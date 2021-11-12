@@ -1,0 +1,43 @@
+{
+  "home":{
+    "title": "bienvenido home",
+    "prueba": "prueba home",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+  "about":{
+    "title": "bienvenido About",
+    "prueba": "prueba about",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+   "nav": {
+    "home":{
+      "title": "Inicio",
+      "link": "/"
+    },
+    "about":{
+      "title": "Nosotros",
+      "link": "/about"
+    },
+    "contact":{
+      "title": "Contacto",
+      "link": "/contact"
+    }  
+  }
+  
+}
