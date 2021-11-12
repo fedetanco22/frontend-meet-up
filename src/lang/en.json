@@ -1,5 +1,42 @@
 {
   "home":{
-    "title": "welcome home"
+    "title": "welcome home",
+    "prueba": "prueba",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },  
+  "about":{
+    "title": "Welcome About",
+    "prueba": "Test about",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
+  "nav": {
+    "home":{
+      "title": "Home",
+      "link": "/en"
+    },
+    "about":{
+      "title": "About",
+      "link": "/en/about"
+    },
+    "contact":{
+      "title": "Contact",
+      "link": "/en/contact"
+    }
   }
 }
