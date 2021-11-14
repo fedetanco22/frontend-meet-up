@@ -12,9 +12,35 @@
       }
     }
   },
+  "courses":{
+    "title": "bienvenido a Cursos",
+    "prueba": "prueba cursos",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+  "test":{
+    "title": "bienvenido a Test",
+    "prueba": "prueba a Test",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
   "about":{
-    "title": "bienvenido About",
-    "prueba": "prueba about",
+    "title": "bienvenido a Nosotros",
+    "prueba": "prueba Nosotros",
     "auth": {
       "SignUp": {
         "title": "Entrar",
@@ -30,14 +56,27 @@
       "title": "Inicio",
       "link": "/"
     },
+    "courses":{
+      "title": "Cursos",
+      "link": "/en/courses"
+    },
+    "test":{
+      "title": "Test",
+      "link": "/en/test"
+    },
     "about":{
       "title": "Nosotros",
       "link": "/about"
     },
-    "contact":{
-      "title": "Contacto",
-      "link": "/contact"
-    }  
+    "login":{
+      "title": "Entrar",
+      "link": "/login"
+    },
+    "signup":{
+      "title": "Signup",
+      "link": "/en/signup"
+    }
+    
   }
   
 }

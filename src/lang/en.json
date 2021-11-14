@@ -11,7 +11,34 @@
         }
       }
     }
-  },  
+  }, 
+  "courses":{
+    "title": "Welcome to Courses",
+    "prueba": "Test Courses",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
+  
+  "test":{
+    "title": "Welcome To Test",
+    "prueba": "Test about",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
   "about":{
     "title": "Welcome About",
     "prueba": "Test about",
@@ -30,13 +57,26 @@
       "title": "Home",
       "link": "/en"
     },
+    "courses":{
+      "title": "Courses",
+      "link": "/en/courses"
+    },
+    "test":{
+      "title": "Test",
+      "link": "/en/test"
+    },
     "about":{
       "title": "About",
       "link": "/en/about"
     },
-    "contact":{
-      "title": "Contact",
-      "link": "/en/contact"
+    "login":{
+      "title": "Login",
+      "link": "/en/login"
+    },
+    "signup":{
+      "title": "Signup",
+      "link": "/en/signup"
     }
+    
   }
 }
