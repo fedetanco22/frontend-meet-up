@@ -1,6 +1,6 @@
 {
   "home":{
-    "title": "welcome home",
+    "title": "Home",
     "prueba": "prueba",
     "auth": {
       "SignUp": {
@@ -13,7 +13,7 @@
     }
   }, 
   "courses":{
-    "title": "Welcome to Courses",
+    "title": "Courses",
     "prueba": "Test Courses",
     "auth": {
       "SignUp": {
@@ -27,7 +27,7 @@
   },
   
   "test":{
-    "title": "Welcome To Test",
+    "title": "Test",
     "prueba": "Test about",
     "auth": {
       "SignUp": {
@@ -40,7 +40,7 @@
     }
   },
   "about":{
-    "title": "Welcome About",
+    "title": "About",
     "prueba": "Test about",
     "auth": {
       "SignUp": {

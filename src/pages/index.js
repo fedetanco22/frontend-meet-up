@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Layout } from '../components';
 import { useRouter } from 'next/router';
 
 import {useTranslations} from 'next-intl';
@@ -14,13 +15,14 @@ export default function Home() {
   
  
   return (
-    <div>
-      <h1>{t('title')}</h1>
-     <h1> {t("prueba")}</h1>
-     <p>{t("auth.SignUp.title")}</p>
-     <p>{t("auth.SignUp.form.placeholder")}</p>
-     <p>{}</p>
-    </div>
+    <Layout pageTitle={t('title')}>
+      <div>
+        <h1>{t('title')}</h1>
+        <h1> {t("prueba")}</h1>
+        <p>{t("auth.SignUp.title")}</p>
+        <p>{t("auth.SignUp.form.placeholder")}</p>
+      </div>
+    </Layout>
   )
 }
 

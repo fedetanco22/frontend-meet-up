@@ -1,16 +1,19 @@
-import React from 'react'
-import Head from 'next/head'
-import Navbar from '../Navbar/Navbar'
+import {useState} from 'react'
+import { Navbar, MobileToggler, SEO } from '../index'
 
 
 const Layout = ({children , pageTitle}) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Navbar/>
+      <SEO title={pageTitle}/> {/* Donde poner el SEO en cada pagina */}
+      <Navbar handleMenu={handleToggle}/>
+      {isOpen && <MobileToggler handleMenu={handleToggle}/>}
       <main>
         {children}
       </main>

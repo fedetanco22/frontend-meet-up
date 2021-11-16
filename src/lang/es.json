@@ -1,6 +1,6 @@
 {
   "home":{
-    "title": "bienvenido home",
+    "title": "Inicio",
     "prueba": "prueba home",
     "auth": {
       "SignUp": {
@@ -13,7 +13,7 @@
     }
   },
   "courses":{
-    "title": "bienvenido a Cursos",
+    "title": "Cursos",
     "prueba": "prueba cursos",
     "auth": {
       "SignUp": {
@@ -26,7 +26,7 @@
     }
   },
   "test":{
-    "title": "bienvenido a Test",
+    "title": "Test",
     "prueba": "prueba a Test",
     "auth": {
       "SignUp": {
@@ -39,7 +39,7 @@
     }
   },
   "about":{
-    "title": "bienvenido a Nosotros",
+    "title": "Nosotros",
     "prueba": "prueba Nosotros",
     "auth": {
       "SignUp": {
@@ -58,11 +58,11 @@
     },
     "courses":{
       "title": "Cursos",
-      "link": "/en/courses"
+      "link": "/courses"
     },
     "test":{
       "title": "Test",
-      "link": "/en/test"
+      "link": "/test"
     },
     "about":{
       "title": "Nosotros",
@@ -74,7 +74,7 @@
     },
     "signup":{
       "title": "Signup",
-      "link": "/en/signup"
+      "link": "/signup"
     }
     
   }
