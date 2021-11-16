@@ -58,11 +58,11 @@
     },
     "courses":{
       "title": "Cursos",
-      "link": "/en/courses"
+      "link": "/courses"
     },
     "test":{
       "title": "Test",
-      "link": "/en/test"
+      "link": "/test"
     },
     "about":{
       "title": "Nosotros",
@@ -74,7 +74,7 @@
     },
     "signup":{
       "title": "Signup",
-      "link": "/en/signup"
+      "link": "/signup"
     }
     
   }

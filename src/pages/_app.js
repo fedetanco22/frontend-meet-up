@@ -1,6 +1,6 @@
 
   import {NextIntlProvider, IntlErrorCode} from 'next-intl';
-import Layout from '../components/Layout/Layout'
+import { Layout } from '../components/index'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/globals.css'
 

@@ -1,9 +1,9 @@
 import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-
-const Navbar = () => {
+const Navbar = ({ handleMenu }) => {
   const t = useTranslations('nav')
   const router = useRouter()
   const { locale, pathname } = router
@@ -17,8 +17,8 @@ const Navbar = () => {
     <>
       <div className='bg-primary'><div>&nbsp;</div></div>
       <div className='container '>    
-        <div className='row'>
-          <div className='col-6 py-4'>
+        <div className='row align-items-center'>
+          <div className='col col-md-4 col-lg-6 py-4 '>
             <Link href='/'>
               <a>
                 <svg width="120" height="43" viewBox="0 0 120 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ const Navbar = () => {
             </Link>
           </div>
             
-          <div className='col d-flex justify-content-between align-items-center'>
+          <div className='col-9 col-md-8 col-lg-6 d-none d-md-flex justify-content-between align-items-center'>
             <div className='col d-flex justify-content-start'>
               <Link href= {t("home.link")} >
                 <a className='px-3'>{t('home.title')}</a>
@@ -52,7 +52,7 @@ const Navbar = () => {
               <Link href= {t("login.link")} >
                 <a className='px-3'>{t('login.title')}</a>
               </Link>
-              <Link href= {t("sigup.link")} >
+              <Link href= {t("signup.link")} >
                 <a className='px-3'>{t('signup.title')}</a>
               </Link>
               <select className='border-0' defaultValue={locale} onChange={handleLangChange}>
@@ -60,7 +60,18 @@ const Navbar = () => {
                 <option value="en">EN</option>
               </select>
             </div>
-      
+          </div>
+
+          <div className='col d-flex justify-content-end d-md-none ' >
+            <select className='border-0' defaultValue={locale} onChange={handleLangChange}>
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+            <button onClick={handleMenu}>
+                <span className=''>
+                  <GiHamburgerMenu />
+                </span>
+            </button>
           </div>
         </div>
       </div>
