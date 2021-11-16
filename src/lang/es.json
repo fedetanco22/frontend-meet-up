@@ -1,0 +1,82 @@
+{
+  "home":{
+    "title": "Inicio",
+    "prueba": "prueba home",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+  "courses":{
+    "title": "Cursos",
+    "prueba": "prueba cursos",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+  "test":{
+    "title": "Test",
+    "prueba": "prueba a Test",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+  "about":{
+    "title": "Nosotros",
+    "prueba": "prueba Nosotros",
+    "auth": {
+      "SignUp": {
+        "title": "Entrar",
+        "form": {
+          "placeholder": "Porfavor ingrese su nombre",
+          "submit": "Enviar"
+        }
+      }
+    }
+  },
+   "nav": {
+    "home":{
+      "title": "Inicio",
+      "link": "/"
+    },
+    "courses":{
+      "title": "Cursos",
+      "link": "/courses"
+    },
+    "test":{
+      "title": "Test",
+      "link": "/test"
+    },
+    "about":{
+      "title": "Nosotros",
+      "link": "/about"
+    },
+    "login":{
+      "title": "Entrar",
+      "link": "/login"
+    },
+    "signup":{
+      "title": "Signup",
+      "link": "/signup"
+    }
+    
+  }
+  
+}
