@@ -1,4 +1,16 @@
 {
+  "config":{
+    "title": "Meet-up plataforma educativa",
+    "author": {
+      "name": "Trylogic",
+      "summary": "Somos un groupo de developers."
+    },
+    "description": "Meet-up es una plataforma educativa para aprender Ingles facilmente",
+    "keywords": "ingles online",
+    "social": {
+      "twitter": "lerobbb"
+    }
+  },
   "home":{
     "title": "Inicio",
     "prueba": "prueba home",
@@ -73,7 +85,7 @@
       "link": "/login"
     },
     "signup":{
-      "title": "Signup",
+      "title": "Sign Up",
       "link": "/signup"
     }
     
