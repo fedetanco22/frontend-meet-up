@@ -1,26 +1,25 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { useRouter } from 'next/router';
-
+import { Layout } from '../components';
+import {Banner} from '../components/index';
 import {useTranslations} from 'next-intl';
+
+import bannerHome from "../../public/banner-home.jpg"
 
 export default function Home() {
   const t = useTranslations('home');
-  const router = useRouter();
-  console.log(router.locale);
-  console.log(router.pathname);
-  console.log(router);
-  
  
   return (
-    <div>
-      <h1>{t('title')}</h1>
-     <h1> {t("prueba")}</h1>
-     <p>{t("auth.SignUp.title")}</p>
-     <p>{t("auth.SignUp.form.placeholder")}</p>
-     <p>{}</p>
-    </div>
+    <Layout pageTitle={t('title')}>
+      <Banner 
+        image={bannerHome}
+        altText={"banner-home"}
+      />
+      <div>
+        <h1>{t('title')}</h1>
+        <h1> {t("prueba")}</h1>
+        <p>{t("auth.SignUp.title")}</p>
+        <p>{t("auth.SignUp.form.placeholder")}</p>
+      </div>
+    </Layout>
   )
 }
 

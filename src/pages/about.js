@@ -1,14 +1,17 @@
 import {useTranslations} from 'next-intl';
+import { Layout } from '../components';
 
 const About = () => {
 const t = useTranslations('about');
   return (
-    <div>
-       <h1>{t('title')}</h1>
-     <h1> {t("prueba")}</h1>
-     <p>{t("auth.SignUp.title")}</p>
-     <p>{t("auth.SignUp.form.placeholder")}</p>
-    </div>
+    <Layout pageTitle={t('title')}>
+      <div>
+         <h1>{t('title')}</h1>
+       <h1> {t("prueba")}</h1>
+       <p>{t("auth.SignUp.title")}</p>
+       <p>{t("auth.SignUp.form.placeholder")}</p>
+      </div>
+    </Layout>
   )
 }
 

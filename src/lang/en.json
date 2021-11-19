@@ -1,6 +1,18 @@
 {
+  "config":{
+    "title": "Meet-up online educational platform",
+    "author": {
+      "name": "Trylogic",
+      "summary": "Who is a group of developers."
+    },
+    "description": "Meet-up is an educational platform where you can learn English easy",
+    "keywords": "english online",
+    "social": {
+      "twitter": "lerobbb"
+    }
+  },
   "home":{
-    "title": "welcome home",
+    "title": "Home",
     "prueba": "prueba",
     "auth": {
       "SignUp": {
@@ -11,9 +23,36 @@
         }
       }
     }
-  },  
+  }, 
+  "courses":{
+    "title": "Courses",
+    "prueba": "Test Courses",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
+  
+  "test":{
+    "title": "Test",
+    "prueba": "Test about",
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
   "about":{
-    "title": "Welcome About",
+    "title": "About",
     "prueba": "Test about",
     "auth": {
       "SignUp": {
@@ -30,13 +69,25 @@
       "title": "Home",
       "link": "/en"
     },
+    "courses":{
+      "title": "Courses",
+      "link": "/en/courses"
+    },
+    "test":{
+      "title": "Test",
+      "link": "/en/test"
+    },
     "about":{
       "title": "About",
       "link": "/en/about"
     },
-    "contact":{
-      "title": "Contact",
-      "link": "/en/contact"
-    }
+    "login":{
+      "title": "Login",
+      "link": "/en/login"
+    },
+    "signup":{
+      "title": "Sign Up",
+      "link": "/en/signup"
+    }  
   }
 }
