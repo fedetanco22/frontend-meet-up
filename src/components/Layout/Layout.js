@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { Navbar, MobileToggler, SEO } from '../index'
 
 
-const Layout = ({children , pageTitle}) => {
+const Layout = ({children , pageTitle, pageDescription, pageKeywords}) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleToggle = () => {
@@ -11,7 +11,7 @@ const Layout = ({children , pageTitle}) => {
 
   return (
     <div>
-      <SEO title={pageTitle}/> {/* Donde poner el SEO en cada pagina */}
+      <SEO title={pageTitle} description={pageDescription} keywords={pageKeywords}/> {/* Donde poner el SEO en cada pagina */}
       <Navbar handleMenu={handleToggle}/>
       {isOpen && <MobileToggler handleMenu={handleToggle}/>}
       <main>

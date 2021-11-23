@@ -1,8 +1,7 @@
 
-  import {NextIntlProvider, IntlErrorCode} from 'next-intl';
-import { Layout } from '../components/index'
+import {NextIntlProvider, IntlErrorCode} from 'next-intl';
 import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
 

@@ -1,10 +1,10 @@
 const config = {
   title: `Meet-up plataforma educativa`,
   author: {
-    name: `federico tanco`,
-    summary: `who is a developer, writer, and creator.`,
+    name: `Trylogic`,
+    summary: `Who is a group of developers.`,
   },
-  description: `A starter blog converting Gatsby -> Next.`,
+  description: `Meet-up es una plataforma educativa para aprender Ingles facilmente`,
   social: {
     twitter: `leeerob`,
   },
