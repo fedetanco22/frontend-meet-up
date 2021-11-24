@@ -1,0 +1,28 @@
+@import './patterns';
+
+.button{
+  font-family: $primary-font;
+  font-size: $large;
+  font-weight: $bold;
+  padding: .4rem .8rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-align: center;
+  &-transparent{
+    background-color: transparent;
+    color: $primary-color;
+    &:hover{
+      color: $primary-color-hover;
+    }
+  }
+  &-ligth{
+    background-color: $bg-blue;
+    color: $primary-color;
+    transition: all .3s ease-in-out;
+    &:hover{
+      background-color: $primary-color;
+      color: $white;
+      transition: all .3s ease-in-out;
+    }
+  }
+}

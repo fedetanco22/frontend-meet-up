@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { Navbar, MobileToggler, SEO } from '../index'
+import { Navbar, SEO } from '../index'
 
 
 const Layout = ({children , pageTitle, pageDescription, pageKeywords}) => {
@@ -12,8 +12,7 @@ const Layout = ({children , pageTitle, pageDescription, pageKeywords}) => {
   return (
     <div>
       <SEO title={pageTitle} description={pageDescription} keywords={pageKeywords}/> {/* Donde poner el SEO en cada pagina */}
-      <Navbar handleMenu={handleToggle}/>
-      {isOpen && <MobileToggler handleMenu={handleToggle}/>}
+      <Navbar handleMenu={handleToggle} open={isOpen}/>
       <main>
         {children}
       </main>
