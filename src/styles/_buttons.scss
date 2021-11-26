@@ -25,4 +25,22 @@
       transition: all .3s ease-in-out;
     }
   }
+  &-secondary{
+    background-color: $secondary-color;
+    color: $white;
+    transition: all .3s ease-in-out;
+    border: 1px solid #FF64C8;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding:.5rem 3.5rem;
+    font-size: 1.125rem;
+    font-weight: $semi-bold;
+    line-height: 1.5rem;
+
+    &:hover{
+      background-color: $secondary-color-hover;
+      color: $white;
+      transition: all .3s ease-in-out;
+    }
+  }
 }

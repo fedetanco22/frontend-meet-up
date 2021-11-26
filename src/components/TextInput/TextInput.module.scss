@@ -1,0 +1,20 @@
+@import '../../styles/patterns';
+
+.input{
+  border: none;
+  border-bottom: 1px solid $text-gray;
+  min-width: 20rem;
+  margin: 1rem 0;
+  padding: .25rem .5rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $text-gray;
+
+  &:focus-visible{
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+  }
+}
