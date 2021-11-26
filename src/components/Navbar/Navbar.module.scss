@@ -20,6 +20,7 @@
     height: 0;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
     &.true{
       height: 300px;
       transition: all .3s ease-in-out;
@@ -30,8 +31,6 @@
     font-family: $primary-font;
     color: $text-black;
     font-size: $medium;
-    margin-right: 1rem;
-    margin-left: 1rem;
     text-align: center;
     padding: .5rem;
     border-bottom: 1px solid $line-gray;
@@ -44,16 +43,25 @@
       border-bottom: 1px solid $secondary-color;
     }
   }
-  .flag{
-    width: 30px;
-    height: 30px;
+  .lan{
+    position: relative;
+    padding-left: .5rem;
+    .flag {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+      top: -2px;
+      left: 10px;
+    }
   }
-  .btnMenu{
+  .btnMenu {
     background-color: transparent;
     border: none;
     outline: none;
-    padding-left: 2rem;
-    .icon{
+    padding-left: .5rem;
+    .icon {
       color: $text-black;
       font-size: $giant;
     }
