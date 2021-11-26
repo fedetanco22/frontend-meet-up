@@ -16,7 +16,7 @@ const Navbar = ({handleMenu, open}) => {
   const [activeStyle, setActiveStyle] = useState(styles.false);
   useEffect(() => {
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
-    open ? setActiveStyle(styles.true) : setActiveStyle(styles.false)
+    open ? setActiveStyle(styles.true) : setActiveStyle(styles.false);
   }, [open]);
   const handleLangChange = (e) => {
     const locale = e.target.value;
@@ -30,8 +30,8 @@ const Navbar = ({handleMenu, open}) => {
         <div>&nbsp;</div>
       </div>
       <div className="container ">
-        <div className={`row flex-nowrap align-items-center ${styles.navbar}`}>
-          <div className="col col-md-3 col-lg-3 py-4 ">
+        <div className={`row mx-0 flex-nowrap align-items-center ${styles.navbar}`}>
+          <div className="col col-md-3 py-4 ">
             <Link href="/">
               <a>
                 <svg width="120" height="43" viewBox="0 0 120 43" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@ const Navbar = ({handleMenu, open}) => {
             </Link>
           </div>
 
-          <div className="col-9 pe-5 pe-lg-3 d-flex justify-content-end align-items-center">
+          <div className="col col-md-9  d-flex justify-content-end align-items-center">
             <div className={`d-flex ${styles.menu} ${activeStyle}`}>
               <Link href={t("home.link")}>
                 <a className={`${styles.link} ${styles.active}`}>{t("home.title")}</a>
@@ -74,17 +74,17 @@ const Navbar = ({handleMenu, open}) => {
               <Link href={t("signup.link")}>
                 <a className="button button-ligth py-2">{t("signup.title")}</a>
               </Link>
-
             </div>
             <div className="d-flex justify-content-end ms-2 align-items-center">
-
-              <div className={`ms-3 ${styles.flag}`}>
-                <Image src={imgLan} alt="idioma" priority />
+              <div className={` ${styles.lan}`}>
+                <div className={`${styles.flag}`}>
+                  <Image src={imgLan} alt="idioma" priority />
+                </div>
+                <select className="border-0 px-1" defaultValue={locale} onChange={handleLangChange}>
+                  <option value="es">ES</option>
+                  <option value="en">EN</option>
+                </select>
               </div>
-              <select className="border-0 px-1" defaultValue={locale} onChange={handleLangChange}>
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-              </select>
               <button onClick={handleMenu} className={`d-block d-lg-none ${styles.btnMenu}`}>
                 <span className={` ${styles.icon}`}>
                   <GiHamburgerMenu />

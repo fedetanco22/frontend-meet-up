@@ -64,6 +64,9 @@
       }
     }
   },
+  "dashboard":{
+    "title": "Welcome"
+  },
   "nav": {
     "home":{
       "title": "Home",
@@ -89,5 +92,32 @@
       "title": "Sign Up",
       "link": "/en/signup"
     }  
+  },
+  "navpanel": {
+    "dashboard":{
+      "title": "Dashboard",
+      "link": "/dashboard"
+    },
+    "mycourses":{
+      "title": "My Courses",
+      "link": "/my-courses"
+    },
+    "setup":{
+      "title": "Setup",
+      "link": "/setup"
+    },
+    "allcourses":{
+      "title": "Courses",
+      "link": "/all-courses"
+    },
+    "users":{
+      "title": "Users",
+      "link": "/users"
+    },
+    "sales":{
+      "title": "Sales",
+      "link": "/sales"
+    }
+    
   }
 }
