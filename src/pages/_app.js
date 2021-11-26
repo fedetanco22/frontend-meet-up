@@ -1,5 +1,6 @@
 
 import {NextIntlProvider, IntlErrorCode} from 'next-intl';
+import { AppProvider } from "../context/useAppContext";
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/globals.scss'
 
@@ -27,7 +28,9 @@ function getMessageFallback({namespace, key, error}) {
 
   return ( 
     <NextIntlProvider messages={pageProps.messages}  onError={onError} getMessageFallback={getMessageFallback}>
-        <Component {...pageProps} />
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
     </NextIntlProvider>
   )
 }
