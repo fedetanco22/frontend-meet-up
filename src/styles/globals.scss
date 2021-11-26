@@ -1,5 +1,11 @@
 @import './patterns';
 @import './buttons';
+
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -13,9 +19,10 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+p {
+  margin: 0;
 }
+
 
 select{
   font-family: $primary-font, sans-serif;

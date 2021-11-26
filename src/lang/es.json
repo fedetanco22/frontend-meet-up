@@ -84,9 +84,9 @@
       "title": "Entrar",
       "link": "/login"
     },
-    "signup":{
+    "register":{
       "title": "Registrarse",
-      "link": "/signup"
+      "link": "/register"
     }
     
   }

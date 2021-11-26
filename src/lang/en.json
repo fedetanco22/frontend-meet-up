@@ -85,9 +85,9 @@
       "title": "Login",
       "link": "/en/login"
     },
-    "signup":{
+    "register":{
       "title": "Sign Up",
-      "link": "/en/signup"
+      "link": "/en/register"
     }  
   }
 }

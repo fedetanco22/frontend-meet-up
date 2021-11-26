@@ -14,10 +14,12 @@ const Navbar = ({handleMenu, open}) => {
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
+
   useEffect(() => {
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
     open ? setActiveStyle(styles.true) : setActiveStyle(styles.false)
-  }, [open]);
+  }, [open, locale]);
+
   const handleLangChange = (e) => {
     const locale = e.target.value;
     router.push(pathname, pathname, {locale});
@@ -71,8 +73,8 @@ const Navbar = ({handleMenu, open}) => {
               <Link href={t("login.link")}>
                 <a className="button button-transparent py-2 ms-lg-4">{t("login.title")}</a>
               </Link>
-              <Link href={t("signup.link")}>
-                <a className="button button-ligth py-2">{t("signup.title")}</a>
+              <Link href={t("register.link")}>
+                <a className="button button-ligth py-2">{t("register.title")}</a>
               </Link>
 
             </div>

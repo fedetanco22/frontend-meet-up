@@ -1,0 +1,31 @@
+@import '../../styles/patterns';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: 26px 54px 45px;
+}
+
+.form__title{
+  font-weight: $semi-bold;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.form__button{
+  margin-top: 1rem;
+}
+
+.checkbox{
+  margin: 1.25rem 0;
+
+  & p {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: $text-gray;
+  }
+}
