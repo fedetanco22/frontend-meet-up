@@ -14,6 +14,8 @@ $text-gray: #959595;
 
 $icon-gray: #C4C4C4;
 
+$border-gray: #E5E5E5;
+
 $link-blue: #012970;
 
 $status-green: #84E904;
@@ -36,13 +38,29 @@ $semi-bold: 500;
 $bold: 600;
 $extra-bold: 800;
 
-$small: 12px;
-$normal: 14px;
-$medium: 16px;/*1rem*/
-$large: 18px;
-$extra-large: 22px;
-$giant: 36px;
-$extra-giant: 48px;
+$small: 0.75rem; /*12px*/
+$normal: 0.875rem; /*14px*/
+$medium: 1rem;/*1rem*/
+$large: 1.125rem; /*18px*/
+$extra-large: 1.375rem; /* 22px */
+$giant: 2.25rem; /*36px*/ 
+$extra-giant: 3rem; /*48px*/
 
 
+/*Spacing*/
+$spacing-small: 0.25rem;
+$spacing-normal: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 1.5rem;
+$spacing-extra-large: 2rem;
+$spacing-giant: 3rem;
+$spacing-extra-giant: 4rem;
+
+/* Screens */
+$screen-xs: 320px;
+$screen-sm: 552px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1440px;
 

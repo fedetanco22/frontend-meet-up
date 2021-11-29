@@ -8,6 +8,7 @@ const [user, setUser] = useState('user initial probando')
   return (
     <AppContext.Provider value={{
       user,
+      setUser
     }}>
       {children}
     </AppContext.Provider>

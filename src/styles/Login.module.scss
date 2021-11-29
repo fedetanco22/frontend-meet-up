@@ -1,6 +1,9 @@
 @import '../styles/patterns';
 
 .login{
-  height: 100vh;
-  background: $bg-gradient
+  background: $bg-gradient;
+  padding: 1rem;
+  @media (min-height: 610px ){
+    height: 100vh;
+  }
 }

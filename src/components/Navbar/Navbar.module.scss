@@ -1,5 +1,6 @@
 @import '../../styles/patterns';
 @import '../../styles/buttons';
+
 .headerLine{
   background-color: $primary-color;
   height: 15px;
@@ -26,23 +27,7 @@
       transition: all .3s ease-in-out;
     }
   }
-  .link{
-    text-transform: uppercase;
-    font-family: $primary-font;
-    color: $text-black;
-    font-size: $medium;
-    text-align: center;
-    padding: .5rem;
-    border-bottom: 1px solid $line-gray;
-    &:hover{
-      color: $link-blue;
-    }
-    &.active{
-      font-weight: $bold;
-      color: $secondary-color;
-      border-bottom: 1px solid $secondary-color;
-    }
-  }
+
   .lan{
     position: relative;
     padding-left: .5rem;
@@ -56,6 +41,7 @@
       left: 10px;
     }
   }
+
   .btnMenu {
     background-color: transparent;
     border: none;
@@ -81,12 +67,6 @@
       height: auto;
       box-shadow: none;
       max-height: 43px;
-    }
-    .link{
-      border-bottom: none;
-      &.active{
-        border-bottom: 3px solid $secondary-color;
-      }
     }
   }
 }

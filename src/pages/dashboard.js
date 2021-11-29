@@ -2,7 +2,8 @@ import {useTranslations} from 'next-intl';
 import { LayoutPanel } from '../components';
 
 const Dashboard = () => {
-const t = useTranslations('dashboard');
+  const t = useTranslations('dashboard'); 
+
   return (
     <LayoutPanel pageTitle={t('title')}>
       <div>

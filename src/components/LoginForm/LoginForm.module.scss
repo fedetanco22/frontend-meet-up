@@ -6,7 +6,12 @@
   justify-content: center;
   align-items: center;
   background-color: $white;
-  padding: 26px 54px 45px;
+  padding: 26px 15px 45px;
+  margin-top: 2rem;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 26px 54px 45px;
+  }
 }
 
 .form__title{
@@ -29,3 +34,24 @@
     color: $text-gray;
   }
 }
+
+.routes{
+  &__link{
+    font-size: $small;
+    padding: 0.25rem 1rem;
+    color: $primary-color;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    @media screen and (min-width: $screen-sm) {
+      font-size: $normal;      
+    }
+    &:hover{
+      color: $primary-color-hover;
+    }
+    &:first-child{
+    border-right: 1px solid $border-gray;
+    }
+}
+}
+
