@@ -8,7 +8,6 @@ import useAppContext from '../context/useAppContext';
 export default function Home() {
   const t = useTranslations('home');
   const {user} = useAppContext();
-  console.log("🚀 ~ file: index.js ~ line 11 ~ Home ~ user", user)
  
   return (
     <Layout pageTitle={t('title')}>

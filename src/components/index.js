@@ -6,6 +6,9 @@ import SEO from "./SEO/SEO";
 import Banner from "./Banner/Banner";
 import LoginForm from "./LoginForm/LoginForm";
 import TextInput from "./TextInput/TextInput";
+import SocialMediaLinks from "./SocialMediaLinks/SocialMediaLinks";
+import Logo from "./Logo/Logo";
+import Button from "./Button/Button";
 
 
 export{
@@ -17,4 +20,7 @@ export{
   Banner,
   LoginForm,
   TextInput,
+  SocialMediaLinks,
+  Logo,
+  Button
 }
