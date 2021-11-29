@@ -1,13 +1,21 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import {useSessionStorage} from "../hooks/useSessionStorage";
+
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
+
 export const AppProvider = ({ children }) => {
-const [user, setUser] = useState('user initial probando')
+const [user, setUser] = useSessionStorage('user' , {})
+const userSession = (userdata) => {
+  localStorage.setItem('user', userdata);
+}
   return (
     <AppContext.Provider value={{
-      user,
+      user, 
+      setUser,
+      userSession 
     }}>
       {children}
     </AppContext.Provider>
