@@ -1,10 +1,12 @@
-import {useState, useEffect} from "react";
-import Link from "next/link";
-import {TextInput} from "../index";
-import axios from "axios";
-import styles from "./LoginForm.module.scss";
-import router from "next/router";
-import useAppContext from '../../context/useAppContext';
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { TextInput, Button } from '../index'
+import axios from 'axios'
+import router from 'next/router'
+import useAppContext from '../../context/useAppContext'
+
+import styles from './LoginForm.module.scss'
+
 
 
 const LoginForm = () => {
@@ -54,20 +56,23 @@ const LoginForm = () => {
           <TextInput type="email" placeholder="Email" handleChange={handleEmailChange} />
           <TextInput type="password" placeholder="Password" handleChange={handlePasswordChange} />
           <div className={styles.form__button}>
-            <button className="button-secondary">Log In</button>
+            <Button  
+              text="Log In"  
+              buttonType={'secondary'}
+            />  
           </div>
+         
           <div className={`${styles.checkbox} d-flex align-items-center`}>
             <input type="checkbox" name="remind-me" />
             <p>Remind me</p>
           </div>
-        </form>
-        <div>
+        </form >
+        <div className={styles.routes}>
           <Link href={"/register"}>
-            <a>Sign In</a>
+            <a className={styles.routes__link}>Sign In</a>
           </Link>
-          <span> | </span>
-          <Link href={"/"}>
-            <a>Recover password</a>
+          <Link href={"/recover"}>
+            <a className={styles.routes__link}>Recover password</a>
           </Link>
         </div>
       </div>

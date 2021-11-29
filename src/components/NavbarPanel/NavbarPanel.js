@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+import useAppContext from '../../context/useAppContext';
 import {useTranslations} from "next-intl";
 import {useRouter} from "next/router";
 import Link from "next/link";
@@ -19,10 +21,12 @@ const Navbar = ({handleMenu, open}) => {
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
+
   useEffect(() => {
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
     open ? setActiveStyle(styles.true) : setActiveStyle(styles.false);
-  }, [open]);
+  }, [open, locale]);
+  
   const handleLangChange = (e) => {
     const locale = e.target.value;
     router.push(pathname, pathname, {locale});

@@ -1,0 +1,75 @@
+@import '../../styles/patterns';
+
+.button{
+  font-family: $primary-font;
+  font-size: $large;
+  font-weight: $bold;
+  padding: .4rem .8rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  text-align: center;
+
+  &_transparent{
+    @extend .button;
+    background-color: transparent;
+    color: $primary-color;
+    &:hover{
+      color: $primary-color-hover;
+    }
+  }
+
+  &_light{
+    @extend .button;
+    background-color: $bg-blue;
+    color: $primary-color;
+    transition: all .3s ease-in-out;
+    &:hover{
+      background-color: $primary-color;
+      color: $white;
+      transition: all .3s ease-in-out;
+    }
+  }
+  &_secondary{
+    background-color: $secondary-color;
+    color: $white;
+    transition: all .3s ease-in-out;
+    border: 1px solid #FF64C8;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding:.5rem 3.5rem;
+    font-size: 1.125rem;
+    font-weight: $semi-bold;
+    line-height: 1.5rem;
+
+    &:hover{
+      background-color: $secondary-color-hover;
+      color: $white;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.link{
+  text-transform: uppercase;
+  font-family: $primary-font;
+  color: $text-black;
+  font-size: $medium;
+  text-align: center;
+  padding: .5rem 1.5rem;
+  border-bottom: 1px solid $line-gray;
+  &:hover{
+    color: $link-blue;
+  }
+  @media screen and (min-width: $screen-lg) {
+    border-bottom: none;
+    &.active{
+      border-bottom: 3px solid $secondary-color;
+    }
+  } 
+}
+
+.active{
+  font-weight: $bold;
+  color: $secondary-color;
+  border-bottom: 1px solid $secondary-color;
+}
