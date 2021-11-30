@@ -10,49 +10,52 @@ import styles from './LoginForm.module.scss'
 
 
 const LoginForm = () => {
-  const { setUser } = useAppContext()
-  const [password, setPassword] = useState(null)
-  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState(null);
+  const {setUser} = useAppContext();
+  
 
-  const handleData = async() => {
-    const url = 'http://164.92.76.51:3000/login'
+  
+  const handleData = async () => {
+    const url = "http://164.92.76.51:3000/login";
 
-   try {
+    try {
       const res = await axios.post(`${url}`, {
-        "email": `${email}`,
-        "password": `${password}`
-      })
-      console.log(res)
-      setUser(res.data)
-      router.push('/dashboard')
+        email: `${email}`,
+        password: `${password}`,
+      });
+      console.log(res);
+      setUser(res.data);
+      localStorage.setItem('user', JSON.stringify(res.data));
+      router.push('/dashboard');
+    } catch (error) {
+      console.log(error);
+      localStorage.setItem( null, res.data);
     }
-    catch(error){
-      alert('Invalid email or password')
-    }
-  }
+  };
 
   const handleEmailChange = (value) => {
-    setEmail(value)
-  }
+    setEmail(value);
+  };
 
   const handlePasswordChange = (value) => {
-    setPassword(value)
-  }
+    setPassword(value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    handleData()
-  }
+    e.preventDefault();
+    handleData();
+  };
 
   return (
     <div className={styles.container}>
-      <div className='d-flex flex-column justify-content-center align-items-center'>
-        <div>  
+      <div className="d-flex flex-column justify-content-center align-items-center">
+        <div>
           <h2 className={styles.form__title}>Welcome!</h2>
         </div>
-        <form onSubmit={handleSubmit} className='d-flex flex-column justify-content-center align-items-center'>
-          <TextInput type="email" placeholder="Email" handleChange={handleEmailChange}/>
-          <TextInput type="password" placeholder="Password" handleChange={handlePasswordChange}/>
+        <form onSubmit={handleSubmit} className="d-flex flex-column justify-content-center align-items-center">
+          <TextInput type="email" placeholder="Email" handleChange={handleEmailChange} />
+          <TextInput type="password" placeholder="Password" handleChange={handlePasswordChange} />
           <div className={styles.form__button}>
             <Button  
               text="Log In"  
@@ -73,10 +76,9 @@ const LoginForm = () => {
             <a className={styles.routes__link}>Recover password</a>
           </Link>
         </div>
-      </div>   
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginForm
-
+export default LoginForm;

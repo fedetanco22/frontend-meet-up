@@ -6,14 +6,16 @@ import Link from "next/link";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog} from "react-icons/fa";
 import Image from "next/image";
-import styles from "./NavbarPanel.module.scss";
 import flagEn from "../../../public/en.png";
 import flagEs from "../../../public/es.png";
 import avatar from "../../../public/avatar.jpg";
 
+import styles from "./NavbarPanel.module.scss";
+
 
 const Navbar = ({handleMenu, open}) => {
   const t = useTranslations("navpanel");
+  const {user} = useAppContext();
   const router = useRouter();
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
@@ -29,6 +31,11 @@ const Navbar = ({handleMenu, open}) => {
     router.push(pathname, pathname, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
+  const foto = user?.data?.profile_image.length > 0 ? (
+    <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
+  ) : (
+    <Image src={avatar} alt="idioma" priority />
+  )
 
   return (
     <>
@@ -103,9 +110,9 @@ const Navbar = ({handleMenu, open}) => {
             <FaRegBell />
             <div className={styles.user}>
               <div className={`ms-3 ${styles.avatar}`}>
-                <Image src={avatar} alt="idioma" priority />
+                {foto}
               </div>
-              <p className={`d-none d-md-block ${styles.name}`}>Micaela</p>
+              <p className={`d-none d-md-block ${styles.name}`}>{user?.data?.name}</p>
             </div>
             <div className={`d-none d-sm-block ${styles.lan}`}>
               <div className={`${styles.flag}`}>
