@@ -12,8 +12,8 @@ import styles from './LoginForm.module.scss'
 const LoginForm = () => {
   const [password, setPassword] = useState(null);
   const [email, setEmail] = useState(null);
-  const {user, setUser, userSession} = useAppContext();
-  console.log(userSession)
+  const {setUser} = useAppContext();
+  
 
   
   const handleData = async () => {
@@ -26,10 +26,11 @@ const LoginForm = () => {
       });
       console.log(res);
       setUser(res.data);
-      userSession(res.data)
+      localStorage.setItem('user', JSON.stringify(res.data));
       router.push('/dashboard');
     } catch (error) {
       console.log(error);
+      localStorage.setItem( null, res.data);
     }
   };
 

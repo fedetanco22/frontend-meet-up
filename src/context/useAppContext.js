@@ -1,25 +1,28 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import {useSessionStorage} from "../hooks/useSessionStorage";
-
+import {createContext, useContext, useState, useEffect} from "react";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
+export const AppProvider = ({children}) => {
+  const storage = () => {
+    if (typeof window !== 'undefined') {
+      return JSON.parse(localStorage.getItem("user"));
+    }else{
+      return null
+    }
+  };
+  const [user, setUser] = useState(storage);
 
-export const AppProvider = ({ children }) => {
-const [user, setUser] = useSessionStorage('user' , {})
-const userSession = (userdata) => {
-  localStorage.setItem('user', userdata);
-}
   return (
-    <AppContext.Provider value={{
-      user, 
-      setUser,
-      userSession 
-    }}>
+    <AppContext.Provider
+      value={{
+        user,
+        setUser,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
-}
+};
 
 export default useAppContext;

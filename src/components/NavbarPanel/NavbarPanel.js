@@ -6,17 +6,16 @@ import Link from "next/link";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog} from "react-icons/fa";
 import Image from "next/image";
-import styles from "./NavbarPanel.module.scss";
 import flagEn from "../../../public/en.png";
 import flagEs from "../../../public/es.png";
 import avatar from "../../../public/avatar.jpg";
-import {useEffect, useState} from "react";
-import useAppContext from "../../context/useAppContext";
+
+import styles from "./NavbarPanel.module.scss";
+
 
 const Navbar = ({handleMenu, open}) => {
   const t = useTranslations("navpanel");
   const {user} = useAppContext();
-  console.log(user);
   const router = useRouter();
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
@@ -32,8 +31,8 @@ const Navbar = ({handleMenu, open}) => {
     router.push(pathname, pathname, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
-  const foto = user?.data.profile_image.length > 0 ? (
-    <Image src={user?.data.profile_image} alt="idioma" width={30} height={30} />
+  const foto = user?.data?.profile_image.length > 0 ? (
+    <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
   ) : (
     <Image src={avatar} alt="idioma" priority />
   )
@@ -113,7 +112,7 @@ const Navbar = ({handleMenu, open}) => {
               <div className={`ms-3 ${styles.avatar}`}>
                 {foto}
               </div>
-              <p className={`d-none d-md-block ${styles.name}`}>{user?.data.name}</p>
+              <p className={`d-none d-md-block ${styles.name}`}>{user?.data?.name}</p>
             </div>
             <div className={`d-none d-sm-block ${styles.lan}`}>
               <div className={`${styles.flag}`}>
