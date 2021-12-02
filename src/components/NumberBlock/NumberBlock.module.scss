@@ -1,0 +1,15 @@
+@import "../../styles/patterns";
+.numberBlock{
+  padding: 3rem 0;
+  background-color: $bg-gray;
+  .number{
+    font-size: $extra-giant;
+    font-weight: $bold;
+    color: $primary-color;
+  }
+  .text{
+    font-size: $large;
+    font-weight: $bold;
+    color: $black;
+  }
+}

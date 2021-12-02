@@ -119,5 +119,40 @@
       "link": "/sales"
     }
     
+  },
+  "numberblock": {
+    "item1": {
+      "number": "3650",
+      "text": "Students"
+    },
+    "item2": {
+      "number": "+6",
+      "text": "Courses"
+    },
+    "item3": {
+      "number": "16",
+      "text": "Teachers"
+    }
+  },
+  "services":{
+    "whyUs":{
+      "title": "Why Choose Meet Up ?",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
+      "button":"see more..."
+    },
+    "service":{
+      "1":{
+        "title":"Online Courses",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      },
+      "2":{
+        "title":"Tutorials",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      },
+      "3":{
+        "title":"Conversations",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      }
+    }
   }
 }
