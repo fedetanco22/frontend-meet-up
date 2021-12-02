@@ -1,0 +1,10 @@
+.imageWrapper{
+  position: relative;
+  width: 100vw;
+  height: 50vh ;
+  overflow: hidden;
+  
+  @media screen and (min-width: 992px) {
+    height: 90vh;   
+  }
+}

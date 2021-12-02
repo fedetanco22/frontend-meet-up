@@ -1,4 +1,4 @@
-import { Layout } from '../components';
+import { CoursesList, Layout } from '../components';
 import {Banner} from '../components/index';
 import {useTranslations} from 'next-intl';
 
@@ -15,6 +15,7 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
+      <CoursesList />
       <div>
         <h1>{t('title')}</h1>
         <h1> {t("prueba")}</h1>

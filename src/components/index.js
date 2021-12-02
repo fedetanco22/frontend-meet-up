@@ -9,7 +9,8 @@ import TextInput from "./TextInput/TextInput";
 import SocialMediaLinks from "./SocialMediaLinks/SocialMediaLinks";
 import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
-
+import CoursesList from "./CoursesList/CoursesList";
+import Course from "./Course/Course";
 
 export{
   Navbar, 
@@ -22,5 +23,7 @@ export{
   TextInput,
   SocialMediaLinks,
   Logo,
-  Button
+  Button,
+  CoursesList,
+  Course
 }
