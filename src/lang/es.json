@@ -1,4 +1,16 @@
 {
+  "config":{
+    "title": "Meet-up plataforma educativa",
+    "author": {
+      "name": "Trylogic",
+      "summary": "Somos un groupo de developers."
+    },
+    "description": "Meet-up es una plataforma educativa para aprender Ingles facilmente",
+    "keywords": "ingles online",
+    "social": {
+      "twitter": "lerobbb"
+    }
+  },
   "home":{
     "title": "Inicio",
     "prueba": "prueba home",
@@ -51,6 +63,9 @@
       }
     }
   },
+  "dashboard":{
+    "title": "Bienvenidos"
+  },
    "nav": {
     "home":{
       "title": "Inicio",
@@ -72,9 +87,36 @@
       "title": "Entrar",
       "link": "/login"
     },
-    "signup":{
-      "title": "Signup",
-      "link": "/signup"
+    "register":{
+      "title": "Registrarse",
+      "link": "/register"
+    }
+    
+  },
+  "navpanel": {
+    "dashboard":{
+      "title": "Panel",
+      "link": "/dashboard"
+    },
+    "mycourses":{
+      "title": "Mis Cursos",
+      "link": "/my-courses"
+    },
+    "setup":{
+      "title": "Configuración",
+      "link": "/setup"
+    },
+    "allcourses":{
+      "title": "Cursos",
+      "link": "/all-courses"
+    },
+    "users":{
+      "title": "Usuarios",
+      "link": "/users"
+    },
+    "sales":{
+      "title": "Ventas",
+      "link": "/sales"
     }
     
   }

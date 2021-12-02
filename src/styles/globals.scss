@@ -1,0 +1,48 @@
+@import './patterns';
+@import './buttons';
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $primary-font, sans-serif;
+  color: $text-black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+
+select{
+  font-family: $primary-font, sans-serif;
+  color: $text-black;
+  &:focus-visible{
+    outline: none;
+  }
+}
+
+.bg-panel{
+  background-color: $bg-blue;
+  padding: 2rem;
+  min-height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 90px);
+}
+
+@media screen and (min-width: 992px) {
+  .bg-panel{
+    padding: 2rem 2rem 2rem 19rem;
+  }
+  
+}

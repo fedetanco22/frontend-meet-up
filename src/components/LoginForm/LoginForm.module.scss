@@ -1,0 +1,57 @@
+@import '../../styles/patterns';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  padding: 26px 15px 45px;
+  margin-top: 2rem;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 26px 54px 45px;
+  }
+}
+
+.form__title{
+  font-weight: $semi-bold;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.form__button{
+  margin-top: 1rem;
+}
+
+.checkbox{
+  margin: 1.25rem 0;
+
+  & p {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: $text-gray;
+  }
+}
+
+.routes{
+  &__link{
+    font-size: $small;
+    padding: 0.25rem 1rem;
+    color: $primary-color;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    @media screen and (min-width: $screen-sm) {
+      font-size: $normal;      
+    }
+    &:hover{
+      color: $primary-color-hover;
+    }
+    &:first-child{
+    border-right: 1px solid $border-gray;
+    }
+}
+}
+
