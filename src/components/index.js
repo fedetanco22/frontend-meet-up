@@ -9,6 +9,8 @@ import TextInput from "./TextInput/TextInput";
 import SocialMediaLinks from "./SocialMediaLinks/SocialMediaLinks";
 import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
+import NumberBlock from "./NumberBlock/NumberBlock";
+import Services from "./Services.js/Services";
 
 
 export{
@@ -22,5 +24,7 @@ export{
   TextInput,
   SocialMediaLinks,
   Logo,
-  Button
+  Button,
+  NumberBlock,
+  Services
 }
