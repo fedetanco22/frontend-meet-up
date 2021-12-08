@@ -11,6 +11,8 @@ import Logo from "./Logo/Logo";
 import Button from "./Button/Button";
 import CoursesList from "./CoursesList/CoursesList";
 import Course from "./Course/Course";
+import NumberBlock from "./NumberBlock/NumberBlock";
+import Services from "./Services.js/Services";
 
 export{
   Navbar, 
@@ -26,4 +28,6 @@ export{
   Button,
   CoursesList,
   Course
+  NumberBlock,
+  Services
 }

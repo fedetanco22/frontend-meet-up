@@ -1,0 +1,53 @@
+@import "../../styles/patterns";
+
+.ServicesBlock{
+  padding: 3rem 0;
+  .whyUs{
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 2.5rem;
+    color: $white;
+    height: 100%;
+    .title{
+      font-weight: $bold;
+      font-size: $extra-large;
+      margin-bottom: 2rem;
+    }
+    .text{
+      font-size: $normal;
+      margin-bottom: 1rem;
+    }
+  }
+  .service{
+    border: 1px solid $line-gray;
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: $bg-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      svg{
+      color: $primary-color;
+      font-size: 2rem;
+      }
+    }
+    .title{
+      color: $text-black;
+      margin-bottom: 1.5rem;
+      font-size: $medium;
+      text-align: center;
+    }
+    .text{
+      color: $text-gray;
+      font-size: $small;
+    }
+  }
+}
