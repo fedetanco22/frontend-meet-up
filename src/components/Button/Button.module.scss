@@ -47,6 +47,30 @@
       transition: all .3s ease-in-out;
     }
   }
+  &_blue{
+    background-color: $tertiary-color;
+    color: $white;
+    transition: all .3s ease-in-out;
+    border: 1px solid $tertiary-color;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding:.5rem 1.5rem;
+    font-size: $extra-large;
+    font-weight: $semi-bold;
+    line-height: 1.5rem;
+
+    &_small{
+      @extend .button_blue;
+      font-size: 1.125rem;
+      padding: .25rem 1.5rem;
+    }
+
+    &:hover{
+      background-color: $tertiary-color-hover;
+      color: $white;
+      transition: all .3s ease-in-out;
+    }
+  }
 }
 
 .link{
