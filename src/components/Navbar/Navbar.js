@@ -3,7 +3,7 @@ import {useRouter} from "next/router";
 import {GiHamburgerMenu} from "react-icons/gi";
 import Image from "next/image";
 import flagEn from "../../../public/en.png";
-import flagEs from "../../../public/es.png";
+import flagEs from "../../../public/ar.png";
 import {useEffect, useState} from "react";
 import { Button, Logo } from "../index";
 

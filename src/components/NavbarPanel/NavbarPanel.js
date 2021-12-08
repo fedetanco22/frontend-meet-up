@@ -7,7 +7,7 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog} from "react-icons/fa";
 import Image from "next/image";
 import flagEn from "../../../public/en.png";
-import flagEs from "../../../public/es.png";
+import flagEs from "../../../public/ar.png";
 import avatar from "../../../public/avatar.jpg";
 
 import styles from "./NavbarPanel.module.scss";
