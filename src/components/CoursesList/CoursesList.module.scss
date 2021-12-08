@@ -1,5 +1,12 @@
 @import "../../styles/patterns";
 
+.container{
+  margin-top: 4rem ;
+  margin-bottom: 4rem ;
+}
+.coursesList{
+  margin-bottom: 5rem;
+}
 .courses{
   padding-bottom: 40px;
   .title {
@@ -19,7 +26,7 @@
     width: 120px;
     height: 3px;
     display: inline-block;
-    background:$secondary-blue;
+    background:$tertiary-color;
     margin: 4px 10px;
   }
   .description {
