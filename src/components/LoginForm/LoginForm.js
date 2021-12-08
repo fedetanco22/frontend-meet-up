@@ -60,6 +60,7 @@ const LoginForm = () => {
             <Button  
               text="Log In"  
               buttonType={'secondary'}
+              asSubmit
             />  
           </div>
          

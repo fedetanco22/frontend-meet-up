@@ -1,4 +1,4 @@
-import { Layout, NumberBlock, Banner, Services } from '../components';
+import { Layout, NumberBlock, Banner, Services, CoursesList } from '../components';
 import {useTranslations} from 'next-intl';
 
 import bannerHome from "../../public/banner-home.jpg"
@@ -14,6 +14,7 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
+      <CoursesList />
       <Services/>
       <NumberBlock/>
       <div>
