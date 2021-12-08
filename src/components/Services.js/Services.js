@@ -19,7 +19,7 @@ const Services = () => {
               text={t("whyUs.button")}  
               buttonType={'light'}
               asLink={true}
-              path={'/'}
+              path={'/about'}
             />  
           </div>
         </div>

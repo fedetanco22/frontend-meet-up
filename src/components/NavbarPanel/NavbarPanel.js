@@ -44,37 +44,37 @@ const Navbar = ({handleMenu, open}) => {
       </div>
       <div className={`d-flex ${styles.menu} ${activeStyle}`}>
         <Link href={t("dashboard.link")}>
-          <a className={`${styles.link} ${styles.active}`}>
+          <a className={`${styles.link} ${pathname === '/dashboard' ? styles.active : false}`}>
             <FaPause className={styles.icon} />
             {t("dashboard.title")}
           </a>
         </Link>
         <Link href={t("mycourses.link")}>
-          <a className={styles.link}>
+        <a className={`${styles.link} ${pathname === '/my-courses' ? styles.active : false}`}>
             <FaLaptop className={styles.icon} />
             {t("mycourses.title")}
           </a>
         </Link>
         <Link href={t("allcourses.link")}>
-          <a className={styles.link}>
+        <a className={`${styles.link} ${pathname === '/all-courses' ? styles.active : false}`}>
             <FaLaptop className={styles.icon} />
             {t("allcourses.title")}
           </a>
         </Link>
         <Link href={t("users.link")}>
-          <a className={styles.link}>
+        <a className={`${styles.link} ${pathname === '/users' ? styles.active : false}`}>
             <FaUsers className={styles.icon} />
             {t("users.title")}
           </a>
         </Link>
         <Link href={t("sales.link")}>
-          <a className={styles.link}>
+        <a className={`${styles.link} ${pathname === '/sales' ? styles.active : false}`}>
             <FaShoppingCart className={styles.icon} />
             {t("sales.title")}
           </a>
         </Link>
         <Link href={t("setup.link")}>
-          <a className={styles.link}>
+        <a className={`${styles.link} ${pathname === '/setup' ? styles.active : false}`}>
             {" "}
             <FaCog className={styles.icon} />
             {t("setup.title")}
