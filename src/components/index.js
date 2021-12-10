@@ -15,6 +15,7 @@ import NumberBlock from "./NumberBlock/NumberBlock";
 import Services from "./Services.js/Services";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import ColorBanner from "./ColorBanner/ColorBanner";
+import Card from "./Card/Card";
 
 export{
   Navbar, 
@@ -33,5 +34,6 @@ export{
   NumberBlock,
   Services,
   SectionTitle,
-  ColorBanner
+  ColorBanner,
+  Card
 }
