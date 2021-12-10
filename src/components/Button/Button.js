@@ -22,6 +22,9 @@ const Button = ({
     [styles.link]: buttonType === 'link',
     [styles.button_blue]: buttonType === 'blue',
     [styles.button_blue_small]: buttonType === 'blue_small',
+    [styles.button_white]: buttonType === 'white',
+    [styles.button_white_primary]: buttonType === 'white_primary',
+    [styles.button_white_secondary]: buttonType === 'white_secondary',
     [styles.active]: active === true,
   }, buttonType);
 
@@ -33,7 +36,7 @@ const Button = ({
     </Link> 
 
   const submit = asSubmit && 
-    <button className={styles.button, classes} onClick={callback}>{text}</button>;
+    <button className={`${classes} ${styles.button}`}  onClick={callback}>{text}</button>;
 
   const button = linkAsButton &&
     <Link href={path}>

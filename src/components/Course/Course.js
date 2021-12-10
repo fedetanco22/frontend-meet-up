@@ -20,7 +20,7 @@ const Course = ({course}) => {
           <h5 className={styles.text__title}>{title}</h5>
           <p className={styles.text__description}>{description}</p>
         </div>
-       <div className='text-end'>
+       <div className='text-end px-4'>
         <Button
           text='Enroll' 
           linkAsButton
