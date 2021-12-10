@@ -1,4 +1,4 @@
-import { Course, Button } from "../index"
+import { Course, Button, SectionTitle } from "../index"
 import styles from "./CoursesList.module.scss"
 
 const courses= [
@@ -111,22 +111,19 @@ const CoursesList = () => {
     
   return (
     <div className={`container ${styles.container}`}>
-      <div className={`${styles.courses}`}>
-        <h2 className={styles.title}>Courses</h2>
-        <p className={styles.description}>Popular Courses</p>
+      <SectionTitle title="Courses" subTitle="Popular Courses"/>
+      <div className={`${styles.coursesList} row`}>
+        {currentCourses}
       </div>
-        <div className={`${styles.coursesList} row`}>
-          {currentCourses}
-        </div>
-        <div className="text-center ">
-            <Button 
-              text="View All Courses"
-              link="/courses"
-              buttonType="blue"
-              linkAsButton
-              path={'/courses'}
-            />  
-        </div>      
+      <div className="text-center ">
+          <Button 
+            text="View All Courses"
+            link="/courses"
+            buttonType="blue"
+            linkAsButton
+            path={'/courses'}
+          />  
+      </div>      
     </div>
   )
 }
