@@ -16,6 +16,8 @@ import Services from "./Services.js/Services";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import ColorBanner from "./ColorBanner/ColorBanner";
 import Card from "./Card/Card";
+import TeacherList from "./TeacherList/TeacherList";
+import Teacher from "./Teacher/Teacher";
 
 export{
   Navbar, 
@@ -35,5 +37,7 @@ export{
   Services,
   SectionTitle,
   ColorBanner,
-  Card
+  Card,
+  TeacherList,
+  Teacher
 }
