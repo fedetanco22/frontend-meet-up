@@ -22,6 +22,7 @@ const Button = ({
     [styles.link]: buttonType === 'link',
     [styles.button_blue]: buttonType === 'blue',
     [styles.button_blue_small]: buttonType === 'blue_small',
+    [styles.button_outline_ligth]: buttonType === 'outline_ligth',
     [styles.active]: active === true,
   }, buttonType);
 

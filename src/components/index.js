@@ -13,6 +13,8 @@ import CoursesList from "./CoursesList/CoursesList";
 import Course from "./Course/Course";
 import NumberBlock from "./NumberBlock/NumberBlock";
 import Services from "./Services.js/Services";
+import Footer from "./Footer/Footer";
+import Newsletter from "./Newsletter/Newsletter";
 
 export{
   Navbar, 
@@ -27,7 +29,9 @@ export{
   Logo,
   Button,
   CoursesList,
-  Course
+  Course,
   NumberBlock,
-  Services
+  Services,
+  Footer,
+  Newsletter
 }

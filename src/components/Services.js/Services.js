@@ -1,9 +1,15 @@
+import {useEffect} from "react";
 import {useTranslations} from "next-intl";
 import { Button } from '../index'
 import {FaLaptop, FaEdit, FaCommentAlt} from "react-icons/fa";
 import styles from "./Services.module.scss";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Services = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const t = useTranslations("services");
   return (
     <section className={styles.ServicesBlock}>
@@ -25,7 +31,7 @@ const Services = () => {
         </div>
         </div>
         <div className="col-12 col-lg-8 d-flex flex-wrap">
-          <div className="col-12 col-md-4 p-2">
+          <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="200" className="col-12 col-md-4 p-2">
             <div className={`${styles.service}`}>
             <div className={`${styles.icon}`}>
               <FaLaptop />
@@ -36,7 +42,7 @@ const Services = () => {
             </p>
             </div>
           </div>
-          <div className="col-12 col-md-4 p-2">
+          <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="300" className="col-12 col-md-4 p-2">
             <div className={`${styles.service}`}>
             <div className={`${styles.icon}`}>
               <FaEdit />
@@ -47,7 +53,7 @@ const Services = () => {
             </p>
             </div>
           </div>
-          <div className="col-12 col-md-4 p-2">
+          <div data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="400" className="col-12 col-md-4 p-2">
             <div className={`${styles.service}`}>
             <div className={`${styles.icon}`}>
               <FaCommentAlt />

@@ -15,8 +15,7 @@ const Navbar = ({handleMenu, open}) => {
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
-  console.log(pathname, 'local')
-  console.log(pathname === '/about' , 'comparacion')
+
   useEffect(() => {
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
     open ? setActiveStyle(styles.true) : setActiveStyle(styles.false)
@@ -47,6 +46,7 @@ const Navbar = ({handleMenu, open}) => {
                 asLink
                 active={pathname === '/'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button 
                 path={t("courses.link")}
@@ -54,6 +54,7 @@ const Navbar = ({handleMenu, open}) => {
                 asLink
                 active={pathname === '/courses'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button
                 path={t("test.link")}
@@ -61,6 +62,7 @@ const Navbar = ({handleMenu, open}) => {
                 asLink
                 active={pathname === '/test'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button
                 path={t("about.link")}
@@ -68,6 +70,7 @@ const Navbar = ({handleMenu, open}) => {
                 asLink
                 active={pathname === '/about'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
 
               <Button 

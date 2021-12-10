@@ -20,7 +20,7 @@ const Course = ({course}) => {
           <h5 className={styles.text__title}>{title}</h5>
           <p className={styles.text__description}>{description}</p>
         </div>
-       <div className='text-end'>
+       <div className='d-flex justify-content-end pb-3 px-3'>
         <Button
           text='Enroll' 
           linkAsButton

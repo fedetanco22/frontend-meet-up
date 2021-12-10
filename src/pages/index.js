@@ -14,15 +14,16 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
-      <CoursesList />
+      
       <Services/>
       <NumberBlock/>
-      <div>
+      <CoursesList />
+      {/* <div>
         <h1>{t('title')}</h1>
         <h1> {t("prueba")}</h1>
         <p>{t("auth.SignUp.title")}</p>
         <p>{t("auth.SignUp.form.placeholder")}</p>
-      </div>
+      </div> */}
     </Layout>
   )
 }
