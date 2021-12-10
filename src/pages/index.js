@@ -1,4 +1,11 @@
-import { Layout, NumberBlock, Banner, Services, CoursesList } from '../components';
+import { 
+  Layout, 
+  NumberBlock, 
+  Banner, 
+  Services, 
+  CoursesList, 
+  ColorBanner 
+} from '../components';
 import {useTranslations} from 'next-intl';
 
 import bannerHome from "../../public/banner-home.jpg"
@@ -14,9 +21,25 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
-      <CoursesList />
       <Services/>
       <NumberBlock/>
+      <CoursesList />
+      <ColorBanner 
+        backgroundColor={'secondary'}
+        title={t('bannerColor.title')}
+        description={t('bannerColor.description')}
+        btnText={t('bannerColor.button')}
+        buttonLink={'/test'}
+        icon
+      />
+      <ColorBanner 
+        backgroundColor={'primary'}
+        title={t('bannerColor.title')}
+        description={t('bannerColor.description')}
+        btnText={t('bannerColor.button')}
+        buttonLink={'/test'}
+      />
+      
       <div>
         <h1>{t('title')}</h1>
         <h1> {t("prueba")}</h1>

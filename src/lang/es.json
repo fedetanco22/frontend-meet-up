@@ -14,6 +14,17 @@
   "home":{
     "title": "Inicio",
     "prueba": "prueba home",
+    "bannerColor":{
+      "title": "Probá tu inglés",
+      "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
+      "button": "Tomar el examen"
+
+    },
+    "bannerColor2":{
+      "title": "Convertite en Docente",
+      "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
+      "button": "Aplicá ahora"
+    },
     "auth": {
       "SignUp": {
         "title": "Entrar",

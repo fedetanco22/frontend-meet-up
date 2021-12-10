@@ -13,6 +13,8 @@ import CoursesList from "./CoursesList/CoursesList";
 import Course from "./Course/Course";
 import NumberBlock from "./NumberBlock/NumberBlock";
 import Services from "./Services.js/Services";
+import SectionTitle from "./SectionTitle/SectionTitle";
+import ColorBanner from "./ColorBanner/ColorBanner";
 
 export{
   Navbar, 
@@ -27,7 +29,9 @@ export{
   Logo,
   Button,
   CoursesList,
-  Course
+  Course,
   NumberBlock,
-  Services
+  Services,
+  SectionTitle,
+  ColorBanner
 }

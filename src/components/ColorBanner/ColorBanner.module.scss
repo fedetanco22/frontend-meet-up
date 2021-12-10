@@ -1,0 +1,32 @@
+@import '../../styles/patterns';
+
+.colorBanner {
+  &_primary{
+    background-color: $primary-color;
+    color: $white;
+  }
+  &_secondary{
+    background-color: $secondary-color;
+    color: $white;
+  }
+  &__icon{
+    svg {
+      color: $white;
+      font-size: 67px;
+      margin-right: 2rem;
+    }
+  }
+  &__title{
+    font-size: 2.25rem;
+    font-weight: $bold;
+  }
+  &__description{
+    font-size: 1rem;
+    font-weight: $regular;
+  }
+}
+
+.banner{
+  padding: 3.5rem 0rem;
+}
+
