@@ -41,13 +41,6 @@ export default function Home() {
         btnText={t('bannerColor.button')}
         buttonLink={'/test'}
       />
-      
-      <div>
-        <h1>{t('title')}</h1>
-        <h1> {t("prueba")}</h1>
-        <p>{t("auth.SignUp.title")}</p>
-        <p>{t("auth.SignUp.form.placeholder")}</p>
-      </div>
     </Layout>
   )
 }

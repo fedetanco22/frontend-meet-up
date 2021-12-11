@@ -1,8 +1,28 @@
 @import '../../styles/patterns';
 
+.content{
+  padding: 3rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile{
   text-align: center;
   img { 
     border-radius: 50%;
+  }
+}
+
+.text{
+  &__title{
+    font-size: $extra-large;
+    font-weight: $bold;
+    margin: 1rem 0 1.5rem;
+  }
+  &__description{
+    font-size: $small;
+    font-weight: $regular;
   }
 }
