@@ -17,6 +17,9 @@ import Footer from "./Footer/Footer";
 import Newsletter from "./Newsletter/Newsletter";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import ColorBanner from "./ColorBanner/ColorBanner";
+import Card from "./Card/Card";
+import TeacherList from "./TeacherList/TeacherList";
+import Teacher from "./Teacher/Teacher";
 
 export{
   Navbar, 
@@ -37,5 +40,8 @@ export{
   Footer,
   Newsletter,
   SectionTitle,
-  ColorBanner
+  ColorBanner,
+  Card,
+  TeacherList,
+  Teacher
 }
