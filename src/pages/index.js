@@ -22,7 +22,7 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
-      <Services/>
+       <Services/>
       <NumberBlock/>
       <CoursesList />
       <ColorBanner 

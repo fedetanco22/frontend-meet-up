@@ -1,0 +1,24 @@
+@import '../../styles/patterns';
+
+.footer{
+  background-color:#F9FAF9;
+  padding: 0rem;
+  .copy{
+    background-color: $line-gray;
+    padding: 1rem 0
+  }
+  h4{
+    font-size: $large;
+  }
+  ul{
+    list-style-type: none;
+    padding-left: .5rem;
+    li{
+      margin-bottom: .5rem;
+      svg{
+        color: $primary-color;
+        height: .8rem;
+      }
+    }
+  }
+}
