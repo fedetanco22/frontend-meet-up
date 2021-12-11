@@ -102,7 +102,15 @@
     "register":{
       "title": "Sign Up",
       "link": "/en/register"
-    }  
+    },
+    "terms":{
+      "title": "Terms of service",
+      "link": "/en/terms-of-service"
+    },
+    "policy":{
+      "title": "Private policy",
+      "link": "/en/private-policy"
+    }   
   },
   "navpanel": {
     "dashboard":{
@@ -165,5 +173,27 @@
         "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
+  },
+  "banner": {
+    "title1": "Learning Today,",
+    "title2": "Speaking Tomorrow",
+    "subtitle": "English courses for beginners and advanced students",
+    "button": {
+      "text": "Get Started",
+      "url": "/en/courses"
+    }
+  },
+  "footer":{
+    "phone": "Phone",
+    "email": "Email",
+    "listLink1": "Usefull Links",
+    "listLink2": "Courses"
+  },
+  "newsletter":{
+    "title": "Join Our Newsletter",
+    "button":{
+      "text": "Suscribe"
+    },
+    "placeholder": "Email address"
   }
 }

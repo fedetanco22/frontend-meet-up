@@ -3,7 +3,7 @@ import {useRouter} from "next/router";
 import {GiHamburgerMenu} from "react-icons/gi";
 import Image from "next/image";
 import flagEn from "../../../public/en.png";
-import flagEs from "../../../public/es.png";
+import flagEs from "../../../public/ar.png";
 import {useEffect, useState} from "react";
 import { Button, Logo } from "../index";
 
@@ -44,26 +44,33 @@ const Navbar = ({handleMenu, open}) => {
                 path={t("home.link")}
                 text={t("home.title")} 
                 asLink
-                active
+                active={pathname === '/'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button 
                 path={t("courses.link")}
                 text={t("courses.title")} 
                 asLink
+                active={pathname === '/courses'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button
                 path={t("test.link")}
                 text={t("test.title")}
                 asLink
+                active={pathname === '/test'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
               <Button
                 path={t("about.link")}
                 text={t("about.title")}
                 asLink
+                active={pathname === '/about'}
                 buttonType={'link'}
+                className="text-uppercase p-2"
               />
 
               <Button 

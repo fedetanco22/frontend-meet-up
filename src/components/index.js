@@ -13,6 +13,8 @@ import CoursesList from "./CoursesList/CoursesList";
 import Course from "./Course/Course";
 import NumberBlock from "./NumberBlock/NumberBlock";
 import Services from "./Services.js/Services";
+import Footer from "./Footer/Footer";
+import Newsletter from "./Newsletter/Newsletter";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import ColorBanner from "./ColorBanner/ColorBanner";
 import Card from "./Card/Card";
@@ -35,6 +37,8 @@ export{
   Course,
   NumberBlock,
   Services,
+  Footer,
+  Newsletter,
   SectionTitle,
   ColorBanner,
   Card,

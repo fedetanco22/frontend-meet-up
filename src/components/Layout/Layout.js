@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { Navbar, SEO } from '../index'
+import { Footer, Navbar, SEO } from '../index'
 
 
 const Layout = ({children , pageTitle, pageDescription, pageKeywords}) => {
@@ -16,6 +16,7 @@ const Layout = ({children , pageTitle, pageDescription, pageKeywords}) => {
       <main>
         {children}
       </main>
+      <Footer/>
     </div>
   )
 }

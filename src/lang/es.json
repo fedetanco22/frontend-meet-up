@@ -101,7 +101,15 @@
     "register":{
       "title": "Registrarse",
       "link": "/register"
-    }
+    },
+    "terms":{
+      "title": "Terminos del servicio",
+      "link": "/terms-of-service"
+    },
+    "policy":{
+      "title": "Politica de privacidad",
+      "link": "/private-policy"
+    } 
     
   },
   "navpanel": {
@@ -165,6 +173,28 @@
         "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
+  },
+  "banner": {
+    "title1": "Aprender hoy,",
+    "title2": "hablar mañana",
+    "subtitle": "Cursos de inglés para principiantes y estudiantes avanzados",
+    "button": {
+      "text": "Comenzar",
+      "url": "/courses"
+    }
+  },
+  "footer":{
+    "phone": "Teléfono",
+    "email": "Correo",
+    "listLink1": "Enlaces útiles",
+    "listLink2": "Cursos"
+  },
+  "newsletter":{
+    "title": "Suscríbase a nuestras novedades",
+    "button":{
+      "text": "Suscribirse"
+    },
+    "placeholder": "Correo electrónico"
   }
   
 }
