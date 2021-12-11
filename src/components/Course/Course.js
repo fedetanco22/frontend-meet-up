@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import {Button} from '../index';
+import {Button, Card} from '../index';
 import styles from './Course.module.scss';
 
 const Course = ({course}) => {
   const {id, title, description, url, image} = course;
   return (
     <div className='col-12 col-sm-6 col-md-4'>
-      <div className={`${styles.course}  `} >
+      <Card>
         <div style={{width:'100%'}}>
           <Image src={image} alt="" 
             width={580}
@@ -29,8 +29,9 @@ const Course = ({course}) => {
           />
        </div>
         <a href={url}>{url}</a>
-      </div>
+      </Card>  
     </div>
+    
   )
 }
 

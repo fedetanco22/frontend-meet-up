@@ -4,7 +4,8 @@ import {
   Banner, 
   Services, 
   CoursesList, 
-  ColorBanner 
+  ColorBanner, 
+  TeacherList
 } from '../components';
 import {useTranslations} from 'next-intl';
 
@@ -32,6 +33,7 @@ export default function Home() {
         buttonLink={'/test'}
         icon
       />
+      <TeacherList/>
       <ColorBanner 
         backgroundColor={'primary'}
         title={t('bannerColor.title')}
@@ -39,13 +41,6 @@ export default function Home() {
         btnText={t('bannerColor.button')}
         buttonLink={'/test'}
       />
-      
-      <div>
-        <h1>{t('title')}</h1>
-        <h1> {t("prueba")}</h1>
-        <p>{t("auth.SignUp.title")}</p>
-        <p>{t("auth.SignUp.form.placeholder")}</p>
-      </div>
     </Layout>
   )
 }
