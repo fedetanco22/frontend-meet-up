@@ -21,6 +21,7 @@ const Button = ({
     [styles.button_transparent]: buttonType === 'transparent',
     [styles.link]: buttonType === 'link',
     [styles.button_blue]: buttonType === 'blue',
+    [styles.button_green]: buttonType === 'green',
     [styles.button_blue_small]: buttonType === 'blue_small',
     [styles.button_outline_ligth]: buttonType === 'outline_ligth',
     [styles.button_white]: buttonType === 'white',

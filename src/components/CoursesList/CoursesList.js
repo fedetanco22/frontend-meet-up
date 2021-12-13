@@ -1,4 +1,5 @@
 import { Course, Button, SectionTitle } from "../index"
+import {useTranslations} from "next-intl";
 import styles from "./CoursesList.module.scss"
 
 const courses= [
@@ -108,20 +109,21 @@ const CoursesList = () => {
   const currentCourses = courses.map(course => (
     <Course key={course.id} course={course} />
   )).slice(0, 3)
+  const t = useTranslations("coursesList");
     
   return (
     <div className={`container ${styles.container}`}>
-      <SectionTitle title="Courses" subTitle="Popular Courses"/>
+      <SectionTitle title={t("title")} subTitle={t("subtitle")}/>
       <div className={`${styles.coursesList} row`}>
         {currentCourses}
       </div>
       <div className="text-center ">
           <Button 
-            text="View All Courses"
+            text={t("buttonAll.text")}
             link="/courses"
             buttonType="blue"
             linkAsButton
-            path={'/courses'}
+            path={t("buttonAll.url")}
           />  
       </div>      
     </div>

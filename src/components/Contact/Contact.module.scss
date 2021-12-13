@@ -1,0 +1,55 @@
+@import '../../styles/patterns';
+
+.iconEmail{
+  background-color: $bg-blue;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  position: relative;
+  svg{
+    color: $primary-color;
+    font-size: 4.5rem;
+    transform: rotate(-30deg);
+    top: 0px;
+    left: 30px;
+    position: absolute;
+  }
+}
+
+.iconWa{
+  background-color: $bg-green;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  position: relative;
+  svg{
+    color: $status-green;
+    font-size: 5rem;
+    top: 0px;
+    left: 30px;
+    position: absolute;
+  }
+}
+
+.title{
+  font-size: $large;
+}
+
+.button_green{
+  background-color: $status-green;
+  color: $white;
+  transition: all .3s ease-in-out;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 40px;
+  padding:.5rem 3.5rem;
+  font-size: 1.125rem;
+  font-weight: $semi-bold;
+  line-height: 1.5rem;
+
+  &:hover{
+    background-color: $bg-green;
+    color: $status-green;
+    transition: all .3s ease-in-out;
+  }
+}

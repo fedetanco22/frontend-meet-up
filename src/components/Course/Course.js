@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import {Button, Card} from '../index';
+import {useTranslations} from "next-intl";
 import styles from './Course.module.scss';
 
 const Course = ({course}) => {
+  const t = useTranslations("coursesList");
   const {id, title, description, url, image} = course;
   return (
     <div className='col-12 col-sm-6 col-md-4'>
@@ -22,7 +24,7 @@ const Course = ({course}) => {
         </div>
        <div className='text-end px-4'>
         <Button
-          text='Enroll' 
+          text={t("buttonEnroll")} 
           linkAsButton
           path={'/enroll'}
           buttonType='blue_small'
