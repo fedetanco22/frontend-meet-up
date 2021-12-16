@@ -5,7 +5,8 @@ import {
   Services, 
   CoursesList, 
   ColorBanner, 
-  TeacherList
+  TeacherList,
+  Contact
 } from '../components';
 import {useTranslations} from 'next-intl';
 
@@ -22,7 +23,7 @@ export default function Home() {
         image={bannerHome}
         altText={"banner-home"}
       />
-       <Services/>
+      <Services/>
       <NumberBlock/>
       <CoursesList />
       <ColorBanner 
@@ -33,12 +34,13 @@ export default function Home() {
         buttonLink={'/test'}
         icon
       />
+      <Contact/>
       <TeacherList/>
       <ColorBanner 
         backgroundColor={'primary'}
-        title={t('bannerColor.title')}
-        description={t('bannerColor.description')}
-        btnText={t('bannerColor.button')}
+        title={t('bannerColor2.title')}
+        description={t('bannerColor2.description')}
+        btnText={t('bannerColor2.button')}
         buttonLink={'/test'}
       />
     </Layout>

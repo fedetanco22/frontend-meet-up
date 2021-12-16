@@ -195,5 +195,22 @@
       "text": "Suscribe"
     },
     "placeholder": "Email address"
+  },
+  "contact":{
+    "title": "Contact",
+    "subtitle": "Contact Us",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Your message",
+    "button": "Send"
+  },
+  "coursesList": {
+    "title": "Courses",
+    "subtitle": "Popular Courses",
+    "buttonEnroll": "Enroll",
+    "buttonAll": {
+      "text": "View all courses",
+      "url": "/en/courses"
+    }
   }
 }

@@ -20,6 +20,7 @@ import ColorBanner from "./ColorBanner/ColorBanner";
 import Card from "./Card/Card";
 import TeacherList from "./TeacherList/TeacherList";
 import Teacher from "./Teacher/Teacher";
+import Contact from "./Contact/Contact";
 
 export{
   Navbar, 
@@ -43,5 +44,6 @@ export{
   ColorBanner,
   Card,
   TeacherList,
-  Teacher
+  Teacher,
+  Contact
 }
