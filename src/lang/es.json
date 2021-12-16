@@ -75,7 +75,12 @@
     }
   },
   "dashboard":{
-    "title": "Bienvenidos"
+    "title": "Mi Panel",
+    "roleTeacher": "Teacher",
+    "roleStudent": "Student",
+    "card1": "Cursos en progreso",
+    "card2": "Cursos completados",
+    "emptyCourse": "No hay cursos"
   },
    "nav": {
     "home":{
@@ -136,7 +141,8 @@
     "sales":{
       "title": "Ventas",
       "link": "/sales"
-    }
+    },
+    "close": "Salir"
     
   },
   "numberblock": {

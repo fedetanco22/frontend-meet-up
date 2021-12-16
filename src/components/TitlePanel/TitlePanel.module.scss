@@ -1,0 +1,21 @@
+@import '../../styles/patterns';
+
+.title{
+  font-weight: $semi-bold;
+  font-size: $extra-large;
+  color: $link-blue;
+  font-family: $primary-font;
+}
+
+.breadcrumb{
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+  font-size: $normal;
+  li{
+    padding-right: .5rem;
+  }
+  .active{
+    font-weight: $semi-bold;
+  }
+}

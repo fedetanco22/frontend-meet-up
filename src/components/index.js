@@ -21,6 +21,7 @@ import Card from "./Card/Card";
 import TeacherList from "./TeacherList/TeacherList";
 import Teacher from "./Teacher/Teacher";
 import Contact from "./Contact/Contact";
+import TitlePanel from "./TitlePanel/TitlePanel";
 
 export{
   Navbar, 
@@ -45,5 +46,6 @@ export{
   Card,
   TeacherList,
   Teacher,
-  Contact
+  Contact,
+  TitlePanel
 }

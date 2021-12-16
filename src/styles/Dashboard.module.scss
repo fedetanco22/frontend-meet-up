@@ -1,0 +1,55 @@
+@import '../styles/patterns';
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+}
+.user{
+  border-left: 1px solid $line-gray;
+  padding-left: 1rem;
+}
+.cardTitle{
+  font-size: $extra-large;
+  font-weight: $bold;
+}
+
+.empty{
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  div{
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      display: block;
+      height: 8px;
+      width: 100px;
+      border-radius: 15px;
+      background-color: $icon-gray;
+      position: absolute;
+      transform: rotate(-45deg);
+    }
+    svg{
+      font-size: 4rem;
+      color: $icon-gray;
+    }
+  }
+
+
+  h5{
+    color: $icon-gray;
+    font-size: $large;
+    font-weight: $bold;
+  }
+}
