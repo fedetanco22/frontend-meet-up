@@ -15,7 +15,7 @@ const Services = () => {
     <section className={styles.ServicesBlock}>
       <div className="container d-flex flex-wrap">
         <div className="col-12 col-lg-4 p-2">
-        <div className={`${styles.whyUs}`}>
+        <div className={`${styles.whyUs}`} data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="100">
           <h3 className={styles.title}>{t("whyUs.title")}</h3>
           <p className={styles.text}>
           {t("whyUs.text")}

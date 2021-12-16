@@ -14,14 +14,14 @@ const ColorBanner = ({backgroundColor , title , description, icon, btnText,  }) 
     <div className={`${classes} ${styles.banner}`} >
       <div className="container  ">
         <div className='row align-items-center'>
-          <div className={`${styles.colorBanner__icon} col-8 d-flex align-items-center`}>
+          <div className={`${styles.colorBanner__icon} col-12 col-md-8 d-flex align-items-center`}>
             {icon && <FaPencilAlt />}
             <div className='col-10'>
               <h2 className={styles.colorBanner__title}>{title}</h2>
               <p className={styles.colorBanner__description}>{description}</p>
             </div>
           </div >
-          <div className={`${styles.button} col-4 text-end`}>
+          <div className={`${styles.button} col-12 col-md-4 text-end mt-4 mt-md-0`}>
             <Button 
               text={btnText} 
               linkAsButton

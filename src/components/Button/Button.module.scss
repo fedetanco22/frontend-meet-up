@@ -64,6 +64,24 @@
       transition: all .3s ease-in-out;
     }
   }
+  &_green{
+    background-color: $status-green;
+    color: $white;
+    transition: all .3s ease-in-out;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding:.5rem 3.5rem;
+    font-size: 1.125rem;
+    font-weight: $semi-bold;
+    line-height: 1.5rem;
+
+    &:hover{
+      background-color: $bg-green;
+      color: $status-green;
+      transition: all .3s ease-in-out;
+    }
+  }
   &_blue{
     background-color: $tertiary-color;
     color: $white;
@@ -100,14 +118,14 @@
     &_primary{
       @extend .button_white;
       color: $primary-color;
-      border: 1px solid $primary-color;
+      border: none;
       &:hover{
         color: $primary-color-hover;
       }
     }
     &_secondary{
       @extend .button_white;
-      border: 1px solid $secondary-color;
+      border: none;
       color: $secondary-color;
       &:hover{
         color: $secondary-color-hover;

@@ -195,6 +195,23 @@
       "text": "Suscribirse"
     },
     "placeholder": "Correo electrónico"
+  },
+  "contact":{
+    "title": "Contacto",
+    "subtitle": "Contactarnos",
+    "phone": "Teléfono",
+    "email": "Correo",
+    "message": "Su mensaje",
+    "button": "Enviar"
+  },
+  "coursesList": {
+    "title": "Cursos",
+    "subtitle": "Cursos populares",
+    "buttonEnroll": "Inscribirse",
+    "buttonAll": {
+      "text": "Ver todos los cursos",
+      "url": "/courses"
+    }
   }
   
 }
