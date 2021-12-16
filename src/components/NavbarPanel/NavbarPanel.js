@@ -4,7 +4,7 @@ import {useTranslations} from "next-intl";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import {GiHamburgerMenu} from "react-icons/gi";
-import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog} from "react-icons/fa";
+import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog, FaDoorOpen} from "react-icons/fa";
 import Image from "next/image";
 import flagEn from "../../../public/en.png";
 import flagEs from "../../../public/ar.png";
@@ -13,9 +13,9 @@ import avatar from "../../../public/avatar.jpg";
 import styles from "./NavbarPanel.module.scss";
 
 
-const Navbar = ({handleMenu, open}) => {
+const NavbarPanel = ({handleMenu, open}) => {
   const t = useTranslations("navpanel");
-  const {user} = useAppContext();
+  const {user, setUser} = useAppContext();
   const router = useRouter();
   const {locale, pathname} = router;
   const [imgLan, setImgLan] = useState(flagEs);
@@ -31,11 +31,16 @@ const Navbar = ({handleMenu, open}) => {
     router.push(pathname, pathname, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
-  const foto = user?.data?.profile_image.length > 0 ? (
+  const foto = user?.data?.profile_image?.length > 0 ? (
     <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
   ) : (
     <Image src={avatar} alt="idioma" priority />
   )
+
+  const exit = () => {
+    setUser(null);
+    router.push('/');
+  }
 
   return (
     <>
@@ -80,6 +85,10 @@ const Navbar = ({handleMenu, open}) => {
             {t("setup.title")}
           </a>
         </Link>
+        <button className={`${styles.link}`}  onClick={exit}>
+          <FaDoorOpen className={styles.icon}/>
+            {t("close")}
+        </button>
       </div>
       <div className={`row flex-nowrap align-items-center mx-0 ${styles.navbar}`}>
         <div className="col col-md-3 col-lg-3 py-3 ps-4">
@@ -136,4 +145,4 @@ const Navbar = ({handleMenu, open}) => {
   );
 };
 
-export default Navbar;
+export default NavbarPanel;

@@ -76,7 +76,12 @@
     }
   },
   "dashboard":{
-    "title": "Welcome"
+    "title": "Dashboard",
+    "roleTeacher": "Teacher",
+    "roleStudent": "Student",
+    "card1": "Courses in progress",
+    "card2": "Courses completed",
+    "emptyCourse": "No courses"
   },
   "nav": {
     "home":{
@@ -136,7 +141,8 @@
     "sales":{
       "title": "Sales",
       "link": "/sales"
-    }
+    },
+    "close": "Logout"
     
   },
   "numberblock": {
