@@ -31,7 +31,8 @@ const Navbar = ({handleMenu, open}) => {
     router.push(pathname, pathname, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
-  const foto = user?.data?.profile_image.length > 0 ? (
+
+  const foto = user?.data?.profile_image.length > 0  ? (
     <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
   ) : (
     <Image src={avatar} alt="idioma" priority />

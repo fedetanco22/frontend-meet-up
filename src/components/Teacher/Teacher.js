@@ -4,7 +4,7 @@ import styles from './Teacher.module.scss'
 import SocialMediaLinks from '../SocialMediaLinks/SocialMediaLinks';
 
 const Teacher = ({teacher}) => {
-  const {name, age, description, profilePicture} = teacher
+  const {name, description, profilePicture} = teacher
   return (
     <div className='col-12 col-sm-6 col-md-4'>
       <Card>
@@ -17,7 +17,7 @@ const Teacher = ({teacher}) => {
               quality={100}
             />
           </div>
-          <div className="text-center">
+          <div className="text-center mb-4">
             <h5 className={styles.text__title}>{name}</h5>
             <p className={styles.text__description}>{description}</p>
           </div>

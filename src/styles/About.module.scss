@@ -1,0 +1,45 @@
+@import '../styles/patterns';
+
+
+.title{
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $line-gray;
+  
+}
+.textBody{
+  h3{
+    font-size: $extra-large;
+    font-weight: $bold;
+    color: $text-black;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: $text-gray;
+    margin-bottom: 2rem;
+  }
+}
+
+.value{
+  background-color: $tertiary-color;
+  color: $white;
+  padding: 2.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &__text{
+    
+    h3{
+      font-size: $extra-large;
+      font-weight: $bold;
+      color: $white;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $white;
+      margin-bottom: 2rem;
+    }
+  }
+}

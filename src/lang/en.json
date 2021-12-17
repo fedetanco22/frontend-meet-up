@@ -63,17 +63,11 @@
     }
   },
   "about":{
-    "title": "About",
-    "prueba": "Test about",
-    "auth": {
-      "SignUp": {
-        "title": "Sign up",
-        "form": {
-          "placeholder": "Please enter your name",
-          "submit": "Submit"
-        }
-      }
-    }
+    "title": "About Us",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. "
   },
   "dashboard":{
     "title": "Welcome"

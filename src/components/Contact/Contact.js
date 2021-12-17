@@ -18,7 +18,7 @@ const Contact = () => {
   };
   return (
     <section>
-      <div className="container py-5">
+      <div className={`container py-5 ${styles.container}`}>
         <SectionTitle title={t("title")} subTitle={t("subtitle")} />
         <Card>
           <div className="px-3 pt-5  pb-3 d-flex flex-wrap">
