@@ -1,0 +1,26 @@
+@import '../../styles/patterns';
+
+.container{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.value{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 0 2.8rem;
+  &__item{
+    display: flex;
+    align-items: center;
+    & p{
+      text-transform: capitalize;
+      font-size: 1.2rem;
+    }
+    & svg{
+      font-size: 2rem;
+      color: $tertiary-color;
+      margin-right: .5rem;
+    }
+  }
+}

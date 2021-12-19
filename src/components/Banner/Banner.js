@@ -6,12 +6,14 @@ import styles from "./Banner.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const Banner = ({image, altText}) => {
   useEffect(() => {
     AOS.init();
   }, []);
 
   const t = useTranslations("banner");
+  
   return (
     <div className={styles.imageWrapper}>
       <Image src={image} alt={altText} layout="fill" objectFit="cover" objectPosition="50% 0%" quality={100} />

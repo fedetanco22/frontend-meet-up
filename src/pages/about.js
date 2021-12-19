@@ -1,16 +1,46 @@
 import {useTranslations} from 'next-intl';
-import { Layout } from '../components';
+import {Layout, NumberBlock, Contact, PartnerList, OurValues} from '../components/index';
+import Banner from '../components/Banner/Banner';
+import bannerAbout from "../../public/banner-about-us.png";
+import styles from '../styles/About.module.scss';
 
 const About = () => {
 const t = useTranslations('about');
   return (
     <Layout pageTitle={t('title')}>
-      <div>
-         <h1>{t('title')}</h1>
-       <h1> {t("prueba")}</h1>
-       <p>{t("auth.SignUp.title")}</p>
-       <p>{t("auth.SignUp.form.placeholder")}</p>
+      <Banner 
+      image={bannerAbout}
+      altText={"banner-home"}
+    />
+    <div className={`container py-5 ${styles.container}`}>
+      <div className='row'>
+        <div className="col-12 col-md-8">
+          <h1 className={styles.title}>{t('title')}</h1>
+          <div className={styles.textBody}>
+            <h3>Meet Up</h3>
+            <p>{t('description')}</p>
+          </div>
+          <div className={styles.textBody}>
+            <h3>Nuestra Metodologia</h3>
+            <p>{t('methodology')}</p>
+          </div>
+        </div>
+        <div className={`${styles.value} col-12 col-md-4 `}>
+          <div className={styles.value__text}>
+            <h3>Mision</h3>
+            <p>{t('mision')}</p>
+          </div>
+          <div className={styles.value__text}>
+            <h3>Vision</h3>
+            <p>{t('vision')}</p>
+          </div>
+        </div>
       </div>
+    </div>
+      <OurValues />
+      <PartnerList />
+      <NumberBlock />
+      <Contact />
     </Layout>
   )
 }

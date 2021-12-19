@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const Services = () => {
   useEffect(() => {
-    AOS.init();
+      AOS.init();
   }, []);
   const t = useTranslations("services");
   return (
