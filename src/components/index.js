@@ -18,9 +18,11 @@ import Newsletter from "./Newsletter/Newsletter";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import ColorBanner from "./ColorBanner/ColorBanner";
 import Card from "./Card/Card";
-import TeacherList from "./TeacherList/TeacherList";
-import Teacher from "./Teacher/Teacher";
+import PartnerList from "./PartnerList/PartnerList";
+import Partner from "./Partner/Partner";
 import Contact from "./Contact/Contact";
+import TitlePanel from "./TitlePanel/TitlePanel";
+import OurValues from "./OurValues/OurValues";
 
 export{
   Navbar, 
@@ -43,7 +45,9 @@ export{
   SectionTitle,
   ColorBanner,
   Card,
-  TeacherList,
-  Teacher,
-  Contact
+  PartnerList,
+  Partner,
+  Contact,
+  TitlePanel,
+  OurValues
 }

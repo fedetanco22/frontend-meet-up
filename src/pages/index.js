@@ -5,7 +5,6 @@ import {
   Services, 
   CoursesList, 
   ColorBanner, 
-  TeacherList,
   Contact
 } from '../components';
 import {useTranslations} from 'next-intl';
@@ -35,7 +34,6 @@ export default function Home() {
         icon
       />
       <Contact/>
-      <TeacherList/>
       <ColorBanner 
         backgroundColor={'primary'}
         title={t('bannerColor2.title')}

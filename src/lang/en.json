@@ -67,10 +67,24 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. "
-  },
+    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "values": {
+      "title": "Our",
+      "subtitle": "Values",
+      "values": {
+        "professionalism":"professionalism",
+        "excellence":"excellence",
+        "warranty":"warranty",
+        "knowledge":"knowledge"
+      }
+    }},
   "dashboard":{
-    "title": "Welcome"
+    "title": "Dashboard",
+    "roleTeacher": "Teacher",
+    "roleStudent": "Student",
+    "card1": "Courses in progress",
+    "card2": "Courses completed",
+    "emptyCourse": "No courses"
   },
   "nav": {
     "home":{
@@ -130,7 +144,8 @@
     "sales":{
       "title": "Sales",
       "link": "/sales"
-    }
+    },
+    "close": "Logout"
     
   },
   "numberblock": {

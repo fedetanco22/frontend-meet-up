@@ -1,6 +1,5 @@
 import {useTranslations} from 'next-intl';
-import { Layout } from '../components';
-import {NumberBlock, Contact} from '../components/index';
+import {Layout, NumberBlock, Contact, PartnerList, OurValues} from '../components/index';
 import Banner from '../components/Banner/Banner';
 import bannerAbout from "../../public/banner-about-us.png";
 import styles from '../styles/About.module.scss';
@@ -38,6 +37,8 @@ const t = useTranslations('about');
         </div>
       </div>
     </div>
+      <OurValues />
+      <PartnerList />
       <NumberBlock />
       <Contact />
     </Layout>

@@ -1,6 +1,6 @@
 import { useState , useEffect} from 'react'
 import React from "react";
-import {Card, Button, SectionTitle} from "../index";
+import {Card, SectionTitle} from "../index";
 import {useTranslations} from "next-intl";
 import {FaRegEnvelope, FaWhatsapp} from "react-icons/fa";
 import AOS from "aos";
@@ -9,13 +9,16 @@ import styles from "./Contact.module.scss";
 
 const Contact = () => {
   const [path, setPath] = useState('https://api.whatsapp.com/send?phone=5493517059857&text=Hola%20tengo%20una%20Consulta!');
+  
   useEffect(() => {
     AOS.init();
   }, []);
+
   const t = useTranslations("contact");
   const handleMessage = (value) => {
     setPath(`https://api.whatsapp.com/send?phone=5493517059857&text=${value.target.value}`);
   };
+
   return (
     <section>
       <div className={`container py-5 ${styles.container}`}>

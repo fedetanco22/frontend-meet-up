@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { Card } from ".."
-import styles from './Teacher.module.scss'
+import styles from './Partner.module.scss'
 import SocialMediaLinks from '../SocialMediaLinks/SocialMediaLinks';
 
-const Teacher = ({teacher}) => {
-  const {name, description, profilePicture} = teacher
+const Partner = ({partner}) => {
+  const {name, description, profilePicture} = partner
   return (
     <div className='col-12 col-sm-6 col-md-4'>
       <Card>
@@ -28,4 +28,4 @@ const Teacher = ({teacher}) => {
   )
 }
 
-export default Teacher
+export default Partner

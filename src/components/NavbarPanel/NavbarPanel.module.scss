@@ -88,6 +88,9 @@
     color: $link-blue;
     transition: all 0.3s ease-in-out;
     margin-bottom: 0.3rem;
+    background-color: transparent;
+    border: none;
+    text-align: left;
     &:hover {
       color: $link-blue;
       transition: all 0.3s ease-in-out;

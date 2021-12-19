@@ -17,6 +17,7 @@
   p {
     color: $text-gray;
     margin-bottom: 2rem;
+    padding-right: 4rem;
   }
 }
 
@@ -26,6 +27,7 @@
   padding: 2.5rem;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   
@@ -36,10 +38,12 @@
       font-weight: $bold;
       color: $white;
       margin-bottom: 1rem;
+     
     }
     p {
       color: $white;
       margin-bottom: 2rem;
+     
     }
   }
 }
