@@ -1,0 +1,25 @@
+@import '../../styles/patterns';
+
+.alert{
+  background-color: burlywood;
+  padding: .5rem;
+  border-radius: .2rem;
+  display: flex;
+  align-items: center;
+  svg{
+    margin-right: .5rem;
+    font-size: 1.5rem;
+  }
+  &.warning{
+    background-color: $bg-yellow;
+    color: $status-orenge;
+  }
+  &.success{
+    background-color: $bg-green;
+    color: $status-green;
+  }
+  &.error{
+    background-color: $bg-red;
+    color: $status-red;
+  }
+}

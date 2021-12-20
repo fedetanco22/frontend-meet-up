@@ -23,6 +23,9 @@ import Partner from "./Partner/Partner";
 import Contact from "./Contact/Contact";
 import TitlePanel from "./TitlePanel/TitlePanel";
 import OurValues from "./OurValues/OurValues";
+import Breadcrumb from "./Breadcrumb/Breadcrumb";
+import IconButton from "./IconButton/IconButton";
+import Alert from "./Alert/Alert";
 
 export{
   Navbar, 
@@ -49,5 +52,8 @@ export{
   Partner,
   Contact,
   TitlePanel,
-  OurValues
+  OurValues,
+  Breadcrumb,
+  IconButton,
+  Alert
 }

@@ -1,0 +1,14 @@
+@import '../../styles/patterns';
+
+.breadcrumb{
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+  font-size: $normal;
+  li{
+    padding-right: .5rem;
+  }
+  .active{
+    font-weight: $semi-bold;
+  }
+}

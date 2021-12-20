@@ -1,0 +1,61 @@
+@import '../../styles/patterns';
+
+.iconButton{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg{
+    font-size: 1.2rem;
+  }
+  &.blue{
+    background-color: $bg-blue;
+    transition: all .3s ease-in-out;
+    svg{
+      color: $primary-color;
+      transition: all .3s ease-in-out;
+    }
+    &:hover{
+      background-color: $primary-color;
+      transition: all .3s ease-in-out;
+      svg{
+        color: $white;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+  &.green{
+    background-color: $bg-green;
+    transition: all .3s ease-in-out;
+    svg{
+      color: $status-green;
+      transition: all .3s ease-in-out;
+    }
+    &:hover{
+      background-color: $status-green;
+      transition: all .3s ease-in-out;
+      svg{
+        color: $white;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+  &.red{
+    background-color: $bg-red;
+    transition: all .3s ease-in-out;
+    svg{
+      color: $status-red;
+      transition: all .3s ease-in-out;
+    }
+    &:hover{
+      background-color: $status-red;
+      transition: all .3s ease-in-out;
+      svg{
+        color: $white;
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+}

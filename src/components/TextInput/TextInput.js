@@ -1,19 +1,21 @@
-import styles from './TextInput.module.scss'
+import classNames from "classnames";
+import styles from "./TextInput.module.scss";
 
-const TextInput = ({type, placeholder, id, value, classes, handleChange }) => {
-
+const TextInput = ({type, placeholder, id, value, classes, handleChange, variant, label , required}) => {
+  const classesVariant = classNames(
+    {
+      [styles.input]: variant === "login",
+      ["form-control"]: variant === "bootstrap",
+    },
+    variant
+  );
+  const labelInput = label !== undefined ? <label className={styles.label}>{label}</label> : null;
   return (
     <div className={classes ? classes : styles.container}>
-      <input 
-        type={type} 
-        placeholder={placeholder} 
-        id={id} 
-        value={value} 
-        className={styles.input}
-        onChange={(e)=>handleChange(e.target.value)}
-      />
+      {labelInput}
+      <input type={type} placeholder={placeholder} id={id} value={value} className={classesVariant} onChange={(e) => handleChange(e.target.value)} required={required}/>
     </div>
-  )
-}
+  );
+};
 
-export default TextInput
+export default TextInput;

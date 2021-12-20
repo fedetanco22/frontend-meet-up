@@ -8,6 +8,9 @@
   border-radius: 3px;
   white-space: nowrap;
   text-align: center;
+  svg{
+    margin-right: .5rem
+  }
   &_outline{
     @extend .button;
     background-color: transparent;
@@ -40,6 +43,7 @@
     background-color: $bg-blue;
     color: $primary-color;
     transition: all .3s ease-in-out;
+    border: none;
     &:hover{
       background-color: $primary-color;
       color: $white;
