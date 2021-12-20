@@ -80,11 +80,29 @@
   },
   "dashboard":{
     "title": "Mi Panel",
+    "buttonEdit": "/setup",
     "roleTeacher": "Teacher",
     "roleStudent": "Student",
     "card1": "Cursos en progreso",
     "card2": "Cursos completados",
-    "emptyCourse": "No hay cursos"
+    "emptyCourse": "No hay cursos",
+    "salesCard": {
+      "title": "Ventas",
+      "period": "Total",
+      "button": {
+        "text": "ver más...",
+        "url": "/sales"
+      }
+    },
+    "usersCard": {
+      "title": "Usuarios",
+      "period": "Total",
+      "button": {
+        "text": "ver más...",
+        "url": "/users"
+      }
+    }
+
   },
    "nav": {
     "home":{
@@ -221,6 +239,34 @@
     "buttonAll": {
       "text": "Ver todos los cursos",
       "url": "/courses"
+    }
+  },
+  "setup":{
+    "title": "Configuración",
+    "form":{
+      "name":"Nombre",
+      "lastname": "Apellido",
+      "phone": "Teléfono"
+    },
+    "alert": {
+      "warning": "Hay cambios pendientes",
+      "success": "Datos guardados exitosamente",
+      "error": "Error , verifique los datos y vuelva a intentar"      
+    }
+  },
+  "users": {
+    "title": "Usuarios",
+    "list": "Lista de usuarios",
+    "table": {
+      "user": "Usuario",
+      "name": "Nombre",
+      "role": "Rol",
+      "actions": "Acciones"
+    },
+    "search": "Buscar",
+    "roleInput": {
+      "label": "Rol",
+      "input": "Todos"
     }
   }
   

@@ -24,13 +24,11 @@ const LoginForm = () => {
         email: `${email}`,
         password: `${password}`,
       });
-      console.log(res);
       setUser(res.data);
       localStorage.setItem('user', JSON.stringify(res.data));
       router.push('/dashboard');
     } catch (error) {
-      console.log(error);
-      localStorage.setItem( null, res.data);
+      localStorage.setItem( 'user', null);
     }
   };
 
@@ -54,8 +52,8 @@ const LoginForm = () => {
           <h2 className={styles.form__title}>Welcome!</h2>
         </div>
         <form onSubmit={handleSubmit} className="d-flex flex-column justify-content-center align-items-center">
-          <TextInput type="email" placeholder="Email" handleChange={handleEmailChange} />
-          <TextInput type="password" placeholder="Password" handleChange={handlePasswordChange} />
+          <TextInput type="email" placeholder="Email" variant="login" handleChange={handleEmailChange} />
+          <TextInput type="password" placeholder="Password" variant="login" handleChange={handlePasswordChange} />
           <div className={styles.form__button}>
             <Button  
               text="Log In"  

@@ -1,0 +1,20 @@
+@import '../styles/patterns';
+
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+}
+.user{
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: $screen-md) {
+  .user{
+    border-left: 1px solid $line-gray;
+    padding-left: 1rem;
+  }
+}

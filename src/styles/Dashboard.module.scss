@@ -11,45 +11,75 @@
   border-left: 1px solid $line-gray;
   padding-left: 1rem;
 }
-.cardTitle{
-  font-size: $extra-large;
-  font-weight: $bold;
-}
+.cardDashboard{
+  padding: 1rem 1rem 0 1rem;
+  .cardTitle{
+    font-size: $extra-large;
+    font-weight: $bold;
+  }
+  .number{
+    font-size: $extra-giant;
+    margin-bottom: 0;
+  }
+  .period{
+    color: $text-gray;
+    font-size: $large;
+    line-height: .3;
+  }
+  .iconBox{
+    display: flex;
+    .cardIcon{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: .5rem;
+      background-color: $line-gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg{
+        font-size: 3rem;
+      }
+    }
+  }
 
-.empty{
-  width: 100%;
-  min-height: 100px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  
-  div{
-    position: relative;
-    margin-bottom: 1rem;
+  .empty{
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    span{
-      display: block;
-      height: 8px;
-      width: 100px;
-      border-radius: 15px;
-      background-color: $icon-gray;
-      position: absolute;
-      transform: rotate(-45deg);
+    flex-direction: column;
+    
+    .emptyBox{
+      position: relative;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span{
+        display: block;
+        height: 8px;
+        width: 100px;
+        border-radius: 15px;
+        background-color: $icon-gray;
+        position: absolute;
+        transform: rotate(-45deg);
+      }
+      svg{
+        font-size: 4rem;
+        color: $icon-gray;
+      }
     }
-    svg{
-      font-size: 4rem;
+  
+  
+    h5{
       color: $icon-gray;
+      font-size: $large;
+      font-weight: $bold;
     }
-  }
-
-
-  h5{
-    color: $icon-gray;
-    font-size: $large;
-    font-weight: $bold;
   }
 }
+
+

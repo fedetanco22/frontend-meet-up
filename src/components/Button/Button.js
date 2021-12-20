@@ -11,7 +11,8 @@ const Button = ({
   linkAsButton,
   active,
   path,
-  className
+  className,
+  children
 }) => {
 
   const classes = classNames({
@@ -34,15 +35,19 @@ const Button = ({
 
   const link = asLink &&
     <Link href={path}>
-      <a className={`${classNameProp} ${classes}`} >{text}</a>
+      
+      <a className={`${classNameProp} ${classes}`} >{children}{text}</a>
     </Link> 
 
   const submit = asSubmit && 
-    <button className={`${classes} ${styles.button}`}  onClick={callback}>{text}</button>;
+    <button className={` ${classNameProp} ${classes} ${styles.button}`}  onClick={callback}>
+      {children}
+      {text}</button>;
 
   const button = linkAsButton &&
     <Link href={path}>
-      <a className={`${classNameProp} ${classes}`} >{text}</a>
+      
+      <a className={`${classNameProp} ${classes}`} >{children}{text}</a>
       
     </Link>  
 

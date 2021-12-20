@@ -46,3 +46,25 @@ select{
   }
   
 }
+
+.text-primary{
+  color: $primary-color;
+}
+.text-orange{
+  color: $status-orenge;
+}
+
+.table{
+  tbody:not(:first-child){
+    border-top: 1px solid $line-gray;
+    td{
+      font-size: $medium;
+      color: $text-gray;
+    }
+  }
+  th{
+    font-weight: $semi-bold!important;
+  }
+
+
+}

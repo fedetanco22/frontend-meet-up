@@ -80,11 +80,28 @@
     }},
   "dashboard":{
     "title": "Dashboard",
+    "buttonEdit": "/en/setup",
     "roleTeacher": "Teacher",
     "roleStudent": "Student",
     "card1": "Courses in progress",
     "card2": "Courses completed",
-    "emptyCourse": "No courses"
+    "emptyCourse": "No courses",
+    "salesCard": {
+      "title": "Sales",
+      "period": "Total",
+      "button": {
+        "text": "see all...",
+        "url": "/en/sales"
+      }
+    },
+    "usersCard": {
+      "title": "Users",
+      "period": "Total",
+      "button": {
+        "text": "see all...",
+        "url": "/en/users"
+      }
+    }
   },
   "nav": {
     "home":{
@@ -220,6 +237,34 @@
     "buttonAll": {
       "text": "View all courses",
       "url": "/en/courses"
+    }
+  },
+  "setup":{
+    "title": "Setup",
+    "form":{
+      "name":"Name",
+      "lastname": "Lastname",
+      "phone": "Phone"
+    },
+    "alert": {
+      "warning": "There are pending changes",
+      "success": "Data saved successfully",
+      "error": "Error, check the data and try again"      
+    }
+  },
+  "users": {
+    "title": "Users",
+    "list": "List of users",
+    "table": {
+      "user": "User",
+      "name": "Name",
+      "role": "Role",
+      "actions": "Actions"
+    },
+    "search": "Search",
+    "roleInput": {
+      "label": "Role",
+      "input": "All"
     }
   }
 }
