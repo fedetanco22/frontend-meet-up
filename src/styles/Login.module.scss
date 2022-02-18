@@ -4,6 +4,6 @@
   background: $bg-gradient;
   padding: 1rem;
   @media (min-height: 610px ){
-    height: 100vh;
+    min-height: 100vh;
   }
 }

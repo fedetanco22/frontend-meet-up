@@ -18,6 +18,7 @@ const Dashboard = () => {
   const [isPending, setIsPending] = useState(false);
   const [send, setSend] = useState(false);
   const [sendError, setSendError] = useState(false);
+  
   useEffect(() => {
     if (user !== null) {
       getUser();

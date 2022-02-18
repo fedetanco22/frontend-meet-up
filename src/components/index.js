@@ -26,6 +26,7 @@ import OurValues from "./OurValues/OurValues";
 import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import IconButton from "./IconButton/IconButton";
 import Alert from "./Alert/Alert";
+import RegisterForm from './RegisterForm/RegisterForm'
 
 export{
   Navbar, 
@@ -55,5 +56,6 @@ export{
   OurValues,
   Breadcrumb,
   IconButton,
-  Alert
+  Alert,
+  RegisterForm
 }
