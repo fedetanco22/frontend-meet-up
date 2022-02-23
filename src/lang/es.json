@@ -18,7 +18,6 @@
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
-
     },
     "bannerColor2":{
       "title": "Convertite en Docente",
@@ -38,6 +37,16 @@
   "courses":{
     "title": "Cursos",
     "prueba": "prueba cursos",
+    "bannerColor":{
+      "title": "Probá tu inglés",
+      "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
+      "button": "Tomar el examen"
+    },
+    "bannerColor2":{
+      "title": "Convertite en Docente",
+      "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
+      "button": "Aplicá ahora"
+    },
     "auth": {
       "SignUp": {
         "title": "Entrar",
@@ -67,6 +76,7 @@
     "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",  
     "vision": "Nuestra visión es ser brindar una educacion de calidad a traves de la plataforma educativa, que permita a los estudiantes aprender inglés de manera fácil y divertida.",
     "methodology": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales. Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo. Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
+    "course_info": "Nuestros cursos están especialmente diseñados para vos y la concreta situación que estás atravesando. Podes elegir distintas modalidades de cursado: Grupal: clases online en grupo de no más de 12 personas, Individuales, Just Talk: clases de conversación o English for Business purposes",
     "values": {
       "title": "Nuestros",
       "subtitle": "Valores",

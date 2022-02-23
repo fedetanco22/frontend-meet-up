@@ -38,6 +38,17 @@
   "courses":{
     "title": "Courses",
     "prueba": "Test Courses",
+    "bannerColor":{
+      "title": "Test your English",
+      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
+      "button": "Take the test"
+
+    },
+    "bannerColor2":{
+      "title": "Become a Teacher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+      "button": "Apply now"
+    },
     "auth": {
       "SignUp": {
         "title": "Sign up",
@@ -68,6 +79,7 @@
     "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "course_info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "values": {
       "title": "Our",
       "subtitle": "Values",

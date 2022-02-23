@@ -1,0 +1,71 @@
+@import '../../styles/patterns';
+
+.imageWrapper{
+    position: relative;
+    width: 100%;
+    height: 50vh ;
+    overflow: hidden;
+}
+
+.title{
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $line-gray;
+    
+  }
+  .textBody{
+    h3{
+      font-size: $extra-large;
+      font-weight: $bold;
+      color: $text-black;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $text-gray;
+      margin-bottom: 2rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .value{
+    background-color: $white;
+    color: $black;
+    padding: 0rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -200px;
+    z-index: 2;
+    &__title {
+      background-color: $status-green;
+      color: $white;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      
+      h3{
+        font-size: $large;
+        font-weight: $extra-bold;
+        color: $white;
+        margin-bottom: 0;
+      }
+    }
+
+    &__text{ 
+      padding: 2rem;  
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;  
+     &__title{
+      h6 {
+        font-size: $extra-large;
+        font-weight: $bold;
+        line-height: 1.8rem;
+        color: #525050;
+       
+      }
+     }
+    }
+  }
+  

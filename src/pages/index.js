@@ -1,31 +1,28 @@
-import { 
-  Layout, 
-  NumberBlock, 
-  Banner, 
-  Services, 
-  CoursesList, 
-  ColorBanner, 
-  Contact
+import {
+  Layout,
+  NumberBlock,
+  Banner,
+  Services,
+  CoursesList,
+  ColorBanner,
+  Contact,
 } from '../components';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl';
 
-import bannerHome from "../../public/banner-home.jpg"
+import bannerHome from '../../public/banner-home.jpg';
 import useAppContext from '../context/useAppContext';
 
-export default function Home() {
+export default function Home({ courses }) {
   const t = useTranslations('home');
-  const {user} = useAppContext();
- 
+  const { user } = useAppContext();
+
   return (
     <Layout pageTitle={t('title')}>
-      <Banner 
-        image={bannerHome}
-        altText={"banner-home"}
-      />
-      <Services/>
-      <NumberBlock/>
-      <CoursesList />
-      <ColorBanner 
+      <Banner image={bannerHome} altText={'banner-home'} />
+      <Services />
+      <NumberBlock />
+      <CoursesList courseList={courses?.data.slice(0, 3)} />
+      <ColorBanner
         backgroundColor={'secondary'}
         title={t('bannerColor.title')}
         description={t('bannerColor.description')}
@@ -33,8 +30,8 @@ export default function Home() {
         buttonLink={'/test'}
         icon
       />
-      <Contact/>
-      <ColorBanner 
+      <Contact />
+      <ColorBanner
         backgroundColor={'primary'}
         title={t('bannerColor2.title')}
         description={t('bannerColor2.description')}
@@ -42,17 +39,16 @@ export default function Home() {
         buttonLink={'/test'}
       />
     </Layout>
-  )
+  );
 }
 
-// pages/index.js
-export function getStaticProps({locale}) {
+export async function getStaticProps({ locale }) {
+  const res = await fetch('http://164.92.76.51:3000/courses');
+  const courses = await res.json();
   return {
     props: {
-      // You can get the messages from anywhere you like, but the recommended
-      // pattern is to put them in JSON files separated by language and read 
-      // the desired one based on the `locale` received from Next.js. 
-      messages: require(`../lang/${locale}.json`)
-    }
+      courses,
+      messages: require(`../lang/${locale}.json`),
+    },
   };
 }

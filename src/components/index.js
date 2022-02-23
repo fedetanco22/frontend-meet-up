@@ -29,6 +29,8 @@ import Alert from "./Alert/Alert";
 import ChangePassword from "./ChangePassword/ChangePassword";
 import EditUser from "./EditUser/EditUser";
 import TextInputFormik from "./TextInputFormik/TextInputFormik";
+import RegisterForm from './RegisterForm/RegisterForm';
+import CourseSchedule from './CourseSchedule/CourseSchedule';
 
 export{
   Navbar, 
@@ -61,5 +63,9 @@ export{
   Alert,
   ChangePassword,
   EditUser,
-  TextInputFormik
+  TextInputFormik,
+  RegisterForm,
+  CourseSchedule,
 }
+
+

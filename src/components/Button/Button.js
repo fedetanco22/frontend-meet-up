@@ -36,7 +36,6 @@ const Button = ({
 
   const link = asLink &&
     <Link href={path}>
-      
       <a className={`${classNameProp} ${classes}`} >{children}{text}</a>
     </Link> 
 
