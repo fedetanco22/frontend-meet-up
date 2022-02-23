@@ -256,12 +256,35 @@
     "form":{
       "name":"Name",
       "lastname": "Lastname",
-      "phone": "Phone"
+      "phone": "Phone",
+      "submit": "Save",
+      "validations": {
+        "name": {
+          "required": "name is required",
+          "min": "min. 3 characters",
+          "max": "max. 30 characters"
+        },
+        "lastName": {
+          "required": "lastname is required"
+        },
+        "phone": {
+          "required": "phone is required",
+          "number": "only numbers"
+        }
+      }
     },
     "alert": {
       "warning": "There are pending changes",
       "success": "Data saved successfully",
-      "error": "Error, check the data and try again"      
+      "error": "Error, check the data and try again",
+      "errorRepeat": "Passwords must be the same"         
+    },
+    "password": {
+      "title": "Change Password",
+      "current": "Current password",
+      "new": "New password",
+      "repeat": "Repeat new password",
+      "conditions": "Conditions: Password must have a minimum of 8 characters, a maximum of 12, contain at least one uppercase, one lowercase and one symbol."
     }
   },
   "users": {
@@ -271,12 +294,24 @@
       "user": "User",
       "name": "Name",
       "role": "Role",
-      "actions": "Actions"
+      "actions": "Actions",
+      "empty": "No users found"
     },
     "search": "Search",
     "roleInput": {
       "label": "Role",
       "input": "All"
+    },
+    "modal":{
+      "title": "Confirm Delete user?",
+      "text1": "you want to delete the user  ",
+      "text2": "If you press delete the data cannot be recovered",
+      "cancel": "Cancel",
+      "delete": "Delete"
     }
+  },
+  "user":{
+    "title": "Edit User",
+    "child": "Users"
   }
 }

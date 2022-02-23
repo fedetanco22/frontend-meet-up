@@ -12,7 +12,8 @@ const Button = ({
   active,
   path,
   className,
-  children
+  children,
+  disabled
 }) => {
 
   const classes = classNames({
@@ -39,7 +40,7 @@ const Button = ({
     </Link> 
 
   const submit = asSubmit && 
-    <button className={` ${classNameProp} ${classes} ${styles.button}`}  onClick={callback}>
+    <button className={` ${classNameProp} ${classes} ${styles.button}`}  onClick={callback} disabled={disabled}>
       {children}
       {text}</button>;
 

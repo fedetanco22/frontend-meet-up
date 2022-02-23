@@ -15,9 +15,9 @@ import styles from "./NavbarPanel.module.scss";
 
 const NavbarPanel = ({handleMenu, open}) => {
   const t = useTranslations("navpanel");
-  const {user, setUser} = useAppContext();
+  const {user, setUser, getUser} = useAppContext();
   const router = useRouter();
-  const {locale, pathname} = router;
+  const {locale, pathname, query} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
 
@@ -28,11 +28,12 @@ const NavbarPanel = ({handleMenu, open}) => {
   
   const handleLangChange = (e) => {
     const locale = e.target.value;
-    router.push(pathname, pathname, {locale});
+    router.push(pathname, query.userId, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
+
   const foto = user?.data?.profile_image?.length > 0 ? (
-    <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
+    <Image src={`http://164.92.76.51:3000/userImages/${user?.data?.profile_image}`} alt="idioma" width={30} height={30} />
   ) : (
     <Image src={avatar} alt="idioma" priority />
   )

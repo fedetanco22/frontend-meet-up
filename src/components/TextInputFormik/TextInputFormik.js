@@ -1,8 +1,9 @@
 import classNames from "classnames";
-import styles from "./TextInput.module.scss";
+import {Field, ErrorMessage} from "formik";
+import styles from "./TextInputFormik.module.scss";
 
 
-const TextInput = ({type, placeholder, id, value, classes, handleChange, variant, label , required, validation ,}) => {
+const TextInputFormik = ({type, placeholder,value, classes, variant, label ,}) => {
   const classesVariant = classNames(
     {
       [styles.input]: variant === "login",
@@ -14,10 +15,10 @@ const TextInput = ({type, placeholder, id, value, classes, handleChange, variant
   return (
     <div className={classes ? classes : styles.container}>
       {labelInput}
-      <input type={type} placeholder={placeholder} id={id} value={value} className={classesVariant} onChange={(e) => handleChange(e.target.value)} required={required}/>
-    
+      <Field type={type} name={value} placeholder={placeholder} className={classesVariant}/>
+      <ErrorMessage name={value} component="small" className={styles.error}/>
     </div>
   );
 };
 
-export default TextInput;
+export default TextInputFormik;
