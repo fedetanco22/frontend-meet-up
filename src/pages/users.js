@@ -10,7 +10,7 @@ import styles from "../styles/Setup.module.scss";
 
 const Users = () => {
   const t = useTranslations("users");
-  const {user} = useAppContext();
+  const {user, getUser} = useAppContext();
   const [users, setUsers] = useState([]);
   const [usersFilters, setUsersFilters] = useState(users);
   const [roles, setRoles] = useState([]);
@@ -19,15 +19,18 @@ const Users = () => {
   const [show, setShow] = useState(false);
   const userSelected = null;
 
+  console.log(users, 'usuarios')
+  console.log(usersFilters, 'filtrados')
   let roleSelected = roleSelectedState;
   let inputText = inputTextState;
-  console.log(roleSelected, "rol");
-  console.log(inputText, "texto");
+
 
   useEffect(() => {
     if (user !== null) {
-      getUsers();
+      console.log(user, 'usuario en useefcet')
+      getUser()
       getRoles();
+      getUsers();
     } else {
       router.push("/");
     }
@@ -49,20 +52,22 @@ const Users = () => {
       const url = "http://164.92.76.51:3000/users";
       try {
         const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-        setUsers(res.data.data);
+        console.log(res.data?.data, 'resultado')
+        setUsers(res.data?.data);
 
-        setUsersFilters(res.data.data);
+        setUsersFilters(res.data?.data);
       } catch (error) {
         router.push("/");
+        console.log(error, 'error')
       }
     }
   };
 
-  const getRoles = async () => {
+  const getRoles = () => {
     if (user?.data?.role === "Administrator") {
       const url = "http://164.92.76.51:3000/roles";
       try {
-        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+        const res =  axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
         setRoles(res.data.data);
       } catch (error) {}
     }
@@ -84,7 +89,6 @@ const Users = () => {
     if (roleSelected === "0") {
       if (inputText.length === 0) {
         setUsersFilters(users);
-        console.log(usersFilters, "caso1");
       } else {
         setUsersFilters(
           users.filter((e) => e.last_name.toLowerCase().match(inputText.toLowerCase()) || e.name.toLowerCase().match(inputText.toLowerCase()))

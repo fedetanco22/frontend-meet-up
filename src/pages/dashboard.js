@@ -11,11 +11,12 @@ import styles from "../styles/Dashboard.module.scss";
 
 const Dashboard = () => {
   const t = useTranslations("dashboard");
-  const {user} = useAppContext();
+  const {user, getUser} = useAppContext();
   const [users, setUsers] = useState(0);
 
   useEffect(() => {
     if (user !== null) {
+      getUser()
       getUsers();
     } else {
       router.push("/");

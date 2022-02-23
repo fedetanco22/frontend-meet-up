@@ -31,7 +31,7 @@ const NavbarPanel = ({handleMenu, open}) => {
     router.push(pathname, query.userId, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
-  console.log(locale, 'locale', query,'query')
+
   const foto = user?.data?.profile_image?.length > 0 ? (
     <Image src={`http://164.92.76.51:3000/userImages/${user?.data?.profile_image}`} alt="idioma" width={30} height={30} />
   ) : (

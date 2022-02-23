@@ -10,7 +10,6 @@ const User = () => {
   const t = useTranslations("user");
   const {user} = useAppContext();
   const [editUser, setEditUser] = useState(null);
-  console.log(router.query.userId, "query");
   useEffect(() => {
     if (user !== null) {
       if (user?.data?.role !== "Administrator") {
@@ -29,7 +28,6 @@ const User = () => {
     try {
       const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
       setEditUser({data: res.data.data[0]});
-      console.log(editUser, "Editar usuario fuera");
     } catch (error) {
       if (res.status === 403) {
         router.push("/");

@@ -101,7 +101,6 @@ const ChangePassword = ({user}) => {
         validationSchema={validations}
         onSubmit={(values, {setSubmitting}) => {
           setTimeout(() => {
-            console.log(values);
             if(values.newPass === values.repeatPass){
               handlePass(values);
             }else{

@@ -22,7 +22,6 @@ const EditUser = ({user, editUser}) => {
   const [imageUrl, setImageUrl] = useState(null);
   let fileTmp = selectedFile;
   let urlTmp = imageUrl;
-  console.log(editUser?.data.name, 'nombre')
   const initialValues = {
     name: editUser?.data?.name,
     lastName: editUser?.data?.last_name,
@@ -42,7 +41,6 @@ const EditUser = ({user, editUser}) => {
       .integer(t("form.validations.phone.number"))
       .required(t("form.validations.phone.required")),
   })
-console.log(editUser, 'dentro de editar')
   const foto =
     editUser?.data?.profile_image?.length > 0 ? (
       <Image src={`http://164.92.76.51:3000/userImages/${editUser?.data?.profile_image}`} alt="idioma" width={130} height={130} />
@@ -134,7 +132,6 @@ console.log(editUser, 'dentro de editar')
             validationSchema={validations}
             onSubmit={(values, {setSubmitting}) => {
               setTimeout(() => {
-                console.log(values)
                 handleData(values);
                 setSubmitting(false);
               }, 400);
