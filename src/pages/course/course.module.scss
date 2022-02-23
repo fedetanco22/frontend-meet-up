@@ -28,30 +28,44 @@
   }
 
   .value{
-    background-color: $tertiary-color;
-    color: $white;
-    padding: 2.5rem;
+    background-color: $white;
+    color: $black;
+    padding: 0rem;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-30%);
-    
-    &__text{
+    align-items: flex-start;
+    margin-top: -200px;
+    z-index: 2;
+    &__title {
+      background-color: $status-green;
+      color: $white;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
       
       h3{
+        font-size: $large;
+        font-weight: $extra-bold;
+        color: $white;
+        margin-bottom: 0;
+      }
+    }
+
+    &__text{ 
+      padding: 2rem;  
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;  
+     &__title{
+      h6 {
         font-size: $extra-large;
         font-weight: $bold;
-        color: $white;
-        margin-bottom: 1rem;
+        line-height: 1.8rem;
+        color: #525050;
        
       }
-      p {
-        color: $white;
-        margin-bottom: 2rem;
-       
-      }
+     }
     }
   }
   
