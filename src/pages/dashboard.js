@@ -29,13 +29,14 @@ const Dashboard = () => {
         const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
         setUsers(res.data.data.length);
       } catch (error) {
+        router.push("/");
       }
     }
   };
 
   const foto =
     user?.data?.profile_image?.length > 0 ? (
-      <Image src={user?.data?.profile_image} alt="idioma" width={130} height={130} />
+      <Image src={`http://164.92.76.51:3000/userImages/${user?.data?.profile_image}`} alt="idioma" width={130} height={130} />
     ) : (
       <Image src={avatar} alt="idioma" priority />
     );

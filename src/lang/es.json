@@ -246,12 +246,48 @@
     "form":{
       "name":"Nombre",
       "lastname": "Apellido",
-      "phone": "Teléfono"
+      "phone": "Teléfono",
+      "submit": "Guardar",
+      "validations": {
+        "name": {
+          "required": "nombre es requerido",
+          "min": "min. 3 caracteres",
+          "max": "max. 30 caracteres"
+        },
+        "lastName": {
+          "required": "apellido es requerido"
+        },
+        "phone": {
+          "required": "teléfono es requerido",
+          "number": "sólo caracteres numéricos"
+        },
+        "password": {
+          "required": "contraseña es requerido"
+        },
+        "newPassword": {
+          "required": "nueva contraeña es requerido",
+          "min": "min. 8 caracteres",
+          "max": "max. 12 caracteres"
+        },
+        "repeatPassword": {
+          "required": "repetir contraeña es requerido",
+          "min": "min. 8 caracteres",
+          "max": "max. 12 caracteres"
+        }
+      }
     },
     "alert": {
       "warning": "Hay cambios pendientes",
       "success": "Datos guardados exitosamente",
-      "error": "Error , verifique los datos y vuelva a intentar"      
+      "error": "Error , verifique los datos y vuelva a intentar",
+      "errorRepeat": "Las contraseñas deben ser iguales"       
+    },
+    "password": {
+      "title": "Cambiar contraseña",
+      "current": "Contraseña actual",
+      "new": "Nueva contraseña",
+      "repeat": "Repetir nueva contraseña",
+      "conditions": "Condiciones: la contraseña debe tener minimo 8 carcteres, maximo 12, contener al menos una mayuscula, una minuscula y un simbolo. "
     }
   },
   "users": {
@@ -261,13 +297,25 @@
       "user": "Usuario",
       "name": "Nombre",
       "role": "Rol",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "empty": "No se encontraron usuarios"
     },
     "search": "Buscar",
     "roleInput": {
       "label": "Rol",
       "input": "Todos"
+    },
+    "modal":{
+      "title": "Eliminar el Usuario?",
+      "text1": "Desea eliminar el usuario  ",
+      "text2": "si preciona Eliminar los datos no se podrán recuperar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
     }
+  },
+  "user":{
+    "title": "Editar Usuario",
+    "child": "Usuarios"
   }
   
 }

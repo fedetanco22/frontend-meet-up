@@ -26,6 +26,9 @@ import OurValues from "./OurValues/OurValues";
 import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import IconButton from "./IconButton/IconButton";
 import Alert from "./Alert/Alert";
+import ChangePassword from "./ChangePassword/ChangePassword";
+import EditUser from "./EditUser/EditUser";
+import TextInputFormik from "./TextInputFormik/TextInputFormik";
 
 export{
   Navbar, 
@@ -55,5 +58,8 @@ export{
   OurValues,
   Breadcrumb,
   IconButton,
-  Alert
+  Alert,
+  ChangePassword,
+  EditUser,
+  TextInputFormik
 }

@@ -32,6 +32,12 @@ select{
   }
 }
 
+small{
+font-size: $small;
+color: $text-gray;
+line-height: 1.6!important;
+}
+
 .bg-panel{
   background-color: $bg-blue;
   padding: 2rem;
@@ -40,11 +46,9 @@ select{
   min-height: calc(100vh - 90px);
 }
 
-@media screen and (min-width: 992px) {
-  .bg-panel{
-    padding: 2rem 2rem 2rem 19rem;
-  }
-  
+.cardTitle{
+  font-size: $extra-large;
+  font-weight: $bold;
 }
 
 .text-primary{
@@ -66,5 +70,66 @@ select{
     font-weight: $semi-bold!important;
   }
 
+  &.responsive{
 
+    @media screen and (max-width: 768px) {
+      thead{
+        th{
+          display: none;
+        }
+      }
+      tbody{
+        border-top: 1px solid $line-gray;
+        tr{
+          border-bottom: 1px solid $line-gray;
+          position: relative;
+          padding: .5rem 0;
+          display: block;
+          td{
+            display: block;
+            width: 100%;
+            border-bottom: none;
+            padding: 0 .5rem;
+            &:last-child{
+              position: absolute;
+              top: .5rem;
+            }
+            &:first-child{
+              font-weight: $bold;
+              position: relative;
+            }
+  
+          }
+        }
+      }
+      
+    }
+
+  }
+}
+.empty{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg{
+    height: 3rem;
+    width: 3rem;
+    color: $text-gray;
+  }
+  p{
+    text-align: center;
+    padding: 1rem;
+    font-weight: $bold;
+    color: $text-gray;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bg-panel{
+    padding: 2rem 2rem 2rem 19rem;
+  }
+  
 }

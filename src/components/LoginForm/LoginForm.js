@@ -14,8 +14,6 @@ const LoginForm = () => {
   const [email, setEmail] = useState(null);
   const {setUser} = useAppContext();
   
-
-  
   const handleData = async () => {
     const url = "http://164.92.76.51:3000/login";
 
