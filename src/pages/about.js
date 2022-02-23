@@ -21,6 +21,10 @@ const About = () => {
                             <h3>Nuestra Metodologia</h3>
                             <p>{t('methodology')}</p>
                         </div>
+                        <div className={styles.textBody}>
+                            <h3>Informaci&oacute;n general de nuestros cursos</h3>
+                            <p>{t('course_info')}</p>
+                        </div>
                     </div>
                     <div className={`${styles.value} col-12 col-md-4 `}>
                         <div className={styles.value__text}>

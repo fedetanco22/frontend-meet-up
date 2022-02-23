@@ -1,9 +1,14 @@
 import Image from 'next/image';
-import { Layout } from '../../components/index';
+import { Layout, Contact, ColorBanner, Card, CourseSchedule } from '../../components/index';
+import { useTranslations } from 'next-intl';
 import styles from './course.module.scss';
 
 const Course = ({ item }) => {
-    const { image, title, description } = item.course;
+    const t = useTranslations('courses');
+    const { image, title, description, level } = item.course;
+    const scheduleModality = item?.schedules?.map((schedule, idx) => {
+        return <CourseSchedule key={idx} schedule={schedule} />;
+    });
 
     return (
         <Layout pageTitle={title}>
@@ -27,18 +32,31 @@ const Course = ({ item }) => {
                         </div>
                         <div className={styles.textBody}></div>
                     </div>
-                    <div className={`${styles.value} col-12 col-md-4 `}>
-                        <div className={styles.value__text}>
-                            <h3>Mision</h3>
-                            <p>{'mision'}</p>
+                    <Card className={`${styles.value} col-12 col-md-4 `}>
+                        <div className={styles.value__title}>
+                            <h3>For {level}</h3>
                         </div>
                         <div className={styles.value__text}>
-                            <h3>Vision</h3>
-                            <p>{'vision'}</p>
+                            <div className={styles.value__text__title}>
+                                <h6>Schedule</h6>
+                                {scheduleModality}
+                            </div>
+                            <div className={styles.value__text__title}>
+                                <h6>Material Includes</h6>
+                            </div>
                         </div>
-                    </div>
+                    </Card>
                 </div>
             </div>
+            <ColorBanner
+                backgroundColor={'secondary'}
+                title={t('bannerColor.title')}
+                description={t('bannerColor.description')}
+                btnText={t('bannerColor.button')}
+                buttonLink={'/test'}
+                icon
+            />
+            <Contact />
         </Layout>
     );
 };
