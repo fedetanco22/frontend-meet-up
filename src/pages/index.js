@@ -21,7 +21,7 @@ export default function Home({ courses }) {
       <Banner image={bannerHome} altText={'banner-home'} />
       <Services />
       <NumberBlock />
-      <CoursesList courseList={courses?.data.slice(0, 3)} />
+      {/* <CoursesList courseList={courses?.data.slice(0, 3)} /> */}
       <ColorBanner
         backgroundColor={'secondary'}
         title={t('bannerColor.title')}
@@ -43,11 +43,11 @@ export default function Home({ courses }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const res = await fetch('http://164.92.76.51:3000/courses');
-  const courses = await res.json();
+  // const res = await fetch('http://164.92.76.51:3000/courses');
+  // const courses = await res.json();
   return {
     props: {
-      courses,
+      // courses,
       messages: require(`../lang/${locale}.json`),
     },
   };

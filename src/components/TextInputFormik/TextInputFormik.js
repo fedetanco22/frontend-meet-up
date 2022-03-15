@@ -3,7 +3,7 @@ import {Field, ErrorMessage} from "formik";
 import styles from "./TextInputFormik.module.scss";
 
 
-const TextInputFormik = ({type, placeholder,value, classes, variant, label ,}) => {
+const TextInputFormik = ({type, placeholder,value, classes, variant, label}) => {
   const classesVariant = classNames(
     {
       [styles.input]: variant === "login",

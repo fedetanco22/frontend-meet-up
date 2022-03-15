@@ -44,6 +44,7 @@ line-height: 1.6!important;
   min-height: 100%;
   width: 100%;
   min-height: calc(100vh - 90px);
+  margin-top: 90px;
 }
 
 .cardTitle{
@@ -64,6 +65,7 @@ line-height: 1.6!important;
     td{
       font-size: $medium;
       color: $text-gray;
+      min-height: 53.5px;
     }
   }
   th{
@@ -132,4 +134,30 @@ line-height: 1.6!important;
     padding: 2rem 2rem 2rem 19rem;
   }
   
+}
+
+.accordion-panel{
+  .accordion{
+    .accordion-item{
+      background-color: #FDFDFD;
+      border: none;
+      margin-bottom: .6rem;
+      border-radius: 0.5rem!important;
+
+      .accordion-header{
+        padding: .5rem!important;
+        border-radius: 0.5rem!important;
+        .accordion-button{
+          color: $text-black;
+          background-color: #FDFDFD!important;
+          font-weight: $bold!important;
+          font-size: $large;
+        }
+      }
+      .accordion-body{
+        padding: 2rem!important;
+
+      }
+    }
+  }
 }

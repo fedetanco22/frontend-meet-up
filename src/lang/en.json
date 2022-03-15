@@ -162,7 +162,7 @@
       "title": "Setup",
       "link": "/setup"
     },
-    "allcourses":{
+    "all-courses":{
       "title": "Courses",
       "link": "/all-courses"
     },
@@ -270,6 +270,19 @@
         "phone": {
           "required": "phone is required",
           "number": "only numbers"
+        },
+        "password": {
+          "required": "password is required"
+        },
+        "newPassword": {
+          "required": "new password is required",
+          "min": "min. 8 characters",
+          "max": "max. 12 characters"
+        },
+        "repeatPassword": {
+          "required": "repeat new password is required",
+          "min": "min. 8 characters",
+          "max": "max. 12 characters"
         }
       }
     },
@@ -285,7 +298,13 @@
       "new": "New password",
       "repeat": "Repeat new password",
       "conditions": "Conditions: Password must have a minimum of 8 characters, a maximum of 12, contain at least one uppercase, one lowercase and one symbol."
+    },
+    "sendPassword":{
+      "title": "Reset Password",
+      "indications": "An email will be sent to your email to reset your password.",
+      "send": "Send"
     }
+
   },
   "users": {
     "title": "Users",
@@ -301,17 +320,73 @@
     "roleInput": {
       "label": "Role",
       "input": "All"
-    },
-    "modal":{
-      "title": "Confirm Delete user?",
-      "text1": "you want to delete the user  ",
-      "text2": "If you press delete the data cannot be recovered",
-      "cancel": "Cancel",
-      "delete": "Delete"
     }
   },
   "user":{
     "title": "Edit User",
-    "child": "Users"
+    "child": "Users",
+    "delete": {
+      "title": "Delete user",
+      "content": "If you delete the user, all your data will be lost and cannot be recovered.",
+      "button": "Delete"
+    }
+  },
+  "sales":{
+    "title": "Sales",
+    "list": "List of orders",
+    "search": "Search",
+    "status": "Status",
+    "inputStatusAll": "All",
+    "table": {
+      "order": "Order",
+      "user": "User",
+      "product": "Product",
+      "status": "Status",
+      "actions": "Actions"
+    }
+  },
+  "allCourses":{
+    "title": "Courses",
+    "addCourse": "Add New course"
+  },
+  "addCourse":{
+    "title": "Add new course",
+    "child": "Courses"
+  },
+  "cardCourse":{
+    "button": "See more"
+  },
+  "courseView": {
+    "title": "Course",
+    "level": "Level",
+    "duration": "Duration",
+    "child": "Courses",
+    "editCourse": "Edit course",
+    "onlineClass": "Online Class",
+    "openFiles": "Open Files",
+    "deleteCourse": "Delete course",
+    "enrolled": "Enrolled",
+    "schedule": {
+      "title": "Schedules",
+      "day": "Days",
+      "time": "Time",
+      "start": "Start",
+      "end": "End",
+      "teacher": "Teacher",
+      "modality": "Modality",
+      "registrationStart": "Registration start",
+      "registrationEnd": "Registration end"
+
+    },
+    "module":{
+      "title": "Modules"
+    },
+    "modal":{
+      "title": "Confirm delete course?",
+      "text1": "you want to delete the course  ",
+      "text2": "If you press delete the data cannot be recovered",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    }
   }
 }
