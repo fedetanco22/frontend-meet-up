@@ -24,7 +24,6 @@ const CoursesList = ({ courseList }) => {
                     buttonType='blue'
                     linkAsButton
                     path={t('buttonAll.url')}
-                    // path={'hola'}
                 />
             </div>
         </div>

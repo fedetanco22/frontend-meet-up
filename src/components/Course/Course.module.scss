@@ -17,10 +17,15 @@
   }
   &__description{
     font-size: $small;
+    line-height:1.5rem ;
     color: $text-gray;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid $border-gray;
+    width: 43ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:pre,
   }
  
 }

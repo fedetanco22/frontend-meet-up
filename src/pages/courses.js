@@ -35,7 +35,7 @@ const Courses = ({ courses }) => {
 export default Courses;
 
 export async function getStaticProps({ locale }) {
-    const res = await fetch('http://164.92.76.51:3000/courses');
+    const res = await fetch(`http://164.92.76.51:3000/${locale}/courses`);
     const courses = await res.json();
     return {
         props: {
