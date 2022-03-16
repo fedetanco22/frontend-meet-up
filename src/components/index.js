@@ -31,6 +31,12 @@ import EditUser from "./EditUser/EditUser";
 import TextInputFormik from "./TextInputFormik/TextInputFormik";
 import RegisterForm from './RegisterForm/RegisterForm';
 import CourseSchedule from './CourseSchedule/CourseSchedule';
+import Loading from "./Loading/Loading";
+import SendPassword from "./SendPassword/SendPassword";
+import CardCourse from "./CardCourse/CardCourse";
+import CourseView from "./CourseView/CourseView";
+import Schedule from "./Schedule/Schedule"
+import Module from "./Module/Module";
 
 export{
   Navbar, 
@@ -66,6 +72,12 @@ export{
   TextInputFormik,
   RegisterForm,
   CourseSchedule,
+  Loading,
+  SendPassword,
+  CardCourse,
+  CourseView,
+  Schedule,
+  Module
 }
 
 

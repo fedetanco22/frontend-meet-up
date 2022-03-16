@@ -30,37 +30,13 @@ const ChangePassword = ({user}) => {
       .required(t("form.validations.repeatPassword.required")),
   });
 
-  // const handleCurrent = (value) => {
-  //   setCurrentPass(value);
-  //   setIsPending(true);
-  //   setSend(false);
-  // };
-  // const handleNew = (value) => {
-  //   setNewPass(value);
-  //   setIsPending(true);
-  //   setSend(false);
-
-  // };
-  // const handleRepeat = (value) => {
-  //   setRepeatPass(value);
-  //   setIsPending(true);
-  //   setSend(false);
-  // };
-  // const handleSubmitPass = (e) => {
-  //   e.preventDefault();
-  //   if(newPass === repeatPass){
-  //     handlePass();
-  //   }
-
-  // };
-
   const handlePass = async (values) => {
-    const url = "http://164.92.76.51:3000/recoveryPassword";
+    const url = "http://164.92.76.51:3000/users/changePassword/" + user?.data?.user_id;
     try {
-      const res = await axios.post(
+      const res = await axios.patch(
         `${url}`,
         {
-          user_id: `${user.data.user_id}`,
+          old_password: `${values.pass}`,
           new_password: `${values.newPass}`,
         },
         {headers: {Authorization: `Bearer ${user.token}`}}
@@ -75,9 +51,9 @@ const ChangePassword = ({user}) => {
         setIsPending(false);
       }
     } catch (error) {
-      if (res.status === 403) {
-        router.push("/");
-      }
+      // if (res.status === 403) {
+      //   router.push("/");
+      // }
       setSend(true);
       setSendError(true);
       setIsPending(false);
