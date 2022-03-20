@@ -1,4 +1,5 @@
 import { FaCheck } from 'react-icons/fa';
+import Moment from 'react-moment';
 import styles from './CourseSchedule.module.scss';
 
 const CourseSchedule = ({ schedule }) => {
@@ -23,13 +24,13 @@ const CourseSchedule = ({ schedule }) => {
             <div className={styles.schedule__checks}>
                 <FaCheck className={styles.schedule__checks__icon} />
                 <p>
-                    <span>Starts:</span> {date_init}
+                    <span>Starts:</span> <Moment format='DD/MM/YYYY' date={date_init} />
                 </p>
             </div>
             <div className={styles.schedule__checks}>
                 <FaCheck className={styles.schedule__checks__icon} />
                 <p>
-                    <span>Ends:</span> {date_end}
+                    <span>Ends:</span> <Moment format='DD/MM/YYYY' date={date_end} />
                 </p>
             </div>
         </div>

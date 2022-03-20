@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { Modal } from 'react-bootstrap';
 import router from 'next/router';
 import axios from 'axios';
-import { LayoutPanel, TitlePanel, Card, IconButton, Button } from '../components';
+import { LayoutPanel, TitlePanel, Card, IconButton, Button, Loading } from '../components';
 import useAppContext from '../context/useAppContext';
 import { FaPencilAlt, FaUsers, FaTrashAlt } from 'react-icons/fa';
 import styles from '../styles/Setup.module.scss';
@@ -18,33 +18,26 @@ const Users = () => {
     const [inputTextState, setInputTextState] = useState('');
     const [show, setShow] = useState(false);
     const userSelected = null;
+    const [isLoading, setIsLoading] = useState(false);
 
     let roleSelected = roleSelectedState;
     let inputText = inputTextState;
 
     useEffect(() => {
         if (user !== null) {
-            console.log(user, 'usuario en useefcet');
-            getUser();
-            getRoles();
-            getUsers();
+            if (user?.data?.role !== 'Administrator') {
+                router.push('/dashboard');
+            } else {
+                getRoles();
+                getUsers();
+            }
         } else {
             router.push('/');
         }
     }, []);
 
-    const handleClose = () => {
-        userSelected = null;
-        setShow(false);
-    };
-    const handleShow = (user) => {
-        userSelected = user;
-        setShow(true);
-    };
-    const confirmDelete = () => {
-        console.log('usuario eliminado');
-    };
     const getUsers = async () => {
+        setIsLoading(true);
         if (user?.data?.role === 'Administrator') {
             const url = 'http://164.92.76.51:3000/users';
             try {
@@ -53,34 +46,30 @@ const Users = () => {
                 });
                 console.log(res.data?.data, 'resultado');
                 setUsers(res.data?.data);
-
                 setUsersFilters(res.data?.data);
+                if (res.status === 200) {
+                    setIsLoading(false);
+                }
             } catch (error) {
-                router.push('/');
+                if (error.response.status === 403) {
+                    router.push('/');
+                }
                 console.log(error, 'error');
+                setIsLoading(false);
             }
         }
     };
 
-    const getRoles = () => {
+    const getRoles = async () => {
         if (user?.data?.role === 'Administrator') {
             const url = 'http://164.92.76.51:3000/roles';
             try {
-                const res = axios.get(`${url}`, {
+                const res = await axios.get(`${url}`, {
                     headers: { Authorization: `Bearer ${user.token}` },
                 });
                 setRoles(res.data.data);
             } catch (error) {}
         }
-    };
-
-    const handleRole = (event) => {
-        roleSelected = event.target.value;
-        filterUser();
-    };
-    const searchUser = (event) => {
-        inputText = event.target.value;
-        filterUser();
     };
 
     const filterUser = () => {
@@ -131,15 +120,14 @@ const Users = () => {
                     >
                         <FaPencilAlt />
                     </IconButton>
-                    {/* <IconButton path={`/users/${user.user_id}`} buttonType="red" asSubmit callback={handleShow(user)}>
-            <FaTrashAlt />
-          </IconButton> */}
                 </td>
             </tr>
         );
     });
+
     return (
         <LayoutPanel pageTitle={t('title')}>
+            {isLoading && <Loading />}
             <div>
                 <TitlePanel title={t('title')} />
                 <Card>
@@ -169,9 +157,6 @@ const Users = () => {
                                             </option>
                                         );
                                     })}
-                                    {/* <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option> */}
                                 </select>
                             </div>
                         </div>

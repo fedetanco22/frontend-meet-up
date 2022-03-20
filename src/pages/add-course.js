@@ -1,40 +1,48 @@
-import {useEffect, useState} from "react";
+import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
+
 import router from "next/router";
-import {LayoutPanel, TitlePanel, ChangePassword, EditUser, Loading} from "../components";
+import axios from "axios";
+import {LayoutPanel, TitlePanel, Card, Loading, Button} from "../components";
 import useAppContext from "../context/useAppContext";
 
+// import styles from "../styles/Setup.module.scss";
 
-const Dashboard = () => {
-  const t = useTranslations("setup");
+const AddCourse = () => {
+  const t = useTranslations("addCourse");
   const {user, getUser} = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
-      getUser();
+      if (user?.data?.role !== "Administrator") {
+        router.push("/dashboard");
+      } else {
+      }
     } else {
       router.push("/");
     }
   }, []);
 
-    return (
+  const child = {
+    path: "../all-courses",
+    name: t("child"),
+  };
+
+  return (
     <LayoutPanel pageTitle={t("title")}>
-       {isLoading && <Loading/>}
+      {isLoading && <Loading />}
       <div>
-        <TitlePanel title={t("title")} />
-        <div>
-          <EditUser user={user} editUser={user}/>
-        </div>
-        <div className="pt-3">
-          <ChangePassword user={user}/>
-        </div>
+        <TitlePanel title={t("title")} child={child} />
+        <Card>
+
+        </Card>
       </div>
     </LayoutPanel>
   );
 };
 
-export default Dashboard;
+export default AddCourse;
 
 export function getStaticProps({locale}) {
   return {

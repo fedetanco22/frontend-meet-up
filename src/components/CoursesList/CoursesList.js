@@ -1,8 +1,11 @@
 import { Course, Button, SectionTitle } from '../index';
 import { useTranslations } from 'next-intl';
 import styles from './CoursesList.module.scss';
+import { useRouter } from 'next/router';
 
 const CoursesList = ({ courseList }) => {
+    const { pathname } = useRouter();
+
     const currentCourses = courseList.map((course) => (
         <Course key={course.course_id} course={course} />
     ));
@@ -17,15 +20,17 @@ const CoursesList = ({ courseList }) => {
                 {currentCourses}
             </div>
 
-            <div className='text-center '>
-                <Button
-                    text={t('buttonAll.text')}
-                    link='/courses'
-                    buttonType='blue'
-                    linkAsButton
-                    path={t('buttonAll.url')}
-                />
-            </div>
+            {pathname === '/' && (
+                <div className='text-center '>
+                    <Button
+                        text={t('buttonAll.text')}
+                        link='/courses'
+                        buttonType='blue'
+                        linkAsButton
+                        path={t('buttonAll.url')}
+                    />
+                </div>
+            )}
         </div>
     );
 };

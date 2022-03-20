@@ -1,39 +1,29 @@
 import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
 import router from "next/router";
-import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, Button, IconButton} from "../components";
+import {LayoutPanel, TitlePanel, Card, Button, IconButton, Loading} from "../components";
 import useAppContext from "../context/useAppContext";
 import Image from "next/image";
 import avatar from "../../public/avatar.jpg";
 import {FaLaptop, FaShoppingCart, FaUsers, FaPencilAlt} from "react-icons/fa";
+
 import styles from "../styles/Dashboard.module.scss";
 
 const Dashboard = () => {
   const t = useTranslations("dashboard");
   const {user, getUser} = useAppContext();
   const [users, setUsers] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
-      getUser()
-      getUsers();
+      // getUser()
+      // getUsers();
     } else {
       router.push("/");
     }
   }, []);
-
-  const getUsers = async () => {
-    if (user?.data?.role_id === 1) {
-      const url = "http://164.92.76.51:3000/users";
-      try {
-        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-        setUsers(res.data.data.length);
-      } catch (error) {
-        router.push("/");
-      }
-    }
-  };
+console.log(user)
 
   const foto =
     user?.data?.profile_image?.length > 0 ? (
@@ -44,7 +34,7 @@ const Dashboard = () => {
 
   return (
     <LayoutPanel pageTitle={t("title")}>
-      
+      {isLoading && <Loading/>}
         <TitlePanel title={t("title")} />
         <Card>
           <div className="d-flex justify-content-end pt-3 pe-3">

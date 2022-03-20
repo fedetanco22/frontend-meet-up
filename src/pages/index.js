@@ -15,9 +15,6 @@ import { useRouter } from 'next/router';
 
 export default function Home({ courses }) {
     const t = useTranslations('home');
-    const { user } = useAppContext();
-    const router = useRouter();
-    console.log('🚀 ~ file: index.js ~ line 20 ~ Home ~ router', router);
 
     return (
         <Layout pageTitle={t('title')}>

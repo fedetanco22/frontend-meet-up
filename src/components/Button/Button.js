@@ -36,7 +36,7 @@ const Button = ({
 
   const link = asLink &&
     <Link href={path}>
-      <a className={`${classNameProp} ${classes}`} >{children}{text}</a>
+      <a className={`${classNameProp} ${classes} ${disabled ? styles.disabled : ''}`} >{children}{text}</a>
     </Link> 
 
   const submit = asSubmit && 

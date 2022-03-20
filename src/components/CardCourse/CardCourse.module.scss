@@ -1,0 +1,38 @@
+@import "../../styles/patterns";
+
+.cardCourse {
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  min-height: 130px;
+  .image{
+    background-color: $icon-gray;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+    min-height: 180px;
+  }
+  .title {
+    font-weight: $bold;
+    font-size: $extra-large;
+    line-height: 33px;
+  }
+  .text {
+    font-size: $normal;
+    line-height: 18px;
+    color: $text-gray;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cardCourse {
+    .image{
+      border-radius: 5px 0 0 5px;
+    }
+  }
+}

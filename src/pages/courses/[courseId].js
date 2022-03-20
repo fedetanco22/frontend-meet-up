@@ -1,68 +1,72 @@
+import { useState } from 'react';
 import Image from 'next/image';
-import { Layout, Contact, ColorBanner, Card, CourseSchedule } from '../../components/index';
+import { Layout, Contact, ColorBanner, Card, CourseSchedule, Button } from '../../components/index';
 import { useTranslations } from 'next-intl';
-import styles from './course.module.scss';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import Moment from 'react-moment';
+import courseImage from '../../../public/course-image.png';
 
-const Course = () => {
-    const { locale, query } = useRouter();
+import styles from './course.module.scss';
+
+const Course = ({ courses }) => {
     const [course, setCourse] = useState();
     const t = useTranslations('courses');
 
-    const getCourseData = async () => {
-        const url = `http://164.92.76.51:3000/${locale}/courses/${query.courseId}`;
-        try {
-            const res = await fetch(url);
-            const coursesData = await res.json();
-            setCourse(coursesData.data.course);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    const { image, title, description, price, duration, slug, level } = courses.course;
+    console.log('courses.modules', courses.modules, courses.schedules);
+    const coursePicture = (
+        <Image
+            className={styles.image}
+            src={
+                image?.length > 0 ? `http://164.92.76.51:3000/coursesImages/${image}` : courseImage
+            }
+            alt={title}
+            layout='fill'
+            objectFit='cover'
+            quality={100}
+        />
+    );
 
-    useEffect(() => {
-        getCourseData();
-    }, []);
+    const scheduleModality = courses?.schedules?.map((schedule, idx) => {
+        return <CourseSchedule key={idx} schedule={schedule} />;
+    });
 
-    // const scheduleModality = courses?.schedules?.map((schedule, idx) => {
-    //     return <CourseSchedule key={idx} schedule={schedule} />;
-    // });
-    // return null;
     return (
-        <Layout pageTitle={'course.title'}>
-            <div className={styles.imageWrapper}>
-                {/* <Image
-                    src={image}
-                    alt={title}
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='0% 35%'
-                    quality={100}
-                /> */}
-            </div>
+        <Layout pageTitle={title}>
+            <div className={styles.imageWrapper}>{coursePicture}</div>
             <div className={`container py-5 ${styles.container}`}>
                 <div className='row'>
                     <div className='col-12 col-md-8'>
-                        <h1 className={styles.title}>{'title'}</h1>
+                        <h1 className={styles.title}>{title}</h1>
                         <div className={styles.textBody}>
                             <h3>About Course</h3>
-                            <p>{'description'}</p>
+                            <p>{description}</p>
                         </div>
                         <div className={styles.textBody}></div>
                     </div>
                     <Card className={`${styles.value} col-12 col-md-4 `}>
                         <div className={styles.value__title}>
-                            <h3>For {'level'}</h3>
+                            <h3>For {level}</h3>
                         </div>
                         <div className={styles.value__text}>
                             <div className={styles.value__text__title}>
                                 <h6>Schedule</h6>
-                                {'scheduleModality'}
+                                {scheduleModality}
                             </div>
                             <div className={styles.value__text__title}>
                                 <h6>Material Includes</h6>
                             </div>
+                        </div>
+
+                        <div className={styles.enroll}>
+                            <span className={styles.enroll__price}>
+                                $ <span className={styles.enroll__price__number}>{price}</span> ARS
+                            </span>
+                            <Button
+                                text={'Enroll'}
+                                linkAsButton
+                                path={`/courses/`}
+                                buttonType='blue_small'
+                            />
                         </div>
                     </Card>
                 </div>
@@ -82,56 +86,14 @@ const Course = () => {
 
 export default Course;
 
-export function getServerSideProps({ locale }) {
+export async function getServerSideProps({ locale, query }) {
+    const res = await fetch(`http://164.92.76.51:3000/${locale}/courses/${query.courseId}`);
+    const jsonCourse = await res.json();
+    const courses = jsonCourse.data;
     return {
         props: {
-            // You can get the messages from anywhere you like, but the recommended
-            // pattern is to put them in JSON files separated by language and read
-            // the desired one based on the `locale` received from Next.js.
+            courses,
             messages: require(`../../lang/${locale}.json`),
         },
     };
 }
-// export async function getServerSideProps({ params, locale }) {
-//     const courseId = params.courseId;
-//     const res = await fetch(`http://164.92.76.51:3000/en/courses/${courseId}`);
-//     const jsonCourse = await res.json();
-//     const item = jsonCourse.data;
-//     return {
-//         props: {
-//             item,
-//             // messages: require(`../../lang/${locale}.json`),
-//         },
-//     };
-// }
-
-// export async function getStaticProps({ params, locale }) {
-//     const res = await fetch(`http://164.92.76.51:3000/${locale}/courses/${params.courseId}`);
-//     const jsonCourse = await res.json();
-//     const item = jsonCourse.data;
-//     return {
-//         props: {
-//             // jsonCourse,
-//             item,
-//             messages: require(`../../lang/${locale}.json`),
-//         },
-//     };
-// }
-
-// export async function getStaticPaths({ locales }) {
-//     const res = await fetch(`http://164.92.76.51:3000/en/courses`);
-//     const courses = await res.json();
-
-//     return {
-//         paths: courses.data.map((course) => {
-//             const courseId = course.course_id.toString();
-
-//             return {
-//                 params: {
-//                     courseId,
-//                 },
-//             };
-//         }),
-//         fallback: false,
-//     };
-// }

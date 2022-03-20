@@ -162,7 +162,7 @@
       "title": "Configuración",
       "link": "/setup"
     },
-    "allcourses":{
+    "all-courses":{
       "title": "Cursos",
       "link": "/all-courses"
     },
@@ -298,6 +298,11 @@
       "new": "Nueva contraseña",
       "repeat": "Repetir nueva contraseña",
       "conditions": "Condiciones: la contraseña debe tener minimo 8 carcteres, maximo 12, contener al menos una mayuscula, una minuscula y un simbolo. "
+    },
+    "sendPassword":{
+      "title": "Reestablecer contraseña",
+      "indications": "Se enviara un email a su correo electronico para reestablecer la contraseña.",
+      "send": "Enviar"
     }
   },
   "users": {
@@ -314,18 +319,73 @@
     "roleInput": {
       "label": "Rol",
       "input": "Todos"
-    },
-    "modal":{
-      "title": "Eliminar el Usuario?",
-      "text1": "Desea eliminar el usuario  ",
-      "text2": "si preciona Eliminar los datos no se podrán recuperar",
-      "cancel": "Cancelar",
-      "delete": "Eliminar"
     }
   },
   "user":{
     "title": "Editar Usuario",
-    "child": "Usuarios"
+    "child": "Usuarios",
+    "delete": {
+      "title": "Eliminar usuario",
+      "content": "Si elimina el usuario todos sus datos se perderan y no se podran recuperar.",
+      "button": "Eliminar"
+    }
+  },
+  "sales":{
+    "title": "Ventas",
+    "list": "Lista de pedidos",
+    "search": "Buscar",
+    "status": "Estado",
+    "inputStatusAll": "Todas",
+    "table": {
+      "order": "Orden",
+      "user": "Usuario",
+      "product": "Producto",
+      "status": "Estado",
+      "actions": "Acciones"
+    }
+  },
+  "allCourses":{
+    "title": "Cursos",
+    "addCourse": "Agregar nuevo curso"
+  },
+  "addCourse":{
+    "title": "Agregar nuevo curso",
+    "child": "Cursos"
+  },
+  "cardCourse":{
+    "button": "Ver más"
+  },
+  "courseView": {
+    "title": "Curso",
+    "level:": "Nivel",
+    "duration": "Duración",
+    "child": "Cursos",
+    "editCourse": "Editar Curso",
+    "onlineClass": "Clase Online",
+    "openFiles": "Abrir Archivos",
+    "deleteCourse": "Eliminar Curso",
+    "enrolled": "Inscriptos",
+    "schedule": {
+      "title": "Horarios",
+      "day": "Días",
+      "time": "Horario",
+      "start": "Comienzo",
+      "end": "Fin",
+      "teacher": "Profesor",
+      "modality": "Modalidad",
+      "registrationStart": "Comienzo de inscripción",
+      "registrationEnd": "Fin de inscripción"
+    },
+    "module":{
+      "title": "Modulos"
+    },
+    "modal":{
+      "title": "Confirmar eliminación de curso?",
+      "text1": "realmente desea borrar el curso  ",
+      "text2": "Si confirma la eliminación los datos no se podrán recuperar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
+    }
   }
   
 }
