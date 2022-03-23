@@ -370,13 +370,12 @@
       "title": "Schedules",
       "day": "Days",
       "time": "Time",
-      "start": "Start",
-      "end": "End",
+      "start": "Starts",
+      "end": "Ends",
       "teacher": "Teacher",
       "modality": "Modality",
       "registrationStart": "Registration start",
       "registrationEnd": "Registration end"
-
     },
     "module":{
       "title": "Modules"
@@ -387,6 +386,17 @@
       "text2": "If you press delete the data cannot be recovered",
       "cancel": "Cancel",
       "delete": "Delete"
+    },
+    "bannerColor":{
+      "title": "Test your English",
+      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
+      "button": "Take the test"
+
+    },
+    "bannerColor2":{
+      "title": "Become a Teacher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+      "button": "Apply now"
     }
   }
 }

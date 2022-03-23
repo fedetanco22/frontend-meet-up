@@ -72,6 +72,15 @@ const Users = () => {
         }
     };
 
+    const handleRole = (event) => {
+        roleSelected = event.target.value;
+        filterUser();
+    };
+    const searchUser = (event) => {
+        inputText = event.target.value;
+        filterUser();
+    };
+
     const filterUser = () => {
         setRoleSelectedState(roleSelected);
         setInputTextState(inputText);
