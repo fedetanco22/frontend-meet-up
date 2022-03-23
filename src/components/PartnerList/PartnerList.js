@@ -29,8 +29,8 @@ const PartnerList = () => {
             <SectionTitle title='PROFESSIONALS' subTitle='OUR Partners' />{' '}
             {/* traducir poner en idiomas*/}
             <div className={`${styles.partnerList} row justify-content-center`}>
-                <div className='col-12 col-sm-6 col-md-4'>
-                    <Card>
+                <div className='col-12 col-sm-6 col-lg-4 mt-3'>
+                    <Card className={styles.partnerList__card}>
                         <div className={styles.content}>
                             <div style={{ width: '100%' }} className={styles.profile}>
                                 <Image
@@ -50,12 +50,12 @@ const PartnerList = () => {
                                     {PARTNERS[0].description}
                                 </p>
                             </div>
-                            <SocialMediaLinks />
                         </div>
+                        <SocialMediaLinks />
                     </Card>
                 </div>
-                <div className='col-12 col-sm-6 col-md-4'>
-                    <Card>
+                <div className='col-12 col-sm-6 col-lg-4 mt-3'>
+                    <Card className={styles.partnerList__card}>
                         <div className={styles.content}>
                             <div style={{ width: '100%' }} className={styles.profile}>
                                 <Image
@@ -74,8 +74,8 @@ const PartnerList = () => {
                                     {PARTNERS[1].description}
                                 </p>
                             </div>
-                            <SocialMediaLinks />
                         </div>
+                        <SocialMediaLinks />
                     </Card>
                 </div>
             </div>
