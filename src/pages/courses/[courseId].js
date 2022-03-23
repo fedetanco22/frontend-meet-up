@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { Layout, Contact, ColorBanner, Card, CourseSchedule, Button } from '../../components/index';
+import {
+    Layout,
+    Contact,
+    ColorBanner,
+    Card,
+    CourseSchedule,
+    Button,
+    Module,
+} from '../../components/index';
 import { useTranslations } from 'next-intl';
 import Moment from 'react-moment';
 import courseImage from '../../../public/course-image.png';
@@ -9,10 +17,10 @@ import styles from './course.module.scss';
 
 const Course = ({ courses }) => {
     const [course, setCourse] = useState();
-    const t = useTranslations('courses');
+    const t = useTranslations('courseView');
 
     const { image, title, description, price, duration, slug, level } = courses.course;
-    console.log('courses.modules', courses.modules, courses.schedules);
+
     const coursePicture = (
         <Image
             className={styles.image}
@@ -22,6 +30,7 @@ const Course = ({ courses }) => {
             alt={title}
             layout='fill'
             objectFit='cover'
+            objectPosition='50% 20%'
             quality={100}
         />
     );
@@ -30,8 +39,10 @@ const Course = ({ courses }) => {
         return <CourseSchedule key={idx} schedule={schedule} />;
     });
 
+    const moduleCourses = <Module modules={courses.modules} />;
+
     return (
-        <Layout pageTitle={title}>
+        <Layout pageTitle={t('title')}>
             <div className={styles.imageWrapper}>{coursePicture}</div>
             <div className={`container py-5 ${styles.container}`}>
                 <div className='row'>
@@ -43,6 +54,7 @@ const Course = ({ courses }) => {
                         </div>
                         <div className={styles.textBody}></div>
                     </div>
+
                     <Card className={`${styles.value} col-12 col-md-4 `}>
                         <div className={styles.value__title}>
                             <h3>For {level}</h3>
@@ -70,7 +82,11 @@ const Course = ({ courses }) => {
                         </div>
                     </Card>
                 </div>
+                <div className='row'>
+                    <div className='col-8'>{moduleCourses}</div>
+                </div>
             </div>
+
             <ColorBanner
                 backgroundColor={'secondary'}
                 title={t('bannerColor.title')}

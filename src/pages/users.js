@@ -16,8 +16,6 @@ const Users = () => {
     const [roles, setRoles] = useState([]);
     const [roleSelectedState, setRoleSelectedState] = useState(0);
     const [inputTextState, setInputTextState] = useState('');
-    const [show, setShow] = useState(false);
-    const userSelected = null;
     const [isLoading, setIsLoading] = useState(false);
 
     let roleSelected = roleSelectedState;
@@ -70,6 +68,15 @@ const Users = () => {
                 setRoles(res.data.data);
             } catch (error) {}
         }
+    };
+
+    const handleRole = (event) => {
+        roleSelected = event.target.value;
+        filterUser();
+    };
+    const searchUser = (event) => {
+        inputText = event.target.value;
+        filterUser();
     };
 
     const filterUser = () => {
@@ -194,20 +201,6 @@ const Users = () => {
                     </div>
                 </Card>
             </div>
-            {/* <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{t("modal.title")}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {t("modal.text1")} {t("modal.text2")}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button text={t("modal.cancel")} buttonType={"white_secondary"} callback={handleClose} asSubmit></Button>
-          <Button text={t("modal.delete")} buttonType={"light"} callback={confirmDelete} asSubmit>
-            <FaTrashAlt />
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
         </LayoutPanel>
     );
 };
