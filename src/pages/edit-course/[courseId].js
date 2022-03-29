@@ -1,28 +1,29 @@
-import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
-import {useTranslations} from "next-intl";
-import {LayoutPanel, TitlePanel, Loading,} from "../../components";
-import axios from "axios";
-import useAppContext from "../../context/useAppContext";
+import { LayoutPanel, Loading, TitlePanel } from '../../components';
+import { useEffect, useState } from 'react';
+
+import axios from 'axios';
+import useAppContext from '../../context/useAppContext';
+import { useRouter } from 'next/router';
+import { useTranslations } from 'next-intl';
 
 const EditCourse = () => {
   const router = useRouter();
-  const t = useTranslations("courseView");
-  const {user} = useAppContext();
+  const t = useTranslations('courseView');
+  const { user } = useAppContext();
   const [isCourse, setIsCourse] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const curso = isCourse;
-  const {locale} = router;
+  const { locale } = router;
 
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
-        router.push("/dashboard");
+      if (user?.data?.role !== 'Administrator') {
+        router.push('/dashboard');
       } else {
         getCourse();
       }
     } else {
-      router.push("/");
+      router.push('/');
     }
   }, []);
 
@@ -30,11 +31,15 @@ const EditCourse = () => {
 
   const getCourse = async () => {
     setIsLoading(true);
-    const url = "http://164.92.76.51:3000/en/courses/" + id;
-    locale === "en" ? (url = "http://164.92.76.51:3000/en/courses/full/" + id) : (url = "http://164.92.76.51:3000/es/courses/full/" + id);
+    const url = 'http://164.92.76.51:3000/en/courses/' + id;
+    locale === 'en'
+      ? (url = 'http://164.92.76.51:3000/en/courses/full/' + id)
+      : (url = 'http://164.92.76.51:3000/es/courses/full/' + id);
 
     try {
-      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      const res = await axios.get(`${url}`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       if (res.status === 200) {
         setIsLoading(false);
         curso = res.data.data;
@@ -43,26 +48,26 @@ const EditCourse = () => {
       }
     } catch (error) {
       if (error.response.status === 403) {
-        router.push("/");
+        router.push('/');
       }
-      console.log(error.response.status, "resp");
-      console.log("error:", error);
+      console.log(error.response.status, 'resp');
+      console.log('error:', error);
       setIsLoading(false);
     }
     return user;
   };
   const child = {
-    path: "../all-courses",
-    name: t("child"),
+    path: '../all-courses',
+    name: t('child'),
   };
 
   return (
-    <LayoutPanel pageTitle={t("title")}>
+    <LayoutPanel pageTitle={t('title')}>
       {isLoading && <Loading />}
       <div>
         <TitlePanel title={'Editar curso'} child={child} />
-        
-        <div className="pt-3">{id}</div>
+
+        <div className='pt-3'>{id}</div>
       </div>
     </LayoutPanel>
   );
@@ -70,7 +75,7 @@ const EditCourse = () => {
 
 export default EditCourse;
 
-export function getServerSideProps({locale}) {
+export function getServerSideProps({ locale }) {
   return {
     props: {
       // You can get the messages from anywhere you like, but the recommended

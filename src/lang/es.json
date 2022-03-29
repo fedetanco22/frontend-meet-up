@@ -1,5 +1,5 @@
 {
-  "config":{
+  "config": {
     "title": "Meet-up plataforma educativa",
     "author": {
       "name": "Trylogic",
@@ -11,15 +11,15 @@
       "twitter": "lerobbb"
     }
   },
-  "home":{
+  "home": {
     "title": "Inicio",
     "prueba": "prueba home",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -34,15 +34,17 @@
       }
     }
   },
-  "courses":{
+  "courses": {
     "title": "Cursos",
     "prueba": "prueba cursos",
-    "bannerColor":{
+    "titleC": "Acerca del curso",
+    "descriptionC": "¿Tenés ganas de empezar a estudiar inglés y no sabes cómo? Este es el primer paso para convertirte en un experto del idioma. En Meet Up te brindamos todos los conocimientos y herramientas que necesitás para arrancar! Con Beginners vas a lograr sentirte cómodo al comunicarte en contextos cotidianos de todos los días. No sólo mejorarás la gramática y adquirirás muchísimo vocabulario, sino que fortalecerás tu pronunciación y fluidez desde el primer día. Qué vas a aprender? - A usar expresiones básicas y familiares de todos los días - El abecedario y los números - Formular y contestar preguntas - Brindar información personal y de otros Y mucho más… Empezá ya! Anímate a dar este primer paso. Con Meet Up vas a aprender inglés de forma eficaz y consistente. Después de Beginners solo querrás seguir aprendiendo y lograrás todos tus objetivos!",
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -57,7 +59,7 @@
       }
     }
   },
-  "test":{
+  "test": {
     "title": "Test",
     "prueba": "prueba a Test",
     "auth": {
@@ -70,10 +72,10 @@
       }
     }
   },
-  "about":{
+  "about": {
     "title": "Nosotros",
     "description": "Somos el resultado de la fusión entre experimentados docentes y avanzados emprendedores, convencidos del poder transformador de la educación como verdadera herramienta de progreso.",
-    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",  
+    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",
     "vision": "Nuestra visión es ser brindar una educacion de calidad a traves de la plataforma educativa, que permita a los estudiantes aprender inglés de manera fácil y divertida.",
     "methodology": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales. Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo. Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
     "course_info": "Nuestros cursos están especialmente diseñados para vos y la concreta situación que estás atravesando. Podes elegir distintas modalidades de cursado: Grupal: clases online en grupo de no más de 12 personas, Individuales, Just Talk: clases de conversación o English for Business purposes",
@@ -81,14 +83,14 @@
       "title": "Nuestros",
       "subtitle": "Valores",
       "values": {
-        "professionalism":"Profesionalismo",
-        "excellence":"Excelencia",
-        "warranty":"Garantia",
-        "knowledge":"Conocimiento"
+        "professionalism": "Profesionalismo",
+        "excellence": "Excelencia",
+        "warranty": "Garantia",
+        "knowledge": "Conocimiento"
       }
     }
   },
-  "dashboard":{
+  "dashboard": {
     "title": "Mi Panel",
     "buttonEdit": "/setup",
     "roleTeacher": "Teacher",
@@ -112,70 +114,67 @@
         "url": "/users"
       }
     }
-
   },
-   "nav": {
-    "home":{
+  "nav": {
+    "home": {
       "title": "Inicio",
       "link": "/"
     },
-    "courses":{
+    "courses": {
       "title": "Cursos",
       "link": "/courses"
     },
-    "test":{
+    "test": {
       "title": "Test",
       "link": "/test"
     },
-    "about":{
+    "about": {
       "title": "Nosotros",
       "link": "/about"
     },
-    "login":{
+    "login": {
       "title": "Entrar",
       "link": "/login"
     },
-    "register":{
+    "register": {
       "title": "Registrarse",
       "link": "/register"
     },
-    "terms":{
+    "terms": {
       "title": "Terminos del servicio",
       "link": "/terms-of-service"
     },
-    "policy":{
+    "policy": {
       "title": "Politica de privacidad",
       "link": "/private-policy"
-    } 
-    
+    }
   },
   "navpanel": {
-    "dashboard":{
+    "dashboard": {
       "title": "Panel",
       "link": "/dashboard"
     },
-    "mycourses":{
+    "mycourses": {
       "title": "Mis Cursos",
       "link": "/my-courses"
     },
-    "setup":{
+    "setup": {
       "title": "Configuración",
       "link": "/setup"
     },
-    "all-courses":{
+    "all-courses": {
       "title": "Cursos",
       "link": "/all-courses"
     },
-    "users":{
+    "users": {
       "title": "Usuarios",
       "link": "/users"
     },
-    "sales":{
+    "sales": {
       "title": "Ventas",
       "link": "/sales"
     },
     "close": "Salir"
-    
   },
   "numberblock": {
     "item1": {
@@ -191,24 +190,24 @@
       "text": "Profesores"
     }
   },
-  "services":{
-    "whyUs":{
+  "services": {
+    "whyUs": {
       "title": "¿Porque elegir Meet Up?",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
-      "button":"ver mas..."
+      "button": "ver mas..."
     },
-    "service":{
-      "1":{
-        "title":"Cursos Online",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+    "service": {
+      "1": {
+        "title": "Cursos Online",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "2":{
-        "title":"Tutoriales",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "2": {
+        "title": "Tutoriales",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "3":{
-        "title":"Conversaciones",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "3": {
+        "title": "Conversaciones",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
   },
@@ -221,20 +220,20 @@
       "url": "/courses"
     }
   },
-  "footer":{
+  "footer": {
     "phone": "Teléfono",
     "email": "Correo",
     "listLink1": "Enlaces útiles",
     "listLink2": "Cursos"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Suscríbase a nuestras novedades",
-    "button":{
+    "button": {
       "text": "Suscribirse"
     },
     "placeholder": "Correo electrónico"
   },
-  "contact":{
+  "contact": {
     "title": "Contacto",
     "subtitle": "Contactarnos",
     "phone": "Teléfono",
@@ -251,10 +250,10 @@
       "url": "/courses"
     }
   },
-  "setup":{
+  "setup": {
     "title": "Configuración",
-    "form":{
-      "name":"Nombre",
+    "form": {
+      "name": "Nombre",
       "lastname": "Apellido",
       "phone": "Teléfono",
       "submit": "Guardar",
@@ -290,7 +289,7 @@
       "warning": "Hay cambios pendientes",
       "success": "Datos guardados exitosamente",
       "error": "Error , verifique los datos y vuelva a intentar",
-      "errorRepeat": "Las contraseñas deben ser iguales"       
+      "errorRepeat": "Las contraseñas deben ser iguales"
     },
     "password": {
       "title": "Cambiar contraseña",
@@ -299,7 +298,7 @@
       "repeat": "Repetir nueva contraseña",
       "conditions": "Condiciones: la contraseña debe tener minimo 8 carcteres, maximo 12, contener al menos una mayuscula, una minuscula y un simbolo. "
     },
-    "sendPassword":{
+    "sendPassword": {
       "title": "Reestablecer contraseña",
       "indications": "Se enviara un email a su correo electronico para reestablecer la contraseña.",
       "send": "Enviar"
@@ -321,7 +320,7 @@
       "input": "Todos"
     }
   },
-  "user":{
+  "user": {
     "title": "Editar Usuario",
     "child": "Usuarios",
     "delete": {
@@ -330,7 +329,7 @@
       "button": "Eliminar"
     }
   },
-  "sales":{
+  "sales": {
     "title": "Ventas",
     "list": "Lista de pedidos",
     "search": "Buscar",
@@ -344,15 +343,15 @@
       "actions": "Acciones"
     }
   },
-  "allCourses":{
+  "allCourses": {
     "title": "Cursos",
     "addCourse": "Agregar nuevo curso"
   },
-  "addCourse":{
+  "addCourse": {
     "title": "Agregar nuevo curso",
     "child": "Cursos"
   },
-  "cardCourse":{
+  "cardCourse": {
     "button": "Ver más"
   },
   "courseView": {
@@ -376,10 +375,10 @@
       "registrationStart": "Comienzo de inscripción",
       "registrationEnd": "Fin de inscripción"
     },
-    "module":{
+    "module": {
       "title": "Modulos"
     },
-    "modal":{
+    "modal": {
       "title": "Confirmar eliminación de curso?",
       "text1": "realmente desea borrar el curso  ",
       "text2": "Si confirma la eliminación los datos no se podrán recuperar",
@@ -387,5 +386,4 @@
       "delete": "Eliminar"
     }
   }
-  
 }

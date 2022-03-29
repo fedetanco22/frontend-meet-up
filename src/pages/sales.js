@@ -1,36 +1,43 @@
-import {useState, useEffect} from "react";
-import {useTranslations} from "next-intl";
+import {
+  Card,
+  IconButton,
+  LayoutPanel,
+  Loading,
+  TitlePanel,
+} from '../components';
+import { useEffect, useState } from 'react';
 
-import router from "next/router";
-import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, IconButton, Loading} from "../components";
-import useAppContext from "../context/useAppContext";
-import {FaSearchPlus} from "react-icons/fa";
+import { FaSearchPlus } from 'react-icons/fa';
+import axios from 'axios';
+import router from 'next/router';
+import useAppContext from '../context/useAppContext';
+import { useTranslations } from 'next-intl';
+
 // import styles from "../styles/Setup.module.scss";
 
 const Sales = () => {
-  const t = useTranslations("sales");
-  const {user, getUser} = useAppContext();
+  const t = useTranslations('sales');
+  const { user, getUser } = useAppContext();
   const [users, setUsers] = useState([]);
   const [usersFilters, setUsersFilters] = useState(users);
   const [roles, setRoles] = useState([]);
   const [roleSelectedState, setRoleSelectedState] = useState(0);
-  const [inputTextState, setInputTextState] = useState("");
+  const [inputTextState, setInputTextState] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(users, "usuarios");
-  console.log(usersFilters, "filtrados");
+  console.log(users, 'usuarios');
+  console.log(usersFilters, 'filtrados');
   let roleSelected = roleSelectedState;
   let inputText = inputTextState;
 
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
-        router.push("/dashboard");
+      if (user?.data?.role !== 'Administrator') {
+        router.push('/dashboard');
       } else {
       }
     } else {
-      router.push("/");
+      router.push('/');
     }
   }, []);
 
@@ -119,37 +126,44 @@ const Sales = () => {
   //   );
   // });
   return (
-    <LayoutPanel pageTitle={t("title")}>
+    <LayoutPanel pageTitle={t('title')}>
       {isLoading && <Loading />}
       <div>
-        <TitlePanel title={t("title")} />
+        <TitlePanel title={t('title')} />
         <Card>
-          <div className="p-3 pb-0">
-            <h4 className="">{t("list")}</h4>
-            <div className="d-flex justify-content-end flex-wrap">
-              <div className="mb-3 col-12 col-md-6 col-lg-3 col-xxl-2">
-                <input type="text" className="form-control" placeholder={t("search")} />
+          <div className='p-3 pb-0'>
+            <h4 className=''>{t('list')}</h4>
+            <div className='d-flex justify-content-end flex-wrap'>
+              <div className='mb-3 col-12 col-md-6 col-lg-3 col-xxl-2'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder={t('search')}
+                />
               </div>
-              <div className="mb-3 col-12 col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center">
-                <p className="mb-0 ps-0 ps-md-5 pe-3">{t("status")}</p>
-                <select className="form-select form-control" aria-label="Default select example">
-                  <option value="0">{t("inputStatusAll")}</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+              <div className='mb-3 col-12 col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center'>
+                <p className='mb-0 ps-0 ps-md-5 pe-3'>{t('status')}</p>
+                <select
+                  className='form-select form-control'
+                  aria-label='Default select example'
+                >
+                  <option value='0'>{t('inputStatusAll')}</option>
+                  <option value='1'>One</option>
+                  <option value='2'>Two</option>
+                  <option value='3'>Three</option>
                 </select>
               </div>
             </div>
-            <div className="table-responsive">
-              <table className="table responsive">
+            <div className='table-responsive'>
+              <table className='table responsive'>
                 <thead>
                   <tr>
-                    <th scope="col">{t("table.order")}</th>
-                    <th scope="col">{t("table.user")}</th>
-                    <th scope="col">{t("table.product")}</th>
-                    <th scope="col">{t("table.status")}</th>
-                    <th scope="col" className="text-end">
-                      {t("table.actions")}
+                    <th scope='col'>{t('table.order')}</th>
+                    <th scope='col'>{t('table.user')}</th>
+                    <th scope='col'>{t('table.product')}</th>
+                    <th scope='col'>{t('table.status')}</th>
+                    <th scope='col' className='text-end'>
+                      {t('table.actions')}
                     </th>
                   </tr>
                 </thead>
@@ -159,21 +173,21 @@ const Sales = () => {
                     <td>darioviada@gmail.com</td>
                     <td>English Level 1</td>
                     <td>Completed</td>
-                    <td className="d-flex justify-content-end">
+                    <td className='d-flex justify-content-end'>
                       <IconButton
-                        path={"/"}
-                        buttonType="blue"
-                        className="me-2"
+                        path={'/'}
+                        buttonType='blue'
+                        className='me-2'
                         asLink
                       >
-                        <FaSearchPlus/>
+                        <FaSearchPlus />
                       </IconButton>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="d-flex justify-content-end">
+            <div className='d-flex justify-content-end'>
               <p>Total Users: 0</p>
             </div>
           </div>
@@ -185,7 +199,7 @@ const Sales = () => {
 
 export default Sales;
 
-export function getStaticProps({locale}) {
+export function getStaticProps({ locale }) {
   return {
     props: {
       // You can get the messages from anywhere you like, but the recommended

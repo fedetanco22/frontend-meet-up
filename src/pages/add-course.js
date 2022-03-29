@@ -1,42 +1,40 @@
-import {useState, useEffect} from "react";
-import {useTranslations} from "next-intl";
+import { Button, Card, LayoutPanel, Loading, TitlePanel } from '../components';
+import { useEffect, useState } from 'react';
 
-import router from "next/router";
-import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, Loading, Button} from "../components";
-import useAppContext from "../context/useAppContext";
+import axios from 'axios';
+import router from 'next/router';
+import useAppContext from '../context/useAppContext';
+import { useTranslations } from 'next-intl';
 
 // import styles from "../styles/Setup.module.scss";
 
 const AddCourse = () => {
-  const t = useTranslations("addCourse");
-  const {user, getUser} = useAppContext();
+  const t = useTranslations('addCourse');
+  const { user, getUser } = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
-        router.push("/dashboard");
+      if (user?.data?.role !== 'Administrator') {
+        router.push('/dashboard');
       } else {
       }
     } else {
-      router.push("/");
+      router.push('/');
     }
   }, []);
 
   const child = {
-    path: "../all-courses",
-    name: t("child"),
+    path: '../all-courses',
+    name: t('child'),
   };
 
   return (
-    <LayoutPanel pageTitle={t("title")}>
+    <LayoutPanel pageTitle={t('title')}>
       {isLoading && <Loading />}
       <div>
-        <TitlePanel title={t("title")} child={child} />
-        <Card>
-
-        </Card>
+        <TitlePanel title={t('title')} child={child} />
+        <Card></Card>
       </div>
     </LayoutPanel>
   );
@@ -44,7 +42,7 @@ const AddCourse = () => {
 
 export default AddCourse;
 
-export function getStaticProps({locale}) {
+export function getStaticProps({ locale }) {
   return {
     props: {
       // You can get the messages from anywhere you like, but the recommended

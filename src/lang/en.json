@@ -1,5 +1,5 @@
 {
-  "config":{
+  "config": {
     "title": "Meet-up online educational platform",
     "author": {
       "name": "Trylogic",
@@ -11,40 +11,15 @@
       "twitter": "lerobbb"
     }
   },
-  "home":{
+  "home": {
     "title": "Home",
     "prueba": "prueba",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Test your English",
       "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
       "button": "Take the test"
-
     },
-    "bannerColor2":{
-      "title": "Become a Teacher",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-      "button": "Apply now"
-    },
-    "auth": {
-      "SignUp": {
-        "title": "Sign up",
-        "form": {
-          "placeholder": "Please enter your name",
-          "submit": "Submit"
-        }
-      }
-    }
-  }, 
-  "courses":{
-    "title": "Courses",
-    "prueba": "Test Courses",
-    "bannerColor":{
-      "title": "Test your English",
-      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
-      "button": "Take the test"
-
-    },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Become a Teacher",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
       "button": "Apply now"
@@ -59,8 +34,33 @@
       }
     }
   },
-  
-  "test":{
+  "courses": {
+    "title": "Courses",
+    "prueba": "Test Courses",
+    "titleC": "About Course",
+    "descriptionC": "Do you want to start studying English and don't know how? This is the first step in becoming a language expert. At Meet Up we give you all the knowledge and tools you need to get started! With Beginners you will be able to feel comfortable communicating in everyday contexts. Not only will you improve your grammar and acquire a lot of vocabulary, but you will strengthen your pronunciation and fluency from day one. What are you going to learn? - To use basic and familiar everyday expressions - The alphabet and numbers - Ask and answer questions - Provide personal and other information And much more... Start now! Dare to take this first step. With Meet Up you will learn English effectively and consistently. After Beginners you will just want to keep learning and you will achieve all your goals!",
+    "bannerColor": {
+      "title": "Test your English",
+      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
+      "button": "Take the test"
+    },
+    "bannerColor2": {
+      "title": "Become a Teacher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+      "button": "Apply now"
+    },
+    "auth": {
+      "SignUp": {
+        "title": "Sign up",
+        "form": {
+          "placeholder": "Please enter your name",
+          "submit": "Submit"
+        }
+      }
+    }
+  },
+
+  "test": {
     "title": "Test",
     "prueba": "Test about",
     "auth": {
@@ -73,24 +73,25 @@
       }
     }
   },
-  "about":{
+  "about": {
     "title": "About Us",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "course_info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "description": "We are the result of the fusion between experienced teachers and advanced entrepreneurs, convinced of the transforming power of education as a true tool for progress.",
+    "mision": "Our mission is to democratize education, establishing ourselves as an inclusive instrument that allows unhindered access to learning the universally adopted language.",
+    "vision": "Our vision is to provide quality education through an educational platform that allows students to learn English in an easy and fun way.",
+    "methodology": "We created a digital teaching space so that you can go through this journey in the best possible way. The first step will be to draw up a personalized program that fits your specific needs and according to your real possibilities. We have a highly qualified teaching team that faithfully represents the principles that identify us. His goal is yours. We encourage collaborative learning. We create a meeting and learning space. Join the Meet Up community.",
+    "course_info": "Our courses are specially designed for you and the specific situation you are going through. You can choose different course modalities: Group: online group classes of no more than 12 people, Individual, Just Talk: conversation classes or English for Business purposes",
     "values": {
       "title": "Our",
       "subtitle": "Values",
       "values": {
-        "professionalism":"professionalism",
-        "excellence":"excellence",
-        "warranty":"warranty",
-        "knowledge":"knowledge"
+        "professionalism": "professionalism",
+        "excellence": "excellence",
+        "warranty": "warranty",
+        "knowledge": "knowledge"
       }
-    }},
-  "dashboard":{
+    }
+  },
+  "dashboard": {
     "title": "Dashboard",
     "buttonEdit": "/en/setup",
     "roleTeacher": "Teacher",
@@ -116,66 +117,65 @@
     }
   },
   "nav": {
-    "home":{
+    "home": {
       "title": "Home",
       "link": "/en"
     },
-    "courses":{
+    "courses": {
       "title": "Courses",
       "link": "/en/courses"
     },
-    "test":{
+    "test": {
       "title": "Test",
       "link": "/en/test"
     },
-    "about":{
+    "about": {
       "title": "About",
       "link": "/en/about"
     },
-    "login":{
+    "login": {
       "title": "Login",
       "link": "/en/login"
     },
-    "register":{
+    "register": {
       "title": "Sign Up",
       "link": "/en/register"
     },
-    "terms":{
+    "terms": {
       "title": "Terms of service",
       "link": "/en/terms-of-service"
     },
-    "policy":{
+    "policy": {
       "title": "Private policy",
       "link": "/en/private-policy"
-    }   
+    }
   },
   "navpanel": {
-    "dashboard":{
+    "dashboard": {
       "title": "Dashboard",
       "link": "/dashboard"
     },
-    "mycourses":{
+    "mycourses": {
       "title": "My Courses",
       "link": "/my-courses"
     },
-    "setup":{
+    "setup": {
       "title": "Setup",
       "link": "/setup"
     },
-    "all-courses":{
+    "all-courses": {
       "title": "Courses",
       "link": "/all-courses"
     },
-    "users":{
+    "users": {
       "title": "Users",
       "link": "/users"
     },
-    "sales":{
+    "sales": {
       "title": "Sales",
       "link": "/sales"
     },
     "close": "Logout"
-    
   },
   "numberblock": {
     "item1": {
@@ -191,24 +191,24 @@
       "text": "Teachers"
     }
   },
-  "services":{
-    "whyUs":{
+  "services": {
+    "whyUs": {
       "title": "Why Choose Meet Up ?",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
-      "button":"see more..."
+      "button": "see more..."
     },
-    "service":{
-      "1":{
-        "title":"Online Courses",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+    "service": {
+      "1": {
+        "title": "Online Courses",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "2":{
-        "title":"Tutorials",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "2": {
+        "title": "Tutorials",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "3":{
-        "title":"Conversations",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "3": {
+        "title": "Conversations",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
   },
@@ -221,20 +221,20 @@
       "url": "/en/courses"
     }
   },
-  "footer":{
+  "footer": {
     "phone": "Phone",
     "email": "Email",
     "listLink1": "Usefull Links",
     "listLink2": "Courses"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Join Our Newsletter",
-    "button":{
+    "button": {
       "text": "Suscribe"
     },
     "placeholder": "Email address"
   },
-  "contact":{
+  "contact": {
     "title": "Contact",
     "subtitle": "Contact Us",
     "phone": "Phone",
@@ -251,10 +251,10 @@
       "url": "/en/courses"
     }
   },
-  "setup":{
+  "setup": {
     "title": "Setup",
-    "form":{
-      "name":"Name",
+    "form": {
+      "name": "Name",
       "lastname": "Lastname",
       "phone": "Phone",
       "submit": "Save",
@@ -290,7 +290,7 @@
       "warning": "There are pending changes",
       "success": "Data saved successfully",
       "error": "Error, check the data and try again",
-      "errorRepeat": "Passwords must be the same"         
+      "errorRepeat": "Passwords must be the same"
     },
     "password": {
       "title": "Change Password",
@@ -299,12 +299,11 @@
       "repeat": "Repeat new password",
       "conditions": "Conditions: Password must have a minimum of 8 characters, a maximum of 12, contain at least one uppercase, one lowercase and one symbol."
     },
-    "sendPassword":{
+    "sendPassword": {
       "title": "Reset Password",
       "indications": "An email will be sent to your email to reset your password.",
       "send": "Send"
     }
-
   },
   "users": {
     "title": "Users",
@@ -322,7 +321,7 @@
       "input": "All"
     }
   },
-  "user":{
+  "user": {
     "title": "Edit User",
     "child": "Users",
     "delete": {
@@ -331,7 +330,7 @@
       "button": "Delete"
     }
   },
-  "sales":{
+  "sales": {
     "title": "Sales",
     "list": "List of orders",
     "search": "Search",
@@ -345,15 +344,15 @@
       "actions": "Actions"
     }
   },
-  "allCourses":{
+  "allCourses": {
     "title": "Courses",
     "addCourse": "Add New course"
   },
-  "addCourse":{
+  "addCourse": {
     "title": "Add new course",
     "child": "Courses"
   },
-  "cardCourse":{
+  "cardCourse": {
     "button": "See more"
   },
   "courseView": {
@@ -376,12 +375,11 @@
       "modality": "Modality",
       "registrationStart": "Registration start",
       "registrationEnd": "Registration end"
-
     },
-    "module":{
+    "module": {
       "title": "Modules"
     },
-    "modal":{
+    "modal": {
       "title": "Confirm delete course?",
       "text1": "you want to delete the course  ",
       "text2": "If you press delete the data cannot be recovered",
