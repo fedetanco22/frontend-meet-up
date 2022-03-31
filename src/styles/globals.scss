@@ -1,7 +1,6 @@
 @import './patterns';
 @import './buttons';
 
-
 * {
   box-sizing: border-box;
 }
@@ -23,22 +22,21 @@ p {
   margin: 0;
 }
 
-
-select{
+select {
   font-family: $primary-font, sans-serif;
   color: $text-black;
-  &:focus-visible{
+  &:focus-visible {
     outline: none;
   }
 }
 
-small{
-font-size: $small;
-color: $text-gray;
-line-height: 1.6!important;
+small {
+  font-size: $small;
+  color: $text-gray;
+  line-height: 1.6 !important;
 }
 
-.bg-panel{
+.bg-panel {
   background-color: $bg-blue;
   padding: 2rem;
   min-height: 100%;
@@ -47,81 +45,77 @@ line-height: 1.6!important;
   margin-top: 90px;
 }
 
-.cardTitle{
+.cardTitle {
   font-size: $extra-large;
   font-weight: $bold;
 }
 
-.text-primary{
+.text-primary {
   color: $primary-color;
 }
-.text-orange{
+.text-orange {
   color: $status-orenge;
 }
 
-.table{
-  tbody:not(:first-child){
+.table {
+  tbody:not(:first-child) {
     border-top: 1px solid $line-gray;
-    td{
+    td {
       font-size: $medium;
       color: $text-gray;
       min-height: 53.5px;
     }
   }
-  th{
-    font-weight: $semi-bold!important;
+  th {
+    font-weight: $semi-bold !important;
   }
 
-  &.responsive{
-
+  &.responsive {
     @media screen and (max-width: 768px) {
-      thead{
-        th{
+      thead {
+        th {
           display: none;
         }
       }
-      tbody{
+      tbody {
         border-top: 1px solid $line-gray;
-        tr{
+        tr {
           border-bottom: 1px solid $line-gray;
           position: relative;
-          padding: .5rem 0;
+          padding: 0.5rem 0;
           display: block;
-          td{
+          td {
             display: block;
             width: 100%;
             border-bottom: none;
-            padding: 0 .5rem;
-            &:last-child{
+            padding: 0 0.5rem;
+            &:last-child {
               position: absolute;
-              top: .5rem;
+              top: 0.5rem;
             }
-            &:first-child{
+            &:first-child {
               font-weight: $bold;
               position: relative;
             }
-  
           }
         }
       }
-      
     }
-
   }
 }
-.empty{
+.empty {
   width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  svg{
+  svg {
     height: 3rem;
     width: 3rem;
     color: $text-gray;
   }
-  p{
+  p {
     text-align: center;
     padding: 1rem;
     font-weight: $bold;
@@ -130,33 +124,31 @@ line-height: 1.6!important;
 }
 
 @media screen and (min-width: 992px) {
-  .bg-panel{
+  .bg-panel {
     padding: 2rem 2rem 2rem 19rem;
   }
-  
 }
 
-.accordion-panel{
-  .accordion{
-    .accordion-item{
-      background-color: #FDFDFD;
+.accordion-panel {
+  .accordion {
+    .accordion-item {
+      background-color: #fdfdfd;
       border: none;
-      margin-bottom: .6rem;
-      border-radius: 0.5rem!important;
+      margin-bottom: 0.6rem;
+      border-radius: 0.5rem !important;
 
-      .accordion-header{
-        padding: .5rem!important;
-        border-radius: 0.5rem!important;
-        .accordion-button{
+      .accordion-header {
+        padding: 0.5rem !important;
+        border-radius: 0.5rem !important;
+        .accordion-button {
           color: $text-black;
-          background-color: #FDFDFD!important;
-          font-weight: $bold!important;
+          background-color: #fdfdfd !important;
+          font-weight: $bold !important;
           font-size: $large;
         }
       }
-      .accordion-body{
-        padding: 2rem!important;
-
+      .accordion-body {
+        padding: 2rem !important;
       }
     }
   }

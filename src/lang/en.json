@@ -386,5 +386,12 @@
       "cancel": "Cancel",
       "delete": "Delete"
     }
+  },
+  "404": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "text": "Uh! Looks like you got lost.",
+    "text2": "Go back to the homepage if you dare!",
+    "button": "Back to home"
   }
 }
