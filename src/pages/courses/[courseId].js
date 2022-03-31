@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import router from 'next/router';
 import Image from 'next/image';
 import {
     Layout,
@@ -12,14 +13,21 @@ import {
 import { useTranslations } from 'next-intl';
 import Moment from 'react-moment';
 import courseImage from '../../../public/course-image.png';
+import useAppContext from '../../context/useAppContext';
 
 import styles from './course.module.scss';
+import { useRouter } from 'next/router';
 
 const Course = ({ courses }) => {
     const [course, setCourse] = useState();
     const t = useTranslations('courseView');
+    const { addProduct } = useAppContext();
 
     const { image, title, description, price, duration, slug, level } = courses.course;
+
+    const addToCart = () => {
+        addProduct(courses.course);
+    };
 
     const coursePicture = (
         <Image
@@ -75,8 +83,9 @@ const Course = ({ courses }) => {
                             </span>
                             <Button
                                 text={'Enroll'}
-                                linkAsButton
-                                path={`/courses/`}
+                                asSubmit
+                                callback={addToCart}
+                                // path={`/courses/`}
                                 buttonType='blue_small'
                             />
                         </div>
