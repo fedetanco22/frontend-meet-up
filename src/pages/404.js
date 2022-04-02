@@ -1,5 +1,4 @@
-import { Contact, Layout } from '../components/index';
-
+import { Layout } from '../components/index';
 import styles from '../styles/404.module.scss';
 import { useTranslations } from 'next-intl';
 
@@ -7,7 +6,7 @@ const error404 = () => {
   const t = useTranslations('404');
 
   return (
-    <Layout pageTitle={t('title')}>
+    <Layout pageTitle={t('title')} className={styles.error}>
       <section className={styles.wrapper}>
         <div className='container'>
           <div id='scene' className={styles.scene} data-hover-only='false'>
@@ -38,18 +37,17 @@ const error404 = () => {
             </div>
 
             <p className={styles.p404} data-depth='0.50'>
-              {t('subtitle')}
+              404
             </p>
             <p className={styles.p404} data-depth='0.10'>
               404
             </p>
           </div>
-
           <div className={styles.text}>
-            <p>{t('text')}</p>
-            <p>{t('text2')}</p>
+            <p>{t('subtitle')}</p>
             <button>{t('button')}</button>
           </div>
+          -
         </div>
       </section>
     </Layout>
@@ -68,3 +66,6 @@ export function getStaticProps({ locale }) {
     },
   };
 }
+
+// var scene = document.getElementById('scene');
+// var parallax = new Parallax(scene);

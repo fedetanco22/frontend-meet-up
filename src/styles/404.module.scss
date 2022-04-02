@@ -64,7 +64,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
   grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
   background: $bg-gradient;
 }
@@ -94,7 +94,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
 .scene .p404 {
   width: 60%;
   height: 60%;
-  top: 20% !important;
+  top: 26% !important;
   left: 20% !important;
   min-width: 400px;
   min-height: 400px;
@@ -109,7 +109,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: content 0.8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
@@ -380,14 +380,13 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
 .text {
   width: 400px;
   position: absolute;
-  bottom: 0;
+  bottom: 170px;
   z-index: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 
@@ -398,7 +397,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
 
 .text p {
   color: white;
-  font-size: 18px;
+  font-size: 33px;
   letter-spacing: 0.6px;
   margin-bottom: 40px;
   text-shadow: 6px 6px 10px $bg-03;
@@ -408,13 +407,13 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
   height: 40px;
   padding: 0 30px;
   border-radius: 50px;
-  border: 1px solid #8077ea;
+  border: 1px solid $tertiary-color;
 
   cursor: pointer;
   box-shadow: 0px 15px 20px rgba($bg-02, 0.5);
   z-index: 3;
   color: $white;
-  background-color: #8077ea;
+  background-color: $tertiary-color;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
@@ -424,7 +423,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
     box-shadow: 0px 10px 10px -10px rgba($bg-02, 0.5);
     transform: translateY(5px);
     background: $white;
-    // color: #eb73ff;
+    font-weight: 700;
     color: $secondary-color;
     border: 1px solid $white;
   }
