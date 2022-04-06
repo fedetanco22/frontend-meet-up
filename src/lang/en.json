@@ -134,7 +134,8 @@
     },
     "login":{
       "title": "Login",
-      "link": "/en/login"
+      "link": "/en/login",
+      "titleUser": "Dashboard"
     },
     "register":{
       "title": "Sign Up",
@@ -388,5 +389,122 @@
       "cancel": "Cancel",
       "delete": "Delete"
     }
+  },
+  "courseEdit": {
+    "title": "Course data",
+    "titleImage":"Edit course image",
+    "selectFile": "Select file",
+    "form": {
+      "title": "Title",
+      "titleES": "Title in Spanish",
+      "level": "Level",
+      "levelES": "Level in Spanish",
+      "description": "Description ",
+      "descriptionES": "Description in spanish",
+      "duration": "Duration ",
+      "durationES": "Duration in spanish",
+      "price": "Price",
+      "addModule" : "Add module",
+      "deleteModule":"Delete module",
+      "addSchedule" : "Add schedule",
+      "deleteSchedule":"Delete schedule",
+      "schedules": {
+        "schedule": "Schedule",
+        "title": "Title",
+        "titleES": "Title in spanish",
+        "start": "Start",
+        "end": "End",
+        "startR": "Start registration",
+        "endR": "End registration",
+        "time": "Time",
+        "teacher": "Teacher",
+        "modality": "Modality",
+        "modalityES": "Modality in spanish",
+        "linkDrive": "Link to docs",
+        "linkZoom": "Link to class",
+        "days": "Days",
+        "week": {
+          "mon": "Mon",
+          "tue": "Tue",
+          "wed": "Wed",
+          "thu": "Thu",
+          "fri": "Fri",
+          "sat": "Sat",
+          "sun": "Sun"
+        }
+      },
+      "modules":{
+        "module": "Module",
+        "title": "Title",
+        "titleES": "Title in spanish",
+        "description": "Description ",
+        "descriptionES": "Description in spanish",
+        "number": "Number"
+    
+      },
+      "submit": "Save",
+      "validations": {
+        "title": {
+          "required": "Title is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "level": {
+          "required": "Level is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "description": {
+          "required": "Description is required",
+          "min": "min. 3 characters",
+          "max": "max. 5000 characters"
+        },
+        "duration": {
+          "required": "Duration is required",
+          "min": "min. 3 characters",
+          "max": "max. 30 characters"
+        },
+        "price": {
+          "number":"only numbers"
+        },
+        "modality": {
+          "required": "Modality is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "linkDocs": {
+          "required": "Link to docs is required",
+          "min": "min. 3 characters",
+          "max": "max. 350 characters"
+        },
+        "linkClass": {
+          "required": "Link to class is required",
+          "min": "min. 3 characters",
+          "max": "max. 350 characters"
+        },
+        "time": {
+          "required": "Time is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "teacher": {
+          "required": "teacher is required"
+        },
+        "data": {
+          "required": "Is required"
+        }
+      },
+      "alert": {
+        "warning": "There are pending changes",
+        "success": "Data saved successfully",
+        "error": "Error, check the data and try again"        
+      }
+    },
+    "schedule": {
+    },
+    "module":{
+      "title": "Modules"
+    }
+
   }
 }

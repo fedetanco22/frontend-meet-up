@@ -52,6 +52,7 @@ const Users = () => {
         }
       } catch (error) {
         if (error.response.status === 403) {
+          setUser(null);
           router.push("/");
         }
         console.log(error, 'error')

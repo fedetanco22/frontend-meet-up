@@ -37,6 +37,9 @@ import CardCourse from "./CardCourse/CardCourse";
 import CourseView from "./CourseView/CourseView";
 import Schedule from "./Schedule/Schedule"
 import Module from "./Module/Module";
+import CourseEdit from "./CourseEdit/CourseEdit";
+import ModuleEdit from "./ModuleEdit/ModuleEdit";
+import AddImage from "./AddImage/AddImage";
 
 export{
   Navbar, 
@@ -77,7 +80,10 @@ export{
   CardCourse,
   CourseView,
   Schedule,
-  Module
+  Module,
+  CourseEdit,
+  ModuleEdit,
+  AddImage
 }
 
 

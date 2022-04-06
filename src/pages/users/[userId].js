@@ -42,6 +42,7 @@ const User = () => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        setUser(null);
         router.push("/");
       }
       console.log(error);
@@ -64,6 +65,7 @@ const User = () => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        setUser(null);
         router.push("/");
       }
       console.log("error: ", error);

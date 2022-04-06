@@ -7,7 +7,7 @@ import useAppContext from "../context/useAppContext";
 
 const Allcourses = () => {
   const t = useTranslations("allCourses");
-  const {user} = useAppContext();
+  const {user, setUser} = useAppContext();
   const [isCourses, setIsCourses] = useState([])
   const [isLoading, setIsLoading] = useState(false);
   const cursos = isCourses;
@@ -45,6 +45,7 @@ const Allcourses = () => {
       
     } catch (error) {
       if (error.response.status === 403) {
+        setUser(null);
         router.push("/");
       }
       console.log("error: ", error);

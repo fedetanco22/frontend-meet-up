@@ -133,7 +133,8 @@
     },
     "login":{
       "title": "Entrar",
-      "link": "/login"
+      "link": "/login",
+      "titleUser": "Panel"
     },
     "register":{
       "title": "Registrarse",
@@ -357,7 +358,7 @@
   },
   "courseView": {
     "title": "Curso",
-    "level:": "Nivel",
+    "level": "Nivel",
     "duration": "Duración",
     "child": "Cursos",
     "editCourse": "Editar Curso",
@@ -386,6 +387,123 @@
       "cancel": "Cancelar",
       "delete": "Eliminar"
     }
+  },
+  "courseEdit": {
+    "title": "Datos del curso",
+    "titleImage":"Editar imagen del curso",
+    "selectFile": "Seleccionar imagen",
+    "form": {
+      "title": "Titulo en Inglés",
+      "titleES": "Titulo en español",
+      "level": "Nivel en inglés",
+      "levelES": "Nivel en español",
+      "description": "Descripción en inglés ",
+      "descriptionES": "Descripción en español",
+      "duration": "Duración en inglés ",
+      "durationES": "Duración en español",
+      "price": "Precio",
+      "addModule" : "Agregar módulo",
+      "deleteModule":"Borrar modulo",
+      "addSchedule" : "Agregar horario",
+      "deleteSchedule":"Eliminar horario",
+      "schedules": {
+        "schedule": "Horario",
+        "title": "Titulo",
+        "titleES": "Titulo en español",
+        "start": "Inicio",
+        "end": "Fin",
+        "startR": "Inicio inscripción",
+        "endR": "Fin inscripción",
+        "time": "Horario",
+        "teacher": "Profesor",
+        "modality": "Modalidad",
+        "modalityES": "Modalidad en español",
+        "linkDrive": "Link a documentos",
+        "linkZoom": "Link a clase",
+        "days": "Días",
+        "week": {
+          "mon": "Lun",
+          "tue": "Mar",
+          "wed": "Mie",
+          "thu": "Jue",
+          "fri": "Vie",
+          "sat": "Sab",
+          "sun": "Dom"
+        }
+
+      },
+      "modules":{
+        "module": "Modulo",
+        "title": "Titulo",
+        "titleES": "Titulo en español",
+        "description": "Descripción en inglés ",
+        "descriptionES": "Descripción en español",
+        "number": "Numero"
+      },
+      "submit": "Guardar",
+      "validations": {
+        "title": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "level": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "description": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 2000 caracteres"
+        },
+        "duration": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "price": {
+          "number":"Solo numeros"
+        },
+        "modality": {
+          "required": "Modalidad es requerido",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "linkDocs": {
+          "required": "Link to docs is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 350 caracteres"
+        },
+        "linkClass": {
+          "required": "Link to class is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 350 caracteres"
+        },
+        "time": {
+          "required": "Time is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "teacher": {
+          "required": "teacher is required"
+        },
+        "data": {
+          "required": "Is required"
+        }
+      },
+      "alert": {
+        "warning": "Hay cambios pendientes",
+        "success": "Datos guardados exitosamente",
+        "error": "Error , verifique los datos y vuelva a intentar"   
+      }
+    },
+    "schedule": {
+    },
+    "module":{
+      "title": "Modules"
+    }
+
   }
   
 }

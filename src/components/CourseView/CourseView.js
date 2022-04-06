@@ -1,7 +1,7 @@
 import router from "next/router";
 import {useState} from "react";
 import {useTranslations} from "next-intl";
-import {Card, Button, Schedule, Module} from "../../components";
+import {Card, Button, Schedule, Module, Loading} from "../../components";
 import useAppContext from "../../context/useAppContext";
 import {Modal} from "react-bootstrap";
 import axios from "axios";
@@ -10,6 +10,7 @@ import styles from "./CourseView.module.scss";
 
 const CourseView = ({course}) => {
   const [show, setShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   console.log(course);
   const handleClose = () => {
     setShow(false);
@@ -29,6 +30,7 @@ const CourseView = ({course}) => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        setUser(null);
         router.push("/");
       }
       console.log(error);
@@ -39,6 +41,7 @@ const CourseView = ({course}) => {
   console.log(user);
   return (
     <Card styleClass="px-3">
+       {isLoading && <Loading />}
       <div className="d-flex flex-wrap border-bottom">
         <div className="col-12 col-md p-4 my-3">
           <h3 className={styles.title}>{course.course?.title}</h3>

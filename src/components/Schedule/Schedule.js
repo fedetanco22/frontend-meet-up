@@ -61,7 +61,7 @@ const Schedule = ({schedules, role}) => {
                   className="mt-1 mx-md-2 flex-auto w-100"
                   asLink
                   text={t("onlineClass")}
-                  disabled={`${item.link_class ? false : true}`}
+                  disabled={item.link_class ? false : true}
                 >
                   <FaVideo />
                 </Button>
@@ -71,7 +71,7 @@ const Schedule = ({schedules, role}) => {
                   className="mt-1 mx-md-2 flex-auto w-10"
                   asLink
                   text={t("openFiles")}
-                  disabled={`${item.link_docs ? false : true}`}
+                  disabled={item.link_docs ? false : true}
                 >
                   <FaFolderOpen />
                 </Button>
