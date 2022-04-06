@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
+import axios from "axios";
 import router from "next/router";
 import {LayoutPanel, TitlePanel, Card, Button, IconButton, Loading} from "../components";
 import useAppContext from "../context/useAppContext";
@@ -11,19 +12,42 @@ import styles from "../styles/Dashboard.module.scss";
 
 const Dashboard = () => {
   const t = useTranslations("dashboard");
-  const {user, getUser} = useAppContext();
-  const [users, setUsers] = useState(0);
+  const {user, setUser, getUser} = useAppContext();
+  const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
       // getUser()
-      // getUsers();
+      getUsers();
     } else {
-      router.push("/");
+      router.push("/login");
     }
   }, []);
 console.log(user)
+console.log(users)
+const getUsers = async () => {
+  setIsLoading(true)
+  if (user?.data?.role === "Administrator") {
+    const url = "http://164.92.76.51:3000/users";
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      if(res.status === 200){
+        console.log(res.data?.data, 'resultado')
+        setUsers(res.data?.data);
+        setUsersFilters(res.data?.data);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        setUser(null);
+        router.push("/");
+      }
+      console.log(error, 'error')
+      setIsLoading(false)
+    }
+  }
+};
 
   const foto =
     user?.data?.profile_image?.length > 0 ? (
@@ -96,7 +120,7 @@ console.log(user)
                       <FaUsers />
                     </div>
                     <div className="ps-3">
-                      <p className={styles.number}>{users}</p>
+                      <p className={styles.number}>{users.length}</p>
                       <p className={styles.period}>{t("usersCard.period")}</p>
                     </div>
                   </div>
@@ -114,7 +138,7 @@ console.log(user)
             </div>
           </div>
         )}
-        {user?.data?.role_id !== 1 && (
+        {/* {user?.data?.role_id !== 1 && (
           <div className="d-flex flex-wrap pt-3">
             <div className="col-12 col-md-6 pe-md-2 ">
               <Card>
@@ -145,7 +169,7 @@ console.log(user)
               </Card>
             </div>
           </div>
-        )}
+        )} */}
       
     </LayoutPanel>
   );
