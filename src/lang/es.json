@@ -369,7 +369,7 @@
     "schedule": {
       "title": "Horarios",
       "day": "Días",
-      "time": "Horario",
+      "time": "Horarios",
       "start": "Comienzo",
       "end": "Fin",
       "teacher": "Profesor",
@@ -378,7 +378,7 @@
       "registrationEnd": "Fin de inscripción"
     },
     "module":{
-      "title": "Modulos"
+      "title": "Módulos"
     },
     "modal":{
       "title": "Confirmar eliminación de curso?",
@@ -386,6 +386,16 @@
       "text2": "Si confirma la eliminación los datos no se podrán recuperar",
       "cancel": "Cancelar",
       "delete": "Eliminar"
+    },
+    "bannerColor":{
+      "title": "Probá tu inglés",
+      "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
+      "button": "Tomar el examen"
+    },
+    "bannerColor2":{
+      "title": "Convertite en Docente",
+      "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
+      "button": "Aplicá ahora"
     }
   },
   "courseEdit": {

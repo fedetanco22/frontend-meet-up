@@ -1,0 +1,124 @@
+import { useState } from 'react';
+import router from 'next/router';
+import Image from 'next/image';
+import {
+    Layout,
+    Contact,
+    ColorBanner,
+    Card,
+    CourseSchedule,
+    Button,
+    Module,
+} from '../../components/index';
+import { useTranslations } from 'next-intl';
+import Moment from 'react-moment';
+import courseImage from '../../../public/course-image.png';
+import useAppContext from '../../context/useAppContext';
+
+import styles from './course.module.scss';
+import { useRouter } from 'next/router';
+
+const Course = ({ courses }) => {
+    const [course, setCourse] = useState();
+    const t = useTranslations('courseView');
+    const { addProduct } = useAppContext();
+
+    const { image, title, description, price, duration, slug, level } = courses.course;
+
+    const addToCart = () => {
+        addProduct(courses.course);
+    };
+
+    const coursePicture = (
+        <Image
+            className={styles.image}
+            src={
+                image?.length > 0 ? `http://164.92.76.51:3000/coursesImages/${image}` : courseImage
+            }
+            alt={title}
+            layout='fill'
+            objectFit='cover'
+            objectPosition='50% 20%'
+            quality={100}
+        />
+    );
+
+    const scheduleModality = courses?.schedules?.map((schedule, idx) => {
+        return <CourseSchedule key={idx} schedule={schedule} />;
+    });
+
+    const moduleCourses = <Module modules={courses.modules} />;
+
+    return (
+        <Layout pageTitle={t('title')}>
+            <div className={styles.imageWrapper}>{coursePicture}</div>
+            <div className={`container py-5 ${styles.container}`}>
+                <div className='row'>
+                    <div className='col-12 col-md-8'>
+                        <h1 className={styles.title}>{title}</h1>
+                        <div className={styles.textBody}>
+                            <h3>About Course</h3>
+                            <p>{description}</p>
+                        </div>
+                        <div className={styles.textBody}></div>
+                    </div>
+
+                    <Card className={`${styles.value} col-12 col-md-4 `}>
+                        <div className={styles.value__title}>
+                            <h3>For {level}</h3>
+                        </div>
+                        <div className={styles.value__text}>
+                            <div className={styles.value__text__title}>
+                                <h6>Schedule</h6>
+                                {scheduleModality}
+                            </div>
+                            <div className={styles.value__text__title}>
+                                <h6>Material Includes</h6>
+                            </div>
+                        </div>
+
+                        <div className={styles.enroll}>
+                            <span className={styles.enroll__price}>
+                                $ <span className={styles.enroll__price__number}>{price}</span> ARS
+                            </span>
+                            <Button
+                                text={'Enroll'}
+                                asSubmit
+                                callback={addToCart}
+                                // path={`/courses/`}
+                                buttonType='blue_small'
+                            />
+                        </div>
+                    </Card>
+                </div>
+                <div className='row'>
+                    <div className='col-8'>{moduleCourses}</div>
+                </div>
+            </div>
+
+            <ColorBanner
+                backgroundColor={'secondary'}
+                title={t('bannerColor.title')}
+                description={t('bannerColor.description')}
+                btnText={t('bannerColor.button')}
+                buttonLink={'/test'}
+                icon
+            />
+            <Contact />
+        </Layout>
+    );
+};
+
+export default Course;
+
+export async function getServerSideProps({ locale, query }) {
+    const res = await fetch(`http://164.92.76.51:3000/${locale}/courses/${query.courseId}`);
+    const jsonCourse = await res.json();
+    const courses = jsonCourse.data;
+    return {
+        props: {
+            courses,
+            messages: require(`../../lang/${locale}.json`),
+        },
+    };
+}

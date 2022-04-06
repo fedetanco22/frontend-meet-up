@@ -41,7 +41,7 @@ const User = () => {
         setSendError(true);
       }
     } catch (error) {
-      if (error.response.status === 403) {
+      if (error.response?.status === 403) {
         setUser(null);
         router.push("/");
       }
@@ -57,7 +57,9 @@ const User = () => {
     setIsLoading(true);
     const url = "http://164.92.76.51:3000/user/" + id;
     try {
-      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      const res = await axios.get(`${url}`, {
+        headers: {Authorization: `Bearer ${user.token}`},
+      });
 
       if (res.status === 200) {
         setIsLoading(false);

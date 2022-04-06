@@ -1,16 +1,16 @@
 import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
+import {Modal} from "react-bootstrap";
 import router from "next/router";
 import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, IconButton, Loading} from "../components";
+import {LayoutPanel, TitlePanel, Card, IconButton, Button, Loading} from "../components";
 import useAppContext from "../context/useAppContext";
-import {FaPencilAlt, FaUsers} from "react-icons/fa";
-
+import {FaPencilAlt, FaUsers, FaTrashAlt} from "react-icons/fa";
 import styles from "../styles/Setup.module.scss";
 
 const Users = () => {
   const t = useTranslations("users");
-  const {user} = useAppContext();
+  const {user, getUser} = useAppContext();
   const [users, setUsers] = useState([]);
   const [usersFilters, setUsersFilters] = useState(users);
   const [roles, setRoles] = useState([]);
@@ -18,8 +18,6 @@ const Users = () => {
   const [inputTextState, setInputTextState] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(users, 'usuarios')
-  console.log(usersFilters, 'filtrados')
   let roleSelected = roleSelectedState;
   let inputText = inputTextState;
 
@@ -36,36 +34,36 @@ const Users = () => {
     }
   }, []);
 
-
-
   const getUsers = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (user?.data?.role === "Administrator") {
       const url = "http://164.92.76.51:3000/users";
       try {
-        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-        console.log(res.data?.data, 'resultado')
+        const res = await axios.get(`${url}`, {
+          headers: {Authorization: `Bearer ${user.token}`},
+        });
+        console.log(res.data?.data, "resultado");
         setUsers(res.data?.data);
         setUsersFilters(res.data?.data);
-        if(res.status === 200){
+        if (res.status === 200) {
           setIsLoading(false);
         }
       } catch (error) {
-        if (error.response.status === 403) {
-          setUser(null);
+        if (error.response?.status === 403) {
           router.push("/");
         }
-        console.log(error, 'error')
-        setIsLoading(false)
+        console.log(error, "error");
+        setIsLoading(false);
       }
     }
   };
-
   const getRoles = async () => {
     if (user?.data?.role === "Administrator") {
       const url = "http://164.92.76.51:3000/roles";
       try {
-        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+        const res = await axios.get(`${url}`, {
+          headers: {Authorization: `Bearer ${user.token}`},
+        });
         setRoles(res.data.data);
       } catch (error) {}
     }
@@ -127,9 +125,10 @@ const Users = () => {
       </tr>
     );
   });
+
   return (
     <LayoutPanel pageTitle={t("title")}>
-      {isLoading && <Loading/>}
+      {isLoading && <Loading />}
       <div>
         <TitlePanel title={t("title")} />
         <Card>
@@ -187,7 +186,6 @@ const Users = () => {
           </div>
         </Card>
       </div>
-
     </LayoutPanel>
   );
 };

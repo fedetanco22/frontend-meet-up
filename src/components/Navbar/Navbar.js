@@ -25,7 +25,7 @@ const Navbar = ({handleMenu, open}) => {
 
   const handleLangChange = (e) => {
     const locale = e.target.value;
-    router.push(pathname, pathname, {locale});
+    router.push(pathname, query.courseId, {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
 
@@ -108,22 +108,3 @@ const Navbar = ({handleMenu, open}) => {
 };
 
 export default Navbar;
-
-/*  <Link href={t("home.link")}>
-      <a className={`${styles.link} ${styles.active}`}>{t("home.title")}</a>
-    </Link>
-    <Link href={t("courses.link")}>
-      <a className={styles.link}>{t("courses.title")}</a>
-    </Link>
-    <Link href={t("test.link")}>
-      <a className={styles.link}>{t("test.title")}</a>
-    </Link>
-    <Link href={t("about.link")}>
-      <a className={styles.link}>{t("about.title")}</a>
-    </Link>
-    <Link href={t("login.link")}>
-      <a className="button button-transparent py-2 ms-lg-4">{t("login.title")}</a>
-    </Link>
-    <Link href={t("register.link")}>
-      <a className="button button-ligth py-2">{t("register.title")}</a>
-    </Link> */
