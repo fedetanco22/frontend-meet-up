@@ -16,7 +16,6 @@ import courseImage from '../../../public/course-image.png';
 import useAppContext from '../../context/useAppContext';
 
 import styles from './course.module.scss';
-import { useRouter } from 'next/router';
 
 const Course = ({ courses }) => {
     const [course, setCourse] = useState();
@@ -25,8 +24,9 @@ const Course = ({ courses }) => {
 
     const { image, title, description, price, duration, slug, level } = courses.course;
 
-    const addToCart = () => {
-        addProduct(courses.course);
+    const addToCart = (course) => {
+        console.log('🚀 ~ file: [courseId].js ~ line 28 ~ addToCart ~ course', course);
+        addProduct(course);
     };
 
     const coursePicture = (
@@ -84,7 +84,7 @@ const Course = ({ courses }) => {
                             <Button
                                 text={'Enroll'}
                                 asSubmit
-                                callback={addToCart}
+                                callback={() => addToCart(courses.course)}
                                 // path={`/courses/`}
                                 buttonType='blue_small'
                             />

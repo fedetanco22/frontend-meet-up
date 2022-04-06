@@ -7,8 +7,7 @@ const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
-    console.log('🚀 ~ file: useAppContext.js ~ line 11 ~ AppProvider ~ product', products);
+    const [product, setProduct] = useState([]);
 
     const storage = () => {
         if (typeof window !== 'undefined') {
@@ -38,44 +37,32 @@ export const AppProvider = ({ children }) => {
     };
 
     const addProduct = (product) => {
-        console.log('🚀 ~ file: useAppContext.js ~ line 41 ~ addProduct ~ product', product);
-        const existingProduct = products.find((prod) => prod.course_id === product.course_id);
-
-        if (existingProduct) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href="">Why do I have this issue?</a>',
-            });
-        } else {
-            setProducts([...products, product]);
-            router.push('/checkout');
-        }
+        setProduct([product]);
+        router.push('/checkout');
     };
 
     //Total Quantity in Cart
     const productsQuantity = () => {
-        return products.reduce((acc, product) => (acc += product.quantity), 0);
+        return product.reduce((acc, product) => (acc += product.quantity), 0);
     };
 
     // Delete Product from List
     const deleteProduct = (id) => {
-        products.splice(
-            products.findIndex((product) => product.id === id),
+        product.splice(
+            product.findIndex((product) => product.id === id),
             1
         );
-        setProducts([...products]);
+        setProduct([...product]);
     };
 
     // Total $ Shopping Cart
     const totalPrice = () => {
-        return products.reduce((acc, product) => (acc += product.quantity * product.price), 0);
+        return product.reduce((acc, product) => (acc += product.quantity * product.price), 0);
     };
 
     const emptyCart = () => {
-        products.splice(0, products.length);
-        return setProducts([...products]);
+        product.splice(0, product.length);
+        return setProduct([...product]);
     };
     return (
         <AppContext.Provider
@@ -87,6 +74,7 @@ export const AppProvider = ({ children }) => {
                 deleteProduct,
                 totalPrice,
                 emptyCart,
+                product,
             }}
         >
             {children}
