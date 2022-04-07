@@ -10,8 +10,6 @@ const error404 = () => {
       <section className={styles.wrapper}>
         <div className='container'>
           <div id='scene' className={styles.scene} data-hover-only='false'>
-            <div className={styles.circle} data-depth='1.2'></div>
-
             <div className={styles.one} data-depth='0.9'>
               <div className={styles.content}>
                 <span className={styles.piece}></span>
@@ -43,11 +41,11 @@ const error404 = () => {
               404
             </p>
           </div>
+
           <div className={styles.text}>
             <p>{t('subtitle')}</p>
             <button>{t('button')}</button>
           </div>
-          -
         </div>
       </section>
     </Layout>

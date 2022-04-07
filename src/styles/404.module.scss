@@ -1,8 +1,5 @@
 @import './patterns';
 
-$font-01: 'Barlow', sans-serif;
-$font-02: 'Barlow Condensed', sans-serif;
-
 $m-01: #fb8a8a;
 $m-02: #ffedc0;
 
@@ -29,33 +26,6 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
 @mixin height {
   @media screen and (max-height: 660px) {
     @content;
-  }
-}
-
-// body {
-//   background: $bg-01;
-// }
-
-.logo {
-  position: fixed;
-  z-index: 5;
-  bottom: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 100%;
-  backdrop-filter: blur(5px);
-
-  img {
-    width: 55%;
-    height: 55%;
-    transform: translateY(-1px);
-    opacity: 0.8;
   }
 }
 
@@ -119,6 +89,10 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
         width: 0;
       }
     }
+
+    @include sm {
+      width: 325px;
+    }
   }
 
   // Pieces
@@ -129,7 +103,6 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
     position: absolute;
     border-radius: 80px;
     z-index: 1;
-
     animation: pieceLeft 8s cubic-bezier(1, 0.06, 0.25, 1) infinite both;
 
     @keyframes pieceLeft {
@@ -174,7 +147,8 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
     width: 60%;
     height: 60%;
     top: 20% !important;
-    left: 20% !important;
+    // left: 20% !important;
+    left: 5% !important;
   }
 }
 
@@ -212,45 +186,13 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
   }
 }
 
-// Bigger Circle
-.circle {
-  position: absolute;
-}
-
-.circle:before {
-  content: '';
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background-color: rgba($bg-02, 0.2);
-  border-radius: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: $circleShadow;
-  animation: circle 0.8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
-
-  @keyframes circle {
-    0% {
-      width: 0;
-      height: 0;
-    }
-  }
-
-  @include sm {
-    width: 400px;
-    height: 400px;
-  }
-}
 // Container 1  // Smaller Circle
 .one .content:before {
   content: '';
   position: absolute;
   width: 600px;
   height: 600px;
-  background-color: rgba($bg-02, 0.3);
   border-radius: 100%;
-  box-shadow: $circleShadow;
   animation: circle 0.8s 0.4s cubic-bezier(1, 0.06, 0.25, 1) backwards;
 
   @include sm {
@@ -393,6 +335,10 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
   @include sm {
     width: 100%;
   }
+
+  @include height {
+    bottom: 0;
+  }
 }
 
 .text p {
@@ -408,7 +354,6 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
   padding: 0 30px;
   border-radius: 50px;
   border: 1px solid $tertiary-color;
-
   cursor: pointer;
   box-shadow: 0px 15px 20px rgba($bg-02, 0.5);
   z-index: 3;
