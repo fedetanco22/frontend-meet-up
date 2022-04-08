@@ -30,50 +30,58 @@ import EditUser from './EditUser/EditUser';
 import TextInputFormik from './TextInputFormik/TextInputFormik';
 import RegisterForm from './RegisterForm/RegisterForm';
 import CourseSchedule from './CourseSchedule/CourseSchedule';
-import Loading from './Loading/Loading';
-import SendPassword from './SendPassword/SendPassword';
-import CardCourse from './CardCourse/CardCourse';
-import CourseView from './CourseView/CourseView';
-import Schedule from './Schedule/Schedule';
-import Module from './Module/Module';
+import Loading from "./Loading/Loading";
+import SendPassword from "./SendPassword/SendPassword";
+import CardCourse from "./CardCourse/CardCourse";
+import CourseView from "./CourseView/CourseView";
+import Schedule from "./Schedule/Schedule"
+import Module from "./Module/Module";
+import CourseEdit from "./CourseEdit/CourseEdit";
+import ModuleEdit from "./ModuleEdit/ModuleEdit";
+import AddImage from "./AddImage/AddImage";
 
-export {
-    Navbar,
-    Layout,
-    NavbarPanel,
-    LayoutPanel,
-    SEO,
-    Banner,
-    LoginForm,
-    TextInput,
-    SocialMediaLinks,
-    Logo,
-    Button,
-    CoursesList,
-    Course,
-    NumberBlock,
-    Services,
-    Footer,
-    Newsletter,
-    SectionTitle,
-    ColorBanner,
-    Card,
-    PartnerList,
-    Contact,
-    TitlePanel,
-    OurValues,
-    Breadcrumb,
-    IconButton,
-    Alert,
-    ChangePassword,
-    EditUser,
-    TextInputFormik,
-    RegisterForm,
-    CourseSchedule,
-    Loading,
-    SendPassword,
-    CardCourse,
-    CourseView,
-    Schedule,
-    Module,
-};
+export{
+  Navbar, 
+  Layout,
+  NavbarPanel, 
+  LayoutPanel,
+  SEO,
+  Banner,
+  LoginForm,
+  TextInput,
+  SocialMediaLinks,
+  Logo,
+  Button,
+  CoursesList,
+  Course,
+  NumberBlock,
+  Services,
+  Footer,
+  Newsletter,
+  SectionTitle,
+  ColorBanner,
+  Card,
+  PartnerList,
+  Contact,
+  TitlePanel,
+  OurValues,
+  Breadcrumb,
+  IconButton,
+  Alert,
+  ChangePassword,
+  EditUser,
+  TextInputFormik,
+  RegisterForm,
+  CourseSchedule,
+  Loading,
+  SendPassword,
+  CardCourse,
+  CourseView,
+  Schedule,
+  Module,
+  CourseEdit,
+  ModuleEdit,
+  AddImage
+}
+
+

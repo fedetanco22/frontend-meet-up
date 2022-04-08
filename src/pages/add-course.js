@@ -3,7 +3,7 @@ import {useTranslations} from "next-intl";
 
 import router from "next/router";
 import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, Loading, Button} from "../components";
+import {LayoutPanel, TitlePanel, Card, Loading, CourseEdit} from "../components";
 import useAppContext from "../context/useAppContext";
 
 // import styles from "../styles/Setup.module.scss";
@@ -34,9 +34,7 @@ const AddCourse = () => {
       {isLoading && <Loading />}
       <div>
         <TitlePanel title={t("title")} child={child} />
-        <Card>
-
-        </Card>
+        <CourseEdit edit={false}/>
       </div>
     </LayoutPanel>
   );

@@ -109,6 +109,14 @@ line-height: 1.6!important;
 
   }
 }
+.label{
+  font-size: $small;
+  color: $text-gray;
+}
+.error {
+  color: $status-red;
+  position: absolute;
+}
 .empty{
   width: 100%;
   padding: 2rem;
