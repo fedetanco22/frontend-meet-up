@@ -18,15 +18,13 @@ import useAppContext from '../../context/useAppContext';
 import styles from './course.module.scss';
 
 const Course = ({ courses }) => {
-    const [course, setCourse] = useState();
     const t = useTranslations('courseView');
-    const { addProduct } = useAppContext();
+    const { addCourse } = useAppContext();
 
     const { image, title, description, price, duration, slug, level } = courses.course;
 
-    const addToCart = (course) => {
-        console.log('🚀 ~ file: [courseId].js ~ line 28 ~ addToCart ~ course', course);
-        addProduct(course);
+    const handleScheduleId = (schedule_id) => {
+        addCourse(courses, schedule_id);
     };
 
     const coursePicture = (
@@ -43,8 +41,15 @@ const Course = ({ courses }) => {
         />
     );
 
-    const scheduleModality = courses?.schedules?.map((schedule, idx) => {
-        return <CourseSchedule key={idx} schedule={schedule} />;
+    const scheduleModality = courses?.schedules?.map((schedule) => {
+        return (
+            <CourseSchedule
+                key={schedule.id}
+                schedule={schedule}
+                textButton={t('button')}
+                selectSchedule={handleScheduleId}
+            />
+        );
     });
 
     const moduleCourses = <Module modules={courses.modules} />;
@@ -81,13 +86,6 @@ const Course = ({ courses }) => {
                             <span className={styles.enroll__price}>
                                 $ <span className={styles.enroll__price__number}>{price}</span> ARS
                             </span>
-                            <Button
-                                text={'Enroll'}
-                                asSubmit
-                                callback={() => addToCart(courses.course)}
-                                // path={`/courses/`}
-                                buttonType='blue_small'
-                            />
                         </div>
                     </Card>
                 </div>

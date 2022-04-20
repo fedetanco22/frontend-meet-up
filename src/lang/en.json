@@ -246,7 +246,7 @@
   "coursesList": {
     "title": "Courses",
     "subtitle": "Popular Courses",
-    "buttonEnroll": "Enroll",
+    "buttonEnroll": "See more...",
     "buttonAll": {
       "text": "View all courses",
       "url": "/en/courses"
@@ -367,6 +367,7 @@
     "openFiles": "Open Files",
     "deleteCourse": "Delete course",
     "enrolled": "Enrolled",
+    "button": "Enroll",
     "schedule": {
       "title": "Schedules",
       "day": "Days",
@@ -516,5 +517,10 @@
       "title": "Modules"
     }
 
+  },
+  "checkout":{
+    "title": "Checkout",
+    "subtitle": "Payment",
+    "button": "Pay"
   }
 }

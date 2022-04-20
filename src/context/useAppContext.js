@@ -2,13 +2,12 @@ import { createContext, useContext, useState } from 'react';
 import router from 'next/router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useStorage } from '../hooks/useStorage';
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-    const [product, setProduct] = useState([]);
-
     const storage = () => {
         if (typeof window !== 'undefined') {
             return JSON.parse(localStorage.getItem('user'));
@@ -16,7 +15,10 @@ export const AppProvider = ({ children }) => {
             return null;
         }
     };
+
     const [user, setUser] = useState(storage);
+    const [courseCart, setCourseCart] = useStorage('course', {});
+
     const getUser = async () => {
         const url = 'http://164.92.76.51:3000/user/' + user?.data?.user_id;
         try {
@@ -36,33 +38,23 @@ export const AppProvider = ({ children }) => {
         return user;
     };
 
-    const addProduct = (product) => {
-        setProduct([product]);
+    const addCourse = (course, schedule_id) => {
+        setCourseCart({ ...course, schedule_id });
         router.push('/checkout');
-    };
-
-    //Total Quantity in Cart
-    const productsQuantity = () => {
-        return product.reduce((acc, product) => (acc += product.quantity), 0);
     };
 
     // Delete Product from List
     const deleteProduct = (id) => {
-        product.splice(
-            product.findIndex((product) => product.id === id),
+        courseCart.splice(
+            courseCart.findIndex((course) => course.id === id),
             1
         );
-        setProduct([...product]);
-    };
-
-    // Total $ Shopping Cart
-    const totalPrice = () => {
-        return product.reduce((acc, product) => (acc += product.quantity * product.price), 0);
+        setProduct([...courseCart]);
     };
 
     const emptyCart = () => {
-        product.splice(0, product.length);
-        return setProduct([...product]);
+        courseCart.splice(0, courseCart.length);
+        return setProduct([...courseCart]);
     };
     return (
         <AppContext.Provider
@@ -70,11 +62,10 @@ export const AppProvider = ({ children }) => {
                 user,
                 setUser,
                 getUser,
-                addProduct,
+                addCourse,
                 deleteProduct,
-                totalPrice,
                 emptyCart,
-                product,
+                courseCart,
             }}
         >
             {children}
