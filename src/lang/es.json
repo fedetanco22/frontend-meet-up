@@ -386,7 +386,7 @@
       "delete": "Eliminar"
     }
   },
-  "404": {
+  "errorPage": {
     "title": "404",
     "subtitle": "Pagina no encontrada",
     "text": "¡Uh! Parece que te perdiste.",

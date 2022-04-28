@@ -59,7 +59,6 @@
       }
     }
   },
-
   "test": {
     "title": "Test",
     "prueba": "Test about",
@@ -387,7 +386,7 @@
       "delete": "Delete"
     }
   },
-  "404": {
+  "errorPage": {
     "title": "404",
     "subtitle": "Page not found",
     "text": "Uh! Looks like you got lost.",
