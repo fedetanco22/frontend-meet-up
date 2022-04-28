@@ -6,7 +6,7 @@ const ErrorPage = () => {
     const t = useTranslations('errorPage');
 
     return (
-        <Layout pageTitle={t('title')} className={styles.error}>
+        <Layout pageTitle={500} className={styles.error}>
             <section className={styles.wrapper}>
                 <div className='container'>
                     <div id='scene' className={styles.scene} data-hover-only='false'>
