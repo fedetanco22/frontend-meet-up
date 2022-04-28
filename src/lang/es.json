@@ -1,5 +1,5 @@
 {
-  "config":{
+  "config": {
     "title": "Meet-up plataforma educativa",
     "author": {
       "name": "Trylogic",
@@ -11,15 +11,15 @@
       "twitter": "lerobbb"
     }
   },
-  "home":{
+  "home": {
     "title": "Inicio",
     "prueba": "prueba home",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -34,15 +34,15 @@
       }
     }
   },
-  "courses":{
+  "courses": {
     "title": "Cursos",
     "prueba": "prueba cursos",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -57,7 +57,7 @@
       }
     }
   },
-  "test":{
+  "test": {
     "title": "Test",
     "prueba": "prueba a Test",
     "auth": {
@@ -70,10 +70,10 @@
       }
     }
   },
-  "about":{
+  "about": {
     "title": "Nosotros",
     "description": "Somos el resultado de la fusión entre experimentados docentes y avanzados emprendedores, convencidos del poder transformador de la educación como verdadera herramienta de progreso.",
-    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",  
+    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",
     "vision": "Nuestra visión es ser brindar una educacion de calidad a traves de la plataforma educativa, que permita a los estudiantes aprender inglés de manera fácil y divertida.",
     "methodology": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales. Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo. Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
     "course_info": "Nuestros cursos están especialmente diseñados para vos y la concreta situación que estás atravesando. Podes elegir distintas modalidades de cursado: Grupal: clases online en grupo de no más de 12 personas, Individuales, Just Talk: clases de conversación o English for Business purposes",
@@ -81,14 +81,14 @@
       "title": "Nuestros",
       "subtitle": "Valores",
       "values": {
-        "professionalism":"Profesionalismo",
-        "excellence":"Excelencia",
-        "warranty":"Garantia",
-        "knowledge":"Conocimiento"
+        "professionalism": "Profesionalismo",
+        "excellence": "Excelencia",
+        "warranty": "Garantia",
+        "knowledge": "Conocimiento"
       }
     }
   },
-  "dashboard":{
+  "dashboard": {
     "title": "Mi Panel",
     "buttonEdit": "/setup",
     "roleTeacher": "Teacher",
@@ -112,72 +112,69 @@
         "url": "/users"
       }
     }
-
   },
-   "nav": {
-    "home":{
+  "nav": {
+    "home": {
       "title": "Inicio",
       "link": "/"
     },
-    "courses":{
+    "courses": {
       "title": "Cursos",
       "link": "/courses"
     },
-    "test":{
+    "test": {
       "title": "Test",
       "link": "/test"
     },
-    "about":{
+    "about": {
       "title": "Nosotros",
       "link": "/about"
     },
-    "login":{
+    "login": {
       "title": "Entrar",
       "link": "/login",
       "titleUser": "Mi cuenta",
       "linkUser": "/dashboard"
     },
-    "register":{
+    "register": {
       "title": "Registrarse",
       "link": "/register"
     },
-    "terms":{
+    "terms": {
       "title": "Terminos del servicio",
       "link": "/terms-of-service"
     },
-    "policy":{
+    "policy": {
       "title": "Politica de privacidad",
       "link": "/private-policy"
-    } 
-    
+    }
   },
   "navpanel": {
-    "dashboard":{
+    "dashboard": {
       "title": "Panel",
       "link": "/dashboard"
     },
-    "mycourses":{
+    "mycourses": {
       "title": "Mis Cursos",
       "link": "/my-courses"
     },
-    "setup":{
+    "setup": {
       "title": "Configuración",
       "link": "/setup"
     },
-    "all-courses":{
+    "all-courses": {
       "title": "Cursos",
       "link": "/all-courses"
     },
-    "users":{
+    "users": {
       "title": "Usuarios",
       "link": "/users"
     },
-    "sales":{
+    "sales": {
       "title": "Ventas",
       "link": "/sales"
     },
     "close": "Salir"
-    
   },
   "numberblock": {
     "item1": {
@@ -193,24 +190,24 @@
       "text": "Profesores"
     }
   },
-  "services":{
-    "whyUs":{
+  "services": {
+    "whyUs": {
       "title": "¿Porque elegir Meet Up?",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
-      "button":"ver mas..."
+      "button": "ver mas..."
     },
-    "service":{
-      "1":{
-        "title":"Cursos Online",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+    "service": {
+      "1": {
+        "title": "Cursos Online",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "2":{
-        "title":"Tutoriales",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "2": {
+        "title": "Tutoriales",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "3":{
-        "title":"Conversaciones",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "3": {
+        "title": "Conversaciones",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
   },
@@ -223,20 +220,20 @@
       "url": "/courses"
     }
   },
-  "footer":{
+  "footer": {
     "phone": "Teléfono",
     "email": "Correo",
     "listLink1": "Enlaces útiles",
     "listLink2": "Cursos"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Suscríbase a nuestras novedades",
-    "button":{
+    "button": {
       "text": "Suscribirse"
     },
     "placeholder": "Correo electrónico"
   },
-  "contact":{
+  "contact": {
     "title": "Contacto",
     "subtitle": "Contactarnos",
     "phone": "Teléfono",
@@ -247,16 +244,16 @@
   "coursesList": {
     "title": "Cursos",
     "subtitle": "Cursos populares",
-    "buttonEnroll": "Inscribirse",
+    "buttonEnroll": "Ver más...",
     "buttonAll": {
       "text": "Ver todos los cursos",
       "url": "/courses"
     }
   },
-  "setup":{
+  "setup": {
     "title": "Configuración",
-    "form":{
-      "name":"Nombre",
+    "form": {
+      "name": "Nombre",
       "lastname": "Apellido",
       "phone": "Teléfono",
       "submit": "Guardar",
@@ -292,7 +289,7 @@
       "warning": "Hay cambios pendientes",
       "success": "Datos guardados exitosamente",
       "error": "Error , verifique los datos y vuelva a intentar",
-      "errorRepeat": "Las contraseñas deben ser iguales"       
+      "errorRepeat": "Las contraseñas deben ser iguales"
     },
     "password": {
       "title": "Cambiar contraseña",
@@ -301,7 +298,7 @@
       "repeat": "Repetir nueva contraseña",
       "conditions": "Condiciones: la contraseña debe tener minimo 8 carcteres, maximo 12, contener al menos una mayuscula, una minuscula y un simbolo. "
     },
-    "sendPassword":{
+    "sendPassword": {
       "title": "Reestablecer contraseña",
       "indications": "Se enviara un email a su correo electronico para reestablecer la contraseña.",
       "send": "Enviar"
@@ -323,7 +320,7 @@
       "input": "Todos"
     }
   },
-  "user":{
+  "user": {
     "title": "Editar Usuario",
     "child": "Usuarios",
     "delete": {
@@ -332,7 +329,7 @@
       "button": "Eliminar"
     }
   },
-  "sales":{
+  "sales": {
     "title": "Ventas",
     "list": "Lista de pedidos",
     "search": "Buscar",
@@ -357,15 +354,15 @@
   "myCourses":{
     "title": "Mis Cursos"
   },
-  "allCourses":{
+  "allCourses": {
     "title": "Cursos",
     "addCourse": "Agregar nuevo curso"
   },
-  "addCourse":{
+  "addCourse": {
     "title": "Agregar nuevo curso",
     "child": "Cursos"
   },
-  "cardCourse":{
+  "cardCourse": {
     "button": "Ver más"
   },
   "courseView": {
@@ -378,6 +375,7 @@
     "openFiles": "Abrir Archivos",
     "deleteCourse": "Eliminar Curso",
     "enrolled": "Inscriptos",
+    "button": "Inscribirse",
     "schedule": {
       "title": "Horarios",
       "day": "Días",
@@ -389,22 +387,22 @@
       "registrationStart": "Comienzo de inscripción",
       "registrationEnd": "Fin de inscripción"
     },
-    "module":{
+    "module": {
       "title": "Módulos"
     },
-    "modal":{
+    "modal": {
       "title": "Confirmar eliminación de curso?",
       "text1": "realmente desea borrar el curso  ",
       "text2": "Si confirma la eliminación los datos no se podrán recuperar",
       "cancel": "Cancelar",
       "delete": "Eliminar"
     },
-    "bannerColor":{
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -412,7 +410,7 @@
   },
   "courseEdit": {
     "title": "Datos del curso",
-    "titleImage":"Editar imagen del curso",
+    "titleImage": "Editar imagen del curso",
     "selectFile": "Seleccionar imagen",
     "form": {
       "title": "Titulo en Inglés",
@@ -424,10 +422,10 @@
       "duration": "Duración en inglés ",
       "durationES": "Duración en español",
       "price": "Precio",
-      "addModule" : "Agregar módulo",
-      "deleteModule":"Borrar modulo",
-      "addSchedule" : "Agregar horario",
-      "deleteSchedule":"Eliminar horario",
+      "addModule": "Agregar módulo",
+      "deleteModule": "Borrar modulo",
+      "addSchedule": "Agregar horario",
+      "deleteSchedule": "Eliminar horario",
       "schedules": {
         "schedule": "Horario",
         "title": "Titulo",
@@ -452,9 +450,8 @@
           "sat": "Sab",
           "sun": "Dom"
         }
-
       },
-      "modules":{
+      "modules": {
         "module": "Modulo",
         "title": "Titulo",
         "titleES": "Titulo en español",
@@ -485,7 +482,7 @@
           "max": "max. 50 caracteres"
         },
         "price": {
-          "number":"Solo numeros"
+          "number": "Solo numeros"
         },
         "modality": {
           "required": "Modalidad es requerido",
@@ -517,12 +514,11 @@
       "alert": {
         "warning": "Hay cambios pendientes",
         "success": "Datos guardados exitosamente",
-        "error": "Error , verifique los datos y vuelva a intentar"   
+        "error": "Error , verifique los datos y vuelva a intentar"
       }
     },
-    "schedule": {
-    },
-    "module":{
+    "schedule": {},
+    "module": {
       "title": "Modules"
     }
 
@@ -530,5 +526,16 @@
   "sesion": {
     "title": "Expired Session",
     "link": "log back in"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Metodo de pago",
+    "button": "Pagar"
+  },
+  "errorPage": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "text": "Uh! Parece que estas perdido.",
+    "button": "Volver al inicio."
   }
 }

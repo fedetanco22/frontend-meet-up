@@ -3,6 +3,7 @@ import router from 'next/router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {useTranslations} from "next-intl";
+import { useStorage } from '../hooks/useStorage';
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
@@ -19,7 +20,10 @@ export const AppProvider = ({ children }) => {
             return null;
         }
     };
+
     const [user, setUser] = useState(storage);
+    const [courseCart, setCourseCart] = useStorage('course', {});
+
     const getUser = async () => {
         const url = 'http://164.92.76.51:3000/user/' + user?.data?.user_id;
         try {
@@ -53,45 +57,23 @@ export const AppProvider = ({ children }) => {
           })
     }
 
-    const addProduct = (product) => {
-        console.log('🚀 ~ file: useAppContext.js ~ line 41 ~ addProduct ~ product', product);
-        const existingProduct = products.find((prod) => prod.course_id === product.course_id);
-
-        if (existingProduct) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href="">Why do I have this issue?</a>',
-            });
-        } else {
-            setProducts([...products, product]);
-            router.push('/checkout');
-        }
-    };
-
-    //Total Quantity in Cart
-    const productsQuantity = () => {
-        return products.reduce((acc, product) => (acc += product.quantity), 0);
+    const addCourse = (course, schedule_id) => {
+        setCourseCart({ ...course, schedule_id });
+        router.push('/checkout');
     };
 
     // Delete Product from List
     const deleteProduct = (id) => {
-        products.splice(
-            products.findIndex((product) => product.id === id),
+        courseCart.splice(
+            courseCart.findIndex((course) => course.id === id),
             1
         );
-        setProducts([...products]);
-    };
-
-    // Total $ Shopping Cart
-    const totalPrice = () => {
-        return products.reduce((acc, product) => (acc += product.quantity * product.price), 0);
+        setProduct([...courseCart]);
     };
 
     const emptyCart = () => {
-        products.splice(0, products.length);
-        return setProducts([...products]);
+        courseCart.splice(0, courseCart.length);
+        return setProduct([...courseCart]);
     };
     return (
         <AppContext.Provider
@@ -99,11 +81,11 @@ export const AppProvider = ({ children }) => {
                 user,
                 setUser,
                 getUser,
-                addProduct,
+                addCourse,
                 deleteProduct,
-                totalPrice,
                 emptyCart,
-                endSesion
+                endSesion,
+                courseCart
             }}
         >
             {children}

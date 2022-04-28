@@ -14,7 +14,7 @@ const Navbar = ({handleMenu, open}) => {
   const t = useTranslations("nav");
   const router = useRouter();
   const {user} = useAppContext();
-  const {locale, pathname} = router;
+  const {locale, pathname, query} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
 
@@ -76,7 +76,7 @@ const Navbar = ({handleMenu, open}) => {
               />
 
               <Button
-                path={user ? t("login.linkUser"): t("login.link")}
+                path={user ? t("login.linkUser") : t("login.link")}
                 text={user ? t("login.titleUser") : t("login.title")}
                 asLink
                 buttonType={"transparent"}
@@ -84,22 +84,22 @@ const Navbar = ({handleMenu, open}) => {
               />
               {user !== null ? null : <Button path={t("register.link")} text={t("register.title")} asLink buttonType={"light"} />}
             </div>
-            <div className="d-flex justify-content-end ms-2 align-items-center">
-              <div className={` ${styles.lan}`}>
-                <div className={`${styles.flag}`}>
-                  <Image src={imgLan} alt="idioma" priority />
-                </div>
-                <select className="border-0 px-1" defaultValue={locale} onChange={handleLangChange}>
-                  <option value="es">ES</option>
-                  <option value="en">EN</option>
-                </select>
+          </div>
+          <div className="d-flex justify-content-end ms-2 align-items-center">
+            <div className={` ${styles.lan}`}>
+              <div className={`${styles.flag}`}>
+                <Image src={imgLan} alt="idioma" priority />
               </div>
-              <button onClick={handleMenu} className={`d-block d-lg-none ${styles.btnMenu}`}>
-                <span className={` ${styles.icon}`}>
-                  <GiHamburgerMenu />
-                </span>
-              </button>
+              <select className="border-0 px-1" defaultValue={locale} onChange={handleLangChange}>
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+              </select>
             </div>
+            <button onClick={handleMenu} className={`d-block d-lg-none ${styles.btnMenu}`}>
+              <span className={` ${styles.icon}`}>
+                <GiHamburgerMenu />
+              </span>
+            </button>
           </div>
         </div>
       </div>
