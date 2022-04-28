@@ -10,7 +10,7 @@ import styles from "../styles/Setup.module.scss";
 
 const Users = () => {
   const t = useTranslations("users");
-  const {user, getUser} = useAppContext();
+  const {user, getUser , endSesion} = useAppContext();
   const [users, setUsers] = useState([]);
   const [usersFilters, setUsersFilters] = useState(users);
   const [roles, setRoles] = useState([]);
@@ -42,7 +42,6 @@ const Users = () => {
         const res = await axios.get(`${url}`, {
           headers: {Authorization: `Bearer ${user.token}`},
         });
-        console.log(res.data?.data, "resultado");
         setUsers(res.data?.data);
         setUsersFilters(res.data?.data);
         if (res.status === 200) {
@@ -50,7 +49,8 @@ const Users = () => {
         }
       } catch (error) {
         if (error.response?.status === 403) {
-          router.push("/");
+          endSesion()
+          setUser(null);
         }
         console.log(error, "error");
         setIsLoading(false);
@@ -81,7 +81,6 @@ const Users = () => {
   const filterUser = () => {
     setRoleSelectedState(roleSelected);
     setInputTextState(inputText);
-    console.log(usersFilters, "usuarios antes de filtrar");
     if (roleSelected === "0") {
       if (inputText.length === 0) {
         setUsersFilters(users);

@@ -76,7 +76,7 @@ const Navbar = ({handleMenu, open}) => {
               />
 
               <Button
-                path={t("login.link")}
+                path={user ? t("login.linkUser"): t("login.link")}
                 text={user ? t("login.titleUser") : t("login.title")}
                 asLink
                 buttonType={"transparent"}

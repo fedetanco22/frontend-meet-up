@@ -9,7 +9,7 @@ import {FaTrashAlt} from "react-icons/fa";
 const User = () => {
   const router = useRouter();
   const t = useTranslations("user");
-  const {user} = useAppContext();
+  const {user , endSesion} = useAppContext();
   const [editUser, setEditUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [send, setSend] = useState(false);
@@ -30,7 +30,6 @@ const User = () => {
   const confirmDelete = async (e) => {
     setIsLoading(true);
     e.preventDefault();
-    console.log("usuario eliminado:", editUser);
     const url = "http://164.92.76.51:3000/users/" + editUser?.data?.user_id;
     try {
       const res = await axios.delete(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
@@ -42,8 +41,8 @@ const User = () => {
       }
     } catch (error) {
       if (error.response?.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
       console.log(error);
       setSend(true);
@@ -67,8 +66,8 @@ const User = () => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
       console.log("error: ", error);
       setIsLoading(false);

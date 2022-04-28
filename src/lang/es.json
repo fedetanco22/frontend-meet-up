@@ -134,7 +134,8 @@
     "login":{
       "title": "Entrar",
       "link": "/login",
-      "titleUser": "Panel"
+      "titleUser": "Mi cuenta",
+      "linkUser": "/dashboard"
     },
     "register":{
       "title": "Registrarse",
@@ -342,8 +343,19 @@
       "user": "Usuario",
       "product": "Producto",
       "status": "Estado",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "date": "Fecha de orden",
+      "dateComplete": "Fecha de orden completada",
+      "payment": "ID de pago",
+      "empty": "No hay resultados"
+    },
+    "modal": {
+      "title": "Detalle de venta",
+      "close": "Cerrar"
     }
+  },
+  "myCourses":{
+    "title": "Mis Cursos"
   },
   "allCourses":{
     "title": "Cursos",
@@ -514,6 +526,9 @@
       "title": "Modules"
     }
 
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
   }
-  
 }

@@ -2,11 +2,13 @@ import { createContext, useContext, useState } from 'react';
 import router from 'next/router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import {useTranslations} from "next-intl";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
+    const t = useTranslations("sesion");
     const [products, setProducts] = useState([]);
     console.log('🚀 ~ file: useAppContext.js ~ line 11 ~ AppProvider ~ product', products);
 
@@ -31,11 +33,25 @@ export const AppProvider = ({ children }) => {
             );
         } catch (error) {
             localStorage.setItem('user', null);
-            console.log('error: ', error);
-            router.push('/');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Sesión caducada',
+                showConfirmButton: false,
+                footer: '<a href="/login">Volver a loguearse</a>'
+              })
         }
         return user;
     };
+    const endSesion = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${t("title")}`,
+            showConfirmButton: false,
+            footer: `<a href="/login">${t("link")}</a>`
+          })
+    }
 
     const addProduct = (product) => {
         console.log('🚀 ~ file: useAppContext.js ~ line 41 ~ addProduct ~ product', product);
@@ -87,6 +103,7 @@ export const AppProvider = ({ children }) => {
                 deleteProduct,
                 totalPrice,
                 emptyCart,
+                endSesion
             }}
         >
             {children}

@@ -14,11 +14,9 @@ const SendPassword = ({editUser}) => {
     email: editUser?.data?.email
   };
 
-  console.log(initialValues.email, "valor");
   const sendPass = async (values) => {
     const url = "http://164.92.76.51:3000/forgotPassword";
     try {
-      console.log(values, 'mailaaa')
       const res = await axios.post(
         `${url}`,
         {

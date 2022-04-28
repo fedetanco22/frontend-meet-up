@@ -13,11 +13,11 @@ const LoginForm = () => {
   const {user, setUser} = useAppContext();
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (user !== null) {
-      router.push("/dashboard");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (user !== null) {
+  //     router.push("/dashboard");
+  //   }
+  // }, []);
 
   const handleData = async () => {
     setIsLoading(true);

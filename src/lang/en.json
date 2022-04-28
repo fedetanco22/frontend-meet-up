@@ -135,7 +135,8 @@
     "login":{
       "title": "Login",
       "link": "/en/login",
-      "titleUser": "Dashboard"
+      "titleUser": "My  Account",
+      "linkUser": "/dashboard"
     },
     "register":{
       "title": "Sign Up",
@@ -343,8 +344,19 @@
       "user": "User",
       "product": "Product",
       "status": "Status",
-      "actions": "Actions"
+      "actions": "Actions",
+      "date": "Date order",
+      "dateComplete": "Date complete order",
+      "payment": "Payment id",
+      "empty": "No results"
+    },
+    "modal": {
+      "title": "Sale detail",
+      "close": "Close"
     }
+  },
+  "myCourses":{
+    "title": "My Courses"
   },
   "allCourses":{
     "title": "Courses",
@@ -516,5 +528,9 @@
       "title": "Modules"
     }
 
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
   }
 }
