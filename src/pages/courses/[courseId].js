@@ -16,12 +16,13 @@ import courseImage from '../../../public/course-image.png';
 import useAppContext from '../../context/useAppContext';
 
 import styles from './course.module.scss';
+import ErrorPage from '../404';
 
 const Course = ({ courses }) => {
     const t = useTranslations('courseView');
     const { addCourse } = useAppContext();
 
-    const { image, title, description, price, duration, slug, level } = courses.course;
+    const { image, title, description, price, duration, slug, level } = courses?.course;
 
     const handleScheduleId = (schedule_id) => {
         addCourse(courses, schedule_id);
