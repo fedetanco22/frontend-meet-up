@@ -529,8 +529,18 @@
   },
   "checkout": {
     "title": "Checkout",
-    "subtitle": "Metodo de pago",
-    "button": "Pagar"
+    "subtitle": "Detalles de la compra",
+    "subtitle2": "Método de pago",
+    "description": "Al pagar será redirigido a Mercado pago para realizar su pago de forma segura, a traves de la plataforma de pagos Mercado Pagos, podrá utilizar Tarjeta de crédito o débito según promociones vigentes",
+    "button": "Pagar",
+    "coursesButton": "Mis Cursos",
+    "retryButton": "Reintentar",
+    "table": {
+      "course": "Curso",
+      "schedule": "Horario",
+      "price": "Precio",
+      "status": "Estado"
+    }
   },
   "errorPage": {
     "title": "404",

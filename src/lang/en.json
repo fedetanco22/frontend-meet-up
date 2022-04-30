@@ -529,8 +529,18 @@
   },
   "checkout": {
     "title": "Checkout",
-    "subtitle": "Payment",
-    "button": "Pay"
+    "subtitle": "Purchase details",
+    "subtitle2": "Payment method",
+    "description": "When paying you will be redirected to Mercado Pago to make your payment safely, through the Mercado Pagos payment platform, you can use a credit or debit card according to current promotions",
+    "button": "Pay",
+    "coursesButton": "My Courses",
+    "retryButton": "Retry",
+    "table": {
+      "course": "Course",
+      "schedule": "Schedule",
+      "price": "Price",
+      "status": "Status"
+    }
   },
   "errorPage": {
     "title": "404",

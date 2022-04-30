@@ -35,7 +35,7 @@ const Navbar = ({handleMenu, open}) => {
         <div>&nbsp;</div>
       </div>
       <div className="container ">
-        <div className={`row mx-0 flex-nowrap align-items-center ${styles.navbar}`}>
+        <div className={`d-flex mx-0 flex-nowrap align-items-center ${styles.navbar}`}>
           <div className="col col-md-3 py-4 ">
             <Logo color width="120" height="43" />
           </div>
