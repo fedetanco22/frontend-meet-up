@@ -133,7 +133,8 @@
     "login": {
       "title": "Entrar",
       "link": "/login",
-      "titleUser": "Panel"
+      "titleUser": "Mi cuenta",
+      "linkUser": "/dashboard"
     },
     "register": {
       "title": "Registrarse",
@@ -339,8 +340,19 @@
       "user": "Usuario",
       "product": "Producto",
       "status": "Estado",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "date": "Fecha de orden",
+      "dateComplete": "Fecha de orden completada",
+      "payment": "ID de pago",
+      "empty": "No hay resultados"
+    },
+    "modal": {
+      "title": "Detalle de venta",
+      "close": "Cerrar"
     }
+  },
+  "myCourses":{
+    "title": "Mis Cursos"
   },
   "allCourses": {
     "title": "Cursos",
@@ -509,11 +521,26 @@
     "module": {
       "title": "Modules"
     }
+
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
   },
   "checkout": {
     "title": "Checkout",
-    "subtitle": "Metodo de pago",
-    "button": "Pagar"
+    "subtitle": "Detalles de la compra",
+    "subtitle2": "Método de pago",
+    "description": "Al pagar será redirigido a Mercado pago para realizar su pago de forma segura, a traves de la plataforma de pagos Mercado Pagos, podrá utilizar Tarjeta de crédito o débito según promociones vigentes",
+    "button": "Pagar",
+    "coursesButton": "Mis Cursos",
+    "retryButton": "Reintentar",
+    "table": {
+      "course": "Curso",
+      "schedule": "Horario",
+      "price": "Precio",
+      "status": "Estado"
+    }
   },
   "errorPage": {
     "title": "404",

@@ -1,0 +1,21 @@
+@import "../styles/patterns";
+
+.statusIcon {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .approved{
+    color: $status-green;
+  }
+  .pending{
+    color: $status-orenge;
+  }
+  .failure{
+    color: $status-red;
+  }
+  svg {
+    font-size: 8rem;
+  }
+}

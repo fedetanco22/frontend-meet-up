@@ -169,3 +169,13 @@ line-height: 1.6!important;
     }
   }
 }
+
+.approved{
+  color: $status-green!important;
+}
+.pending{
+  color: $status-orenge!important;
+}
+.failure{
+  color: $status-red!important;
+}

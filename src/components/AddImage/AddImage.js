@@ -9,7 +9,7 @@ import {FaSave, FaPlus, FaImage} from "react-icons/fa";
 
 const AddImage = ({editCourseId, image}) => {
   const t = useTranslations("courseEdit");
-  const {user} = useAppContext();
+  const {user, endSesion} = useAppContext();
   const [curseId, setCurseId] = useState(editCourseId);
   const [selectedFile, setSelectedFile] = useState("null");
   const [send, setSend] = useState(false);
@@ -22,7 +22,7 @@ const AddImage = ({editCourseId, image}) => {
   const [imageUrl, setImageUrl] = useState(null);
   let fileTmp = selectedFile;
   let urlTmp = imageUrl;
-console.log(image, 'image en add')
+
   const alert = send ? (
     sendError ? (
       <Alert text={t("form.alert.error")} type="error" />
@@ -35,7 +35,6 @@ console.log(image, 'image en add')
 
   const saveImage = async () => {
     setIsLoading(true);
-    console.log("guarod");
     const url = "http://164.92.76.51:3000/courses/changeImage/" + cursoID;
     let formData = new FormData();
     formData.append("course_image", selectedFile);
@@ -54,10 +53,10 @@ console.log(image, 'image en add')
       }
     } catch (error) {
       if (error.response.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
-      console.log(error);
+
       setSend(true);
       setSendError(true);
       setIsPending(false);

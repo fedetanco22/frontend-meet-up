@@ -11,11 +11,10 @@ const EditCourse = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
+      if (user?.data?.role === "Student" ) {
         router.push("/dashboard");
       } else {
         const id = router.query.courseId;
-  console.log( id , 'id q envio')
       }
     } else {
       router.push("/");
@@ -23,7 +22,6 @@ const EditCourse = () => {
   }, []);
 
   const id = router.query.courseId;
-  console.log( id , 'id q envio')
   // const getCourse = async () => {
   //   setIsLoading(true);
   //   const url = "http://164.92.76.51:3000/en/courses/" + id;
@@ -49,7 +47,7 @@ const EditCourse = () => {
   //   return user;
   // };
   const child = {
-    path: "../all-courses",
+    path: user?.data?.role_id === 1 ? "../all-courses": "../my-courses",
     name: t("child"),
   };
 

@@ -15,7 +15,7 @@ import styles from "./CourseEdit.module.scss";
 const CourseEdit = ({editCourseId, edit}) => {
   const t = useTranslations("courseEdit");
 
-  const {user, setUser} = useAppContext();
+  const {user, setUser , endSesion} = useAppContext();
   const [curseId, setCurseId] = useState(editCourseId);
   const [isCourseEn, setIsCourseEn] = useState({});
   const [isCourseEs, setIsCourseEs] = useState({});
@@ -35,7 +35,7 @@ const CourseEdit = ({editCourseId, edit}) => {
   const initialValues = isInitialValues;
 
   useEffect(() => {
-    console.log(curseId, "id curse");
+    
     getUsers();
     if (curseId !== undefined && curseId !== null) {
       getCourse();
@@ -55,7 +55,7 @@ const CourseEdit = ({editCourseId, edit}) => {
       };
       setIsInitialValues(initialValues);
       setIsCharged(true);
-      console.log(isInitialValues, "initial en effect");
+      
     }
   }, [curseId]);
 
@@ -136,6 +136,9 @@ const CourseEdit = ({editCourseId, edit}) => {
           .max(50, t("form.validations.time.max"))
           .required(t("form.validations.time.required")),
         date_init: Yup.date().required(t("form.validations.data.required")),
+        date_end: Yup.date().required(t("form.validations.data.required")),
+        date_init: Yup.date().required(t("form.validations.data.required")),
+        date_end: Yup.date().required(t("form.validations.data.required")),
       })
     ),
   });
@@ -178,27 +181,29 @@ const CourseEdit = ({editCourseId, edit}) => {
   const dataInitSchedule = (props) => (
     <div>
       <label className="label">{t("form.schedules.start")}</label>
-      <input type="date" className="form-control" {...props}></input>
+      <input type="date" className="form-control" {...props} required></input>
       <ErrorMessage name="date_init" component="small" className="error" />
     </div>
   );
   const dataEndSchedule = (props) => (
     <div>
       <label className="label">{t("form.schedules.end")}</label>
-      <input type="date" className="form-control" {...props}></input>
+      <input type="date" className="form-control" {...props} required></input>
       <ErrorMessage name="date_end" component="small" className="error" />
     </div>
   );
   const dataInitRSchedule = (props) => (
     <div>
       <label className="label">{t("form.schedules.startR")}</label>
-      <input type="date" className="form-control" {...props}></input>
+      <input type="date" className="form-control" {...props} required></input>
+      <ErrorMessage name="date_registration_init" component="small" className="error" />
     </div>
   );
   const dataEndRSchedule = (props) => (
     <div>
       <label className="label">{t("form.schedules.endR")}</label>
-      <input type="date" className="form-control" {...props}></input>
+      <input type="date" className="form-control" {...props} required></input>
+      <ErrorMessage name="date_registration_end" component="small" className="error" />
     </div>
   );
 
@@ -213,7 +218,6 @@ const CourseEdit = ({editCourseId, edit}) => {
         setIsLoading(false);
         cursoEn = res.data.data;
         setIsCourseEn(cursoEn);
-        console.log(cursoEn, "englis");
         try {
           const res = await axios.get(`${urlES}`, {headers: {Authorization: `Bearer ${user.token}`}});
           if (res.status === 200) {
@@ -246,8 +250,6 @@ const CourseEdit = ({editCourseId, edit}) => {
             cursoEn.schedules?.map((item, idx) => {
               const arrayDaysNum = [];
               const arrayDays = item.days.split(";");
-              console.log(item.days, "dias");
-              console.log(arrayDays);
               arrayDays?.map((item) => {
                 switch (item) {
                   case "Monday":
@@ -275,7 +277,6 @@ const CourseEdit = ({editCourseId, edit}) => {
                     break;
                 }
               });
-              console.log(arrayDaysNum);
 
               initialValues.schedules[idx] = item;
               initialValues.schedules[idx].title = item?.title;
@@ -295,14 +296,13 @@ const CourseEdit = ({editCourseId, edit}) => {
               initialValues.schedules[idx].schedule_id = item?.schedule_id;
               initialValues.schedules[idx].course_id = Number(cursoID);
             });
-            console.log(initialValues, "initial en get curse");
             setIsInitialValues(initialValues);
             setIsCharged(true);
           }
         } catch (error) {
           if (error.response?.status === 403) {
+            endSesion()
             setUser(null);
-            router.push("/");
           }
           console.log("error:", error);
           setIsLoading(false);
@@ -310,10 +310,9 @@ const CourseEdit = ({editCourseId, edit}) => {
       }
     } catch (error) {
       if (error.response?.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
-      console.log(error.response.status, "resp");
       console.log("error:", error);
       setIsLoading(false);
     }
@@ -328,9 +327,8 @@ const CourseEdit = ({editCourseId, edit}) => {
           setIsLoading(false);
           ufilter = res.data?.data;
           setUsersFilters(ufilter);
-          setUsersFilters(ufilter.filter((e) => e.role_id === 0 || e.role_id === 1));
+          setUsersFilters(ufilter.filter((e) => e.role_id === 1 || e.role_id === 2));
           ufilter = usersFilters;
-          console.log(ufilter, "filtrados");
         }
       } catch (error) {
         if (error?.response?.status === 403) {
@@ -343,7 +341,6 @@ const CourseEdit = ({editCourseId, edit}) => {
     }
   };
   const handleData = async (values) => {
-    console.log(values, "valores a enviar");
     const datos = {
       title: `${values.title}`,
       title_es: `${values.title_es}`,
@@ -422,27 +419,24 @@ const CourseEdit = ({editCourseId, edit}) => {
         course_id: Number(cursoID),
       });
     });
-    console.log(datos, "datos");
     if (cursoID === undefined || cursoID === null) {
       const url = "http:///164.92.76.51:3000/courses/add";
       try {
         const res = await axios.post(url, datos, {headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`}});
         if (res.status === 201) {
-          console.log(res, "guardado ok");
           cursoID = res.data.course_id;
           setCurseId(cursoID);
-          console.log(curseId, "curse id en hanlde");
           if (cursoID !== undefined && cursoID !== null) {
             getCourse();
           }
           setSend(true);
           setSendError(false);
           setIsPending(false);
-        } else console.log(res, "respuesta");
+        }
       } catch (error) {
         if (error.response.status === 403) {
+          endSesion()
           setUser(null);
-          router.push("/");
         }
         console.log(error);
         setSend(true);
@@ -454,15 +448,14 @@ const CourseEdit = ({editCourseId, edit}) => {
       try {
         const res = await axios.patch(url, datos, {headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`}});
         if (res.status === 200) {
-          console.log(res, "guardado ok el edit curse");
           setSend(true);
           setSendError(false);
           setIsPending(false);
         } else console.log(res, "respuesta");
       } catch (error) {
         if (error.response.status === 403) {
+          endSesion()
           setUser(null);
-          router.push("/");
         }
         console.log(error);
         setSend(true);
@@ -488,7 +481,6 @@ const CourseEdit = ({editCourseId, edit}) => {
             }
           } else {
             const urlModule = "http:///164.92.76.51:3000/modules/" + item.module_id;
-            console.log(datos.modules[idx], "datos de modulo");
             try {
               const res = await axios.patch(urlModule, datos.modules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
@@ -524,7 +516,6 @@ const CourseEdit = ({editCourseId, edit}) => {
             }
           } else {
             const urlschedule = "http:///164.92.76.51:3000/schedules/" + item.schedule_id;
-            console.log(datos.schedules[idx], "datos de schedule");
             try {
               const res = await axios.patch(urlschedule, datos.schedules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
@@ -581,12 +572,9 @@ const CourseEdit = ({editCourseId, edit}) => {
   };
 
   const deleteModule = (values, idx) => {
-    console.log(values, "values q recibo");
     if (cursoID !== undefined && cursoID !== null) {
-      console.log(values.modules[idx]?.module_id, "ID");
       const updateArray = [...arrayDelete, values.modules[idx]?.module_id];
       setArrayDelete(updateArray);
-      console.log(arrayDelete, "array");
       setIsPending(true);
     }
 
@@ -596,15 +584,12 @@ const CourseEdit = ({editCourseId, edit}) => {
 
     values.modules?.pop();
     setIsInitialValues(values);
-    console.log(values, "values en delete");
   };
   const deleteSchedule = (values, idx) => {
     console.log(values, "values q recibo");
     if (cursoID !== undefined && cursoID !== null) {
-      console.log(values.schedules[idx]?.schedule_id, "ID");
       const updateArray = [...arrayDeleteSchedule, values.schedules[idx]?.schedule_id];
       setArrayDeleteSchedule(updateArray);
-      console.log(arrayDeleteSchedule, "array");
       setIsPending(true);
     }
 
@@ -620,26 +605,18 @@ const CourseEdit = ({editCourseId, edit}) => {
     if (cursoID !== undefined && cursoID !== null) {
       values.modules?.push({});
       setIsInitialValues(values);
-      console.log(isInitialValues);
-      console.log(values, "values");
     } else {
       initialValues.modules?.push({});
       setIsInitialValues(initialValues);
-      console.log(isInitialValues);
-      console.log(initialValues, "initials");
     }
   };
   const addSchedule = (values) => {
     if (cursoID !== undefined && cursoID !== null) {
       values.schedules?.push({});
       setIsInitialValues(values);
-      console.log(isInitialValues);
-      console.log(values, "values");
     } else {
       initialValues.schedules?.push({});
       setIsInitialValues(initialValues);
-      console.log(isInitialValues);
-      console.log(initialValues, "initials");
     }
   };
   return (
@@ -696,7 +673,7 @@ const CourseEdit = ({editCourseId, edit}) => {
                         <TextInputFormik type={"text"} value={"duration_es"} variant="bootstrap" label={t("form.durationES")} />
                       </div>
                     </div>
-                    <div className="col-12 d-flex flex-wrap">
+                    <div className={`col-12 flex-wrap ${user?.data?.role_id === 2 ? 'd-none' : 'd-flex'}`}>
                       <div className="mb-3 col-12 col-md-6 col-xl-4">
                         <TextInputFormik type="text" value="price" variant="bootstrap" label={t("form.price")} />
                       </div>

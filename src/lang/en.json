@@ -133,7 +133,8 @@
     "login": {
       "title": "Login",
       "link": "/en/login",
-      "titleUser": "Dashboard"
+      "titleUser": "My  Account",
+      "linkUser": "/dashboard"
     },
     "register": {
       "title": "Sign Up",
@@ -339,8 +340,19 @@
       "user": "User",
       "product": "Product",
       "status": "Status",
-      "actions": "Actions"
+      "actions": "Actions",
+      "date": "Date order",
+      "dateComplete": "Date complete order",
+      "payment": "Payment id",
+      "empty": "No results"
+    },
+    "modal": {
+      "title": "Sale detail",
+      "close": "Close"
     }
+  },
+  "myCourses":{
+    "title": "My Courses"
   },
   "allCourses": {
     "title": "Courses",
@@ -509,11 +521,26 @@
     "module": {
       "title": "Modules"
     }
+
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
   },
   "checkout": {
     "title": "Checkout",
-    "subtitle": "Payment",
-    "button": "Pay"
+    "subtitle": "Purchase details",
+    "subtitle2": "Payment method",
+    "description": "When paying you will be redirected to Mercado Pago to make your payment safely, through the Mercado Pagos payment platform, you can use a credit or debit card according to current promotions",
+    "button": "Pay",
+    "coursesButton": "My Courses",
+    "retryButton": "Retry",
+    "table": {
+      "course": "Course",
+      "schedule": "Schedule",
+      "price": "Price",
+      "status": "Status"
+    }
   },
   "errorPage": {
     "title": "404",

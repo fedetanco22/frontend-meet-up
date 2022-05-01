@@ -8,7 +8,7 @@ import useAppContext from "../../context/useAppContext";
 const Course = () => {
   const router = useRouter();
   const t = useTranslations("courseView");
-  const {user, setUser} = useAppContext();
+  const {user, setUser, endSesion} = useAppContext();
   const [isCourse, setIsCourse] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const curso = isCourse;
@@ -16,10 +16,12 @@ const Course = () => {
 
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
-        router.push("/dashboard");
-      } else {
+      if (user?.data?.role === "Administrator") {
         getCourse();
+      } else if (user?.data?.role === "Teacher"){
+        getCourseTeacher();
+      } else {
+        router.push("/404");
       }
     } else {
       router.push("/");
@@ -27,7 +29,6 @@ const Course = () => {
   }, []);
 
   const id = router.query.courseId;
-
   const getCourse = async () => {
     setIsLoading(true);
     const url = "http://164.92.76.51:3000/en/courses/" + id;
@@ -39,21 +40,43 @@ const Course = () => {
         setIsLoading(false);
         curso = res.data.data;
         setIsCourse(curso);
-        console.log(curso);
       }
     } catch (error) {
       if (error.response.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
-      console.log(error.response.status, "resp");
       console.log("error:", error);
       setIsLoading(false);
     }
     return user;
   };
+  const getCourseTeacher = async () => {
+    setIsLoading(true);
+    const url = "http:///164.92.76.51:3000/teacher/courses/" + id;
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      if (res.status === 200 && res.data.data.length !== 0) {
+        if ((res.data?.data[0]?.course[0]?.course_id).toString() === id){
+          getCourse();
+        }else {
+          router.push("/404");
+        }
+        setIsLoading(false);
+      }else {
+        router.push("/404");
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion()
+        setUser(null);
+      }
+      console.log("error:", error);
+      setIsLoading(false);
+    }
+  };
   const child = {
-    path: "../all-courses",
+    path: user?.data?.role_id === 1 ? "../all-courses": "../my-courses",
     name: t("child"),
   };
 
