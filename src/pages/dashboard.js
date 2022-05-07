@@ -8,18 +8,22 @@ import Image from "next/image";
 import avatar from "../../public/avatar.jpg";
 import {FaLaptop, FaShoppingCart, FaUsers, FaPencilAlt} from "react-icons/fa";
 
+
 import styles from "../styles/Dashboard.module.scss";
 
 const Dashboard = () => {
   const t = useTranslations("dashboard");
-  const {user, setUser, getUser} = useAppContext();
+  const {user, setUser, getUser, endSesion} = useAppContext();
   const [users, setUsers] = useState([]);
+  const [sales, setSales] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
       // getUser()
       getUsers();
+      getCourses();
+      getSales();
     } else {
       router.push("/login");
     }
@@ -33,18 +37,65 @@ const getUsers = async () => {
     try {
       const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
       if(res.status === 200){
-        console.log(res.data?.data, 'resultado')
         setUsers(res.data?.data);
         setUsersFilters(res.data?.data);
         setIsLoading(false);
       }
     } catch (error) {
       if (error.response?.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
+        
       }
       console.log(error, 'error')
       setIsLoading(false)
+    }
+  }
+};
+const getCourses = async () => {
+  setIsLoading(true)
+  const url = "";
+  if (user?.data?.role === "Student"){
+    url = "http://164.92.76.51:3000/students/inscriptions";
+  }else if(user?.data?.role === "Teacher"){
+    url = "http://164.92.76.51:3000/teacher/courses";
+  }
+    
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      if(res.status === 200){
+        setIsLoading(false);
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion()
+        setUser(null);
+        
+      }
+      console.log(error, 'error')
+      setIsLoading(false)
+    }
+  
+};
+const getSales = async () => {
+  setIsLoading(true);
+  if (user?.data?.role === "Administrator") {
+    const url = "http://164.92.76.51:3000/sales";
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      console.log(res.data?.data, "resultado");
+      if (res.status === 200) {
+        setSales(res.data?.data);
+        setIsLoading(false);
+      }
+      setIsLoading(false);
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion();
+        setUser(null);
+      }
+      console.log(error, "error");
+      setIsLoading(false);
     }
   }
 };
@@ -94,7 +145,7 @@ const getUsers = async () => {
                       <FaShoppingCart />
                     </div>
                     <div className="ps-3">
-                      <p className={styles.number}>145</p>
+                      <p className={styles.number}>{sales?.length}</p>
                       <p className={styles.period}>{t("salesCard.period")}</p>
                     </div>
                   </div>

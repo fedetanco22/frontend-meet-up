@@ -11,7 +11,6 @@ import styles from "./CourseView.module.scss";
 const CourseView = ({course}) => {
   const [show, setShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(course);
   const handleClose = () => {
     setShow(false);
   };
@@ -30,18 +29,17 @@ const CourseView = ({course}) => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
       console.log(error);
     }
   };
   const t = useTranslations("courseView");
-  const {user} = useAppContext();
-  console.log(user);
+  const {user, endSesion} = useAppContext();
   return (
     <Card styleClass="px-3">
-       {isLoading && <Loading />}
+      {isLoading && <Loading />}
       <div className="d-flex flex-wrap border-bottom">
         <div className="col-12 col-md p-4 my-3">
           <h3 className={styles.title}>{course.course?.title}</h3>
@@ -74,7 +72,16 @@ const CourseView = ({course}) => {
         ) : null}
         {user?.data?.role === "Teacher" || user?.data?.role_id === 2 ? (
           <div className="col-12 col-md-4 col-lg-3 col-xxl-2 d-flex flex-column align-items-stretch my-3 p-3">
-            <Button path={"./course-edit"} buttonType="light" className="mt-1" asLink text={t("editCourse")}>
+            <Button
+              path={{
+                pathname: "/edit-course/[courseId]",
+                query: {courseId: course.course?.course_id},
+              }}
+              buttonType="light"
+              className="mt-1"
+              asLink
+              text={t("editCourse")}
+            >
               <FaPencilAlt />
             </Button>
           </div>

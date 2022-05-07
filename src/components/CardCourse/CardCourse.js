@@ -8,7 +8,7 @@ import styles from "./CardCourse.module.scss";
 
 const CardCourse = ({course}) => {
   const t = useTranslations("cardCourse");
-  console.log(course, "curso en card");
+
 
   const foto =
     course.image?.length > 0 ? (

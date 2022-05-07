@@ -4,9 +4,10 @@ import {useRouter} from "next/router";
 import axios from "axios";
 import {LayoutPanel, TitlePanel, Card, Loading, Button, CardCourse} from "../components";
 import useAppContext from "../context/useAppContext";
+import Swal from 'sweetalert2';
 
-const Allcourses = () => {
-  const t = useTranslations("allCourses");
+const MyCourses = () => {
+  const t = useTranslations("myCourses");
   const {user, setUser , endSesion} = useAppContext();
   const [isCourses, setIsCourses] = useState([])
   const [isLoading, setIsLoading] = useState(false);
@@ -16,39 +17,40 @@ const Allcourses = () => {
 
   useEffect(() => {
     if (user !== null) {
-      if (user?.data?.role !== "Administrator") {
-        router.push("/dashboard");
-      } else {
         getCourses()
-      }
     } else {
       router.push("/");
     }
   }, [locale]);
 
-
   const getCourses = async () => {
-    const url = "http://164.92.76.51:3000/en/courses/"
-    setIsLoading(true);
-    locale === 'en' ? url = "http://164.92.76.51:3000/en/courses/" : url = "http://164.92.76.51:3000/es/courses/"
-     
-    try {
-      const res = await axios.get(`${url}`);
-      cursos = res?.data?.data
-      setIsCourses(cursos)
-      if(res.status === 200){
-        setIsLoading(false);
-      }
-      
-    } catch (error) {
-      if (error.response?.status === 403) {
-        endSesion()
-        setUser(null);
-      }
-      console.log("error: ", error);
-      setIsLoading(false);
+    setIsLoading(true)
+    const url = "http://164.92.76.51:3000/students/inscriptions";
+    if (user?.data?.role === "Student"){
+      url = "http://164.92.76.51:3000/students/inscriptions";
+    }else if(user?.data?.role === "Teacher"){
+      url = "http://164.92.76.51:3000/teacher/courses";
     }
-    return user;
+      
+      try {
+        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user?.token}`}});
+        if(res.status === 200){
+          console.log(url)
+          cursos = res?.data?.data
+          console.log(res?.data , 'datos')
+          setIsCourses(cursos)
+          setIsLoading(false);
+        }
+      } catch (error) {
+        if (error.response?.status === 403) {
+          endSesion()
+          setUser(null);
+          
+        }
+        console.log(error, 'error')
+        setIsLoading(false)
+      }
+    
   };
 
   const coursesList = isCourses?.map((course) => (
@@ -62,18 +64,12 @@ const Allcourses = () => {
       <div>
         <TitlePanel title={t("title")} />
         {coursesList}
-        
-        <Card>
-          <div className="p-5 d-flex align-items-center justify-content-center">
-            <Button path={"./add-course"} buttonType="blue" className="mt-3" asLink text={t("addCourse")}></Button>
-          </div>
-        </Card>
       </div>
     </LayoutPanel>
   );
 };
 
-export default Allcourses;
+export default MyCourses;
 
 export function getStaticProps({locale}) {
   return {

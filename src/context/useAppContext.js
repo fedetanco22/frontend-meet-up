@@ -2,12 +2,17 @@ import { createContext, useContext, useState } from 'react';
 import router from 'next/router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import {useTranslations} from "next-intl";
 import { useStorage } from '../hooks/useStorage';
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
+    const t = useTranslations("sesion");
+    const [products, setProducts] = useState([]);
+    console.log('🚀 ~ file: useAppContext.js ~ line 11 ~ AppProvider ~ product', products);
+
     const storage = () => {
         if (typeof window !== 'undefined') {
             return JSON.parse(localStorage.getItem('user'));
@@ -32,11 +37,25 @@ export const AppProvider = ({ children }) => {
             );
         } catch (error) {
             localStorage.setItem('user', null);
-            console.log('error: ', error);
-            router.push('/');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Sesión caducada',
+                showConfirmButton: false,
+                footer: '<a href="/login">Volver a loguearse</a>'
+              })
         }
         return user;
     };
+    const endSesion = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `${t("title")}`,
+            showConfirmButton: false,
+            footer: `<a href="/login">${t("link")}</a>`
+          })
+    }
 
     const addCourse = (course, schedule_id) => {
         setCourseCart({ ...course, schedule_id });
@@ -65,7 +84,8 @@ export const AppProvider = ({ children }) => {
                 addCourse,
                 deleteProduct,
                 emptyCart,
-                courseCart,
+                endSesion,
+                courseCart
             }}
         >
             {children}

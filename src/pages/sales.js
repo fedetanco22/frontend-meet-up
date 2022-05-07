@@ -1,123 +1,103 @@
 import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
-
+import {Modal} from "react-bootstrap";
 import router from "next/router";
 import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, IconButton, Loading} from "../components";
+import {LayoutPanel, TitlePanel, Card, IconButton, Loading, Button} from "../components";
 import useAppContext from "../context/useAppContext";
-import {FaSearchPlus} from "react-icons/fa";
-// import styles from "../styles/Setup.module.scss";
+import {FaSearchPlus, FaShoppingCart} from "react-icons/fa";
+import styles from "../styles/Sales.module.scss";
+import Moment from "react-moment";
 
 const Sales = () => {
   const t = useTranslations("sales");
-  const {user, getUser} = useAppContext();
-  const [users, setUsers] = useState([]);
-  const [usersFilters, setUsersFilters] = useState(users);
-  const [roles, setRoles] = useState([]);
-  const [roleSelectedState, setRoleSelectedState] = useState(0);
-  const [inputTextState, setInputTextState] = useState("");
+  const {user, endSesion} = useAppContext();
+  const [sales, setSales] = useState([]);
+  const [salesFilters, setSalesFilters] = useState(sales);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(users, "usuarios");
-  console.log(usersFilters, "filtrados");
-  let roleSelected = roleSelectedState;
-  let inputText = inputTextState;
-
+  const [show, setShow] = useState(false);
+  const [itemSelected, setItemSelected] = useState(null);
+  const [statusSelectedState, setStatusSelectedState] = useState(0);
+  let statusSelected = statusSelectedState;
   useEffect(() => {
     if (user !== null) {
       if (user?.data?.role !== "Administrator") {
         router.push("/dashboard");
       } else {
+        getSales();
       }
     } else {
       router.push("/");
     }
   }, []);
 
-  // const getUsers = async () => {
-  //   setIsLoading(true)
-  //   if (user?.data?.role === "Administrator") {
-  //     const url = "http://164.92.76.51:3000/users";
-  //     try {
-  //       const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-  //       console.log(res.data?.data, 'resultado')
-  //       setUsers(res.data?.data);
-  //       setUsersFilters(res.data?.data);
-  //       setIsLoading(false)
-  //     } catch (error) {
-  //       router.push("/");
-  //       console.log(error, 'error')
-  //       setIsLoading(false)
-  //     }
-  //   }
-  // };
+  const handleShow = (item) => {
+    setShow(true);
+    setItemSelected(item);
+  };
+  const handleClose = () => {
+    setShow(false);
+    setItemSelected(null);
+  };
+  const getSales = async () => {
+    setIsLoading(true);
+    if (user?.data?.role === "Administrator") {
+      const url = "http://164.92.76.51:3000/sales";
+      try {
+        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+        console.log(res.data?.data, "resultado");
+        if (res.status === 200) {
+          setSales(res.data?.data);
+          setSalesFilters(res.data?.data);
+          setIsLoading(false);
+        }
+        setIsLoading(false);
+      } catch (error) {
+        if (error.response?.status === 403) {
+          endSesion();
+          setUser(null);
+        }
+        console.log(error, "error");
+        setIsLoading(false);
+      }
+    }
+  };
+  const handleStatus = (event) => {
+    statusSelected = event.target.value;
+    filterUser();
+  };
+  const filterUser = () => {
+    setStatusSelectedState(statusSelected);
 
-  // const getRoles = async () => {
-  //   if (user?.data?.role === "Administrator") {
-  //     const url = "http://164.92.76.51:3000/roles";
-  //     try {
-  //       const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-  //       setRoles(res.data.data);
-  //     } catch (error) {}
-  //   }
-  // };
+    if (statusSelected === "0") {
+      setSalesFilters(sales);
+    } else {
+      setSalesFilters(sales.filter((e) => e.status === statusSelected));
+    }
+  };
+  const salesItem = salesFilters?.map((item) => {
+    return (
+      <tr key={item.inscription_id}>
+        <td>{item.inscription_id}</td>
+        <td>{item.email}</td>
+        <td>{item.TitleCourse}</td>
+        <td className={`${styles.status} ${item?.status}`}>{item.status}</td>
+        <td className="d-flex justify-content-end">
+          <IconButton
+            callback={() => {
+              handleShow(item);
+            }}
+            buttonType="blue"
+            className="me-2"
+            asSubmit
+          >
+            <FaSearchPlus />
+          </IconButton>
+        </td>
+      </tr>
+    );
+  });
 
-  // const handleRole = (event) => {
-  //   roleSelected = event.target.value;
-  //   filterUser();
-  // };
-  // const searchUser = (event) => {
-  //   inputText = event.target.value;
-  //   filterUser();
-  // };
-
-  // const filterUser = () => {
-  //   setRoleSelectedState(roleSelected);
-  //   setInputTextState(inputText);
-  //   console.log(usersFilters, "usuarios antes de filtrar");
-  //   if (roleSelected === "0") {
-  //     if (inputText.length === 0) {
-  //       setUsersFilters(users);
-  //     } else {
-  //       setUsersFilters(
-  //         users.filter((e) => e.last_name.toLowerCase().match(inputText.toLowerCase()) || e.name.toLowerCase().match(inputText.toLowerCase()))
-  //       );
-  //     }
-  //   } else {
-  //     setUsersFilters(
-  //       users.filter(
-  //         (e) =>
-  //           (e.last_name.toLowerCase().match(inputText.toLowerCase()) || e.name.toLowerCase().match(inputText.toLowerCase())) &&
-  //           e.role === roleSelected
-  //       )
-  //     );
-  //   }
-  // };
-
-  // const usersData = usersFilters.map((user, idx) => {
-  //   return (
-  //     <tr key={idx}>
-  //       <td>{user.email}</td>
-  //       <td>
-  //         {user.last_name} , {user.name}
-  //       </td>
-  //       <td>{user.role}</td>
-  //       <td className="d-flex justify-content-end">
-  //         <IconButton
-  //           path={{
-  //             pathname: "/users/[userId]",
-  //             query: {userId: user.user_id},
-  //           }}
-  //           buttonType="blue"
-  //           className="me-2"
-  //           asLink
-  //         >
-  //           <FaPencilAlt />
-  //         </IconButton>
-  //       </td>
-  //     </tr>
-  //   );
-  // });
   return (
     <LayoutPanel pageTitle={t("title")}>
       {isLoading && <Loading />}
@@ -127,16 +107,16 @@ const Sales = () => {
           <div className="p-3 pb-0">
             <h4 className="">{t("list")}</h4>
             <div className="d-flex justify-content-end flex-wrap">
-              <div className="mb-3 col-12 col-md-6 col-lg-3 col-xxl-2">
+              {/* <div className="mb-3 col-12 col-md-6 col-lg-3 col-xxl-2">
                 <input type="text" className="form-control" placeholder={t("search")} />
-              </div>
+              </div> */}
               <div className="mb-3 col-12 col-md-6 col-lg-4 col-xxl-3 d-flex align-items-center">
                 <p className="mb-0 ps-0 ps-md-5 pe-3">{t("status")}</p>
-                <select className="form-select form-control" aria-label="Default select example">
+                <select onChange={handleStatus} className="form-select form-control" aria-label="Default select example">
                   <option value="0">{t("inputStatusAll")}</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option value="approved">Approved</option>
+                  <option value="pending">Pending</option>
+                  <option value="failure">Failure</option>
                 </select>
               </div>
             </div>
@@ -153,32 +133,59 @@ const Sales = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>0105</td>
-                    <td>darioviada@gmail.com</td>
-                    <td>English Level 1</td>
-                    <td>Completed</td>
-                    <td className="d-flex justify-content-end">
-                      <IconButton
-                        path={"/"}
-                        buttonType="blue"
-                        className="me-2"
-                        asLink
-                      >
-                        <FaSearchPlus/>
-                      </IconButton>
-                    </td>
-                  </tr>
-                </tbody>
+                {salesFilters?.length > 0 ? (
+                  <tbody>{salesItem}</tbody>
+                ) : (
+                  <tbody>
+                     <tr>
+                      <td colSpan={5}>
+                        <div className="empty">
+                          <FaShoppingCart />
+                          <p>{t("table.empty")}</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                )}
               </table>
             </div>
             <div className="d-flex justify-content-end">
-              <p>Total Users: 0</p>
+              <p>Total Sales: {sales?.length}</p>
             </div>
           </div>
         </Card>
       </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{t("modal.title")}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            <b>{t("table.order")}:</b> {itemSelected?.inscription_id}
+          </p>
+          <p>
+            <b>{t("table.user")}:</b> {itemSelected?.email}
+          </p>
+          <p>
+            <b>{t("table.product")}:</b> {itemSelected?.TitleCourse}
+          </p>
+          <p>
+            <b>{t("table.status")}:</b> {itemSelected?.status}
+          </p>
+          <p>
+            <b>{t("table.date")}:</b> <Moment format="DD/MM/YYYY" date={itemSelected?.dateGenerator} />{" "}
+          </p>
+          <p>
+            <b>{t("table.dateComplete")}:</b> <Moment format="DD/MM/YYYY" date={itemSelected?.dateResponse} />
+          </p>
+          <p>
+            <b>{t("table.payment")}:</b> {itemSelected?.payment_id}
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button text={t("modal.close")} buttonType={"white_secondary"} callback={handleClose} asSubmit></Button>
+        </Modal.Footer>
+      </Modal>
     </LayoutPanel>
   );
 };

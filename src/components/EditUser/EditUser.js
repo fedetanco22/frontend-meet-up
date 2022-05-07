@@ -13,7 +13,7 @@ import styles from "./EditUser.module.scss";
 
 const EditUser = ({user, editUser}) => {
   const t = useTranslations("setup");
-  const {getUser, setUser} = useAppContext();
+  const {getUser, setUser, endSesion} = useAppContext();
   const [isPending, setIsPending] = useState(false);
   const [send, setSend] = useState(false);
   const [sendError, setSendError] = useState(false);
@@ -72,8 +72,8 @@ const EditUser = ({user, editUser}) => {
       }
     } catch (error) {
       if (error.response.status === 403) {
+        endSesion()
         setUser(null);
-        router.push("/");
       }
       console.log(error);
       setSend(true);

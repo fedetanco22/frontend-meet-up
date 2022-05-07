@@ -1,0 +1,17 @@
+@import '../styles/patterns';
+
+
+.status {
+  font-weight: $bold;
+
+  
+}
+
+
+
+@media screen and (min-width: $screen-md) {
+  .user{
+    border-left: 1px solid $line-gray;
+    padding-left: 1rem;
+  }
+}
