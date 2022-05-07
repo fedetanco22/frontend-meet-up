@@ -23,7 +23,10 @@
     p {
       color: $text-gray;
       margin-bottom: 2rem;
-      padding-right: 4rem;
+      padding-right: 0rem;
+      @media screen and (min-width: $screen-md) {
+        padding-right: 4rem;
+      }
       white-space: pre-line;
     }
   }
@@ -36,8 +39,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: -200px;
+  margin-top: 0px;
   z-index: 2;
+
   &__title {
     background-color: $status-green;
     color: $white;

@@ -78,11 +78,11 @@ const CourseEdit = ({editCourseId, edit}) => {
       .required(t("form.validations.level.required")),
     description: Yup.string()
       .min(3, t("form.validations.description.min"))
-      .max(5000, t("form.validations.description.max"))
+      .max(2500, t("form.validations.description.max"))
       .required(t("form.validations.description.required")),
     description_es: Yup.string()
       .min(3, t("form.validations.description.min"))
-      .max(5000, t("form.validations.description.max"))
+      .max(2500, t("form.validations.description.max"))
       .required(t("form.validations.description.required")),
     duration: Yup.string()
       .min(3, t("form.validations.duration.min"))
@@ -105,11 +105,11 @@ const CourseEdit = ({editCourseId, edit}) => {
           .required(t("form.validations.title.required")),
         description: Yup.string()
           .min(3, t("form.validations.description.min"))
-          .max(5000, t("form.validations.description.max"))
+          .max(2500, t("form.validations.description.max"))
           .required(t("form.validations.description.required")),
         description_es: Yup.string()
           .min(3, t("form.validations.description.min"))
-          .max(5000, t("form.validations.description.max"))
+          .max(2500, t("form.validations.description.max"))
           .required(t("form.validations.description.required")),
       })
     ),

@@ -3,11 +3,14 @@ import router from "next/router";
 import {useState} from "react";
 import {Button, Layout, Card, TitlePanel} from "../components";
 import useAppContext from "../context/useAppContext";
+import {FaShoppingCart} from "react-icons/fa";
 
 const Checkout = () => {
   const {courseCart, user} = useAppContext();
   const t = useTranslations("checkout");
   console.log("object cart", courseCart);
+
+
 
   const handleCheckoutButton = async () => {
     const url = "http://164.92.76.51:3000/payment";
@@ -44,24 +47,46 @@ const Checkout = () => {
                 <tr>
                   <th scope="col">{t("table.course")}</th>
                   <th scope="col">{t("table.schedule")}</th>
-                  <th scope="col" className="text-end">{t("table.price")}</th>
+                  <th scope="col" className="text-end">
+                    {t("table.price")}
+                  </th>
                 </tr>
               </thead>
-              <tbody>
+              {courseCart !== null ? (
+                <tbody>
                   <tr>
-                      <td>{courseCart?.course.title}</td>
-                      <td>{(courseCart?.schedules.filter((i)=> i.schedule_id === courseCart?.schedule_id)[0].title)}</td>
-                      <td className="text-end">{courseCart?.course.price}</td>
+                    <td>{courseCart?.course?.title}</td>
+                    <td>{courseCart?.schedules?.filter((i) => i.schedule_id === courseCart?.schedule_id)[0].title}</td>
+                    <td className="text-end">AR$ {courseCart?.course?.price}</td>
                   </tr>
-              </tbody>
+                </tbody>
+              ) : (
+                <tbody>
+                  <tr>
+                    <td colSpan={5}>
+                      <div className="empty">
+                        <FaShoppingCart />
+                        <p>{t("table.empty")}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              )}
             </table>
-            <h5 className="pt-3">{t("subtitle2")}</h5>
-            <p>{t("description")}</p>
+            {courseCart !== null ? (
+              <>
+                <h5 className="pt-3">{t("subtitle2")}</h5>
+                <p>{t("description")}</p>
 
-           <div className="d-flex justify-content-end">
-           <Button text={t("button")} asSubmit callback={handleCheckoutButton} buttonType="blue_small" />
-            </div>
-            
+                <div className="d-flex justify-content-end">
+                  <Button text={t("button")} asSubmit callback={handleCheckoutButton} buttonType="blue_small" />
+                </div>
+              </>
+            ) : (
+              <div className="d-flex justify-content-end">
+                <Button text={t("buttonBack")} asLink path={"/courses"} buttonType="blue_small" />
+              </div>
+            )}
           </div>
         </Card>
       </div>
@@ -81,28 +106,3 @@ export function getStaticProps({locale}) {
     },
   };
 }
-
-/* import { useState } from 'react';
-import useAppContext from '../context/useAppContext';
-
-const Checkout = ({ item }) => {
-    const handleCheckoutButton = async () => {
-        const url = 'http://164.92.76.51:3000/payment';
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { Authorization: `Bearer ${user.token}` },
-            body: `${item.schedule_id}`,
-        });
-        // llamar el endpoint /payment
-        //devuelve un objeto en url con el id_mp y el url
-        //mandar el schedule_id en el body
-        // redirect a la url loctaion.push(url) esto va a mercadopago
-    };
-    return (
-        <div>
-            <div>Checkout</div>
-        </div>
-    );
-};
-
-export default Checkout; */

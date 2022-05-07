@@ -58,7 +58,7 @@ const Course = ({ courses }) => {
     return (
         <Layout pageTitle={t('title')}>
             <div className={styles.imageWrapper}>{coursePicture}</div>
-            <div className={`container py-5 ${styles.container}`}>
+            <div className={`container py-5 px-5 px-md-0 ${styles.container}`}>
                 <div className='row'>
                     <div className='col-12 col-md-8'>
                         <h1 className={styles.title}>{title}</h1>
@@ -71,15 +71,12 @@ const Course = ({ courses }) => {
 
                     <Card className={`${styles.value} col-12 col-md-4 `}>
                         <div className={styles.value__title}>
-                            <h3>For {level}</h3>
+                            {level ? <h3>{level}</h3> : ''}
                         </div>
                         <div className={styles.value__text}>
                             <div className={styles.value__text__title}>
                                 <h6>Schedule</h6>
                                 {scheduleModality}
-                            </div>
-                            <div className={styles.value__text__title}>
-                                <h6>Material Includes</h6>
                             </div>
                         </div>
 
@@ -90,9 +87,9 @@ const Course = ({ courses }) => {
                         </div>
                     </Card>
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                     <div className='col-8'>{moduleCourses}</div>
-                </div>
+                </div> */}
             </div>
 
             <ColorBanner

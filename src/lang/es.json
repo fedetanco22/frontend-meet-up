@@ -474,7 +474,7 @@
         "description": {
           "required": "Este campo es obligatorio",
           "min": "min. 3 caracteres",
-          "max": "max. 2000 caracteres"
+          "max": "max. 2500 caracteres"
         },
         "duration": {
           "required": "Este campo es obligatorio",
@@ -533,13 +533,15 @@
     "subtitle2": "Método de pago",
     "description": "Al pagar será redirigido a Mercado pago para realizar su pago de forma segura, a traves de la plataforma de pagos Mercado Pagos, podrá utilizar Tarjeta de crédito o débito según promociones vigentes",
     "button": "Pagar",
+    "buttonBack": "Volver",
     "coursesButton": "Mis Cursos",
     "retryButton": "Reintentar",
     "table": {
       "course": "Curso",
       "schedule": "Horario",
       "price": "Precio",
-      "status": "Estado"
+      "status": "Estado",
+      "empty": "No hay cursos selecionado"
     }
   },
   "errorPage": {
