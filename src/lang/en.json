@@ -477,7 +477,7 @@
         "description": {
           "required": "Description is required",
           "min": "min. 3 characters",
-          "max": "max. 5000 characters"
+          "max": "max. 2500 characters"
         },
         "duration": {
           "required": "Duration is required",
@@ -536,13 +536,15 @@
     "subtitle2": "Payment method",
     "description": "When paying you will be redirected to Mercado Pago to make your payment safely, through the Mercado Pagos payment platform, you can use a credit or debit card according to current promotions",
     "button": "Pay",
+    "buttonBack": "Back to courses",
     "coursesButton": "My Courses",
     "retryButton": "Retry",
     "table": {
       "course": "Course",
       "schedule": "Schedule",
       "price": "Price",
-      "status": "Status"
+      "status": "Status",
+      "empty": "No courses found"
     }
   },
   "errorPage": {

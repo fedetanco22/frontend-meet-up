@@ -22,7 +22,7 @@ export const AppProvider = ({ children }) => {
     };
 
     const [user, setUser] = useState(storage);
-    const [courseCart, setCourseCart] = useStorage('course', {});
+    const [courseCart, setCourseCart] = useStorage('course', null);
 
     const getUser = async () => {
         const url = 'http://164.92.76.51:3000/user/' + user?.data?.user_id;

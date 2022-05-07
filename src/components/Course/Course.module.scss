@@ -38,20 +38,23 @@
     }
 
     &__description {
+        min-height: 153px;
         max-height: 290px;
         overflow: hidden;
         margin-bottom: 30px;
         border-bottom: 1px solid $border-gray;
         padding-bottom: 2rem;
+
         & p {
-            font-size: $small;
+            font-size: $normal;
             line-height: 1.5rem;
             color: $text-gray;
             text-align: justify;
 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: wrap;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden; /*si no se declara añade los ... pero muestra todo el texto*/
         }
     }
 }

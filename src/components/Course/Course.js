@@ -36,8 +36,8 @@ const Course = ({ course }) => {
     );
 
     return (
-        <div className='col-12 col-sm-6 col-md-4'>
-            <Card>
+        <div className='col-12 col-sm-6 col-md-4 mb-4'>
+            <Card styleClass="h-100">
                 <div style={{ width: '100%' }}>{coursePicture}</div>
                 <div className={styles.text}>
                     {/* <h6 className={`${styles.text__subtitle} ${classes}`}>for {level} students</h6> */}
