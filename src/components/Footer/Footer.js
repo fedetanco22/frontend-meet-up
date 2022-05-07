@@ -14,10 +14,10 @@ const Footer = () => {
                     <address className='mt-3'>
                         <small>Córdoba, Argentina</small>
                         <p>
-                            <b>{t('footer.phone')}:</b> +54 351 xxxxxxx
+                            <b>{t('footer.phone')}:</b> +54 351 2291292
                         </p>
                         <p>
-                            <b>{t('footer.email')}:</b> info@example.com
+                            <b>{t('footer.email')}:</b> meetup.ea@gmail.com
                         </p>
                     </address>
                 </div>
@@ -88,7 +88,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='col-12 col-md-4 py-3'>
-                    <Newsletter />
+                    {/* <Newsletter /> */}
                 </div>
             </div>
             <div className={styles.copy}>
