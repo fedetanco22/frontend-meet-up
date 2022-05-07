@@ -22,7 +22,7 @@ const SEO = ({ title, description, keywords }) => {
             <meta property='twitter:creator' content={t('social.twitter')} />
             <meta property='twitter:title' content={defaultTitle} />
             <meta property='twitter:description' content={metaDescription} />
-            <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests' />
+            {/* <meta httpEquiv='Content-Security-Policy' content='upgrade-insecure-requests' /> */}
         </Head>
     );
 };

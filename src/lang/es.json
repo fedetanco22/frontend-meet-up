@@ -3,7 +3,7 @@
     "title": "Meet-up plataforma educativa",
     "author": {
       "name": "Trylogic",
-      "summary": "Somos un groupo de developers."
+      "summary": "Somos un gropo de developers."
     },
     "description": "Meet-up es una plataforma educativa para aprender Ingles facilmente",
     "keywords": "ingles online",
@@ -73,9 +73,12 @@
   "about": {
     "title": "Nosotros",
     "description": "Somos el resultado de la fusión entre experimentados docentes y avanzados emprendedores, convencidos del poder transformador de la educación como verdadera herramienta de progreso.",
-    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",
+    "mision": "Nuestra misión es democratizar la educación del inglés, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado en todo el mundo.",
     "vision": "Nuestra visión es ser brindar una educacion de calidad a traves de la plataforma educativa, que permita a los estudiantes aprender inglés de manera fácil y divertida.",
-    "methodology": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales. Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo. Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
+    "methodologyOne": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. ",
+    "methodologyTwo": "El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales.",
+    "methodologyThree": "Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo.",
+    "methodologyFour": "Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
     "course_info": "Nuestros cursos están especialmente diseñados para vos y la concreta situación que estás atravesando. Podes elegir distintas modalidades de cursado: Grupal: clases online en grupo de no más de 12 personas, Individuales, Just Talk: clases de conversación o English for Business purposes",
     "values": {
       "title": "Nuestros",
@@ -211,8 +214,8 @@
     }
   },
   "banner": {
-    "title1": "Aprender hoy,",
-    "title2": "hablar mañana",
+    "title1": "Cursos virtuales ",
+    "title2": "de inglés para vos.",
     "subtitle": "Cursos de inglés para principiantes y estudiantes avanzados",
     "button": {
       "text": "Comenzar",

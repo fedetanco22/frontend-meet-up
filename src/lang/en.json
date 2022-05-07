@@ -75,7 +75,10 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "methodologyOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "methodologyTwo": "",
+    "methodologyThree": "",
+    "methodologyFour": "",
     "course_info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "values": {
       "title": "Our",
@@ -211,8 +214,8 @@
     }
   },
   "banner": {
-    "title1": "Learning Today,",
-    "title2": "Speaking Tomorrow",
+    "title1": "Online English",
+    "title2": "courses for you",
     "subtitle": "English courses for beginners and advanced students",
     "button": {
       "text": "Get Started",
