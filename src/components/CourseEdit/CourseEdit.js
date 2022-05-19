@@ -451,7 +451,7 @@ const CourseEdit = ({editCourseId, edit}) => {
           setSend(true);
           setSendError(false);
           setIsPending(false);
-        } else console.log(res, "respuesta");
+        }
       } catch (error) {
         if (error.response.status === 403) {
           endSesion()
@@ -470,9 +470,6 @@ const CourseEdit = ({editCourseId, edit}) => {
               const res = await axios.post(urlModule, datos.modules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
               });
-              if (res.status === 200) {
-                console.log(res, "modulo nuevo guardado ok");
-              }
             } catch (error) {
               console.log(error);
               setSend(true);
@@ -485,9 +482,7 @@ const CourseEdit = ({editCourseId, edit}) => {
               const res = await axios.patch(urlModule, datos.modules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
               });
-              if (res.status === 200) {
-                console.log(res, "modulo editado guardado ok");
-              }
+
             } catch (error) {
               console.log(error);
               setSend(true);
@@ -505,9 +500,7 @@ const CourseEdit = ({editCourseId, edit}) => {
               const res = await axios.post(urlschedule, datos.schedules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
               });
-              if (res.status === 200) {
-                console.log(res, "schedule nuevo guardado ok");
-              }
+
             } catch (error) {
               console.log(error);
               setSend(true);
@@ -520,9 +513,7 @@ const CourseEdit = ({editCourseId, edit}) => {
               const res = await axios.patch(urlschedule, datos.schedules[idx], {
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`},
               });
-              if (res.status === 200) {
-                console.log(res, "schedule editado guardado ok");
-              }
+
             } catch (error) {
               console.log(error);
               setSend(true);
@@ -537,9 +528,7 @@ const CourseEdit = ({editCourseId, edit}) => {
           const urlDelete = "http:///164.92.76.51:3000/schedules/" + item;
           try {
             const res = await axios.delete(urlDelete, {headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`}});
-            if (res.status === 200) {
-              console.log(res, "schedule borrado ok");
-            }
+
           } catch (error) {
             console.log(error);
             setSend(true);
@@ -555,9 +544,7 @@ const CourseEdit = ({editCourseId, edit}) => {
           const urlDelete = "http:///164.92.76.51:3000/modules/" + item;
           try {
             const res = await axios.delete(urlDelete, {headers: {"Content-Type": "application/json", Authorization: `Bearer ${user.token}`}});
-            if (res.status === 200) {
-              console.log(res, "modulo borrado ok");
-            }
+
           } catch (error) {
             console.log(error);
             setSend(true);
@@ -586,7 +573,6 @@ const CourseEdit = ({editCourseId, edit}) => {
     setIsInitialValues(values);
   };
   const deleteSchedule = (values, idx) => {
-    console.log(values, "values q recibo");
     if (cursoID !== undefined && cursoID !== null) {
       const updateArray = [...arrayDeleteSchedule, values.schedules[idx]?.schedule_id];
       setArrayDeleteSchedule(updateArray);
@@ -599,7 +585,7 @@ const CourseEdit = ({editCourseId, edit}) => {
 
     values.schedules?.pop();
     setIsInitialValues(values);
-    console.log(values, "values en delete");
+    
   };
   const addModule = (values) => {
     if (cursoID !== undefined && cursoID !== null) {

@@ -11,7 +11,7 @@ import Moment from "react-moment";
 
 const Sales = () => {
   const t = useTranslations("sales");
-  const {user, endSesion} = useAppContext();
+  const {user, endSesion, setUser} = useAppContext();
   const [sales, setSales] = useState([]);
   const [salesFilters, setSalesFilters] = useState(sales);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +19,8 @@ const Sales = () => {
   const [itemSelected, setItemSelected] = useState(null);
   const [statusSelectedState, setStatusSelectedState] = useState(0);
   let statusSelected = statusSelectedState;
+  const [modalStatusState, setModalStatusState] = useState(null);
+  let modalStatus = modalStatusState;
   useEffect(() => {
     if (user !== null) {
       if (user?.data?.role !== "Administrator") {
@@ -34,10 +36,38 @@ const Sales = () => {
   const handleShow = (item) => {
     setShow(true);
     setItemSelected(item);
+    modalStatus = item?.status;
+    setModalStatusState(modalStatus);
   };
   const handleClose = () => {
     setShow(false);
     setItemSelected(null);
+  };
+  const handleState = (e) => {
+    changeStatus(e);
+  };
+  const changeStatus = async (e) => {
+    setIsLoading(true);
+    e.preventDefault();
+    const url = "http://164.92.76.51:3000/payment/changeStatus/" + itemSelected?.inscription_id;
+    try {
+      const res = await axios.patch(`${url}`,{
+        "status": `${modalStatus}`,
+      }, {headers: {Authorization: `Bearer ${user.token}`}});
+      if (res.status === 200) {
+        setShow(false);
+        getSales()
+        setItemSelected(null);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion();
+        setUser(null);
+      }
+      console.log(error);
+      setIsLoading(false);
+    }
   };
   const getSales = async () => {
     setIsLoading(true);
@@ -45,7 +75,6 @@ const Sales = () => {
       const url = "http://164.92.76.51:3000/sales";
       try {
         const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-        console.log(res.data?.data, "resultado");
         if (res.status === 200) {
           setSales(res.data?.data);
           setSalesFilters(res.data?.data);
@@ -65,6 +94,10 @@ const Sales = () => {
   const handleStatus = (event) => {
     statusSelected = event.target.value;
     filterUser();
+  };
+  const handleStatusModal = (event) => {
+    modalStatus = event.target.value;
+    setModalStatusState(modalStatus);
   };
   const filterUser = () => {
     setStatusSelectedState(statusSelected);
@@ -137,7 +170,7 @@ const Sales = () => {
                   <tbody>{salesItem}</tbody>
                 ) : (
                   <tbody>
-                     <tr>
+                    <tr>
                       <td colSpan={5}>
                         <div className="empty">
                           <FaShoppingCart />
@@ -170,7 +203,7 @@ const Sales = () => {
             <b>{t("table.product")}:</b> {itemSelected?.TitleCourse}
           </p>
           <p>
-            <b>{t("table.status")}:</b> {itemSelected?.status}
+            <b>{t("table.schedule")}:</b> {itemSelected?.title}
           </p>
           <p>
             <b>{t("table.date")}:</b> <Moment format="DD/MM/YYYY" date={itemSelected?.dateGenerator} />{" "}
@@ -181,9 +214,29 @@ const Sales = () => {
           <p>
             <b>{t("table.payment")}:</b> {itemSelected?.payment_id}
           </p>
+          <p>
+            <b>{t("table.mercadopago")}:</b> {itemSelected?.mercpago_id}
+          </p>
+          <p>
+            <b>{t("table.status")}:</b>
+          </p>
+          <select onChange={handleStatusModal} value={modalStatus} className="form-select form-control" aria-label="Default select example">
+            <option key={0} value={'approved'}>
+              Approved
+            </option>
+            <option key={0} value={'pending'}>
+              Pending
+            </option>
+            <option key={0} value={'failure'}>
+              Failure
+            </option>
+          </select>
         </Modal.Body>
         <Modal.Footer>
-          <Button text={t("modal.close")} buttonType={"white_secondary"} callback={handleClose} asSubmit></Button>
+        <Button text={t("modal.close")} buttonType={"white_secondary"} callback={handleClose} asSubmit></Button>
+          {modalStatus !== itemSelected?.status && <Button text={t("modal.save")} buttonType={"light"} callback={handleState} asSubmit></Button>}
+          
+          
         </Modal.Footer>
       </Modal>
     </LayoutPanel>
