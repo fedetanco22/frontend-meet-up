@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 const ErrorPage = () => {
     const t = useTranslations('errorPage');
-
+    //solo para pushear
     return (
         <Layout pageTitle={t('title')} className={styles.error}>
             <section className={styles.wrapper}>
