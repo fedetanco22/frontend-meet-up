@@ -1,5 +1,5 @@
 {
-  "config":{
+  "config": {
     "title": "Meet-up online educational platform",
     "author": {
       "name": "Trylogic",
@@ -11,16 +11,15 @@
       "twitter": "lerobbb"
     }
   },
-  "home":{
+  "home": {
     "title": "Home",
     "prueba": "prueba",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Test your English",
       "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
       "button": "Take the test"
-
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Become a Teacher",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
       "button": "Apply now"
@@ -34,10 +33,20 @@
         }
       }
     }
-  }, 
-  "courses":{
+  },
+  "courses": {
     "title": "Courses",
     "prueba": "Test Courses",
+    "bannerColor": {
+      "title": "Test your English",
+      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
+      "button": "Take the test"
+    },
+    "bannerColor2": {
+      "title": "Become a Teacher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+      "button": "Apply now"
+    },
     "auth": {
       "SignUp": {
         "title": "Sign up",
@@ -48,8 +57,7 @@
       }
     }
   },
-  
-  "test":{
+  "test": {
     "title": "Test",
     "prueba": "Test about",
     "auth": {
@@ -62,23 +70,28 @@
       }
     }
   },
-  "about":{
+  "about": {
     "title": "About Us",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "mision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "vision": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
-    "methodology": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "methodologyOne": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+    "methodologyTwo": "",
+    "methodologyThree": "",
+    "methodologyFour": "",
+    "course_info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
     "values": {
       "title": "Our",
       "subtitle": "Values",
       "values": {
-        "professionalism":"professionalism",
-        "excellence":"excellence",
-        "warranty":"warranty",
-        "knowledge":"knowledge"
+        "professionalism": "professionalism",
+        "excellence": "excellence",
+        "warranty": "warranty",
+        "knowledge": "knowledge"
       }
-    }},
-  "dashboard":{
+    }
+  },
+  "dashboard": {
     "title": "Dashboard",
     "buttonEdit": "/en/setup",
     "roleTeacher": "Teacher",
@@ -104,66 +117,67 @@
     }
   },
   "nav": {
-    "home":{
+    "home": {
       "title": "Home",
       "link": "/en"
     },
-    "courses":{
+    "courses": {
       "title": "Courses",
       "link": "/en/courses"
     },
-    "test":{
+    "test": {
       "title": "Test",
       "link": "/en/test"
     },
-    "about":{
+    "about": {
       "title": "About",
       "link": "/en/about"
     },
-    "login":{
+    "login": {
       "title": "Login",
-      "link": "/en/login"
+      "link": "/en/login",
+      "titleUser": "My  Account",
+      "linkUser": "/dashboard"
     },
-    "register":{
+    "register": {
       "title": "Sign Up",
       "link": "/en/register"
     },
-    "terms":{
+    "terms": {
       "title": "Terms of service",
       "link": "/en/terms-of-service"
     },
-    "policy":{
+    "policy": {
       "title": "Private policy",
       "link": "/en/private-policy"
-    }   
+    }
   },
   "navpanel": {
-    "dashboard":{
+    "dashboard": {
       "title": "Dashboard",
       "link": "/dashboard"
     },
-    "mycourses":{
+    "mycourses": {
       "title": "My Courses",
       "link": "/my-courses"
     },
-    "setup":{
+    "setup": {
       "title": "Setup",
       "link": "/setup"
     },
-    "allcourses":{
+    "all-courses": {
       "title": "Courses",
       "link": "/all-courses"
     },
-    "users":{
+    "users": {
       "title": "Users",
       "link": "/users"
     },
-    "sales":{
+    "sales": {
       "title": "Sales",
       "link": "/sales"
     },
     "close": "Logout"
-    
   },
   "numberblock": {
     "item1": {
@@ -179,50 +193,50 @@
       "text": "Teachers"
     }
   },
-  "services":{
-    "whyUs":{
+  "services": {
+    "whyUs": {
       "title": "Why Choose Meet Up ?",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
-      "button":"see more..."
+      "button": "see more..."
     },
-    "service":{
-      "1":{
-        "title":"Online Courses",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+    "service": {
+      "1": {
+        "title": "Online Courses",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "2":{
-        "title":"Tutorials",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "2": {
+        "title": "Tutorials",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "3":{
-        "title":"Conversations",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "3": {
+        "title": "Conversations",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
   },
   "banner": {
-    "title1": "Learning Today,",
-    "title2": "Speaking Tomorrow",
+    "title1": "Online English",
+    "title2": "courses for you",
     "subtitle": "English courses for beginners and advanced students",
     "button": {
       "text": "Get Started",
       "url": "/en/courses"
     }
   },
-  "footer":{
+  "footer": {
     "phone": "Phone",
     "email": "Email",
     "listLink1": "Usefull Links",
     "listLink2": "Courses"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Join Our Newsletter",
-    "button":{
+    "button": {
       "text": "Suscribe"
     },
     "placeholder": "Email address"
   },
-  "contact":{
+  "contact": {
     "title": "Contact",
     "subtitle": "Contact Us",
     "phone": "Phone",
@@ -233,23 +247,64 @@
   "coursesList": {
     "title": "Courses",
     "subtitle": "Popular Courses",
-    "buttonEnroll": "Enroll",
+    "buttonEnroll": "See more...",
     "buttonAll": {
       "text": "View all courses",
       "url": "/en/courses"
     }
   },
-  "setup":{
+  "setup": {
     "title": "Setup",
-    "form":{
-      "name":"Name",
+    "form": {
+      "name": "Name",
       "lastname": "Lastname",
-      "phone": "Phone"
+      "phone": "Phone",
+      "submit": "Save",
+      "validations": {
+        "name": {
+          "required": "name is required",
+          "min": "min. 3 characters",
+          "max": "max. 30 characters"
+        },
+        "lastName": {
+          "required": "lastname is required"
+        },
+        "phone": {
+          "required": "phone is required",
+          "number": "only numbers"
+        },
+        "password": {
+          "required": "password is required"
+        },
+        "newPassword": {
+          "required": "new password is required",
+          "min": "min. 8 characters",
+          "max": "max. 12 characters"
+        },
+        "repeatPassword": {
+          "required": "repeat new password is required",
+          "min": "min. 8 characters",
+          "max": "max. 12 characters"
+        }
+      }
     },
     "alert": {
       "warning": "There are pending changes",
       "success": "Data saved successfully",
-      "error": "Error, check the data and try again"      
+      "error": "Error, check the data and try again",
+      "errorRepeat": "Passwords must be the same"
+    },
+    "password": {
+      "title": "Change Password",
+      "current": "Current password",
+      "new": "New password",
+      "repeat": "Repeat new password",
+      "conditions": "Conditions: Password must have a minimum of 8 characters, a maximum of 12, contain at least one uppercase, one lowercase and one symbol."
+    },
+    "sendPassword": {
+      "title": "Reset Password",
+      "indications": "An email will be sent to your email to reset your password.",
+      "send": "Send"
     }
   },
   "users": {
@@ -259,12 +314,243 @@
       "user": "User",
       "name": "Name",
       "role": "Role",
-      "actions": "Actions"
+      "actions": "Actions",
+      "empty": "No users found"
     },
     "search": "Search",
     "roleInput": {
       "label": "Role",
       "input": "All"
     }
+  },
+  "user": {
+    "title": "Edit User",
+    "child": "Users",
+    "delete": {
+      "title": "Delete user",
+      "content": "If you delete the user, all your data will be lost and cannot be recovered.",
+      "button": "Delete"
+    }
+  },
+  "sales": {
+    "title": "Sales",
+    "list": "List of orders",
+    "search": "Search",
+    "status": "Status",
+    "inputStatusAll": "All",
+    "table": {
+      "order": "Order",
+      "user": "User",
+      "product": "Product",
+      "status": "Status",
+      "actions": "Actions",
+      "date": "Date order",
+      "dateComplete": "Date complete order",
+      "payment": "Payment id",
+      "empty": "No results"
+    },
+    "modal": {
+      "title": "Sale detail",
+      "close": "Close"
+    }
+  },
+  "myCourses":{
+    "title": "My Courses"
+  },
+  "allCourses": {
+    "title": "Courses",
+    "addCourse": "Add New course"
+  },
+  "addCourse": {
+    "title": "Add new course",
+    "child": "Courses"
+  },
+  "cardCourse": {
+    "button": "See more"
+  },
+  "courseView": {
+    "title": "Course",
+    "level": "Level",
+    "duration": "Duration",
+    "child": "Courses",
+    "editCourse": "Edit course",
+    "onlineClass": "Online Class",
+    "openFiles": "Open Files",
+    "deleteCourse": "Delete course",
+    "enrolled": "Enrolled",
+    "button": "Enroll",
+    "schedule": {
+      "title": "Schedules",
+      "day": "Days",
+      "time": "Time",
+      "start": "Starts",
+      "end": "Ends",
+      "teacher": "Teacher",
+      "modality": "Modality",
+      "registrationStart": "Registration start",
+      "registrationEnd": "Registration end"
+    },
+    "module": {
+      "title": "Modules"
+    },
+    "modal": {
+      "title": "Confirm delete course?",
+      "text1": "you want to delete the course  ",
+      "text2": "If you press delete the data cannot be recovered",
+      "cancel": "Cancel",
+      "delete": "Delete"
+    },
+    "bannerColor": {
+      "title": "Test your English",
+      "description": "This online test is simple and FREE to use. It evaluates your passive knowledge of English grammar and vocabulary. The results of your test will be sent directly to your email address.",
+      "button": "Take the test"
+    },
+    "bannerColor2": {
+      "title": "Become a Teacher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. ",
+      "button": "Apply now"
+    }
+  },
+  "courseEdit": {
+    "title": "Course data",
+    "titleImage": "Edit course image",
+    "selectFile": "Select file",
+    "form": {
+      "title": "Title",
+      "titleES": "Title in Spanish",
+      "level": "Level",
+      "levelES": "Level in Spanish",
+      "description": "Description ",
+      "descriptionES": "Description in spanish",
+      "duration": "Duration ",
+      "durationES": "Duration in spanish",
+      "price": "Price",
+      "addModule": "Add module",
+      "deleteModule": "Delete module",
+      "addSchedule": "Add schedule",
+      "deleteSchedule": "Delete schedule",
+      "schedules": {
+        "schedule": "Schedule",
+        "title": "Title",
+        "titleES": "Title in spanish",
+        "start": "Start",
+        "end": "End",
+        "startR": "Start registration",
+        "endR": "End registration",
+        "time": "Time",
+        "teacher": "Teacher",
+        "modality": "Modality",
+        "modalityES": "Modality in spanish",
+        "linkDrive": "Link to docs",
+        "linkZoom": "Link to class",
+        "days": "Days",
+        "week": {
+          "mon": "Mon",
+          "tue": "Tue",
+          "wed": "Wed",
+          "thu": "Thu",
+          "fri": "Fri",
+          "sat": "Sat",
+          "sun": "Sun"
+        }
+      },
+      "modules": {
+        "module": "Module",
+        "title": "Title",
+        "titleES": "Title in spanish",
+        "description": "Description ",
+        "descriptionES": "Description in spanish",
+        "number": "Number"
+      },
+      "submit": "Save",
+      "validations": {
+        "title": {
+          "required": "Title is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "level": {
+          "required": "Level is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "description": {
+          "required": "Description is required",
+          "min": "min. 3 characters",
+          "max": "max. 2500 characters"
+        },
+        "duration": {
+          "required": "Duration is required",
+          "min": "min. 3 characters",
+          "max": "max. 30 characters"
+        },
+        "price": {
+          "number": "only numbers"
+        },
+        "modality": {
+          "required": "Modality is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "linkDocs": {
+          "required": "Link to docs is required",
+          "min": "min. 3 characters",
+          "max": "max. 350 characters"
+        },
+        "linkClass": {
+          "required": "Link to class is required",
+          "min": "min. 3 characters",
+          "max": "max. 350 characters"
+        },
+        "time": {
+          "required": "Time is required",
+          "min": "min. 3 characters",
+          "max": "max. 50 characters"
+        },
+        "teacher": {
+          "required": "teacher is required"
+        },
+        "data": {
+          "required": "Is required"
+        }
+      },
+      "alert": {
+        "warning": "There are pending changes",
+        "success": "Data saved successfully",
+        "error": "Error, check the data and try again"
+      }
+    },
+    "schedule": {},
+    "module": {
+      "title": "Modules"
+    }
+
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Purchase details",
+    "subtitle2": "Payment method",
+    "description": "When paying you will be redirected to Mercado Pago to make your payment safely, through the Mercado Pagos payment platform, you can use a credit or debit card according to current promotions",
+    "button": "Pay",
+    "buttonBack": "Back to courses",
+    "coursesButton": "My Courses",
+    "retryButton": "Retry",
+    "table": {
+      "course": "Course",
+      "schedule": "Schedule",
+      "price": "Price",
+      "status": "Status",
+      "empty": "No courses found"
+    }
+  },
+  "errorPage": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "text": "Uh! Looks like you got lost.",
+    "button": "Back to home."
   }
 }

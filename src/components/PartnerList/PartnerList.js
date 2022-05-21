@@ -1,26 +1,87 @@
-import { Partner, SectionTitle} from "../index"
-import styles from "./PartnerList.module.scss"
+import Image from 'next/image';
+import { SectionTitle } from '../index';
+import tomasPicture from '../../../public/profile-tomi-rueda.png';
+import franciscoPicture from '../../../public/profile-fran-albrisi.png';
+import { Card } from '..';
+import SocialMediaLinks from '../SocialMediaLinks/SocialMediaLinks';
+import styles from './PartnerList.module.scss';
 
 const PARTNERS = [
-  { id:"1", name: 'Candelaria Lopez', age: 25, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.', profilePicture:'https://shotkit.com/wp-content/uploads/2021/06/cool-profile-pic-matheus-ferrero.jpeg' },
-  { id:"2", name: 'Tomas Rueda', age: 30, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.', profilePicture:'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg' },
-  { id:"3", name: 'Gonzalo Albrisi', age: 35, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.', profilePicture:'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg' },
-  { id:"4", name: 'Federico Tanco', age: 40, description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.', profilePicture:'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg' },
-]
+    {
+        id: '1',
+        name: 'Tomás Rueda Laje',
+        // age: 30,
+        rol: 'Socio fundador',
+        description:
+            'Abogado, Magister en Derecho Empresarial y en Negocios Internacionales. Emprendedor.',
+    },
+    {
+        id: '2',
+        name: 'Gonzalo Albrisi',
+        // age: 35,
+        rol: 'Socio fundador',
+        description: 'Licenciado en Turismo, Emprendedor, Desarrollista, cripto entusiasta.',
+    },
+];
 
 const PartnerList = () => {
-  const currentPartner = PARTNERS.map(partner => (
-    <Partner key={partner.id} partner={partner} />
-  )).slice(0, 3)
+    return (
+        <div className={`container ${styles.container}`}>
+            <SectionTitle title='PROFESSIONALS' subTitle='OUR Partners' />{' '}
+            {/* traducir poner en idiomas*/}
+            <div className={`${styles.partnerList} row justify-content-center`}>
+                <div className='col-12 col-sm-6 col-lg-4 mt-3'>
+                    <Card className={styles.partnerList__card}>
+                        <div className={styles.content}>
+                            <div style={{ width: '100%' }} className={styles.profile}>
+                                <Image
+                                    src={tomasPicture}
+                                    alt='name'
+                                    width={166}
+                                    height={166}
+                                    objectFit='cover'
+                                    quality={100}
+                                />
+                            </div>
+                            <div className='text-center mb-4'>
+                                <h5 className={styles.text__title}>{PARTNERS[0].name}</h5>
+                                <h6>{PARTNERS[0].rol}</h6>
 
-  return (
-    <div className={`container ${styles.container}`}>
-      <SectionTitle title="PROFESSIONALS" subTitle="OUR Partners"/> {/* traducir poner en idiomas*/}
-      <div className={`${styles.partnerList} row`}>
-        {currentPartner}
-      </div>
-    </div>
-  )
-}
+                                <p className={styles.text__description}>
+                                    {PARTNERS[0].description}
+                                </p>
+                            </div>
+                        </div>
+                        <SocialMediaLinks />
+                    </Card>
+                </div>
+                <div className='col-12 col-sm-6 col-lg-4 mt-3'>
+                    <Card className={styles.partnerList__card}>
+                        <div className={styles.content}>
+                            <div style={{ width: '100%' }} className={styles.profile}>
+                                <Image
+                                    src={franciscoPicture}
+                                    alt='name'
+                                    width={166}
+                                    height={166}
+                                    objectFit='cover'
+                                    quality={100}
+                                />
+                            </div>
+                            <div className='text-center mb-4'>
+                                <h5 className={styles.text__title}>{PARTNERS[1].name}</h5>
+                                <h6>{PARTNERS[1].rol}</h6>
+                                <p className={styles.text__description}>
+                                    {PARTNERS[1].description}
+                                </p>
+                            </div>
+                        </div>
+                        <SocialMediaLinks />
+                    </Card>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-export default PartnerList
+export default PartnerList;

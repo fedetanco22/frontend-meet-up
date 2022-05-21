@@ -1,0 +1,28 @@
+@import '../../styles/patterns';
+
+.schedule{
+    margin-bottom: 2rem;
+    &__modality{
+        font-size: $medium;
+        margin-bottom: 1rem;
+        & span {
+            text-decoration: underline;
+        }
+    }
+    &__checks{
+        display: flex;
+        align-items: center;
+        margin-bottom: .5rem;
+        &__icon{
+            color: $tertiary-color;
+            margin-right: .5rem;
+        }
+        & p{
+            font-size: $normal;
+        }
+    }
+    & span{
+        font-weight: $bold;
+    }
+    
+}

@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
-import useAppContext from '../../context/useAppContext';
+import useAppContext from "../../context/useAppContext";
 import {useTranslations} from "next-intl";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import {Loading} from "..";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {FaUsers, FaRegBell, FaShoppingCart, FaPause, FaLaptop, FaCog, FaDoorOpen} from "react-icons/fa";
 import Image from "next/image";
@@ -12,82 +13,95 @@ import avatar from "../../../public/avatar.jpg";
 
 import styles from "./NavbarPanel.module.scss";
 
-
 const NavbarPanel = ({handleMenu, open}) => {
   const t = useTranslations("navpanel");
-  const {user, setUser} = useAppContext();
+  const {user, setUser, getUser} = useAppContext();
   const router = useRouter();
-  const {locale, pathname} = router;
+  const {locale, pathname, query} = router;
   const [imgLan, setImgLan] = useState(flagEs);
   const [activeStyle, setActiveStyle] = useState(styles.false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
     open ? setActiveStyle(styles.true) : setActiveStyle(styles.false);
   }, [open, locale]);
-  
+
   const handleLangChange = (e) => {
     const locale = e.target.value;
-    router.push(pathname, pathname, {locale});
+    router.push(pathname, (query.userId, query.courseId), {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
-  const foto = user?.data?.profile_image?.length > 0 ? (
-    <Image src={user?.data?.profile_image} alt="idioma" width={30} height={30} />
-  ) : (
-    <Image src={avatar} alt="idioma" priority />
-  )
+
+  const foto =
+    user?.data?.profile_image?.length > 0 ? (
+      <Image src={`http://164.92.76.51:3000/userImages/${user?.data?.profile_image}`} alt="idioma" width={30} height={30} />
+    ) : (
+      <Image src={avatar} alt="idioma" priority />
+    );
 
   const exit = () => {
+    setIsLoading(true);
     setUser(null);
-    router.push('/');
-  }
+    router.push("/");
+  };
 
   return (
     <>
+      {isLoading && <Loading />}
       <div className={styles.headerLine}>
         <div>&nbsp;</div>
       </div>
       <div className={`d-flex ${styles.menu} ${activeStyle}`}>
         <Link href={t("dashboard.link")}>
-          <a className={`${styles.link} ${pathname === '/dashboard' ? styles.active : false}`}>
+          <a className={`${styles.link} ${pathname === "/dashboard" ? styles.active : false}`}>
             <FaPause className={styles.icon} />
             {t("dashboard.title")}
           </a>
         </Link>
-        <Link href={t("mycourses.link")}>
-        <a className={`${styles.link} ${pathname === '/my-courses' ? styles.active : false}`}>
-            <FaLaptop className={styles.icon} />
-            {t("mycourses.title")}
-          </a>
-        </Link>
-        <Link href={t("allcourses.link")}>
-        <a className={`${styles.link} ${pathname === '/all-courses' ? styles.active : false}`}>
-            <FaLaptop className={styles.icon} />
-            {t("allcourses.title")}
-          </a>
-        </Link>
-        <Link href={t("users.link")}>
-        <a className={`${styles.link} ${pathname === '/users' ? styles.active : false}`}>
-            <FaUsers className={styles.icon} />
-            {t("users.title")}
-          </a>
-        </Link>
-        <Link href={t("sales.link")}>
-        <a className={`${styles.link} ${pathname === '/sales' ? styles.active : false}`}>
-            <FaShoppingCart className={styles.icon} />
-            {t("sales.title")}
-          </a>
-        </Link>
+        {user?.data?.role !== "Administrator" || user?.data?.role_id !== 1 ? (
+          <Link href={t("mycourses.link")}>
+            <a className={`${styles.link} ${pathname === "/my-courses" ? styles.active : false}`}>
+              <FaLaptop className={styles.icon} />
+              {t("mycourses.title")}
+            </a>
+          </Link>
+        ) : null}
+        {user?.data?.role === "Administrator" || user?.data?.role_id === 1 ? (
+          <Link href={t("all-courses.link")}>
+            <a className={`${styles.link} ${pathname === "/all-courses" ? styles.active : false}`}>
+              <FaLaptop className={styles.icon} />
+              {t("all-courses.title")}
+            </a>
+          </Link>
+        ) : null}
+        {user?.data?.role === "Administrator" || user?.data?.role_id === 1 ? (
+          <Link href={t("users.link")}>
+            <a className={`${styles.link} ${pathname === "/users" ? styles.active : false}`}>
+              <FaUsers className={styles.icon} />
+              {t("users.title")}
+            </a>
+          </Link>
+        ) : null}
+        {user?.data?.role === "Administrator" || user?.data?.role_id === 1 ? (
+          <Link href={t("sales.link")}>
+            <a className={`${styles.link} ${pathname === "/sales" ? styles.active : false}`}>
+              <FaShoppingCart className={styles.icon} />
+              {t("sales.title")}
+            </a>
+          </Link>
+        ) : null}
+
         <Link href={t("setup.link")}>
-        <a className={`${styles.link} ${pathname === '/setup' ? styles.active : false}`}>
+          <a className={`${styles.link} ${pathname === "/setup" ? styles.active : false}`}>
             {" "}
             <FaCog className={styles.icon} />
             {t("setup.title")}
           </a>
         </Link>
-        <button className={`${styles.link}`}  onClick={exit}>
-          <FaDoorOpen className={styles.icon}/>
-            {t("close")}
+        <button className={`${styles.link}`} onClick={exit}>
+          <FaDoorOpen className={styles.icon} />
+          {t("close")}
         </button>
       </div>
       <div className={`row flex-nowrap align-items-center mx-0 ${styles.navbar}`}>
@@ -118,9 +132,7 @@ const NavbarPanel = ({handleMenu, open}) => {
           <div className="d-flex justify-content-end ms-2 align-items-center">
             <FaRegBell />
             <div className={styles.user}>
-              <div className={`ms-3 ${styles.avatar}`}>
-                {foto}
-              </div>
+              <div className={`ms-3 ${styles.avatar}`}>{foto}</div>
               <p className={`d-none d-md-block ${styles.name}`}>{user?.data?.name}</p>
             </div>
             <div className={`d-none d-sm-block ${styles.lan}`}>

@@ -3,8 +3,10 @@
 .headerLine {
   background-color: $primary-color;
   height: 15px;
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 990;
+  top: 0;
 }
 
 .navbar {
@@ -12,7 +14,8 @@
   box-shadow: 0px 4px 20px rgba(202, 215, 241, 0.68);
   width: 100%;
   z-index: 1000;
-  position: relative;
+  position: fixed;
+  top: 15px;
   .lan{
     position: relative;
     padding-left: .5rem;
@@ -65,11 +68,11 @@
   flex-direction: column;
   background-color: $white;
   width: 0;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0;
   transition: all 0.3s ease-in-out;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   padding: 8rem 0rem 2rem 0rem;
@@ -109,7 +112,7 @@
 
 @media screen and (min-width: 992px) {
   .menu {
-    position: absolute;
+    position: fixed;
     left: 0;
     width: 270px;
     padding: 8rem 1rem 2rem 1rem;

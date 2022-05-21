@@ -1,0 +1,95 @@
+@import '../../styles/patterns';
+
+.imageWrapper{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.title{
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $line-gray;
+    
+  }
+  .textBody{
+    h3{
+      font-size: $extra-large;
+      font-weight: $bold;
+      color: $text-black;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $text-gray;
+      margin-bottom: 2rem;
+      padding-right: 0rem;
+      @media screen and (min-width: $screen-md) {
+        padding-right: 4rem;
+      }
+      white-space: pre-line;
+    }
+  }
+
+.value{
+  background-color: $white;
+  color: $black;
+  padding: 0rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0px;
+  z-index: 2;
+
+  &__title {
+    background-color: $status-green;
+    color: $white;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0 ;
+
+    
+    h3{
+      font-size: $large;
+      font-weight: $extra-bold;
+      color: $white;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text{ 
+    width: 100%;
+    padding: 2rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    border-bottom: 1px solid $line-gray;
+    &__title{
+    h6 {
+      font-size: $extra-large;
+      font-weight: $bold;
+      line-height: 1.8rem;
+      color: #525050;
+      
+    }
+    }
+  }
+}
+
+.enroll{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  &__price{
+    font-size: $normal;
+    &__number{
+      font-weight: bold;
+      font-size: $extra-large;
+    }
+  }
+}
+  

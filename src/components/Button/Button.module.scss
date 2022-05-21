@@ -8,6 +8,8 @@
   border-radius: 3px;
   white-space: nowrap;
   text-align: center;
+  display: block;
+  // width: -webkit-fill-available;
   svg{
     margin-right: .5rem
   }
@@ -44,6 +46,7 @@
     color: $primary-color;
     transition: all .3s ease-in-out;
     border: none;
+
     &:hover{
       background-color: $primary-color;
       color: $white;
@@ -136,6 +139,15 @@
       }
     }
   }
+  &:disabled{
+    cursor:default;
+    color: $text-gray;
+    background-color: transparent;
+    &:hover{
+      background-color: transparent;
+      color: $text-gray;
+    }
+  }
 }
 
 .link{
@@ -159,4 +171,16 @@
   font-weight: $bold;
   color: $secondary-color;
   border-bottom: 1px solid $secondary-color;
+}
+
+.disabled{
+  opacity: .5;
+  color: $text-gray;
+  background-color: transparent;
+  pointer-events: none;
+  cursor: not-allowed;
+  &:hover{
+    background-color: transparent;
+    color: $text-gray;
+  }
 }

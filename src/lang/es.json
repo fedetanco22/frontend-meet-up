@@ -1,9 +1,9 @@
 {
-  "config":{
+  "config": {
     "title": "Meet-up plataforma educativa",
     "author": {
       "name": "Trylogic",
-      "summary": "Somos un groupo de developers."
+      "summary": "Somos un gropo de developers."
     },
     "description": "Meet-up es una plataforma educativa para aprender Ingles facilmente",
     "keywords": "ingles online",
@@ -11,16 +11,15 @@
       "twitter": "lerobbb"
     }
   },
-  "home":{
+  "home": {
     "title": "Inicio",
     "prueba": "prueba home",
-    "bannerColor":{
+    "bannerColor": {
       "title": "Probá tu inglés",
       "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
       "button": "Tomar el examen"
-
     },
-    "bannerColor2":{
+    "bannerColor2": {
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
@@ -35,9 +34,19 @@
       }
     }
   },
-  "courses":{
+  "courses": {
     "title": "Cursos",
     "prueba": "prueba cursos",
+    "bannerColor": {
+      "title": "Probá tu inglés",
+      "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
+      "button": "Tomar el examen"
+    },
+    "bannerColor2": {
+      "title": "Convertite en Docente",
+      "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
+      "button": "Aplicá ahora"
+    },
     "auth": {
       "SignUp": {
         "title": "Entrar",
@@ -48,7 +57,7 @@
       }
     }
   },
-  "test":{
+  "test": {
     "title": "Test",
     "prueba": "prueba a Test",
     "auth": {
@@ -61,24 +70,28 @@
       }
     }
   },
-  "about":{
+  "about": {
     "title": "Nosotros",
     "description": "Somos el resultado de la fusión entre experimentados docentes y avanzados emprendedores, convencidos del poder transformador de la educación como verdadera herramienta de progreso.",
-    "mision": "Nuestra misión es democratizar la educación, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado.",  
+    "mision": "Nuestra misión es democratizar la educación del inglés, erigiéndonos como un instrumento inclusivo, que permita acceder sin trabas al aprendizaje del idioma universalmente adoptado en todo el mundo.",
     "vision": "Nuestra visión es ser brindar una educacion de calidad a traves de la plataforma educativa, que permita a los estudiantes aprender inglés de manera fácil y divertida.",
-    "methodology": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales. Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo. Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
+    "methodologyOne": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible. ",
+    "methodologyTwo": "El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales.",
+    "methodologyThree": "Contamos con un equipo docente altamente calificado, que representa fielmente los principios que nos identifican. Su objetivo es el tuyo.",
+    "methodologyFour": "Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up.",
+    "course_info": "Nuestros cursos están especialmente diseñados para vos y la concreta situación que estás atravesando. Podes elegir distintas modalidades de cursado: Grupal: clases online en grupo de no más de 12 personas, Individuales, Just Talk: clases de conversación o English for Business purposes",
     "values": {
       "title": "Nuestros",
       "subtitle": "Valores",
       "values": {
-        "professionalism":"Profesionalismo",
-        "excellence":"Excelencia",
-        "warranty":"Garantia",
-        "knowledge":"Conocimiento"
+        "professionalism": "Profesionalismo",
+        "excellence": "Excelencia",
+        "warranty": "Garantia",
+        "knowledge": "Conocimiento"
       }
     }
   },
-  "dashboard":{
+  "dashboard": {
     "title": "Mi Panel",
     "buttonEdit": "/setup",
     "roleTeacher": "Teacher",
@@ -102,70 +115,69 @@
         "url": "/users"
       }
     }
-
   },
-   "nav": {
-    "home":{
+  "nav": {
+    "home": {
       "title": "Inicio",
       "link": "/"
     },
-    "courses":{
+    "courses": {
       "title": "Cursos",
       "link": "/courses"
     },
-    "test":{
+    "test": {
       "title": "Test",
       "link": "/test"
     },
-    "about":{
+    "about": {
       "title": "Nosotros",
       "link": "/about"
     },
-    "login":{
+    "login": {
       "title": "Entrar",
-      "link": "/login"
+      "link": "/login",
+      "titleUser": "Mi cuenta",
+      "linkUser": "/dashboard"
     },
-    "register":{
+    "register": {
       "title": "Registrarse",
       "link": "/register"
     },
-    "terms":{
+    "terms": {
       "title": "Terminos del servicio",
       "link": "/terms-of-service"
     },
-    "policy":{
+    "policy": {
       "title": "Politica de privacidad",
       "link": "/private-policy"
-    } 
-    
+    }
   },
   "navpanel": {
-    "dashboard":{
+    "dashboard": {
       "title": "Panel",
       "link": "/dashboard"
     },
-    "mycourses":{
+    "mycourses": {
       "title": "Mis Cursos",
       "link": "/my-courses"
     },
-    "setup":{
+    "setup": {
       "title": "Configuración",
       "link": "/setup"
     },
-    "allcourses":{
+    "all-courses": {
       "title": "Cursos",
       "link": "/all-courses"
     },
-    "users":{
+    "users": {
       "title": "Usuarios",
       "link": "/users"
     },
-    "sales":{
+    "sales": {
       "title": "Ventas",
       "link": "/sales"
     },
     "close": "Salir"
-    
   },
   "numberblock": {
     "item1": {
@@ -181,50 +193,50 @@
       "text": "Profesores"
     }
   },
-  "services":{
-    "whyUs":{
+  "services": {
+    "whyUs": {
       "title": "¿Porque elegir Meet Up?",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
-      "button":"ver mas..."
+      "button": "ver mas..."
     },
-    "service":{
-      "1":{
-        "title":"Cursos Online",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+    "service": {
+      "1": {
+        "title": "Cursos Online",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "2":{
-        "title":"Tutoriales",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "2": {
+        "title": "Tutoriales",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       },
-      "3":{
-        "title":"Conversaciones",
-        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+      "3": {
+        "title": "Conversaciones",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
       }
     }
   },
   "banner": {
-    "title1": "Aprender hoy,",
-    "title2": "hablar mañana",
+    "title1": "Cursos virtuales ",
+    "title2": "de inglés para vos.",
     "subtitle": "Cursos de inglés para principiantes y estudiantes avanzados",
     "button": {
       "text": "Comenzar",
       "url": "/courses"
     }
   },
-  "footer":{
+  "footer": {
     "phone": "Teléfono",
     "email": "Correo",
     "listLink1": "Enlaces útiles",
     "listLink2": "Cursos"
   },
-  "newsletter":{
+  "newsletter": {
     "title": "Suscríbase a nuestras novedades",
-    "button":{
+    "button": {
       "text": "Suscribirse"
     },
     "placeholder": "Correo electrónico"
   },
-  "contact":{
+  "contact": {
     "title": "Contacto",
     "subtitle": "Contactarnos",
     "phone": "Teléfono",
@@ -235,23 +247,64 @@
   "coursesList": {
     "title": "Cursos",
     "subtitle": "Cursos populares",
-    "buttonEnroll": "Inscribirse",
+    "buttonEnroll": "Ver más...",
     "buttonAll": {
       "text": "Ver todos los cursos",
       "url": "/courses"
     }
   },
-  "setup":{
+  "setup": {
     "title": "Configuración",
-    "form":{
-      "name":"Nombre",
+    "form": {
+      "name": "Nombre",
       "lastname": "Apellido",
-      "phone": "Teléfono"
+      "phone": "Teléfono",
+      "submit": "Guardar",
+      "validations": {
+        "name": {
+          "required": "nombre es requerido",
+          "min": "min. 3 caracteres",
+          "max": "max. 30 caracteres"
+        },
+        "lastName": {
+          "required": "apellido es requerido"
+        },
+        "phone": {
+          "required": "teléfono es requerido",
+          "number": "sólo caracteres numéricos"
+        },
+        "password": {
+          "required": "contraseña es requerido"
+        },
+        "newPassword": {
+          "required": "nueva contraeña es requerido",
+          "min": "min. 8 caracteres",
+          "max": "max. 12 caracteres"
+        },
+        "repeatPassword": {
+          "required": "repetir contraeña es requerido",
+          "min": "min. 8 caracteres",
+          "max": "max. 12 caracteres"
+        }
+      }
     },
     "alert": {
       "warning": "Hay cambios pendientes",
       "success": "Datos guardados exitosamente",
-      "error": "Error , verifique los datos y vuelva a intentar"      
+      "error": "Error , verifique los datos y vuelva a intentar",
+      "errorRepeat": "Las contraseñas deben ser iguales"
+    },
+    "password": {
+      "title": "Cambiar contraseña",
+      "current": "Contraseña actual",
+      "new": "Nueva contraseña",
+      "repeat": "Repetir nueva contraseña",
+      "conditions": "Condiciones: la contraseña debe tener minimo 8 carcteres, maximo 12, contener al menos una mayuscula, una minuscula y un simbolo. "
+    },
+    "sendPassword": {
+      "title": "Reestablecer contraseña",
+      "indications": "Se enviara un email a su correo electronico para reestablecer la contraseña.",
+      "send": "Enviar"
     }
   },
   "users": {
@@ -261,13 +314,243 @@
       "user": "Usuario",
       "name": "Nombre",
       "role": "Rol",
-      "actions": "Acciones"
+      "actions": "Acciones",
+      "empty": "No se encontraron usuarios"
     },
     "search": "Buscar",
     "roleInput": {
       "label": "Rol",
       "input": "Todos"
     }
+  },
+  "user": {
+    "title": "Editar Usuario",
+    "child": "Usuarios",
+    "delete": {
+      "title": "Eliminar usuario",
+      "content": "Si elimina el usuario todos sus datos se perderan y no se podran recuperar.",
+      "button": "Eliminar"
+    }
+  },
+  "sales": {
+    "title": "Ventas",
+    "list": "Lista de pedidos",
+    "search": "Buscar",
+    "status": "Estado",
+    "inputStatusAll": "Todas",
+    "table": {
+      "order": "Orden",
+      "user": "Usuario",
+      "product": "Producto",
+      "status": "Estado",
+      "actions": "Acciones",
+      "date": "Fecha de orden",
+      "dateComplete": "Fecha de orden completada",
+      "payment": "ID de pago",
+      "empty": "No hay resultados"
+    },
+    "modal": {
+      "title": "Detalle de venta",
+      "close": "Cerrar"
+    }
+  },
+  "myCourses":{
+    "title": "Mis Cursos"
+  },
+  "allCourses": {
+    "title": "Cursos",
+    "addCourse": "Agregar nuevo curso"
+  },
+  "addCourse": {
+    "title": "Agregar nuevo curso",
+    "child": "Cursos"
+  },
+  "cardCourse": {
+    "button": "Ver más"
+  },
+  "courseView": {
+    "title": "Curso",
+    "level": "Nivel",
+    "duration": "Duración",
+    "child": "Cursos",
+    "editCourse": "Editar Curso",
+    "onlineClass": "Clase Online",
+    "openFiles": "Abrir Archivos",
+    "deleteCourse": "Eliminar Curso",
+    "enrolled": "Inscriptos",
+    "button": "Inscribirse",
+    "schedule": {
+      "title": "Horarios",
+      "day": "Días",
+      "time": "Horarios",
+      "start": "Comienzo",
+      "end": "Fin",
+      "teacher": "Profesor",
+      "modality": "Modalidad",
+      "registrationStart": "Comienzo de inscripción",
+      "registrationEnd": "Fin de inscripción"
+    },
+    "module": {
+      "title": "Módulos"
+    },
+    "modal": {
+      "title": "Confirmar eliminación de curso?",
+      "text1": "realmente desea borrar el curso  ",
+      "text2": "Si confirma la eliminación los datos no se podrán recuperar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
+    },
+    "bannerColor": {
+      "title": "Probá tu inglés",
+      "description": "En nuestra plataforma educativa podes probar tu nivel de inglés cuando quieras. Solo tienes que registrarte y comenzar a aprender inglés.",
+      "button": "Tomar el examen"
+    },
+    "bannerColor2": {
+      "title": "Convertite en Docente",
+      "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
+      "button": "Aplicá ahora"
+    }
+  },
+  "courseEdit": {
+    "title": "Datos del curso",
+    "titleImage": "Editar imagen del curso",
+    "selectFile": "Seleccionar imagen",
+    "form": {
+      "title": "Titulo en Inglés",
+      "titleES": "Titulo en español",
+      "level": "Nivel en inglés",
+      "levelES": "Nivel en español",
+      "description": "Descripción en inglés ",
+      "descriptionES": "Descripción en español",
+      "duration": "Duración en inglés ",
+      "durationES": "Duración en español",
+      "price": "Precio",
+      "addModule": "Agregar módulo",
+      "deleteModule": "Borrar modulo",
+      "addSchedule": "Agregar horario",
+      "deleteSchedule": "Eliminar horario",
+      "schedules": {
+        "schedule": "Horario",
+        "title": "Titulo",
+        "titleES": "Titulo en español",
+        "start": "Inicio",
+        "end": "Fin",
+        "startR": "Inicio inscripción",
+        "endR": "Fin inscripción",
+        "time": "Horario",
+        "teacher": "Profesor",
+        "modality": "Modalidad",
+        "modalityES": "Modalidad en español",
+        "linkDrive": "Link a documentos",
+        "linkZoom": "Link a clase",
+        "days": "Días",
+        "week": {
+          "mon": "Lun",
+          "tue": "Mar",
+          "wed": "Mie",
+          "thu": "Jue",
+          "fri": "Vie",
+          "sat": "Sab",
+          "sun": "Dom"
+        }
+      },
+      "modules": {
+        "module": "Modulo",
+        "title": "Titulo",
+        "titleES": "Titulo en español",
+        "description": "Descripción en inglés ",
+        "descriptionES": "Descripción en español",
+        "number": "Numero"
+      },
+      "submit": "Guardar",
+      "validations": {
+        "title": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "level": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "description": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 2500 caracteres"
+        },
+        "duration": {
+          "required": "Este campo es obligatorio",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "price": {
+          "number": "Solo numeros"
+        },
+        "modality": {
+          "required": "Modalidad es requerido",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "linkDocs": {
+          "required": "Link to docs is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 350 caracteres"
+        },
+        "linkClass": {
+          "required": "Link to class is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 350 caracteres"
+        },
+        "time": {
+          "required": "Time is required",
+          "min": "min. 3 caracteres",
+          "max": "max. 50 caracteres"
+        },
+        "teacher": {
+          "required": "teacher is required"
+        },
+        "data": {
+          "required": "Is required"
+        }
+      },
+      "alert": {
+        "warning": "Hay cambios pendientes",
+        "success": "Datos guardados exitosamente",
+        "error": "Error , verifique los datos y vuelva a intentar"
+      }
+    },
+    "schedule": {},
+    "module": {
+      "title": "Modules"
+    }
+
+  },
+  "sesion": {
+    "title": "Expired Session",
+    "link": "log back in"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Detalles de la compra",
+    "subtitle2": "Método de pago",
+    "description": "Al pagar será redirigido a Mercado pago para realizar su pago de forma segura, a traves de la plataforma de pagos Mercado Pagos, podrá utilizar Tarjeta de crédito o débito según promociones vigentes",
+    "button": "Pagar",
+    "buttonBack": "Volver",
+    "coursesButton": "Mis Cursos",
+    "retryButton": "Reintentar",
+    "table": {
+      "course": "Curso",
+      "schedule": "Horario",
+      "price": "Precio",
+      "status": "Estado",
+      "empty": "No hay cursos selecionado"
+    }
+  },
+  "errorPage": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "text": "Uh! Parece que estas perdido.",
+    "button": "Volver al inicio."
   }
-  
 }

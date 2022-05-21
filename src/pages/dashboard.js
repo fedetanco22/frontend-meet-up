@@ -1,48 +1,115 @@
 import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
-import router from "next/router";
 import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, Button, IconButton} from "../components";
+import router from "next/router";
+import {LayoutPanel, TitlePanel, Card, Button, IconButton, Loading} from "../components";
 import useAppContext from "../context/useAppContext";
 import Image from "next/image";
 import avatar from "../../public/avatar.jpg";
 import {FaLaptop, FaShoppingCart, FaUsers, FaPencilAlt} from "react-icons/fa";
+
+
 import styles from "../styles/Dashboard.module.scss";
 
 const Dashboard = () => {
   const t = useTranslations("dashboard");
-  const {user} = useAppContext();
-  const [users, setUsers] = useState(0);
+  const {user, setUser, getUser, endSesion} = useAppContext();
+  const [users, setUsers] = useState([]);
+  const [sales, setSales] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (user !== null) {
+      // getUser()
       getUsers();
+      getCourses();
+      getSales();
     } else {
-      router.push("/");
+      router.push("/login");
     }
   }, []);
-
-  const getUsers = async () => {
-    if (user?.data?.role_id === 1) {
-      const url = "http://164.92.76.51:3000/users";
-      try {
-        const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-        setUsers(res.data.data.length);
-      } catch (error) {
+console.log(user)
+console.log(users)
+const getUsers = async () => {
+  setIsLoading(true)
+  if (user?.data?.role === "Administrator") {
+    const url = "http://164.92.76.51:3000/users";
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      if(res.status === 200){
+        setUsers(res.data?.data);
+        setUsersFilters(res.data?.data);
+        setIsLoading(false);
       }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion()
+        setUser(null);
+        
+      }
+      console.log(error, 'error')
+      setIsLoading(false)
     }
-  };
+  }
+};
+const getCourses = async () => {
+  setIsLoading(true)
+  const url = "";
+  if (user?.data?.role === "Student"){
+    url = "http://164.92.76.51:3000/students/inscriptions";
+  }else if(user?.data?.role === "Teacher"){
+    url = "http://164.92.76.51:3000/teacher/courses";
+  }
+    
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      if(res.status === 200){
+        setIsLoading(false);
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion()
+        setUser(null);
+        
+      }
+      console.log(error, 'error')
+      setIsLoading(false)
+    }
+  
+};
+const getSales = async () => {
+  setIsLoading(true);
+  if (user?.data?.role === "Administrator") {
+    const url = "http://164.92.76.51:3000/sales";
+    try {
+      const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
+      console.log(res.data?.data, "resultado");
+      if (res.status === 200) {
+        setSales(res.data?.data);
+        setIsLoading(false);
+      }
+      setIsLoading(false);
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion();
+        setUser(null);
+      }
+      console.log(error, "error");
+      setIsLoading(false);
+    }
+  }
+};
 
   const foto =
     user?.data?.profile_image?.length > 0 ? (
-      <Image src={user?.data?.profile_image} alt="idioma" width={130} height={130} />
+      <Image src={`http://164.92.76.51:3000/userImages/${user?.data?.profile_image}`} alt="idioma" width={130} height={130} />
     ) : (
       <Image src={avatar} alt="idioma" priority />
     );
 
   return (
     <LayoutPanel pageTitle={t("title")}>
-      
+      {isLoading && <Loading/>}
         <TitlePanel title={t("title")} />
         <Card>
           <div className="d-flex justify-content-end pt-3 pe-3">
@@ -78,7 +145,7 @@ const Dashboard = () => {
                       <FaShoppingCart />
                     </div>
                     <div className="ps-3">
-                      <p className={styles.number}>145</p>
+                      <p className={styles.number}>{sales?.length}</p>
                       <p className={styles.period}>{t("salesCard.period")}</p>
                     </div>
                   </div>
@@ -104,7 +171,7 @@ const Dashboard = () => {
                       <FaUsers />
                     </div>
                     <div className="ps-3">
-                      <p className={styles.number}>{users}</p>
+                      <p className={styles.number}>{users.length}</p>
                       <p className={styles.period}>{t("usersCard.period")}</p>
                     </div>
                   </div>
@@ -122,7 +189,7 @@ const Dashboard = () => {
             </div>
           </div>
         )}
-        {user?.data?.role_id !== 1 && (
+        {/* {user?.data?.role_id !== 1 && (
           <div className="d-flex flex-wrap pt-3">
             <div className="col-12 col-md-6 pe-md-2 ">
               <Card>
@@ -153,7 +220,7 @@ const Dashboard = () => {
               </Card>
             </div>
           </div>
-        )}
+        )} */}
       
     </LayoutPanel>
   );

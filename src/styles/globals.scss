@@ -32,19 +32,24 @@ select{
   }
 }
 
+small{
+font-size: $small;
+color: $text-gray;
+line-height: 1.6!important;
+}
+
 .bg-panel{
   background-color: $bg-blue;
   padding: 2rem;
   min-height: 100%;
   width: 100%;
   min-height: calc(100vh - 90px);
+  margin-top: 90px;
 }
 
-@media screen and (min-width: 992px) {
-  .bg-panel{
-    padding: 2rem 2rem 2rem 19rem;
-  }
-  
+.cardTitle{
+  font-size: $extra-large;
+  font-weight: $bold;
 }
 
 .text-primary{
@@ -60,11 +65,117 @@ select{
     td{
       font-size: $medium;
       color: $text-gray;
+      min-height: 53.5px;
     }
   }
   th{
     font-weight: $semi-bold!important;
   }
 
+  &.responsive{
 
+    @media screen and (max-width: 768px) {
+      thead{
+        th{
+          display: none;
+        }
+      }
+      tbody{
+        border-top: 1px solid $line-gray;
+        tr{
+          border-bottom: 1px solid $line-gray;
+          position: relative;
+          padding: .5rem 0;
+          display: block;
+          td{
+            display: block;
+            width: 100%;
+            border-bottom: none;
+            padding: 0 .5rem;
+            &:last-child{
+              position: absolute;
+              top: .5rem;
+            }
+            &:first-child{
+              font-weight: $bold;
+              position: relative;
+            }
+  
+          }
+        }
+      }
+      
+    }
+
+  }
+}
+.label{
+  font-size: $small;
+  color: $text-gray;
+}
+.error {
+  color: $status-red;
+  position: absolute;
+}
+.empty{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg{
+    height: 3rem;
+    width: 3rem;
+    color: $text-gray;
+  }
+  p{
+    text-align: center;
+    padding: 1rem;
+    font-weight: $bold;
+    color: $text-gray;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bg-panel{
+    padding: 2rem 2rem 2rem 19rem;
+  }
+  
+}
+
+.accordion-panel{
+  .accordion{
+    .accordion-item{
+      background-color: #FDFDFD;
+      border: none;
+      margin-bottom: .6rem;
+      border-radius: 0.5rem!important;
+
+      .accordion-header{
+        padding: .5rem!important;
+        border-radius: 0.5rem!important;
+        .accordion-button{
+          color: $text-black;
+          background-color: #FDFDFD!important;
+          font-weight: $bold!important;
+          font-size: $large;
+        }
+      }
+      .accordion-body{
+        padding: 2rem!important;
+
+      }
+    }
+  }
+}
+
+.approved{
+  color: $status-green!important;
+}
+.pending{
+  color: $status-orenge!important;
+}
+.failure{
+  color: $status-red!important;
 }
