@@ -9,10 +9,11 @@ import styles from './PartnerList.module.scss';
 const PARTNERS = [
     {
         id: '1',
-        name: 'Tomás Rueda',
+        name: 'Tomás Rueda Laje',
         // age: 30,
         rol: 'Socio fundador',
-        description: 'Master en Derecho Empresarial, Emprendedor.',
+        description:
+            'Abogado, Magister en Derecho Empresarial y en Negocios Internacionales. Emprendedor.',
     },
     {
         id: '2',
