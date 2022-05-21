@@ -14,7 +14,9 @@ const Course = ({ course }) => {
         <Image
             className={styles.image}
             src={
-                image?.length > 0 ? `http://164.92.76.51:3000/coursesImages/${image}` : courseImage
+                image?.length > 0
+                    ? `${process.env.APP_REACT_MEET_UP}/coursesImages/${image}`
+                    : courseImage
             }
             alt={course.title}
             width={580}

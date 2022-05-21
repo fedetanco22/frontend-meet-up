@@ -23,7 +23,7 @@ const Checkout = () => {
     });
 
     const handleCheckoutButton = async () => {
-        const url = 'http://164.92.76.51:3000/payment';
+        const url = `${process.env.APP_REACT_MEET_UP}/payment`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
