@@ -1,67 +1,64 @@
-@import "../../styles/patterns";
+@import '../../styles/patterns';
 
 .course {
-  background: #ffffff;
-  box-shadow: 0px 0px 20px rgba(202, 215, 241, 0.2);
-  border-radius: 5px;
-  padding-bottom: 20px;
-  height: 100%;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px rgba(202, 215, 241, 0.2);
+    border-radius: 5px;
+    padding-bottom: 20px;
+    height: 100%;
 }
 
 .text {
-  padding: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 1rem;
 
-  &__title {
-    font-size: $normal;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    &__title {
+        font-size: $normal;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &__pink {
+            color: $secondary-color;
+        }
+        &__blue {
+            color: $primary-color;
+        }
+        &__green {
+            color: $status-green;
+        }
 
-    @media screen and (min-width: 556px) {
-      font-size: $large;
+        @media screen and (min-width: 556px) {
+            font-size: $large;
+        }
     }
-  }
-  &__subtitle {
-    font-size: $small;
-    text-transform: capitalize;
-
-    &__pink {
-      color: $secondary-color;
+    &__subtitle {
+        font-size: $small;
+        text-transform: capitalize;
     }
-    &__blue {
-      color: $primary-color;
+
+    &__description {
+        min-height: 153px;
+        max-height: 290px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $border-gray;
+        padding-bottom: 2rem;
+
+        & p {
+            font-size: $normal;
+            line-height: 1.5rem;
+            color: $text-gray;
+            text-align: justify;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden; /*si no se declara añade los ... pero muestra todo el texto*/
+        }
     }
-    &__green {
-      color: $status-green;
-    }
-  }
-
-  &__description {
-    min-height: 153px;
-    max-height: 290px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-bottom: 1px solid $border-gray;
-    padding-bottom: 2rem;
-
-   
-
-    & p {
-      font-size: $normal;
-      line-height: 1.5rem;
-      color: $text-gray;
-      text-align: justify;
-
-      display: -webkit-box;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-      overflow: hidden; /*si no se declara añade los ... pero muestra todo el texto*/
-    }
-  }
 }
 
 .image {
-  border-radius: 5px;
+    border-radius: 5px;
 }
