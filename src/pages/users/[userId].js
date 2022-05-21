@@ -4,23 +4,30 @@ import {useTranslations} from "next-intl";
 import {LayoutPanel, TitlePanel, EditUser, Loading, SendPassword, Card, Button, Alert} from "../../components";
 import axios from "axios";
 import useAppContext from "../../context/useAppContext";
-import {FaTrashAlt} from "react-icons/fa";
+import {FaTrashAlt, FaSave} from "react-icons/fa";
 
 const User = () => {
   const router = useRouter();
   const t = useTranslations("user");
-  const {user , endSesion} = useAppContext();
+  const {user, endSesion, setUser} = useAppContext();
   const [editUser, setEditUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [send, setSend] = useState(false);
+  const [sendDelete, setSendDelete] = useState(false);
   const [sendError, setSendError] = useState(false);
+  const [sendErrorDelete, setSendErrorDelete] = useState(false);
+  const [roles, setRoles] = useState([]);
+  const [roleSelectedState, setRoleSelectedState] = useState(null);
+  let roleSelected = roleSelectedState;
 
   useEffect(() => {
     if (user !== null) {
       if (user?.data?.role !== "Administrator") {
         router.push("/dashboard");
       } else {
+        getRoles();
         getEditUser();
+        
       }
     } else {
       router.push("/");
@@ -36,21 +43,68 @@ const User = () => {
       if (res.status === 200) {
         router.push("/users");
       } else {
-        setSend(true);
-        setSendError(true);
+        setSendDelete(true);
+        setSendErrorDelete(true);
       }
     } catch (error) {
       if (error.response?.status === 403) {
-        endSesion()
+        endSesion();
+        setUser(null);
+      }
+      console.log(error);
+      setSendDelete(true);
+      setSendErrorDelete(true);
+    }
+  };
+  const getRoles = async () => {
+    if (user?.data?.role === "Administrator") {
+      const url = "http://164.92.76.51:3000/roles";
+      try {
+        const res = await axios.get(`${url}`, {
+          headers: {Authorization: `Bearer ${user.token}`},
+        });
+        if (res.status === 200) {
+          setRoles(res?.data?.data);
+          
+        }         
+      } catch (error) {}
+    }
+  };
+  
+  
+  const confirmChange = async (e) => {
+    setIsLoading(true);
+    e.preventDefault();
+    const url = "http://164.92.76.51:3000/users/changeRole/" + editUser?.data?.user_id;
+    try {
+      const res = await axios.patch(`${url}`,{
+        "new_role": `${roleSelected}`,
+      }, {headers: {Authorization: `Bearer ${user.token}`}});
+      if (res.status === 200) {
+        setSend(true);
+        setSendError(false);
+        setIsLoading(false);
+      } else {
+        setSend(true);
+        setSendError(true);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      if (error.response?.status === 403) {
+        endSesion();
         setUser(null);
       }
       console.log(error);
       setSend(true);
       setSendError(true);
+      setIsLoading(false);
     }
   };
-
-  const id = router.query.userId;
+  const handleRole = (event) => {
+    roleSelected = event.target.value;
+    setRoleSelectedState(roleSelected)
+  };
+  const id = router?.query?.userId;
 
   const getEditUser = async () => {
     setIsLoading(true);
@@ -62,11 +116,13 @@ const User = () => {
 
       if (res.status === 200) {
         setIsLoading(false);
-        setEditUser({data: res.data.data[0]});
+        setEditUser({data: res.data?.data[0]});
+        roleSelected = res.data?.data[0].role_id;
+        setRoleSelectedState(roleSelected)
       }
     } catch (error) {
-      if (error.response.status === 403) {
-        endSesion()
+      if (error.response?.status === 403) {
+        endSesion();
         setUser(null);
       }
       console.log("error: ", error);
@@ -79,7 +135,8 @@ const User = () => {
     name: t("child"),
   };
 
-  const alert = send ? sendError ? <Alert text={t("alert.error")} type="error" /> : <Alert text={t("alert.success")} type="success" /> : null;
+  const alert = sendDelete ? sendErrorDelete ? <Alert text={t("alert.error")} type="error" /> : <Alert text={t("alert.success")} type="success" /> : null;
+  const alertRole = send ? sendError ? <Alert text={t("alert.error")} type="error" /> : <Alert text={t("alert.success")} type="success" /> : null;
 
   return (
     <LayoutPanel pageTitle={t("title")}>
@@ -88,6 +145,34 @@ const User = () => {
         <TitlePanel title={t("title")} child={child} />
         <div>{editUser !== null && <EditUser user={user} editUser={editUser} />}</div>
         <div className="pt-3">{editUser !== null && <SendPassword editUser={editUser} />}</div>
+        <div className="pt-3">
+          <Card styleClass="p-3 mb-4">
+            <h4 className="cardTitle">{t("changeRole.title")}</h4>
+            <div className="d-flex flex-wrap">{t("changeRole.content")}</div>
+
+            <form onSubmit={confirmChange}>
+              <div className="col-12 col-md-4 col-lg-3">
+                {roleSelected !== null && <select onChange={handleRole} value={roleSelected} className="form-select form-control" aria-label="Default select example">
+                  {roles?.map((role) => {
+                    return (
+                      <option key={role?.role_id} value={role?.role_id}>
+                        {role?.role}
+                      </option>
+                    );
+                  })}
+                </select>}
+              </div>
+              <div className="d-flex flex-wrap flex-md-nowrap w-100">
+                <div className="col-12 flex-fill mb-3">{alertRole}</div>
+                <div className="col-12 col-md-auto text-end px-md-3">
+                  <Button text={t("changeRole.button")} className="w-100" buttonType={"light"} asSubmit>
+                    <FaSave />
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </Card>
+        </div>
         <div className="pt-3">
           <Card styleClass="p-3">
             <h4 className="cardTitle">{t("delete.title")}</h4>

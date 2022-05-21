@@ -28,8 +28,7 @@ const Dashboard = () => {
       router.push("/login");
     }
   }, []);
-console.log(user)
-console.log(users)
+
 const getUsers = async () => {
   setIsLoading(true)
   if (user?.data?.role === "Administrator") {
@@ -83,7 +82,6 @@ const getSales = async () => {
     const url = "http://164.92.76.51:3000/sales";
     try {
       const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
-      console.log(res.data?.data, "resultado");
       if (res.status === 200) {
         setSales(res.data?.data);
         setIsLoading(false);

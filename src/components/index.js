@@ -34,6 +34,7 @@ import Loading from "./Loading/Loading";
 import SendPassword from "./SendPassword/SendPassword";
 import CardCourse from "./CardCourse/CardCourse";
 import CourseView from "./CourseView/CourseView";
+import CourseViewStudent from "./CourseViewStudent/CourseViewStudent";
 import Schedule from "./Schedule/Schedule"
 import Module from "./Module/Module";
 import CourseEdit from "./CourseEdit/CourseEdit";
@@ -77,6 +78,7 @@ export{
   SendPassword,
   CardCourse,
   CourseView,
+  CourseViewStudent,
   Schedule,
   Module,
   CourseEdit,

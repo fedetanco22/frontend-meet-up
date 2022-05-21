@@ -5,11 +5,10 @@ import {Button, Layout, Card, TitlePanel} from "../components";
 import {useTranslations} from "next-intl";
 import {FaCheckCircle, FaExclamationCircle, FaTimesCircle} from "react-icons/fa";
 import styles from "../styles/OrderPage.module.scss";
-const Success = () => {
+const OrderStatus = () => {
   const t = useTranslations("checkout");
   const {user, courseCart} = useAppContext();
   const {query} = useRouter();
-  console.log(query, 'resp');
   //llamar params de la url y llamar endpoint
   // method PATCH y enviar preffered_id, payment_id y status
   const handleData = async () => {
@@ -29,7 +28,6 @@ const Success = () => {
         }),
       });
       const data = await response?.json();
-      console.log("DATA SUCCESS", data);
     } catch (error) {
       console.log(error);
     }
@@ -82,7 +80,7 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default OrderStatus;
 
 export function getStaticProps({locale}) {
     return {

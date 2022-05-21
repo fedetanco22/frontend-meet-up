@@ -8,7 +8,7 @@ import axios from "axios";
 import {FaTrashAlt, FaPencilAlt} from "react-icons/fa";
 import styles from "./CourseView.module.scss";
 
-const CourseView = ({course}) => {
+const CourseView = ({course, student}) => {
   const [show, setShow] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const handleClose = () => {
@@ -20,7 +20,6 @@ const CourseView = ({course}) => {
   const deleteCourse = async (e) => {
     setIsLoading(true);
     e.preventDefault();
-    console.log("curso eliminado");
     const url = "http://164.92.76.51:3000/courses/" + course.course.course_id;
     try {
       const res = await axios.delete(`${url}`, {headers: {Authorization: `Bearer ${user.token}`}});
@@ -42,9 +41,9 @@ const CourseView = ({course}) => {
       {isLoading && <Loading />}
       <div className="d-flex flex-wrap border-bottom">
         <div className="col-12 col-md p-4 my-3">
-          <h3 className={styles.title}>{course.course?.title}</h3>
+          <h3 className={styles.title}>{ course.course?.title  }</h3>
           <p>
-            {t("level")}: {course.course?.level}
+            {t("level")}: { course.course?.level}
           </p>
           <p>
             {t("duration")}: {course.course?.duration}
@@ -88,7 +87,7 @@ const CourseView = ({course}) => {
         ) : null}
       </div>
       <Schedule schedules={course.schedules} role={user?.data?.role_id} />
-      <Module modules={course.modules} />
+      {/* <Module modules={course.modules} /> */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{t("modal.title")}</Modal.Title>

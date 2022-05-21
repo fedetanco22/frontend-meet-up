@@ -52,7 +52,7 @@ const Allcourses = () => {
   };
 
   const coursesList = isCourses?.map((course) => (
-    <CardCourse key={course.course_id} course={course} />
+    <CardCourse key={course.course_id} course={course} student={false}/>
 ));
 
 

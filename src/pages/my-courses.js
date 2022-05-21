@@ -2,9 +2,9 @@ import {useState, useEffect} from "react";
 import {useTranslations} from "next-intl";
 import {useRouter} from "next/router";
 import axios from "axios";
-import {LayoutPanel, TitlePanel, Card, Loading, Button, CardCourse} from "../components";
+import {LayoutPanel, TitlePanel, Loading, CardCourse} from "../components";
 import useAppContext from "../context/useAppContext";
-import Swal from 'sweetalert2';
+
 
 const MyCourses = () => {
   const t = useTranslations("myCourses");
@@ -21,7 +21,7 @@ const MyCourses = () => {
     } else {
       router.push("/");
     }
-  }, [locale]);
+  }, []);
 
   const getCourses = async () => {
     setIsLoading(true)
@@ -35,9 +35,7 @@ const MyCourses = () => {
       try {
         const res = await axios.get(`${url}`, {headers: {Authorization: `Bearer ${user?.token}`}});
         if(res.status === 200){
-          console.log(url)
           cursos = res?.data?.data
-          console.log(res?.data , 'datos')
           setIsCourses(cursos)
           setIsLoading(false);
         }
@@ -54,7 +52,7 @@ const MyCourses = () => {
   };
 
   const coursesList = isCourses?.map((course) => (
-    <CardCourse key={course.course_id} course={course} />
+    <CardCourse key={course.course_id} course={course} student={true}/>
 ));
 
 
