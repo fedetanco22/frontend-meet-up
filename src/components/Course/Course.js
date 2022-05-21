@@ -23,25 +23,23 @@ const Course = ({ course }) => {
             quality={100}
         />
     );
+    // console.log(level.toLowerCase().trim());
+    // const classes = classNames(
+    //     {
+    //         [styles.text__title__pink]: level.toLowerCase().trim() === 'beginner',
+    //         [styles.text__title__green]: level.toLowerCase().trim() === 'intermediate',
+    //         [styles.text__title__blue]: level.toLowerCase().trim() === 'upper-intermediate',
 
-    console.log(level.toLowerCase().trim());
-
-    const classes = classNames(
-        {
-            [styles.text__title__pink]: level.toLowerCase().trim() === 'beginner',
-            [styles.text__title__green]: level.toLowerCase().trim() === 'intermediate',
-            [styles.text__title__blue]: level.toLowerCase().trim() === 'upper-intermediate',
-        },
-        level
-    );
+    //     },
+    //     level
+    // );
 
     return (
         <div className='col-12 col-sm-6 col-md-4 mb-4'>
-            <Card styleClass="h-100">
+            <Card styleClass='h-100'>
                 <div style={{ width: '100%' }}>{coursePicture}</div>
                 <div className={styles.text}>
-                    {/* <h6 className={`${styles.text__subtitle} ${classes}`}>for {level} students</h6> */}
-                    <h5 className={`${styles.text__title}  ${classes}`}>{title}</h5>
+                    <h5 className={`${styles.text__title} `}>{title}</h5>
                     <div className={styles.text__description}>
                         <p>{description}</p>
                     </div>
