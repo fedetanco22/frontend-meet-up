@@ -32,7 +32,9 @@ const Course = ({ courses }) => {
         <Image
             className={styles.image}
             src={
-                image?.length > 0 ? `http://164.92.76.51:3000/coursesImages/${image}` : courseImage
+                image?.length > 0
+                    ? `${process.env.APP_REACT_MEET_UP}/coursesImages/${image}`
+                    : courseImage
             }
             alt={title}
             layout='fill'
@@ -70,9 +72,7 @@ const Course = ({ courses }) => {
                     </div>
 
                     <Card className={`${styles.value} col-12 col-md-4 `}>
-                        <div className={styles.value__title}>
-                            {level ? <h3>{level}</h3> : ''}
-                        </div>
+                        <div className={styles.value__title}>{level ? <h3>{level}</h3> : ''}</div>
                         <div className={styles.value__text}>
                             <div className={styles.value__text__title}>
                                 <h6>Schedule</h6>
@@ -108,7 +108,7 @@ const Course = ({ courses }) => {
 export default Course;
 
 export async function getServerSideProps({ locale, query }) {
-    const res = await fetch(`http://164.92.76.51:3000/${locale}/courses/${query.courseId}`);
+    const res = await fetch(`${process.env.APP_REACT_MEET_UP}/${locale}/courses/${query.courseId}`);
     const jsonCourse = await res.json();
     const courses = jsonCourse.data;
     return {
