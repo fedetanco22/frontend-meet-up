@@ -43,7 +43,7 @@ export default function Home({ courses }) {
 }
 
 export async function getStaticProps({ locale }) {
-    const res = await fetch(`http://164.92.76.51:3000/${locale}/courses`);
+    const res = await fetch(`${process.env.APP_REACT_MEET_UP}/${locale}/courses`);
     const courses = await res.json();
     return {
         props: {
