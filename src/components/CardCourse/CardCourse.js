@@ -6,9 +6,8 @@ import courseImage from "../../../public/course-image.png";
 
 import styles from "./CardCourse.module.scss";
 
-const CardCourse = ({course}) => {
+const CardCourse = ({course, student}) => {
   const t = useTranslations("cardCourse");
-
 
   const foto =
     course.image?.length > 0 ? (
@@ -34,16 +33,29 @@ const CardCourse = ({course}) => {
           <h3 className={styles.title}>{course.title}</h3>
           <p className={styles.text}>{course.description}</p>
           <div className="d-flex justify-content-end w-100 border-top mt-3">
-            <Button
-              path={{
-                pathname: "/all-courses/[courseId]",
-                query: {courseId: course.course_id},
-              }}
-              asLink
-              buttonType="blue_small"
-              className="mt-3"
-              text={t("button")}
-            ></Button>
+            {student === true ? (
+              <Button
+                path={{
+                  pathname: "/my-courses/[courseId]",
+                  query: {courseId: course.course_id},
+                }}
+                asLink
+                buttonType="blue_small"
+                className="mt-3"
+                text={t("button")}
+              ></Button>
+            ) : (
+              <Button
+                path={{
+                  pathname: "/all-courses/[courseId]",
+                  query: {courseId: course.course_id},
+                }}
+                asLink
+                buttonType="blue_small"
+                className="mt-3"
+                text={t("button")}
+              ></Button>
+            )}
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ const Schedule = ({schedules, role}) => {
                 <Button
                   path={item.link_docs ? item.link_docs : "/"}
                   buttonType="light"
-                  className="mt-1 mx-md-2 flex-auto w-10"
+                  className="mt-1 mx-md-2 flex-auto w-100"
                   asLink
                   text={t("openFiles")}
                   disabled={item.link_docs ? false : true}
@@ -76,7 +76,10 @@ const Schedule = ({schedules, role}) => {
                   <FaFolderOpen />
                 </Button>
                 {role === 2 || role === 1 ? (
-                  <Button path={"./course-edit"} buttonType="light" className="mt-1 flex-auto w-100" asLink text={t("enrolled")}>
+                  <Button path={{
+                    pathname: "/enrolled/[scheduleId]",
+                    query: {scheduleId: item.schedule_id},
+                  }} buttonType="light" className="mt-1 flex-auto w-100" asLink text={t("enrolled")}>
                     <FaUsers />
                   </Button>
                 ) : null}
