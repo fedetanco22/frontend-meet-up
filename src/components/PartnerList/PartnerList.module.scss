@@ -1,41 +1,41 @@
 @import '../../styles/patterns';
 
-.container{
-  margin-top: 4rem ;
-  margin-bottom: 4rem ;
+.container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
-.partnerList{
-  margin-bottom: 5rem;
-  &__card{
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-}
-
-.content{
-  height: 100%;
-  padding: 2rem 2rem 0rem;
-  
+.partnerList {
+    margin-bottom: 5rem;
+    &__card {
+        height: 100%;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
-.profile{
-  text-align: center;
-  img { 
-    border-radius: 50%;
-  }
+.content {
+    height: 100%;
+    padding: 2rem 2rem 0rem;
 }
 
-.text{
-  &__title{
-    font-size: $extra-large;
-    font-weight: $bold;
-    margin: 1rem 0 1.5rem;
-  }
-  &__description{
-    font-size: $small;
-    font-weight: $regular;
-  }
+.profile {
+    text-align: center;
+    img {
+        border-radius: 50%;
+    }
+}
+
+.text {
+    &__title {
+        font-size: $extra-large;
+        font-weight: $bold;
+        margin: 1rem 0 1.5rem;
+    }
+    &__description {
+        font-size: $small;
+        font-weight: $regular;
+    }
 }

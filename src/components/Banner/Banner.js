@@ -24,6 +24,7 @@ const Banner = ({ image, altText, side }) => {
                 objectFit='cover'
                 objectPosition='50% 0%'
                 quality={100}
+                priority
             />
             <div className={styles.bannerContent}>
                 <div
