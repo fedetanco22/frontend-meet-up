@@ -2,14 +2,14 @@ import { createContext, useContext, useState } from 'react';
 import router from 'next/router';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import {useTranslations} from "next-intl";
+import { useTranslations } from 'next-intl';
 import { useStorage } from '../hooks/useStorage';
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-    const t = useTranslations("sesion");
+    const t = useTranslations('sesion');
     const [products, setProducts] = useState([]);
     console.log('🚀 ~ file: useAppContext.js ~ line 11 ~ AppProvider ~ product', products);
 
@@ -25,7 +25,7 @@ export const AppProvider = ({ children }) => {
     const [courseCart, setCourseCart] = useStorage('course', null);
 
     const getUser = async () => {
-        const url = 'http://164.92.76.51:3000/user/' + user?.data?.user_id;
+        const url = `${process.env.APP_REACT_MEET_UP}/user/` + user?.data?.user_id;
         try {
             const res = await axios.get(`${url}`, {
                 headers: { Authorization: `Bearer ${user.token}` },
@@ -42,8 +42,8 @@ export const AppProvider = ({ children }) => {
                 title: 'Oops...',
                 text: 'Sesión caducada',
                 showConfirmButton: false,
-                footer: '<a href="/login">Volver a loguearse</a>'
-              })
+                footer: '<a href="/login">Volver a loguearse</a>',
+            });
         }
         return user;
     };
@@ -51,11 +51,11 @@ export const AppProvider = ({ children }) => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: `${t("title")}`,
+            text: `${t('title')}`,
             showConfirmButton: false,
-            footer: `<a href="/login">${t("link")}</a>`
-          })
-    }
+            footer: `<a href="/login">${t('link')}</a>`,
+        });
+    };
 
     const addCourse = (course, schedule_id) => {
         setCourseCart({ ...course, schedule_id });
@@ -85,7 +85,7 @@ export const AppProvider = ({ children }) => {
                 deleteProduct,
                 emptyCart,
                 endSesion,
-                courseCart
+                courseCart,
             }}
         >
             {children}

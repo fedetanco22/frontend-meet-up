@@ -3,14 +3,16 @@ import { useTranslations } from 'next-intl';
 import { Modal } from 'react-bootstrap';
 import router from 'next/router';
 import axios from 'axios';
-import { LayoutPanel, TitlePanel, Card, IconButton, Button, Loading } from '../components';
-import useAppContext from '../context/useAppContext';
+import { LayoutPanel, TitlePanel, Card, IconButton, Button, Loading } from '../../components';
+import useAppContext from '../../context/useAppContext';
 import { FaPencilAlt, FaUsers, FaTrashAlt } from 'react-icons/fa';
-import styles from '../styles/Setup.module.scss';
+import styles from '../../styles/Setup.module.scss';
+import { useRouter } from 'next/router';
 
-const Users = () => {
-    const t = useTranslations('users');
-    const { user, getUser, endSesion } = useAppContext();
+const Enrolled = () => {
+    const router = useRouter();
+    const t = useTranslations('enrolled');
+    const { user, setUser, endSesion } = useAppContext();
     const [users, setUsers] = useState([]);
     const [usersFilters, setUsersFilters] = useState(users);
     const [roles, setRoles] = useState([]);
@@ -23,7 +25,7 @@ const Users = () => {
 
     useEffect(() => {
         if (user !== null) {
-            if (user?.data?.role !== 'Administrator') {
+            if (user?.data?.role === 'Student') {
                 router.push('/dashboard');
             } else {
                 getRoles();
@@ -34,18 +36,20 @@ const Users = () => {
         }
     }, []);
 
+    const id = router.query.scheduleId;
     const getUsers = async () => {
         setIsLoading(true);
         if (user?.data?.role === 'Administrator') {
-            const url = `${process.env.APP_REACT_MEET_UP}/users`;
+            const url = `${process.env.APP_REACT_MEET_UP}/schedules/inscriptions/` + id;
             try {
                 const res = await axios.get(`${url}`, {
                     headers: { Authorization: `Bearer ${user.token}` },
                 });
-                setUsers(res.data?.data);
-                setUsersFilters(res.data?.data);
+
                 if (res.status === 200) {
                     setIsLoading(false);
+                    setUsers(res.data?.data);
+                    setUsersFilters(res.data?.data);
                 }
             } catch (error) {
                 if (error.response?.status === 403) {
@@ -203,15 +207,15 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default Enrolled;
 
-export function getStaticProps({ locale }) {
+export function getServerSideProps({ locale }) {
     return {
         props: {
             // You can get the messages from anywhere you like, but the recommended
             // pattern is to put them in JSON files separated by language and read
             // the desired one based on the `locale` received from Next.js.
-            messages: require(`../lang/${locale}.json`),
+            messages: require(`../../lang/${locale}.json`),
         },
     };
 }

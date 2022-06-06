@@ -1,17 +1,29 @@
 import { useTranslations } from 'next-intl';
 import router from 'next/router';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Button, Layout, Card, TitlePanel } from '../components';
 import useAppContext from '../context/useAppContext';
 import { FaShoppingCart } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
-    const { courseCart, user } = useAppContext();
+    const { courseCart, user, endSesion, setUser } = useAppContext();
     const t = useTranslations('checkout');
-    console.log('object cart', courseCart);
+
+    useEffect(() => {
+        if (user === null) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${t('swal.title')}`,
+                showConfirmButton: false,
+                footer: `<a href="/login">${t('swal.link')}</a>`,
+            });
+        }
+    });
 
     const handleCheckoutButton = async () => {
-        const url = 'http://164.92.76.51:3000/payment';
+        const url = `${process.env.APP_REACT_MEET_UP}/payment`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -26,8 +38,19 @@ const Checkout = () => {
                 'https://sandbox.mercadopago.com.ar/checkout/v1/redirect?pref_id=1098669172-8afb42a3-565e-47a4-9ce4-f9a932352385'
             );
         } catch (error) {
-            console.log(error);
+            if (error.response?.status === 403) {
+                endSesion();
+                setUser(null);
+            }
+            console.log(error, 'error');
+            setIsLoading(false);
         }
+
+        // llamar el endpoint /payment
+        //devuelve un objeto en url con el id_mp y el url
+        //mandar el schedule_id en el body
+        // redirect a la url loctaion.push(url) esto va a mercadopago
+        // 3 paginas en el front SUCCESS, FAILED y PENDING
     };
     return (
         <Layout>

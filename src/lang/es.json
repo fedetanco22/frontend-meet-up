@@ -196,21 +196,21 @@
   "services": {
     "whyUs": {
       "title": "¿Porque elegir Meet Up?",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor.",
+      "text": "Somos el resultado de la fusión entre experimentados docentes y avanzados emprendedores, convencidos del poder transformador de la educación como verdadera herramienta de progreso.",
       "button": "ver mas..."
     },
     "service": {
       "1": {
         "title": "Cursos Online",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+        "text": "Creamos un espacio digital de enseñanza para que puedas transitar este recorrido de la mejor forma posible."
       },
       "2": {
         "title": "Tutoriales",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+        "text": "El primer paso será diagramar un programa personalizado, que se ajuste a tus concretas necesidades y de acuerdo a tus posibilidades reales."
       },
       "3": {
         "title": "Conversaciones",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquet a urna quis auctor. Praesent vestibulum felis ut purus posuere viverra. Nullam sit amet consectetur lorem."
+        "text": "Fomentamos un aprendizaje colaborativo. Creamos un espacio de encuentro y aprendizaje. Sumate a la comunidad Meet Up."
       }
     }
   },
@@ -330,6 +330,15 @@
       "title": "Eliminar usuario",
       "content": "Si elimina el usuario todos sus datos se perderan y no se podran recuperar.",
       "button": "Eliminar"
+    },
+    "changeRole": {
+      "title": "Cambiar rol de usuario",
+      "content": "Selecione el nuevo rol",
+      "button": "Cambiar"
+    },
+    "alert": {
+      "error": "Error, check the data and try again",
+      "success": "Data saved successfully"
     }
   },
   "sales": {
@@ -342,19 +351,22 @@
       "order": "Orden",
       "user": "Usuario",
       "product": "Producto",
+      "schedule": "Horario",
       "status": "Estado",
       "actions": "Acciones",
-      "date": "Fecha de orden",
-      "dateComplete": "Fecha de orden completada",
-      "payment": "ID de pago",
-      "empty": "No hay resultados"
+      "date": "Fecha de compra",
+      "dateComplete": "Fecha de pago",
+      "payment": "Id de Pago",
+      "mercadopago": "MercadoPago id",
+      "empty": "No results"
     },
     "modal": {
       "title": "Detalle de venta",
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "save": "Guardar"
     }
   },
-  "myCourses":{
+  "myCourses": {
     "title": "Mis Cursos"
   },
   "allCourses": {
@@ -524,7 +536,6 @@
     "module": {
       "title": "Modules"
     }
-
   },
   "sesion": {
     "title": "Expired Session",
@@ -539,6 +550,10 @@
     "buttonBack": "Volver",
     "coursesButton": "Mis Cursos",
     "retryButton": "Reintentar",
+    "swal": {
+      "title": "Debe iniciar sesión",
+      "link": "Iniciar sesión"
+    },
     "table": {
       "course": "Curso",
       "schedule": "Horario",
@@ -552,5 +567,21 @@
     "subtitle": "Página no encontrada",
     "text": "Uh! Parece que estas perdido.",
     "button": "Volver al inicio."
+  },
+  "enrolled": {
+    "title": "Inscriptos",
+    "list": "Lista de inscriptos",
+    "search": "Buscar",
+    "roleInput": {
+      "label": "Rol",
+      "input": "Todos"
+    },
+    "table": {
+      "user": "Usuario",
+      "name": "Nombre",
+      "role": "Rol",
+      "actions": "Acciones",
+      "empty": "No hay inscriptos"
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { LayoutPanel, TitlePanel, Loading, CourseView } from '../../components';
+import { LayoutPanel, TitlePanel, Loading, CourseViewStudent } from '../../components';
 import axios from 'axios';
 import useAppContext from '../../context/useAppContext';
 
@@ -9,17 +9,14 @@ const Course = () => {
     const router = useRouter();
     const t = useTranslations('courseView');
     const { user, setUser, endSesion } = useAppContext();
-    const [isCourse, setIsCourse] = useState({});
+    const [isCourse, setIsCourse] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const curso = isCourse;
     const { locale } = router;
 
     useEffect(() => {
         if (user !== null) {
-            if (user?.data?.role === 'Administrator') {
-                getCourse();
-            } else if (user?.data?.role === 'Teacher') {
-                getCourseTeacher();
+            if (user?.data?.role === 'Student') {
+                getCourseStudent();
             } else {
                 router.push('/404');
             }
@@ -29,46 +26,20 @@ const Course = () => {
     }, []);
 
     const id = router.query.courseId;
-    const getCourse = async () => {
+    const getCourseStudent = async () => {
         setIsLoading(true);
-        const url = `${process.env.APP_REACT_MEET_UP}/en/courses/` + id;
-        locale === 'en'
-            ? (url = `${process.env.APP_REACT_MEET_UP}/en/courses/full/` + id)
-            : (url = `${process.env.APP_REACT_MEET_UP}/es/courses/full/` + id);
-
-        try {
-            const res = await axios.get(`${url}`, {
-                headers: { Authorization: `Bearer ${user.token}` },
-            });
-            if (res.status === 200) {
-                setIsLoading(false);
-                curso = res.data.data;
-                setIsCourse(curso);
-            }
-        } catch (error) {
-            if (error.response.status === 403) {
-                endSesion();
-                setUser(null);
-            }
-            console.log('error:', error);
-            setIsLoading(false);
-        }
-        return user;
-    };
-    const getCourseTeacher = async () => {
-        setIsLoading(true);
-        const url = `${process.env.APP_REACT_MEET_UP}/teacher/courses/` + id;
+        const url = `${process.env.APP_REACT_MEET_UP}/students/inscriptions/` + id;
         try {
             const res = await axios.get(`${url}`, {
                 headers: { Authorization: `Bearer ${user.token}` },
             });
             if (res.status === 200 && res.data.data.length !== 0) {
                 if ((res.data?.data[0]?.course[0]?.course_id).toString() === id) {
-                    getCourse();
+                    setIsCourse(res.data?.data[0]);
+                    setIsLoading(false);
                 } else {
                     router.push('/404');
                 }
-                setIsLoading(false);
             } else {
                 router.push('/404');
             }
@@ -91,7 +62,8 @@ const Course = () => {
             {isLoading && <Loading />}
             <div>
                 <TitlePanel title={t('title')} child={child} />
-                <CourseView course={curso} />
+                {isCourse !== null && <CourseViewStudent course={isCourse} />}
+
                 <div className='pt-3'></div>
             </div>
         </LayoutPanel>

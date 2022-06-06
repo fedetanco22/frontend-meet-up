@@ -25,7 +25,7 @@ const Navbar = ({handleMenu, open}) => {
 
   const handleLangChange = (e) => {
     const locale = e.target.value;
-    router.push(pathname, query.courseId, {locale});
+    router.push(pathname, (query.userId, query.courseId, query.scheduleId), {locale});
     locale === "en" ? setImgLan(flagEn) : setImgLan(flagEs);
   };
 

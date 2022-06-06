@@ -330,6 +330,15 @@
       "title": "Delete user",
       "content": "If you delete the user, all your data will be lost and cannot be recovered.",
       "button": "Delete"
+    },
+    "changeRole": {
+      "title": "Change Role",
+      "content" : "select a new role for this user",
+      "button": "Change"
+    },
+    "alert": {
+      "error": "Error, check the data and try again",
+      "success":"Data saved successfully"
     }
   },
   "sales": {
@@ -342,16 +351,19 @@
       "order": "Order",
       "user": "User",
       "product": "Product",
+      "schedule": "Schedule",
       "status": "Status",
       "actions": "Actions",
       "date": "Date order",
       "dateComplete": "Date complete order",
       "payment": "Payment id",
+      "mercadopago": "MercadoPAgo id",
       "empty": "No results"
     },
     "modal": {
       "title": "Sale detail",
-      "close": "Close"
+      "close": "Close",
+      "save": "Save"
     }
   },
   "myCourses":{
@@ -539,6 +551,10 @@
     "buttonBack": "Back to courses",
     "coursesButton": "My Courses",
     "retryButton": "Retry",
+    "swal": {
+      "title": "you must log in",
+      "link": "Log in"
+    },
     "table": {
       "course": "Course",
       "schedule": "Schedule",
@@ -552,5 +568,21 @@
     "subtitle": "Page not found",
     "text": "Uh! Looks like you got lost.",
     "button": "Back to home."
+  },
+  "enrolled":{
+    "title": "Enrolled",
+    "list": "List of Enrolled Users",
+    "search": "Search",
+    "roleInput": {
+      "label": "Role",
+      "input": "All"
+    },
+    "table": {
+      "user": "User",
+      "name": "Name",
+      "role": "Role",
+      "actions": "Actions",
+      "empty": "Not user enrolled"
+    }
   }
 }
