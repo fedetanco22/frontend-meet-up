@@ -36,6 +36,7 @@ const Course = ({ courses }) => {
                     ? `${process.env.APP_REACT_MEET_UP}/coursesImages/${image}`
                     : courseImage
             }
+            priority
             alt={title}
             layout='fill'
             objectFit='cover'

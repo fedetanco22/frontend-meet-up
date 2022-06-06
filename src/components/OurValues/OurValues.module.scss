@@ -1,26 +1,28 @@
 @import '../../styles/patterns';
 
-.container{
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.container {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
-.value{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 4rem 0 2.8rem;
-  &__item{
-    display: flex;
-    align-items: center;
-    & p{
-      text-transform: capitalize;
-      font-size: 1.2rem;
+.value {
+    padding: 4rem 3rem 2.8rem;
+    &__item {
+        display: flex;
+        align-items: center;
+
+        @media screen and (min-width: 769px) {
+            justify-content: center;
+        }
+        & p {
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            text-align: start;
+        }
+        & svg {
+            font-size: 2rem;
+            color: $tertiary-color;
+            margin-right: 0.5rem;
+        }
     }
-    & svg{
-      font-size: 2rem;
-      color: $tertiary-color;
-      margin-right: .5rem;
-    }
-  }
 }
