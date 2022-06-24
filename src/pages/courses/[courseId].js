@@ -1,22 +1,10 @@
-import { useState } from 'react';
-import router from 'next/router';
 import Image from 'next/image';
-import {
-    Layout,
-    Contact,
-    ColorBanner,
-    Card,
-    CourseSchedule,
-    Button,
-    Module,
-} from '../../components/index';
+import { Layout, Contact, ColorBanner, Card, CourseSchedule, Module } from '../../components/index';
 import { useTranslations } from 'next-intl';
-import Moment from 'react-moment';
 import courseImage from '../../../public/course-image.png';
 import useAppContext from '../../context/useAppContext';
 
 import styles from './course.module.scss';
-import ErrorPage from '../404';
 
 const Course = ({ courses }) => {
     const t = useTranslations('courseView');
@@ -26,6 +14,10 @@ const Course = ({ courses }) => {
 
     const handleScheduleId = (schedule_id) => {
         addCourse(courses, schedule_id);
+    };
+
+    const loaderProp = ({ src }) => {
+        return src;
     };
 
     const coursePicture = (
@@ -42,6 +34,7 @@ const Course = ({ courses }) => {
             objectFit='cover'
             objectPosition='50% 20%'
             quality={100}
+            loader={loaderProp}
         />
     );
 
