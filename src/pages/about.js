@@ -6,7 +6,6 @@ import styles from '../styles/About.module.scss';
 
 const About = () => {
     const t = useTranslations('about');
-    console.log('ENV', process.env.APP_REACT_MEET_UP);
 
     return (
         <Layout pageTitle={t('title')}>
