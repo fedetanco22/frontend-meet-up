@@ -46,29 +46,12 @@
       "title": "Convertite en Docente",
       "description": "En Meet-up podes crear un curso de inglés para que los estudiantes puedan aprender inglés.",
       "button": "Aplicá ahora"
-    },
-    "auth": {
-      "SignUp": {
-        "title": "Entrar",
-        "form": {
-          "placeholder": "Porfavor ingrese su nombre",
-          "submit": "Enviar"
-        }
-      }
     }
   },
   "test": {
-    "title": "Test",
+    "title": "Tomar el Test",
     "prueba": "prueba a Test",
-    "auth": {
-      "SignUp": {
-        "title": "Entrar",
-        "form": {
-          "placeholder": "Porfavor ingrese su nombre",
-          "submit": "Enviar"
-        }
-      }
-    }
+    "linkText": "Comencemos"
   },
   "about": {
     "title": "Nosotros",

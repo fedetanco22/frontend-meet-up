@@ -25,16 +25,6 @@ const Course = ({ course }) => {
             quality={100}
         />
     );
-    // console.log(level.toLowerCase().trim());
-    // const classes = classNames(
-    //     {
-    //         [styles.text__title__pink]: level.toLowerCase().trim() === 'beginner',
-    //         [styles.text__title__green]: level.toLowerCase().trim() === 'intermediate',
-    //         [styles.text__title__blue]: level.toLowerCase().trim() === 'upper-intermediate',
-
-    //     },
-    //     level
-    // );
 
     return (
         <div className='col-12 col-sm-6 col-md-4 mb-4'>
