@@ -11,7 +11,6 @@ const useAppContext = () => useContext(AppContext);
 export const AppProvider = ({ children }) => {
     const t = useTranslations('sesion');
     const [products, setProducts] = useState([]);
-    console.log('🚀 ~ file: useAppContext.js ~ line 11 ~ AppProvider ~ product', products);
 
     const storage = () => {
         if (typeof window !== 'undefined') {

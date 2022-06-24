@@ -58,17 +58,9 @@
     }
   },
   "test": {
-    "title": "Test",
+    "title": "Take the test",
     "prueba": "Test about",
-    "auth": {
-      "SignUp": {
-        "title": "Sign up",
-        "form": {
-          "placeholder": "Please enter your name",
-          "submit": "Submit"
-        }
-      }
-    }
+    "linkText": "Let's begin"
   },
   "about": {
     "title": "About Us",
@@ -333,12 +325,12 @@
     },
     "changeRole": {
       "title": "Change Role",
-      "content" : "select a new role for this user",
+      "content": "select a new role for this user",
       "button": "Change"
     },
     "alert": {
       "error": "Error, check the data and try again",
-      "success":"Data saved successfully"
+      "success": "Data saved successfully"
     }
   },
   "sales": {
@@ -366,7 +358,7 @@
       "save": "Save"
     }
   },
-  "myCourses":{
+  "myCourses": {
     "title": "My Courses"
   },
   "allCourses": {
@@ -536,7 +528,6 @@
     "module": {
       "title": "Modules"
     }
-
   },
   "sesion": {
     "title": "Expired Session",
@@ -569,7 +560,7 @@
     "text": "Uh! Looks like you got lost.",
     "button": "Back to home."
   },
-  "enrolled":{
+  "enrolled": {
     "title": "Enrolled",
     "list": "List of Enrolled Users",
     "search": "Search",
