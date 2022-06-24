@@ -1,7 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Layout, NumberBlock, Contact, PartnerList, OurValues, Button } from '../components/index';
-import Banner from '../components/Banner/Banner';
-import bannerAbout from '../../public/estudiante-online-2.jpg';
+import { Layout, Contact, OurValues, Button } from '../components/index';
 import styles from '../styles/About.module.scss';
 
 const Test = () => {
