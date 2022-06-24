@@ -41,6 +41,9 @@ const EditUser = ({ user, editUser }) => {
             .integer(t('form.validations.phone.number'))
             .required(t('form.validations.phone.required')),
     });
+    const loaderProp = ({ src }) => {
+        return src;
+    };
     const foto =
         editUser?.data?.profile_image?.length > 0 ? (
             <Image
@@ -48,13 +51,16 @@ const EditUser = ({ user, editUser }) => {
                 alt='idioma'
                 width={130}
                 height={130}
+                loader={loaderProp}
             />
         ) : (
-            <Image src={avatar} alt='usuario' priority />
+            <Image src={avatar} alt='usuario' priority loader={loaderProp} />
         );
 
     const fotoTmp =
-        imageUrl !== null ? <Image src={imageUrl} alt='idioma' width={130} height={130} /> : null;
+        imageUrl !== null ? (
+            <Image src={imageUrl} alt='idioma' width={130} height={130} loader={loaderProp} />
+        ) : null;
     const handleData = async (values) => {
         const url = `${process.env.APP_REACT_MEET_UP}/users/` + editUser?.data?.user_id;
         let formData = new FormData();
