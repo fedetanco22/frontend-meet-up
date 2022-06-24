@@ -41,6 +41,10 @@ const NavbarPanel = ({ handleMenu, open }) => {
         locale === 'en' ? setImgLan(flagEn) : setImgLan(flagEs);
     };
 
+    const loaderProp = ({ src }) => {
+        return src;
+    };
+
     const foto =
         user?.data?.profile_image?.length > 0 ? (
             <Image
@@ -48,9 +52,10 @@ const NavbarPanel = ({ handleMenu, open }) => {
                 alt='idioma'
                 width={30}
                 height={30}
+                loader={loaderProp}
             />
         ) : (
-            <Image src={avatar} alt='idioma' priority />
+            <Image src={avatar} alt='idioma' priority loader={loaderProp} />
         );
 
     const exit = () => {
@@ -190,7 +195,7 @@ const NavbarPanel = ({ handleMenu, open }) => {
                         </div>
                         <div className={`d-none d-sm-block ${styles.lan}`}>
                             <div className={`${styles.flag}`}>
-                                <Image src={imgLan} alt='idioma' priority />
+                                <Image src={imgLan} alt='idioma' priority loader={loaderProp} />
                             </div>
                             <select
                                 className='border-0 px-1'
