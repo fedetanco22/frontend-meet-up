@@ -10,6 +10,10 @@ const Course = ({ course }) => {
     const t = useTranslations('coursesList');
     const { title, description, level, image, course_id } = course;
 
+    const loaderProp = ({ src }) => {
+        return src;
+    };
+
     const coursePicture = (
         <Image
             className={styles.image}
@@ -23,6 +27,7 @@ const Course = ({ course }) => {
             height={377}
             objectFit='cover'
             quality={100}
+            loader={loaderProp}
         />
     );
 
