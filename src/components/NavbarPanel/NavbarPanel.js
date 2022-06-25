@@ -48,7 +48,7 @@ const NavbarPanel = ({ handleMenu, open }) => {
     const foto =
         user?.data?.profile_image?.length > 0 ? (
             <Image
-                src={`${process.env.APP_REACT_MEET_UP}/${user?.data?.profile_image}`}
+                src={`${process.env.APP_REACT_MEET_UP}/userImages/${user?.data?.profile_image}`}
                 alt='idioma'
                 width={30}
                 height={30}

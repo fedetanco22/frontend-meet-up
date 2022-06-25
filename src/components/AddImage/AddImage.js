@@ -67,6 +67,11 @@ const AddImage = ({ editCourseId, image }) => {
             setIsPending(false);
         }
     };
+
+    const loaderProp = ({ src }) => {
+        return src;
+    };
+
     const fotoTmp =
         imageUrl !== null ? (
             <Image
@@ -76,6 +81,7 @@ const AddImage = ({ editCourseId, image }) => {
                 objectFit='cover'
                 objectPosition='50% 50%'
                 quality={100}
+                loader={loaderProp}
             />
         ) : null;
     const foto =
@@ -87,6 +93,7 @@ const AddImage = ({ editCourseId, image }) => {
                 objectFit='cover'
                 objectPosition='50% 50%'
                 quality={100}
+                loader={loaderProp}
             />
         ) : (
             <FaImage />

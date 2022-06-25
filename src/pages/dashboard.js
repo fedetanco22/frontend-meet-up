@@ -100,6 +100,10 @@ const Dashboard = () => {
         }
     };
 
+    const loaderProp = ({ src }) => {
+        return src;
+    };
+
     const foto =
         user?.data?.profile_image?.length > 0 ? (
             <Image
@@ -107,9 +111,10 @@ const Dashboard = () => {
                 alt='idioma'
                 width={130}
                 height={130}
+                loader={loaderProp}
             />
         ) : (
-            <Image src={avatar} alt='idioma' priority />
+            <Image src={avatar} alt='idioma' priority loader={loaderProp} />
         );
 
     return (
