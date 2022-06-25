@@ -9,6 +9,9 @@ import styles from './CardCourse.module.scss';
 const CardCourse = ({ course, student }) => {
     const t = useTranslations('cardCourse');
 
+    const loaderProp = ({ src }) => {
+        return src;
+    };
     const foto =
         course.image?.length > 0 ? (
             <Image
@@ -18,6 +21,7 @@ const CardCourse = ({ course, student }) => {
                 objectFit='cover'
                 objectPosition='50% 50%'
                 quality={100}
+                loader={loaderProp}
             />
         ) : (
             <Image
@@ -28,6 +32,7 @@ const CardCourse = ({ course, student }) => {
                 objectFit='cover'
                 objectPosition='50% 50%'
                 quality={100}
+                loader={loaderProp}
             />
         );
 
