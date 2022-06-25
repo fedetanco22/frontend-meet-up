@@ -15,6 +15,10 @@ const Banner = ({ image, altText, side }) => {
 
     const textAlign = side === 'right' ? 'end' : 'start';
 
+    const loaderProp = ({ src }) => {
+        return src;
+    };
+
     return (
         <div className={styles.imageWrapper}>
             <Image
@@ -25,6 +29,7 @@ const Banner = ({ image, altText, side }) => {
                 objectPosition='50% 0%'
                 quality={100}
                 priority
+                loader={loaderProp}
             />
             <div className={styles.bannerContent}>
                 <div

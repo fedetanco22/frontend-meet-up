@@ -61,6 +61,7 @@ const EditUser = ({ user, editUser }) => {
         imageUrl !== null ? (
             <Image src={imageUrl} alt='idioma' width={130} height={130} loader={loaderProp} />
         ) : null;
+
     const handleData = async (values) => {
         const url = `${process.env.APP_REACT_MEET_UP}/users/` + editUser?.data?.user_id;
         let formData = new FormData();
